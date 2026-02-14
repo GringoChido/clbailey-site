@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Old Money Sourcebook palette ── */
+  --color-vellum: #F4F1EE;
+  --color-vellum-dark: #E8E4DF;
+  --color-ink: #121212;
+  --color-ink-light: #2A2A2A;
+  --color-estate: #8C8681;
+  --color-estate-light: #A39E99;
+  --color-gold: #C5A47E;
+
+  /* Aliases — 191+ class refs resolve automatically */
+  --color-bone: #F4F1EE;
+  --color-bone-dark: #E8E4DF;
+  --color-cream: #F4F1EE;
+  --color-cream-dark: #E8E4DF;
+  --color-charcoal: #121212;
+  --color-charcoal-light: #2A2A2A;
+  --color-brown: #121212;
+  --color-brown-light: #2A2A2A;
+  --color-forest: #121212;
+  --color-forest-light: #2A2A2A;
+  --color-warm-gray: #8C8681;
+  --color-warm-gray-light: #A39E99;
+  --color-stone: #8C8681;
+  --color-burgundy: #121212;
+
+  /* Typography */
+  --font-serif: var(--font-libre-baskerville);
+  --font-sans: var(--font-montserrat);
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  background: var(--color-vellum);
+}
+
+/* Film grain overlay — vellum paper texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Hide scrollbar for carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Heritage label — 10px Montserrat 500, 0.5em tracking ─── */
+.heritage-label {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+/* ─── 0.5px Estate Grey dividers ─── */
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--color-estate);
+  opacity: 0.3;
+}
+
+/* ─── Homepage sections ─── */
+.snap-container {
+  /* Free-flowing scroll — no snap locking */
+}
+
+.snap-section {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ─── Cinematic strip — full-bleed 100vw sections ─── */
+.cine-strip {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cine-strip--full {
+  min-height: 100vh;
+}
+
+.cine-strip__img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cine-strip__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18,18,18,0.6) 0%, rgba(18,18,18,0.15) 40%, transparent 70%);
+}
+
+.cine-strip__content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .cine-strip__content {
+    padding: 5rem 2.5rem;
+  }
+}
+
+/* ─── Catalog strip — split layout ─── */
+.catalog-strip {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .catalog-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ─── Collections portfolio — 4-col grayscale grid ─── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.portfolio-item {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  filter: grayscale(100%);
+  transition: filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.portfolio-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.15s; opacity: 0; }
+.animate-delay-2 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-3 { animation-delay: 0.45s; opacity: 0; }
+.animate-delay-4 { animation-delay: 0.6s; opacity: 0; }
+.animate-delay-5 { animation-delay: 0.75s; opacity: 0; }
+.animate-delay-6 { animation-delay: 0.9s; opacity: 0; }
+
+/* Image hover zoom */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* ─── Heritage Button — matches reference btn-heritage ─── */
+.btn-heritage {
+  background-color: var(--color-ink);
+  color: var(--color-vellum);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 1.25rem 3rem;
+  border-radius: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-block;
+}
+
+.btn-heritage:hover {
+  background-color: var(--color-estate);
+  transform: translateY(-2px);
+}
+
+/* ─── Input Sourcebook — stamped bottom-border inputs ─── */
+.input-sourcebook {
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid var(--color-estate);
+  padding: 1.25rem 0;
+  font-size: 14px;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: 0.05em;
+  transition: all 0.4s ease;
+  color: var(--color-ink);
+  border-radius: 0;
+}
+
+.input-sourcebook:focus {
+  border-bottom-color: var(--color-ink);
+  outline: none;
+}
+
+/* ─── Metadata label — alias for heritage-label ─── */
+.metadata {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 10px;
+  color: var(--color-estate);
+}
+
+/* ─── Divider thin — 0.5px line ─── */
+.divider-thin {
+  background-color: var(--color-estate);
+  height: 0.5px;
+  width: 100%;
+}
+
+/* ─── Spin animation for gold loader ─── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Line clamp utility */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

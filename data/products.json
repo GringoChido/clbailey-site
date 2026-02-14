@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "version": "2.0",
+    "updated": "2026-02-12",
+    "imageBasePath": "/images/products",
+    "pdfBasePath": "/downloads"
+  },
+  "categories": [
+    {
+      "slug": "pool-tables",
+      "name": "Pool Tables",
+      "headline": "Built for Homes That Endure",
+      "description": "Nine distinct models. Solid hardwood construction. Lifetime guarantee.",
+      "heroImage": "pool-tables/skylar/hero.jpg",
+      "sortOrder": 1
+    },
+    {
+      "slug": "shuffleboards",
+      "name": "Shuffleboards",
+      "headline": "Crafted for the Long Game",
+      "description": "Premium shuffleboards from 9' to 14'. Solid playfield. Precision scoring.",
+      "heroImage": "shuffleboards/viking-shuffleboard/hero.jpg",
+      "sortOrder": 2
+    },
+    {
+      "slug": "game-room-furniture",
+      "name": "Game Room Furniture",
+      "headline": "Every Seat. Every Surface. Matched.",
+      "description": "Spectator chairs, storage benches, and cue racks designed to complement your table.",
+      "heroImage": "game-room-furniture/skylar-furniture/hero.jpg",
+      "sortOrder": 3
+    },
+    {
+      "slug": "cue-racks",
+      "name": "Cue Racks",
+      "headline": "Organize with Intent",
+      "description": "Floor, wall, and corner cue racks in matching finishes.",
+      "heroImage": "cue-racks/carved-leg-cue-rack/hero.jpg",
+      "sortOrder": 4
+    }
+  ],
+  "products": [
+    {
+      "slug": "skylar",
+      "name": "The Skylar",
+      "category": "pool-tables",
+      "tagline": "Beautiful as it is Versatile",
+      "description": "Clean lines. Convertible dining top. The Skylar fits modern homes without compromising on play.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Optional dining top conversion",
+        "Graphite or Espresso finish",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Espresso", "Graphite"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/skylar/hero.jpg",
+        "gallery": [
+          "pool-tables/skylar/angle.jpg",
+          "pool-tables/skylar/graphite.jpg",
+          "pool-tables/skylar/nameplate.jpg",
+          "pool-tables/skylar/dining-top.jpg"
+        ],
+        "dimensions": "pool-tables/skylar/dimensions.jpg"
+      },
+      "pdf": "skylar-pool-table.pdf",
+      "featured": true,
+      "sortOrder": 1
+    },
+    {
+      "slug": "viking",
+      "name": "The Viking",
+      "category": "pool-tables",
+      "tagline": "Bold. Rustic. Uncompromising.",
+      "description": "Distressed hardwood. Industrial hardware. The Viking commands the room.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Distressed rustic finish",
+        "Matching furniture collection",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Rustic"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/viking/hero.jpg",
+        "gallery": [
+          "pool-tables/viking/angle.jpg",
+          "pool-tables/viking/detail.jpg",
+          "pool-tables/viking/nameplate.jpg",
+          "pool-tables/viking/lifestyle.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "viking-pool-table.pdf",
+      "featured": true,
+      "sortOrder": 2
+    },
+    {
+      "slug": "dutchess",
+      "name": "The Dutchess",
+      "category": "pool-tables",
+      "tagline": "Distinctively Traditional",
+      "description": "Double-diamond inlays. Rich wood tones. The Dutchess is heirloom craftsmanship.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Double diamond sight markers",
+        "Multiple finish options",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Traditional Mahogany", "Warm Chestnut", "Graphite"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/dutchess/hero.jpg",
+        "gallery": [
+          "pool-tables/dutchess/green.jpg",
+          "pool-tables/dutchess/diamond-detail.jpg",
+          "pool-tables/dutchess/nameplate.jpg",
+          "pool-tables/dutchess/rail.jpg",
+          "pool-tables/dutchess/detail.jpg",
+          "pool-tables/dutchess/lifestyle.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "dutchess-pool-table.pdf",
+      "featured": true,
+      "sortOrder": 3
+    },
+    {
+      "slug": "tunbridge",
+      "name": "The Tunbridge",
+      "category": "pool-tables",
+      "tagline": "Timeless by Design",
+      "description": "Transitional styling. Full furniture collection. The Tunbridge anchors the whole room.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Matching bench, chair, and cue rack",
+        "Timber finish",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Timber"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/tunbridge/hero.jpg",
+        "gallery": [
+          "pool-tables/tunbridge/profile.jpg",
+          "pool-tables/tunbridge/detail.jpg",
+          "pool-tables/tunbridge/nameplate.jpg",
+          "pool-tables/tunbridge/diamond.jpg"
+        ],
+        "dimensions": "pool-tables/tunbridge/dimensions.jpg"
+      },
+      "pdf": "tunbridge-catalog.pdf",
+      "featured": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "duke",
+      "name": "The Duke",
+      "category": "pool-tables",
+      "tagline": "Refined Storage",
+      "description": "Ball-return drawer. Clean geometry. The Duke keeps the game room tidy.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Built-in ball return drawer",
+        "Multiple finish options",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Black", "Espresso"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/duke/hero.jpg",
+        "gallery": [
+          "pool-tables/duke/closed.jpg",
+          "pool-tables/duke/angle.jpg",
+          "pool-tables/duke/nameplate.jpg",
+          "pool-tables/duke/rail.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "duke-pool-table.pdf",
+      "featured": false,
+      "sortOrder": 5
+    },
+    {
+      "slug": "norwich",
+      "name": "The Norwich",
+      "category": "pool-tables",
+      "tagline": "Classic Sophistication",
+      "description": "Ball-return system. Carved legs. The Norwich blends Old World craft with practical design.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Ball return system",
+        "Carved leg detail",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Dark Walnut"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/norwich/hero.jpg",
+        "gallery": [
+          "pool-tables/norwich/closed.jpg",
+          "pool-tables/norwich/angle.jpg",
+          "pool-tables/norwich/rail.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "norwich-sell-sheet.pdf",
+      "featured": false,
+      "sortOrder": 6
+    },
+    {
+      "slug": "elayna",
+      "name": "The Elayna",
+      "category": "pool-tables",
+      "tagline": "Warm. Inviting. Home.",
+      "description": "Soft curves. Espresso finish. The Elayna makes the game room feel like the living room.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Rounded pocket design",
+        "Espresso finish",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Espresso"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/elayna/hero.jpg",
+        "gallery": [
+          "pool-tables/elayna/angle.jpg",
+          "pool-tables/elayna/detail.jpg",
+          "pool-tables/elayna/side.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "elayna-pool-table.pdf",
+      "featured": false,
+      "sortOrder": 7
+    },
+    {
+      "slug": "adrian",
+      "name": "The Adrian",
+      "category": "pool-tables",
+      "tagline": "Modern Minimalism",
+      "description": "Flat rail. Slim profile. The Adrian disappears into contemporary interiors.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Slim rail design",
+        "Contemporary styling",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Espresso"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "pool-tables/adrian/hero.jpg",
+        "gallery": [
+          "pool-tables/adrian/front.jpg",
+          "pool-tables/adrian/detail.jpg",
+          "pool-tables/adrian/back.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "adrian-pool-table.pdf",
+      "featured": false,
+      "sortOrder": 8
+    },
+    {
+      "slug": "addison",
+      "name": "The Addison",
+      "category": "pool-tables",
+      "tagline": "Sleek. Contemporary. Statement.",
+      "description": "Geometric lines. Premium materials. The Addison is architecture for the game room.",
+      "features": [
+        "Available in 7' and 8' sizes",
+        "Geometric design language",
+        "Contemporary finish",
+        "K66 rubber cushion system"
+      ],
+      "finishes": ["Graphite"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": null,
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": "addison-pool-table.pdf",
+      "featured": false,
+      "sortOrder": 9
+    },
+    {
+      "slug": "viking-shuffleboard",
+      "name": "Viking Shuffleboard",
+      "category": "shuffleboards",
+      "tagline": "Built for Serious Play",
+      "description": "Butcher block playfield. Rustic finish. Matches the Viking pool table.",
+      "features": [
+        "12' playing surface",
+        "Climatic adjusters",
+        "Matching Viking collection",
+        "Score counter included"
+      ],
+      "finishes": ["Rustic"],
+      "sizes": ["12'"],
+      "images": {
+        "hero": "shuffleboards/viking-shuffleboard/hero.jpg",
+        "gallery": [
+          "shuffleboards/viking-shuffleboard/profile.jpg",
+          "shuffleboards/viking-shuffleboard/lifestyle.jpg",
+          "shuffleboards/viking-shuffleboard/playfield.jpg",
+          "shuffleboards/viking-shuffleboard/score-counter.jpg",
+          "shuffleboards/viking-shuffleboard/detail.jpg"
+        ],
+        "dimensions": "shuffleboards/viking-shuffleboard/dimensions.jpg"
+      },
+      "pdf": "viking-shuffleboard.pdf",
+      "featured": true,
+      "sortOrder": 1
+    },
+    {
+      "slug": "skylar-shuffleboard",
+      "name": "Skylar Shuffleboard",
+      "category": "shuffleboards",
+      "tagline": "Refined Play Surface",
+      "description": "Clean modern lines to match the Skylar pool table. Climatic adjusters included.",
+      "features": [
+        "12' playing surface",
+        "Climatic adjusters",
+        "Matching Skylar collection",
+        "Score counter included"
+      ],
+      "finishes": ["Espresso"],
+      "sizes": ["12'"],
+      "images": {
+        "hero": "shuffleboards/skylar-shuffleboard/hero.jpg",
+        "gallery": [
+          "shuffleboards/skylar-shuffleboard/angle.jpg",
+          "shuffleboards/skylar-shuffleboard/detail.jpg"
+        ],
+        "dimensions": "shuffleboards/skylar-shuffleboard/dimensions.jpg"
+      },
+      "pdf": "skylar-shuffleboard.pdf",
+      "featured": false,
+      "sortOrder": 2
+    },
+    {
+      "slug": "tunbridge-shuffleboard",
+      "name": "Tunbridge Shuffleboard",
+      "category": "shuffleboards",
+      "tagline": "The Long View",
+      "description": "Available in 12' and 14'. Matches the full Tunbridge furniture collection.",
+      "features": [
+        "12' and 14' sizes",
+        "Climatic adjusters",
+        "Matching Tunbridge collection",
+        "Score counter included"
+      ],
+      "finishes": ["Timber"],
+      "sizes": ["12'", "14'"],
+      "images": {
+        "hero": "shuffleboards/tunbridge-shuffleboard/hero.jpg",
+        "gallery": [
+          "shuffleboards/tunbridge-shuffleboard/12ft.jpg",
+          "shuffleboards/tunbridge-shuffleboard/14ft.jpg",
+          "shuffleboards/tunbridge-shuffleboard/detail.jpg"
+        ],
+        "dimensions": "shuffleboards/tunbridge-shuffleboard/dimensions.jpg"
+      },
+      "pdf": "tunbridge-shuffleboard.pdf",
+      "featured": false,
+      "sortOrder": 3
+    },
+    {
+      "slug": "level-best",
+      "name": "Level Best Shuffleboard",
+      "category": "shuffleboards",
+      "tagline": "Classic Shuffleboard Play",
+      "description": "Our original shuffleboard line. Multiple styles, proven playfield.",
+      "features": [
+        "Multiple size options",
+        "Multiple design styles",
+        "Accessory kits available",
+        "Climatic adjusters"
+      ],
+      "finishes": ["Various"],
+      "sizes": ["9'", "12'"],
+      "images": {
+        "hero": "shuffleboards/level-best/hero.jpg",
+        "gallery": [
+          "shuffleboards/level-best/carved-angle.jpg",
+          "shuffleboards/level-best/modern-angle.jpg",
+          "shuffleboards/level-best/original-angle.jpg",
+          "shuffleboards/level-best/accessories.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "level-best-shuffleboards.pdf",
+      "featured": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "skylar-furniture",
+      "name": "Skylar Game Room Furniture",
+      "category": "game-room-furniture",
+      "tagline": "Complete the Room",
+      "description": "Spectator chair. Storage bench. Cue rack. Dining dolly. All matched to the Skylar.",
+      "features": [
+        "Spectator chair with swivel",
+        "Storage bench",
+        "Floor cue rack",
+        "Dining dolly for table conversion"
+      ],
+      "finishes": ["Espresso"],
+      "sizes": [],
+      "images": {
+        "hero": "game-room-furniture/skylar-furniture/hero.jpg",
+        "gallery": [
+          "game-room-furniture/skylar-furniture/bench.jpg",
+          "game-room-furniture/skylar-furniture/cue-rack.jpg",
+          "game-room-furniture/skylar-furniture/dolly.jpg",
+          "game-room-furniture/skylar-furniture/chair-detail.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "spectator-chairs.pdf",
+      "featured": false,
+      "sortOrder": 1
+    },
+    {
+      "slug": "tunbridge-furniture",
+      "name": "Tunbridge Game Room Furniture",
+      "category": "game-room-furniture",
+      "tagline": "Matched to the Last Detail",
+      "description": "Spectator chair. Storage bench. Cue rack. All in the Tunbridge Timber finish.",
+      "features": [
+        "Spectator chair with swivel",
+        "Storage bench with lid",
+        "Floor cue rack"
+      ],
+      "finishes": ["Timber"],
+      "sizes": [],
+      "images": {
+        "hero": "game-room-furniture/tunbridge-furniture/hero.jpg",
+        "gallery": [
+          "game-room-furniture/tunbridge-furniture/bench.jpg",
+          "game-room-furniture/tunbridge-furniture/cue-rack.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 2
+    },
+    {
+      "slug": "viking-furniture",
+      "name": "Viking Game Room Furniture",
+      "category": "game-room-furniture",
+      "tagline": "Rugged Match",
+      "description": "Spectator chair. Storage bench. Cue rack. All in the Viking Rustic finish.",
+      "features": [
+        "Spectator chair with swivel",
+        "Storage bench with lid",
+        "Floor cue rack"
+      ],
+      "finishes": ["Rustic"],
+      "sizes": [],
+      "images": {
+        "hero": "game-room-furniture/viking-furniture/hero.jpg",
+        "gallery": [
+          "game-room-furniture/viking-furniture/bench.jpg",
+          "game-room-furniture/viking-furniture/cue-rack.jpg",
+          "game-room-furniture/viking-furniture/chair-detail.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "viking-accessories.pdf",
+      "featured": false,
+      "sortOrder": 3
+    },
+    {
+      "slug": "game-table-sets",
+      "name": "Game Table Sets",
+      "category": "game-room-furniture",
+      "tagline": "Multi-Game Ready",
+      "description": "Convertible game table with matching chairs. Poker, bumper pool, dining.",
+      "features": [
+        "Multi-game playing surface",
+        "Matching chairs included",
+        "Storage compartments",
+        "Dining conversion"
+      ],
+      "finishes": ["Various"],
+      "sizes": [],
+      "images": {
+        "hero": null,
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": "game-table-sets.pdf",
+      "featured": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "carved-leg-cue-rack",
+      "name": "Carved Leg Floor Cue Rack",
+      "category": "cue-racks",
+      "tagline": "Freestanding. Finished. Functional.",
+      "description": "Floor-standing cue rack with carved legs and storage drawer. Available in five finishes.",
+      "features": [
+        "Holds 10 cues",
+        "Storage drawer",
+        "Carved leg detail",
+        "Five finish options"
+      ],
+      "finishes": ["Traditional Mahogany", "Warm Chestnut", "Classic Oak", "Black", "Honey Maple"],
+      "sizes": [],
+      "images": {
+        "hero": "cue-racks/carved-leg-cue-rack/hero.jpg",
+        "gallery": [
+          "cue-racks/carved-leg-cue-rack/open-drawer.jpg",
+          "cue-racks/carved-leg-cue-rack/mahogany.jpg",
+          "cue-racks/carved-leg-cue-rack/warm-chestnut.jpg",
+          "cue-racks/carved-leg-cue-rack/finishes.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "level-best-cue-racks.pdf",
+      "featured": false,
+      "sortOrder": 1
+    },
+    {
+      "slug": "corner-cue-rack",
+      "name": "Corner Cue Rack",
+      "category": "cue-racks",
+      "tagline": "Tucked. Tidy. Five Finishes.",
+      "description": "Space-saving corner design. Holds 10 cues. Available in five wood finishes.",
+      "features": [
+        "Corner-fitting design",
+        "Holds 10 cues",
+        "Five finish options",
+        "Compact footprint"
+      ],
+      "finishes": ["Traditional Mahogany", "Warm Chestnut", "Classic Oak", "Black", "Honey Maple"],
+      "sizes": [],
+      "images": {
+        "hero": "cue-racks/corner-cue-rack/hero.jpg",
+        "gallery": [
+          "cue-racks/corner-cue-rack/black.jpg",
+          "cue-racks/corner-cue-rack/classic-oak.jpg",
+          "cue-racks/corner-cue-rack/honey-maple.jpg",
+          "cue-racks/corner-cue-rack/finishes.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": "level-best-cue-racks.pdf",
+      "featured": false,
+      "sortOrder": 2
+    },
+    {
+      "slug": "deluxe-wall-rack",
+      "name": "Deluxe Wall Cue Rack",
+      "category": "cue-racks",
+      "tagline": "Wall-Mounted. Clean Lines.",
+      "description": "Wall-mounted cue storage. Minimal footprint. Clean presentation.",
+      "features": [
+        "Wall-mounted design",
+        "Minimal footprint",
+        "Multiple finish options",
+        "Clean presentation"
+      ],
+      "finishes": ["Various"],
+      "sizes": [],
+      "images": {
+        "hero": "cue-racks/deluxe-wall-rack/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": "level-best-cue-racks.pdf",
+      "featured": false,
+      "sortOrder": 3
+    }
+  ],
+  "company": {
+    "name": "The C.L. Bailey Co.",
+    "legalName": "CLB Assets LLC",
+    "tagline": "Built for Homes That Endure",
+    "founded": "1999",
+    "phone": "877-258-1963",
+    "fax": "417-258-7533",
+    "email": "info@clbailey.com",
+    "address": {
+      "street": "2013 S Persimmon Street",
+      "suite": "Suite 100",
+      "city": "Tomball",
+      "state": "TX",
+      "zip": "77375"
+    },
+    "hours": {
+      "weekday": "Monday – Thursday: 8:00 AM – 4:30 PM (CST)",
+      "friday": "Friday: 8:00 AM – 12:00 PM (CST)"
+    },
+    "history": "The C.L. Bailey Co., a division of CLB Assets LLC, was founded in the 1990's by the father and son team of Charles and Chuck Bailey, veterans of the billiards industry. In 2001, after experiencing great success in manufacturing pool tables, the Bailey's were joined by another father and son team, Jackson and Shine Lee, and started a billiards accessories and game room furniture division called The Level Best.",
+    "social": {
+      "instagram": "https://www.instagram.com/clbaileyco",
+      "facebook": "https://www.facebook.com/theclbaileyco",
+      "pinterest": "https://www.pinterest.com/clbaileyco"
+    }
+  },
+  "sizeChart": [
+    { "tableSize": "7' Table", "playfield": "39\" x 78\"", "minRoom": "13' x 16'", "cueLength": "52\"" },
+    { "tableSize": "8' Table", "playfield": "44\" x 88\"", "minRoom": "13'6\" x 17'", "cueLength": "52\"" },
+    { "tableSize": "9' Table", "playfield": "50\" x 100\"", "minRoom": "14'2\" x 18'", "cueLength": "52\"" }
+  ]
+}
