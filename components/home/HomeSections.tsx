@@ -1,31 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { categories, getFeaturedProducts, img } from "@/lib/products";
+import { getFeaturedProducts, img } from "@/lib/products";
 
-/* ─── Section 1: Category Navigation ─── */
+/* ─── Section 1: Category Navigation — Arhaus "Shop Everything New" pattern ─── */
 function CategoryNav({ t }: { t: (key: string) => string }) {
   const items = [
     {
       label: t("museum.poolTables"),
+      subtitle: t("museum.nineModels"),
       href: "/products/pool-tables",
       image: "/images/products/pool-tables/viking/hero.jpg",
       alt: t("museum.altPoolTables"),
     },
     {
       label: t("museum.shuffleboards"),
+      subtitle: t("museum.nineToFourteen"),
       href: "/products/shuffleboards",
       image: "/images/products/shuffleboards/viking-shuffleboard/hero.jpg",
       alt: t("museum.altShuffleboards"),
     },
     {
       label: t("museum.furniture"),
+      subtitle: t("museum.completeTheRoom"),
       href: "/products/game-room-furniture",
       image: "/images/products/game-room-furniture/skylar-furniture/hero.jpg",
       alt: t("museum.altFurniture"),
     },
     {
       label: t("museum.cueRacks"),
+      subtitle: t("museum.wallAndFloor"),
       href: "/products/cue-racks",
       image: "/images/products/cue-racks/carved-leg-cue-rack/hero.jpg",
       alt: t("museum.altCueRacks"),
@@ -33,30 +37,41 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h2 className="text-2xl md:text-3xl font-medium text-center mb-14">
+    <section className="py-24 lg:py-32">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+        <p className="section-label text-center mb-3">
+          {t("museum.portfolioLabel")}
+        </p>
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink text-center mb-16">
           {t("home.categoryHeading")}
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+
+        {/* Horizontal scroll on mobile, 4-col grid on desktop */}
+        <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:pb-0">
           {items.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="group text-center"
+              className="group flex-shrink-0 w-[260px] lg:w-auto"
             >
-              <div className="aspect-square overflow-hidden rounded-full bg-gray-100 mx-auto w-full max-w-[200px] mb-4">
+              <div className="aspect-[3/4] relative overflow-hidden bg-light">
                 <Image
                   src={item.image}
                   alt={item.alt}
-                  width={400}
-                  height={400}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-[1.04] transition-transform duration-700"
+                  sizes="(max-width: 1024px) 260px, 25vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-[1.125rem] font-light text-white uppercase tracking-[0.04em]">
+                    {item.label}
+                  </h3>
+                  <p className="text-[0.6875rem] text-white/40 uppercase tracking-[0.1em] mt-1.5">
+                    {item.subtitle}
+                  </p>
+                </div>
               </div>
-              <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors">
-                {item.label}
-              </span>
             </Link>
           ))}
         </div>
@@ -65,28 +80,56 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 2: Featured Products ─── */
+/* ─── Section 2: Editorial Feature — Arhaus "The Outdoor Preview" full-bleed ─── */
+function EditorialFeature({ t }: { t: (key: string) => string }) {
+  return (
+    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <Image
+        src="/images/products/pool-tables/dutchess/hero.jpg"
+        alt={t("museum.altDutchess")}
+        fill
+        className="object-cover"
+        sizes="100vw"
+        quality={85}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
+      <div className="relative z-10 text-center px-6 py-20">
+        <p className="section-label !text-white/40 mb-4">
+          {t("museum.catalogLabel")}
+        </p>
+        <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-8">
+          {t("museum.requestSourcebook")}
+        </h2>
+        <Link href="/catalogs" className="btn-outline-white">
+          {t("museum.viewCatalogs")}
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 3: Featured Products — horizontal scroll ─── */
 function FeaturedProducts({ t }: { t: (key: string) => string }) {
   const featured = getFeaturedProducts();
 
   return (
-    <section className="py-20 lg:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <section className="py-24 lg:py-32 bg-light">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("museum.portfolioLabel")}
             </p>
-            <h2 className="text-3xl md:text-4xl font-medium text-gray-900">
+            <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink">
               {t("home.featuredHeading")}
             </h2>
-            <p className="text-base text-gray-500 mt-2 max-w-md">
+            <p className="text-base text-muted mt-3 max-w-md leading-relaxed">
               {t("home.featuredSubheading")}
             </p>
           </div>
           <Link
             href="/products/pool-tables"
-            className="text-sm font-medium text-gray-900 border-b border-gray-900 pb-0.5 hover:border-gray-400 transition-colors whitespace-nowrap"
+            className="text-sm font-medium text-ink border-b border-ink pb-0.5 hover:border-muted transition-[border-color] duration-300 whitespace-nowrap"
           >
             {t("home.exploreCta")} &rarr;
           </Link>
@@ -99,7 +142,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
               href={`/products/${product.category}/${product.slug}`}
               className="group flex-shrink-0 w-[280px] lg:w-[320px]"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+              <div className="aspect-[4/3] overflow-hidden bg-vellum-dark mb-5">
                 <Image
                   src={img(product.images.hero)}
                   alt={product.name}
@@ -108,10 +151,10 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
                   className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-base font-medium text-gray-900">
+              <h3 className="text-base font-medium text-ink tracking-[0.01em]">
                 {product.name}
               </h3>
-              <p className="text-sm text-gray-500 mt-1">{product.tagline}</p>
+              <p className="text-sm text-muted mt-1">{product.tagline}</p>
             </Link>
           ))}
         </div>
@@ -120,7 +163,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 3: Finishes ─── */
+/* ─── Section 4: Finishes — swatches with names ─── */
 function FinishesSection({ t }: { t: (key: string) => string }) {
   const allFinishes = [
     { name: "Espresso", color: "#3C2415" },
@@ -134,22 +177,25 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
-        <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
+    <section className="py-24 lg:py-32">
+      <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+        <p className="section-label mb-3">
+          {t("home.finishesLabel")}
+        </p>
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink mb-4">
           {t("home.finishesHeading")}
         </h2>
-        <p className="text-base text-gray-500 max-w-lg mx-auto mb-14">
+        <p className="text-base text-muted max-w-lg mx-auto mb-16 leading-relaxed">
           {t("home.finishesDescription")}
         </p>
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
+        <div className="flex flex-wrap justify-center gap-10 lg:gap-14">
           {allFinishes.map((finish) => (
             <div key={finish.name} className="flex flex-col items-center gap-3">
               <div
-                className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border border-gray-200"
+                className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border border-border/50"
                 style={{ backgroundColor: finish.color }}
               />
-              <span className="text-xs font-medium text-gray-500">
+              <span className="text-[0.6875rem] font-normal text-muted tracking-[0.06em]">
                 {finish.name}
               </span>
             </div>
@@ -160,41 +206,10 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 4: Catalog CTA ─── */
-function CatalogSection({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
-      <div className="relative min-h-[50vh] lg:min-h-0 overflow-hidden">
-        <Image
-          src="/images/products/pool-tables/dutchess/hero.jpg"
-          alt={t("museum.altDutchess")}
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
-      </div>
-      <div className="flex flex-col justify-center px-10 lg:px-20 py-16 lg:py-0 bg-gray-50">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          {t("museum.catalogLabel")}
-        </p>
-        <h2 className="text-3xl lg:text-4xl font-medium text-gray-900 leading-tight mb-4">
-          {t("museum.requestSourcebook")}
-        </h2>
-        <p className="text-base text-gray-500 max-w-sm leading-relaxed mb-8">
-          {t("museum.catalogDescription")}
-        </p>
-        <Link href="/catalogs" className="btn-primary self-start">
-          {t("museum.viewCatalogs")}
-        </Link>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 5: Dealer CTA ─── */
+/* ─── Section 5: Dealer CTA — Arhaus-style full-bleed ─── */
 function DealerCTA({ t }: { t: (key: string) => string }) {
   return (
-    <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden">
       <Image
         src="/images/brand/nameplate.jpg"
         alt={t("museum.altNameplate")}
@@ -202,18 +217,18 @@ function DealerCTA({ t }: { t: (key: string) => string }) {
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
       <div className="relative z-10 text-center px-6 py-20">
-        <h2 className="text-3xl md:text-4xl font-medium text-white mb-4">
+        <p className="section-label !text-white/40 mb-4">
+          {t("home.dealerLabel")}
+        </p>
+        <h2 className="heading-display text-3xl md:text-[2.75rem] text-white mb-4">
           {t("home.dealerCta")}
         </h2>
-        <p className="text-base text-white/70 mb-8 max-w-md mx-auto">
+        <p className="text-base text-white/50 mb-10 max-w-md mx-auto leading-relaxed">
           {t("home.dealerCtaDescription")}
         </p>
-        <Link
-          href="/dealer"
-          className="border border-white text-white px-8 py-3 text-sm font-medium tracking-wide hover:bg-white hover:text-gray-900 transition-all duration-300 inline-block"
-        >
+        <Link href="/dealer" className="btn-outline-white">
           {t("home.dealerCtaButton")}
         </Link>
       </div>
@@ -221,50 +236,28 @@ function DealerCTA({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 6: Help CTA ─── */
-function HelpSection({ t }: { t: (key: string) => string }) {
+/* ─── Section 6: Heritage closing ─── */
+function HeritageSection({ t }: { t: (key: string) => string }) {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-24 lg:py-32 bg-light">
       <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-        <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
-          {t("home.helpHeading")}
+        <p className="section-label mb-4">
+          {t("museum.heritageLabel")}
+        </p>
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink mb-5">
+          {t("home.heritageHeading")}
         </h2>
-        <p className="text-base text-gray-500 max-w-lg mx-auto mb-10 leading-relaxed">
-          {t("home.helpDescription")}
+        <p className="text-base text-muted max-w-lg mx-auto mb-12 leading-relaxed">
+          {t("home.heritageDescription")}
         </p>
         <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/about" className="btn-outline">
+            {t("home.heritageCta")}
+          </Link>
           <Link href="/contact-us" className="btn-primary">
             {t("home.helpCta")}
           </Link>
-          <Link href="/catalogs" className="btn-outline">
-            {t("museum.viewCatalogs")}
-          </Link>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 7: Heritage ─── */
-function HeritageSection({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="py-20 lg:py-28 bg-gray-50">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          {t("museum.heritageLabel")}
-        </p>
-        <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
-          {t("home.heritageHeading")}
-        </h2>
-        <p className="text-base text-gray-500 max-w-lg mx-auto mb-10 leading-relaxed">
-          {t("home.heritageDescription")}
-        </p>
-        <Link
-          href="/about"
-          className="text-sm font-medium text-gray-900 border-b border-gray-900 pb-0.5 hover:border-gray-400 transition-colors"
-        >
-          {t("home.heritageCta")} &rarr;
-        </Link>
       </div>
     </section>
   );
@@ -277,11 +270,10 @@ export default async function HomeSections() {
   return (
     <>
       <CategoryNav t={t} />
+      <EditorialFeature t={t} />
       <FeaturedProducts t={t} />
       <FinishesSection t={t} />
-      <CatalogSection t={t} />
       <DealerCTA t={t} />
-      <HelpSection t={t} />
       <HeritageSection t={t} />
     </>
   );

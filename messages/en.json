@@ -13,7 +13,8 @@
     "contact": "Contact",
     "findDealer": "Find a Dealer",
     "toggleMenu": "Toggle menu",
-    "wordmark": "C.L. Bailey & Co."
+    "wordmark": "C.L. Bailey & Co.",
+    "announcement": "Dealer Exclusive \u2014 Not Sold Online  |  Lifetime Structural Guarantee"
   },
   "hero": {
     "label": "The C.L. Bailey Co.",
@@ -23,9 +24,12 @@
     "ctaDealer": "Find a Dealer",
     "altImage": "The Skylar Pool Table by C.L. Bailey",
     "craftsmanship": "Traditional Craftsmanship",
+    "presenting": "Presenting",
     "headline": "Built for Homes That Endure.",
     "exploreCollection": "Explore the Collection",
-    "archive": "The Archive"
+    "archive": "The Archive",
+    "promoBanner": "2026 Collection \u2014 Now Available  |  View the Complete Lineup",
+    "scrollLabel": "Scroll"
   },
   "museum": {
     "poolTables": "Pool Tables",
@@ -64,8 +68,10 @@
     "featuredHeading": "Transform any game room",
     "featuredSubheading": "Explore our most popular pool tables and shuffleboards",
     "exploreCta": "Explore Pool Tables",
+    "finishesLabel": "Materials",
     "finishesHeading": "Crafted in your finish",
     "finishesDescription": "Every table is available in multiple hand-applied finishes. Choose the wood tone that complements your space.",
+    "dealerLabel": "Dealer Network",
     "dealerCta": "See it in person",
     "dealerCtaDescription": "Visit an authorized dealer showroom near you to experience the quality firsthand.",
     "dealerCtaButton": "Find a Dealer",
@@ -89,9 +95,15 @@
     "lifetimeGuarantee": "Lifetime Guarantee",
     "aboutUs": "About Us",
     "contact": "Contact",
+    "backToTop": "Back to Top",
+    "newsletterLabel": "Stay Connected",
+    "newsletterHeading": "Sign up for email updates",
+    "emailPlaceholder": "Enter your email address",
     "allRights": "All rights reserved.",
     "division": "A division of CLB Assets LLC",
     "location": "Tomball, Texas",
+    "yourLocalDealer": "Your Local Dealer",
+    "findNearestDealer": "Find the nearest dealer",
     "followUs": "Follow Us",
     "instagram": "Instagram",
     "facebook": "Facebook",

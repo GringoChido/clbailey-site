@@ -1,32 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Modern Scandinavian palette ── */
   --color-vellum: #FFFFFF;
-  --color-vellum-dark: #F5F5F5;
+  --color-vellum-dark: #F7F7F5;
+  --color-offwhite: #F7F7F5;
+  --color-light: #F1F1F1;
   --color-ink: #1D1D1D;
   --color-ink-light: #333333;
+  --color-body: #222222;
+  --color-muted: #999999;
+  --color-border: #E5E5E5;
   --color-estate: #999999;
   --color-estate-light: #BBBBBB;
   --color-gold: #C5A47E;
+  --color-footer: #F8F8F8;
 
-  /* Aliases — remap so all 191+ class refs resolve */
-  --color-bone: #FFFFFF;
-  --color-bone-dark: #F5F5F5;
-  --color-cream: #FFFFFF;
-  --color-cream-dark: #F5F5F5;
-  --color-charcoal: #1D1D1D;
-  --color-charcoal-light: #333333;
-  --color-brown: #1D1D1D;
-  --color-brown-light: #333333;
-  --color-forest: #1D1D1D;
-  --color-forest-light: #333333;
-  --color-warm-gray: #999999;
-  --color-warm-gray-light: #BBBBBB;
-  --color-stone: #999999;
-  --color-burgundy: #1D1D1D;
-
-  /* Typography — unified sans-serif */
   --font-serif: var(--font-montserrat);
   --font-sans: var(--font-montserrat);
 }
@@ -37,37 +25,55 @@ html {
 }
 
 body {
-  color: var(--color-ink);
+  color: var(--color-body);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
   background: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Scrollbar hide for carousels ─── */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* ─── Display heading — ultra thin (Arhaus weight 200) ─── */
+.heading-display {
+  font-weight: 200;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
-/* ─── Heritage label — kept for backward compat, restyled modern ─── */
+/* ─── Hero heading — responsive clamp sizing ─── */
+.heading-hero {
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+}
+
+/* ─── Section label — small uppercase tracking ─── */
+.section-label {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-muted);
+}
+
+/* ─── Heritage label — backward compat, now maps to section-label ─── */
 .heritage-label {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.6875rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 /* ─── Metadata label ─── */
 .metadata {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  color: var(--color-estate);
+  letter-spacing: 0.15em;
+  font-size: 0.6875rem;
+  color: var(--color-muted);
 }
 
 /* ─── Page container ─── */
@@ -83,15 +89,17 @@ body {
   }
 }
 
-/* ─── Modern buttons ─── */
+/* ─── Buttons — square corners, wide tracking (Arhaus pattern) ─── */
 .btn-primary {
   background-color: var(--color-ink);
   color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  padding: 0.875rem 2rem;
-  transition: background-color 300ms ease, transform 200ms ease;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 0;
+  transition: background-color 300ms ease, color 300ms ease;
   display: inline-block;
   text-align: center;
 }
@@ -100,14 +108,26 @@ body {
   background-color: var(--color-ink-light);
 }
 
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
 .btn-outline {
   border: 1px solid var(--color-ink);
   color: var(--color-ink);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  padding: 0.875rem 2rem;
-  transition: background-color 300ms ease, color 300ms ease;
+  background: transparent;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 0;
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
   display: inline-block;
   text-align: center;
 }
@@ -117,16 +137,54 @@ body {
   color: white;
 }
 
-/* ─── Heritage button — kept for backward compat, mapped to btn-primary ─── */
+.btn-outline:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+/* White outline variant for dark backgrounds */
+.btn-outline-white {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  background: transparent;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 0;
+  transition: background-color 300ms ease, color 300ms ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-outline-white:hover {
+  background-color: white;
+  color: var(--color-ink);
+}
+
+.btn-outline-white:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.btn-outline-white:active {
+  transform: scale(0.98);
+}
+
+/* ─── Heritage button — backward compat ─── */
 .btn-heritage {
   background-color: var(--color-ink);
   color: white;
-  font-family: var(--font-sans), system-ui, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.875rem 2rem;
+  letter-spacing: 0.12em;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  padding: 1rem 2.5rem;
   border-radius: 0;
   transition: background-color 300ms ease;
   display: inline-block;
@@ -136,12 +194,101 @@ body {
   background-color: var(--color-ink-light);
 }
 
-/* ─── Modern input ─── */
+.btn-heritage:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ─── Announcement bar ─── */
+.announcement-bar {
+  background-color: var(--color-ink);
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  padding: 0.625rem 1rem;
+}
+
+/* ─── Back to top ─── */
+.back-to-top {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-muted);
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  transition: color 300ms ease;
+  cursor: pointer;
+  width: 100%;
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.back-to-top:hover {
+  color: var(--color-ink);
+}
+
+/* ─── Newsletter input (Arhaus-style) ─── */
+.newsletter-input {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.newsletter-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.875rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+}
+
+.newsletter-input input::placeholder {
+  color: var(--color-muted);
+}
+
+.newsletter-input input:focus {
+  outline: none;
+}
+
+.newsletter-input button {
+  padding: 0.875rem;
+  color: var(--color-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.newsletter-input button:hover {
+  color: var(--color-ink);
+}
+
+/* ─── Footer accordion (mobile) ─── */
+.footer-accordion summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.footer-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ─── Inputs — clean, thin borders ─── */
 .input-modern {
   width: 100%;
-  border: 1px solid #E0E0E0;
+  border: 1px solid var(--color-border);
   padding: 0.875rem 1rem;
   font-size: 0.875rem;
+  font-weight: 300;
+  border-radius: 0;
   transition: border-color 300ms ease;
   background: transparent;
 }
@@ -151,14 +298,13 @@ body {
   outline: none;
 }
 
-/* ─── Input sourcebook — kept for backward compat, restyled ─── */
 .input-sourcebook {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid var(--color-border);
   padding: 0.875rem 0;
   font-size: 0.875rem;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
   letter-spacing: 0.02em;
   transition: border-color 300ms ease;
   color: var(--color-ink);
@@ -173,28 +319,24 @@ body {
 /* ─── Dividers ─── */
 .divider {
   border: none;
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid var(--color-border);
 }
 
 .divider-thin {
-  background-color: #E0E0E0;
+  background-color: var(--color-border);
   height: 1px;
   width: 100%;
 }
 
-/* ─── Cinematic strip — kept for Hero, simplified ─── */
+/* ─── Cinematic strip ─── */
 .cine-strip {
   position: relative;
   width: 100%;
-  min-height: 85vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.cine-strip--full {
-  min-height: 85vh;
 }
 
 .cine-strip__img {
@@ -220,13 +362,34 @@ body {
   }
 }
 
-/* ─── Scroll-reveal animations (BoConcept-style) ─── */
+/* ─── Catalog split — 2-col layout ─── */
+.catalog-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 70vh;
+}
+
+@media (min-width: 1024px) {
+  .catalog-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ─── Scrollbar hide ─── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Scroll-reveal animations ─── */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
-    transform: translateY(2rem);
-    transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1),
-                transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(1.5rem);
+    transition: opacity 500ms ease, transform 500ms ease;
   }
 
   .reveal.visible {
@@ -242,16 +405,10 @@ body {
   .reveal-stagger-6 { transition-delay: 450ms; }
 }
 
-/* ─── Legacy animation classes — kept for pages not yet migrated ─── */
+/* ─── Keyframe animations ─── */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -260,11 +417,11 @@ body {
 }
 
 .animate-fade-up {
-  animation: fadeUp 0.8s ease-out forwards;
+  animation: fadeUp 0.6s ease-out forwards;
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
 .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
@@ -274,7 +431,6 @@ body {
 .animate-delay-5 { animation-delay: 0.5s; opacity: 0; }
 .animate-delay-6 { animation-delay: 0.6s; opacity: 0; }
 
-/* ─── Spin animation ─── */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

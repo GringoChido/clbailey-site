@@ -13,7 +13,8 @@
     "contact": "Contacto",
     "findDealer": "Encontrar Distribuidor",
     "toggleMenu": "Alternar menú",
-    "wordmark": "C.L. Bailey & Co."
+    "wordmark": "C.L. Bailey & Co.",
+    "announcement": "Exclusivo de Distribuidores \u2014 No Se Vende En L\u00ednea  |  Garant\u00eda Estructural de por Vida"
   },
   "hero": {
     "label": "The C.L. Bailey Co.",
@@ -23,9 +24,12 @@
     "ctaDealer": "Encontrar Distribuidor",
     "altImage": "La mesa de billar Skylar de C.L. Bailey",
     "craftsmanship": "Artesanía Tradicional",
+    "presenting": "Presentando",
     "headline": "Construidas para Hogares que Perduran.",
     "exploreCollection": "Explorar la Colección",
-    "archive": "El Archivo"
+    "archive": "El Archivo",
+    "promoBanner": "Colección 2026 \u2014 Ya Disponible  |  Ver la Línea Completa",
+    "scrollLabel": "Desplazar"
   },
   "museum": {
     "poolTables": "Mesas de Billar",
@@ -64,8 +68,10 @@
     "featuredHeading": "Transforma cualquier sala de juegos",
     "featuredSubheading": "Explora nuestras mesas de billar y shuffleboards más populares",
     "exploreCta": "Explorar Mesas de Billar",
+    "finishesLabel": "Materiales",
     "finishesHeading": "Fabricado en tu acabado",
     "finishesDescription": "Cada mesa está disponible en múltiples acabados aplicados a mano. Elige el tono de madera que complemente tu espacio.",
+    "dealerLabel": "Red de Distribuidores",
     "dealerCta": "Véalo en persona",
     "dealerCtaDescription": "Visite un showroom de distribuidor autorizado cerca de usted para experimentar la calidad de primera mano.",
     "dealerCtaButton": "Encontrar Distribuidor",
@@ -89,9 +95,15 @@
     "lifetimeGuarantee": "Garantía de por Vida",
     "aboutUs": "Sobre Nosotros",
     "contact": "Contacto",
+    "backToTop": "Volver Arriba",
+    "newsletterLabel": "Mant\u00e9ngase Conectado",
+    "newsletterHeading": "Suscr\u00edbase para actualizaciones por correo",
+    "emailPlaceholder": "Ingrese su correo electr\u00f3nico",
     "allRights": "Todos los derechos reservados.",
-    "division": "Una división de CLB Assets LLC",
+    "division": "Una divisi\u00f3n de CLB Assets LLC",
     "location": "Tomball, Texas",
+    "yourLocalDealer": "Su Distribuidor Local",
+    "findNearestDealer": "Encontrar el distribuidor más cercano",
     "followUs": "Síguenos",
     "instagram": "Instagram",
     "facebook": "Facebook",

@@ -6,42 +6,49 @@ export default async function Hero() {
   const t = await getTranslations("hero");
 
   return (
-    <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <Image
-        src="/images/products/pool-tables/skylar/hero.jpg"
-        alt={t("altImage")}
-        fill
-        className="object-cover"
-        priority
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-black/25" />
+    <>
+      {/* ── Hero ── */}
+      <section className="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/products/pool-tables/skylar/hero.jpg"
+          alt={t("altImage")}
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+          quality={85}
+        />
+        {/* Cinematic overlay — darker at bottom for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/15" />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
-        <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-6">
-          {t("craftsmanship")}
-        </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight leading-[1.1] mb-6">
-          {t("headline")}
-        </h1>
-        <p className="text-lg text-white/70 font-normal max-w-lg mx-auto mb-10">
-          {t("subtitle")}
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="/products"
-            className="border border-white text-white px-8 py-3 text-sm font-medium tracking-wide hover:bg-white hover:text-gray-900 transition-all duration-300"
-          >
-            {t("exploreCollection")}
-          </Link>
-          <Link
-            href="/dealer"
-            className="bg-white text-gray-900 px-8 py-3 text-sm font-medium tracking-wide hover:bg-gray-100 transition-all duration-300"
-          >
-            {t("ctaDealer")}
-          </Link>
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
+          <p className="section-label !text-white/40 mb-5 animate-fade-up">
+            {t("presenting")}
+          </p>
+          <h1 className="heading-hero text-white mb-6 animate-fade-up animate-delay-1">
+            {t("headline")}
+          </h1>
+          <p className="text-lg font-light text-white/55 max-w-lg mx-auto mb-14 leading-relaxed animate-fade-up animate-delay-2">
+            {t("subtitle")}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-up animate-delay-3">
+            <Link href="/products" className="btn-outline-white">
+              {t("exploreCollection")}
+            </Link>
+            <Link href="/dealer" className="btn-primary !bg-white !text-ink hover:!bg-white/90">
+              {t("ctaDealer")}
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in animate-delay-5">
+          <div className="w-[1px] h-10 bg-white/20 mx-auto mb-2" />
+          <span className="text-[0.625rem] tracking-[0.2em] uppercase text-white/30">
+            {t("scrollLabel")}
+          </span>
+        </div>
+      </section>
+    </>
   );
 }
