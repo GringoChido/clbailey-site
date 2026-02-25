@@ -59,6 +59,23 @@
     "heritageDescription": "Three decades of industry experience. No particle board. No shortcuts. No compromises. Every table carries a lifetime structural guarantee.",
     "ourStory": "Our Story"
   },
+  "home": {
+    "categoryHeading": "What are you looking for?",
+    "featuredHeading": "Transform any game room",
+    "featuredSubheading": "Explore our most popular pool tables and shuffleboards",
+    "exploreCta": "Explore Pool Tables",
+    "finishesHeading": "Crafted in your finish",
+    "finishesDescription": "Every table is available in multiple hand-applied finishes. Choose the wood tone that complements your space.",
+    "dealerCta": "See it in person",
+    "dealerCtaDescription": "Visit an authorized dealer showroom near you to experience the quality firsthand.",
+    "dealerCtaButton": "Find a Dealer",
+    "helpHeading": "Let us help you — no obligations",
+    "helpDescription": "Our team and AI-powered Showroom Concierge can guide you to the right table for your space, style, and budget.",
+    "helpCta": "Get in touch",
+    "heritageHeading": "More than 25 years of Texas craftsmanship",
+    "heritageDescription": "Founded in 1999 in Tomball, Texas. Every table carries a lifetime structural guarantee.",
+    "heritageCta": "Our history"
+  },
   "footer": {
     "dealerLabel": "Dealer Network",
     "dealerHeadline": "Every table is delivered and installed by an authorized dealer in your area.",
@@ -118,11 +135,12 @@
     "specSheet": "Spec Sheet",
     "collection": "Collection",
     "browse": "Browse",
-    "products": "Products"
+    "products": "Products",
+    "pricingLabel": "Premium Residential — Dealer Exclusive"
   },
   "products": {
     "title": "All Products",
-    "description": "Four categories. Twenty-two products. One standard of quality.",
+    "description": "Four categories. Twenty products. One standard of quality.",
     "moreCategoryName": "More {categoryName}"
   },
   "concierge": {
@@ -160,7 +178,10 @@
     "principle2Desc": "We stand behind the structural integrity of every product for as long as you own it.",
     "principle3Title": "Dealer-Installed Nationwide",
     "principle3Desc": "Every table is delivered and professionally installed by an authorized dealer in your area.",
-    "visitLabel": "Visit Us"
+    "visitLabel": "Visit Us",
+    "heritageLabel": "Tomball, Texas",
+    "heritageStatement": "Built in Texas Since 1999",
+    "heritageSubtext": "Every table that leaves our Tomball facility carries the same promise it did on day one: solid hardwood, lifetime guarantee, no compromises."
   },
   "contact": {
     "title": "Contact Us",

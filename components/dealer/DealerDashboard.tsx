@@ -133,7 +133,7 @@ export default function DealerDashboard() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { labelKey: "productLines", value: "4" },
-              { labelKey: "activeModels", value: "22" },
+              { labelKey: "activeModels", value: "20" },
               { labelKey: "specSheets", value: "11" },
               { labelKey: "priceLists", value: "2" },
             ].map((stat) => (

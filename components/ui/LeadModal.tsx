@@ -69,27 +69,27 @@ export default function LeadModal({
         setSubmitting(false);
       }
     },
-    [name, email, zip, productName, pdfUrl]
+    [name, email, zip, productName, pdfUrl],
   );
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-ink/60 backdrop-blur-sm z-50 data-[state=open]:animate-fade-in" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md bg-vellum p-10 data-[state=open]:animate-fade-up">
-          <Dialog.Title className="font-serif text-2xl text-ink mb-2 tracking-tight">
+        <Dialog.Overlay className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 data-[state=open]:animate-fade-in" />
+        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md bg-white rounded-lg p-8 shadow-2xl data-[state=open]:animate-fade-up">
+          <Dialog.Title className="text-xl font-medium text-gray-900 mb-2">
             {t("title")}
           </Dialog.Title>
-          <Dialog.Description className="text-sm text-ink/40 mb-8 font-serif">
+          <Dialog.Description className="text-sm text-gray-500 mb-8">
             {t("description", { productName })}
           </Dialog.Description>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label
                 htmlFor="gate-name"
-                className="block text-[10px] uppercase tracking-[0.5em] text-ink/40 mb-2 font-sans font-medium"
+                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
               >
                 {t("nameLabel")}
               </label>
@@ -100,13 +100,13 @@ export default function LeadModal({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder={t("namePlaceholder")}
-                className="w-full border-0 border-b border-estate/30 bg-transparent px-0 py-3 text-sm text-ink focus:outline-none focus:border-ink transition-colors placeholder-ink/20"
+                className="input-modern"
               />
             </div>
             <div>
               <label
                 htmlFor="gate-email"
-                className="block text-[10px] uppercase tracking-[0.5em] text-ink/40 mb-2 font-sans font-medium"
+                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
               >
                 {t("emailLabel")}
               </label>
@@ -117,13 +117,13 @@ export default function LeadModal({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("emailPlaceholder")}
-                className="w-full border-0 border-b border-estate/30 bg-transparent px-0 py-3 text-sm text-ink focus:outline-none focus:border-ink transition-colors placeholder-ink/20"
+                className="input-modern"
               />
             </div>
             <div>
               <label
                 htmlFor="gate-zip"
-                className="block text-[10px] uppercase tracking-[0.5em] text-ink/40 mb-2 font-sans font-medium"
+                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
               >
                 {t("zipLabel")}
               </label>
@@ -136,29 +136,28 @@ export default function LeadModal({
                 value={zip}
                 onChange={(e) => setZip(e.target.value.replace(/\D/g, ""))}
                 placeholder={t("zipPlaceholder")}
-                className="w-full border-0 border-b border-estate/30 bg-transparent px-0 py-3 text-sm text-ink focus:outline-none focus:border-ink transition-colors placeholder-ink/20"
+                className="input-modern"
               />
             </div>
 
             {error && (
-              <p className="text-sm text-red-700">{error}</p>
+              <p className="text-sm text-red-600">{error}</p>
             )}
 
-            {/* Heritage Button — square corners, Ink bg, Vellum text */}
             <button
               type="submit"
               disabled={submitting}
-              className="w-full bg-ink text-vellum py-3.5 text-[10px] uppercase tracking-[0.5em] font-sans font-medium hover:bg-ink-light transition-colors disabled:opacity-40"
+              className="w-full btn-primary disabled:opacity-40"
             >
               {submitting ? t("submitting") : t("submit")}
             </button>
           </form>
 
-          <p className="text-xs text-ink/30 mt-6 leading-relaxed font-serif">
+          <p className="text-xs text-gray-400 mt-6 leading-relaxed">
             {t("disclaimer")}
           </p>
 
-          <Dialog.Close className="absolute top-4 right-4 text-ink/30 hover:text-ink transition-colors">
+          <Dialog.Close className="absolute top-4 right-4 text-gray-300 hover:text-gray-900 transition-colors">
             <svg
               width="20"
               height="20"

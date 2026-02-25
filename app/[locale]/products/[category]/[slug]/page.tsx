@@ -11,9 +11,9 @@ import {
   img,
   pdf,
 } from "@/lib/products";
-import SectionLabel from "@/components/ui/SectionLabel";
 import LeadModal from "@/components/ui/LeadModal";
 import ProductCard from "@/components/ui/ProductCard";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface PageProps {
   params: Promise<{ locale: string; category: string; slug: string }>;
@@ -154,50 +154,57 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <div className="pt-28 pb-20 lg:pb-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           {/* Breadcrumb */}
-          <nav
-            className="heritage-label text-brown/40 mb-8 animate-fade-up"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/products" className="hover:text-brown transition-colors">
-              {t("common.products")}
-            </Link>
-            <span className="mx-2">/</span>
-            <Link
-              href={`/products/${category}`}
-              className="hover:text-brown transition-colors"
+          <ScrollReveal>
+            <nav
+              className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-8"
+              aria-label="Breadcrumb"
             >
-              {cat.name}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-brown/60">{product.name}</span>
-          </nav>
+              <Link href="/products" className="hover:text-gray-900 transition-colors">
+                {t("common.products")}
+              </Link>
+              <span className="mx-2">/</span>
+              <Link
+                href={`/products/${category}`}
+                className="hover:text-gray-900 transition-colors"
+              >
+                {cat.name}
+              </Link>
+              <span className="mx-2">/</span>
+              <span className="text-gray-600">{product.name}</span>
+            </nav>
+          </ScrollReveal>
 
           {/* Hero Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-20">
             {/* Image */}
-            <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden bg-cream-dark animate-fade-up">
-              <Image
-                src={img(product.images.hero)}
-                alt={`${product.name} — ${product.tagline}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-            </div>
+            <ScrollReveal>
+              <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden bg-gray-100">
+                <Image
+                  src={img(product.images.hero)}
+                  alt={`${product.name} — ${product.tagline}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </ScrollReveal>
 
             {/* Details */}
-            <div className="flex flex-col justify-center animate-fade-up animate-delay-2">
-              <p className="heritage-label text-brown/40 mb-3">
+            <ScrollReveal delay={1} className="flex flex-col justify-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
                 {cat.name}
               </p>
-              <h1 className="font-serif text-3xl lg:text-4xl mb-4">
+              <h1 className="text-3xl lg:text-4xl font-medium mb-4">
                 {product.name}
               </h1>
-              <p className="text-lg text-brown/70 mb-2 font-serif italic">
+              <p className="text-lg text-gray-500 mb-2">
                 {product.tagline}
               </p>
-              <p className="text-brown/60 leading-relaxed mb-8 max-w-md">
+              <p className="text-xs font-medium uppercase tracking-wider text-gold mb-4">
+                {t("common.pricingLabel")}
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8 max-w-md">
                 {product.description}
               </p>
 
@@ -205,20 +212,20 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <div className="grid grid-cols-2 gap-6 mb-8">
                 {product.sizes.length > 0 && (
                   <div>
-                    <h3 className="heritage-label text-brown/40 mb-2">
+                    <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
                       {t("common.sizes")}
                     </h3>
-                    <p className="text-sm text-brown/70">
+                    <p className="text-sm text-gray-700">
                       {product.sizes.join(", ")}
                     </p>
                   </div>
                 )}
                 {product.finishes.length > 0 && (
                   <div>
-                    <h3 className="heritage-label text-brown/40 mb-2">
+                    <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
                       {t("common.finishes")}
                     </h3>
-                    <p className="text-sm text-brown/70">
+                    <p className="text-sm text-gray-700">
                       {product.finishes.join(", ")}
                     </p>
                   </div>
@@ -228,16 +235,16 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {/* Features */}
               {product.features.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="heritage-label text-brown/40 mb-3">
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
                     {t("common.features")}
                   </h3>
                   <ul className="space-y-2">
                     {product.features.map((f) => (
                       <li
                         key={f}
-                        className="flex gap-3 text-sm text-brown/70"
+                        className="flex gap-3 text-sm text-gray-600"
                       >
-                        <span className="w-1 h-1 rounded-full bg-brown/30 mt-2 flex-shrink-0" />
+                        <span className="w-1 h-1 rounded-full bg-gray-300 mt-2 flex-shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -252,56 +259,56 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     productName={product.name}
                     pdfUrl={pdf(product.pdf)}
                   >
-                    <button className="bg-forest text-bone px-8 py-3.5 heritage-label hover:bg-forest-light transition-colors">
+                    <button className="btn-primary">
                       {t("common.downloadSpecSheet")}
                     </button>
                   </LeadModal>
                 )}
                 <Link
                   href="/dealer"
-                  className="border border-brown text-brown px-8 py-3.5 heritage-label hover:bg-brown hover:text-cream transition-all"
+                  className="btn-outline"
                 >
                   {t("nav.findDealer")}
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Gallery */}
           {product.images.gallery.length > 0 && (
-            <div className="mb-20">
-              <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 mb-8">
-                <SectionLabel label={t("common.gallery")} />
-                <div className="border-t border-brown/20" />
-              </div>
+            <ScrollReveal className="mb-20">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+                {t("common.gallery")}
+              </h2>
+              <div className="h-px bg-gray-200 mb-8" />
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {product.images.gallery.map((imgPath, i) => (
                   <div
                     key={imgPath}
-                    className="relative aspect-square overflow-hidden bg-cream-dark"
+                    className="relative aspect-square overflow-hidden bg-gray-100 group"
                   >
                     <Image
                       src={img(imgPath)}
                       alt={`${product.name} detail ${i + 1}`}
                       fill
-                      className="object-cover img-zoom"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                       sizes="(max-width: 1024px) 50vw, 25vw"
                     />
                   </div>
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
           )}
 
           {/* Dimensions */}
           {product.images.dimensions && (
-            <div className="mb-20">
-              <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 mb-8">
-                <SectionLabel label={t("common.dimensions")} />
-                <div className="border-t border-brown/20" />
-              </div>
+            <ScrollReveal className="mb-20">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+                {t("common.dimensions")}
+              </h2>
+              <div className="h-px bg-gray-200 mb-8" />
               <div className="max-w-3xl">
-                <div className="relative aspect-[16/9] overflow-hidden bg-cream-dark">
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
                   <Image
                     src={img(product.images.dimensions)}
                     alt={`${product.name} dimensions`}
@@ -311,31 +318,31 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   />
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           )}
 
           {/* Related Products */}
           {relatedProducts.length > 0 && (
-            <div>
-              <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 mb-8">
-                <SectionLabel label={t("products.moreCategoryName", { categoryName: cat.name })} />
-                <div className="border-t border-brown/20" />
-              </div>
+            <ScrollReveal>
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+                {t("products.moreCategoryName", { categoryName: cat.name })}
+              </h2>
+              <div className="h-px bg-gray-200 mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map((rp) => (
                   <ProductCard key={rp.slug} product={rp} />
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
           )}
         </div>
       </div>
 
       {/* Sticky Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-bone border-t border-brown/10 px-4 py-3 flex gap-3">
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-gray-200 px-4 py-3 flex gap-3">
         <Link
           href="/dealer"
-          className="flex-1 text-center bg-forest text-bone py-3 heritage-label"
+          className="flex-1 text-center btn-primary"
         >
           {t("common.contactDealer")}
         </Link>
@@ -344,7 +351,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
             productName={product.name}
             pdfUrl={pdf(product.pdf)}
           >
-            <button className="flex-1 text-center border border-brown text-brown py-3 heritage-label">
+            <button className="flex-1 text-center btn-outline">
               {t("common.specSheet")}
             </button>
           </LeadModal>

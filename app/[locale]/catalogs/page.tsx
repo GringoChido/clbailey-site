@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import SectionLabel from "@/components/ui/SectionLabel";
 import LeadModal from "@/components/ui/LeadModal";
 import { products, pdf } from "@/lib/products";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Catalogs & Downloads | The C.L. Bailey Co.",
@@ -17,7 +17,7 @@ const grouped = productsWithPdfs.reduce(
     acc[cat].push(p);
     return acc;
   },
-  {} as Record<string, typeof productsWithPdfs>
+  {} as Record<string, typeof productsWithPdfs>,
 );
 
 const categoryLabels: Record<string, string> = {
@@ -29,46 +29,46 @@ const categoryLabels: Record<string, string> = {
 
 export default function CatalogsPage() {
   return (
-    <div className="pt-32 pb-20 lg:pb-28">
+    <div className="pt-28 pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h1 className="font-serif text-4xl lg:text-5xl mb-6 animate-fade-up">
-          Catalogs &amp; Downloads
-        </h1>
-        <p className="text-brown/60 max-w-lg mb-16 animate-fade-up animate-delay-1">
-          Download detailed specification sheets for any product. Dimensions,
-          finishes, features — everything you need to make the right choice.
-        </p>
+        <ScrollReveal>
+          <h1 className="text-3xl md:text-4xl font-medium mb-4">
+            Catalogs &amp; Downloads
+          </h1>
+          <p className="text-gray-500 max-w-lg mb-16">
+            Download detailed specification sheets for any product. Dimensions,
+            finishes, features — everything you need to make the right choice.
+          </p>
+        </ScrollReveal>
 
-        {Object.entries(grouped).map(([category, prods]) => (
-          <div
-            key={category}
-            className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 mb-16"
-          >
-            <SectionLabel label={categoryLabels[category] || category} />
-            <div className="border-t border-brown/20 pt-4">
-              <div className="space-y-4">
-                {prods.map((product) => (
-                  <div
-                    key={product.slug}
-                    className="flex items-center justify-between border-b border-brown/10 pb-4"
-                  >
-                    <div>
-                      <h3 className="font-serif text-lg">{product.name}</h3>
-                      <p className="text-sm text-brown/50">{product.tagline}</p>
-                    </div>
-                    <LeadModal
-                      productName={product.name}
-                      pdfUrl={pdf(product.pdf)}
-                    >
-                      <button className="heritage-label text-brown/50 hover:text-forest transition-colors flex-shrink-0 ml-4">
-                        Download PDF
-                      </button>
-                    </LeadModal>
+        {Object.entries(grouped).map(([category, prods], idx) => (
+          <ScrollReveal key={category} delay={idx + 1} className="mb-16">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+              {categoryLabels[category] || category}
+            </p>
+            <div className="h-px bg-gray-200 mb-6" />
+            <div className="space-y-4">
+              {prods.map((product) => (
+                <div
+                  key={product.slug}
+                  className="flex items-center justify-between border-b border-gray-100 pb-4"
+                >
+                  <div>
+                    <h3 className="text-base font-medium text-gray-900">{product.name}</h3>
+                    <p className="text-sm text-gray-500">{product.tagline}</p>
                   </div>
-                ))}
-              </div>
+                  <LeadModal
+                    productName={product.name}
+                    pdfUrl={pdf(product.pdf)}
+                  >
+                    <button className="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors flex-shrink-0 ml-4">
+                      Download PDF
+                    </button>
+                  </LeadModal>
+                </div>
+              ))}
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>

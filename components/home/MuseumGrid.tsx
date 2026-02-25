@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 /*
  * Old Money Sourcebook homepage sections.
  *
- * 1. Collections Portfolio — 4-column grayscale grid (color on hover)
+ * 1. Collections Portfolio — 4-column grid with hover scale
  * 2. Catalog Strip — RH "Unveiling" split layout
  * 3. Heritage Strip — full-bleed nameplate
  *
@@ -13,7 +13,7 @@ import { getTranslations } from "next-intl/server";
  * No greens, no gradients, no drop shadows.
  */
 
-/* ─── Section 1: Collections Portfolio — 4-col grayscale grid ─── */
+/* ─── Section 1: Collections Portfolio — 4-col grid ─── */
 function CollectionsPortfolio({ t }: { t: (key: string) => string }) {
   const portfolioItems = [
     {
@@ -67,7 +67,7 @@ function CollectionsPortfolio({ t }: { t: (key: string) => string }) {
           </Link>
         </div>
 
-        {/* 4-column portfolio grid — grayscale, color on hover */}
+        {/* 4-column portfolio grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {portfolioItems.map((item) => (
             <Link
@@ -80,7 +80,7 @@ function CollectionsPortfolio({ t }: { t: (key: string) => string }) {
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-1000"
+                  className="object-cover group-hover:scale-105 transition-all duration-1000"
                   sizes="(max-width: 1024px) 50vw, 25vw"
                   priority
                 />

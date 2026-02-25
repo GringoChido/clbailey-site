@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import SectionLabel from "@/components/ui/SectionLabel";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Table Care Guide | The C.L. Bailey Co.",
@@ -34,28 +34,34 @@ export default async function CareGuidePage() {
   ];
 
   return (
-    <div className="pt-32 pb-20 lg:pb-28">
+    <div className="pt-28 pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h1 className="font-serif text-4xl lg:text-5xl mb-16 animate-fade-up">
-          {t("careGuide.title")}
-        </h1>
+        <ScrollReveal>
+          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+            {t("careGuide.title")}
+          </h1>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
-          <SectionLabel label={t("careGuide.label")} />
-          <div className="border-t border-brown/20 pt-4">
-            <p className="font-serif text-xl leading-relaxed mb-12 max-w-2xl animate-fade-up animate-delay-2">
-              {t("careGuide.intro")}
-            </p>
+        <ScrollReveal>
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            {t("careGuide.label")}
+          </p>
+          <div className="h-px bg-gray-200 mb-8" />
+        </ScrollReveal>
 
-            <div className="space-y-12 max-w-2xl">
-              {sections.map((section, i) => (
-                <div key={section.title} className={`animate-fade-up animate-delay-${Math.min(i + 2, 6)}`}>
-                  <h3 className="font-serif text-xl mb-4">{section.title}</h3>
-                  <p className="text-sm text-brown/70 leading-relaxed">{section.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <ScrollReveal delay={1}>
+          <p className="text-xl font-light leading-relaxed mb-12 max-w-2xl">
+            {t("careGuide.intro")}
+          </p>
+        </ScrollReveal>
+
+        <div className="space-y-12 max-w-2xl">
+          {sections.map((section, i) => (
+            <ScrollReveal key={section.title} delay={Math.min(i + 2, 6)}>
+              <h3 className="text-lg font-medium mb-4">{section.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{section.body}</p>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </div>

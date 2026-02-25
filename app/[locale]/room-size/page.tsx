@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { sizeChart } from "@/lib/products";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Room Size Chart | The C.L. Bailey Co.",
@@ -17,50 +17,60 @@ export default async function RoomSizePage() {
   const t = await getTranslations();
 
   return (
-    <div className="pt-32 pb-20 lg:pb-28">
+    <div className="pt-28 pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h1 className="font-serif text-4xl lg:text-5xl mb-16 animate-fade-up">
-          {t("roomSize.title")}
-        </h1>
+        <ScrollReveal>
+          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+            {t("roomSize.title")}
+          </h1>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 mb-24">
-          <SectionLabel label={t("roomSize.label")} />
-          <div className="border-t border-brown/20 pt-4">
-            <p className="font-serif text-xl leading-relaxed mb-10 max-w-2xl animate-fade-up animate-delay-2">
-              {t("roomSize.description")}
-            </p>
+        <ScrollReveal>
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            {t("roomSize.label")}
+          </p>
+          <div className="h-px bg-gray-200 mb-8" />
+        </ScrollReveal>
 
-            <div className="overflow-x-auto animate-fade-up animate-delay-3">
-              <table className="w-full max-w-2xl text-sm">
-                <thead>
-                  <tr className="border-b border-brown/20">
-                    <th className="text-left py-4 pr-8 text-xs uppercase tracking-wider text-brown/50 font-medium">{t("roomSize.tableSize")}</th>
-                    <th className="text-left py-4 pr-8 text-xs uppercase tracking-wider text-brown/50 font-medium">{t("roomSize.minRoom")}</th>
-                    <th className="text-left py-4 text-xs uppercase tracking-wider text-brown/50 font-medium">{t("roomSize.recommended")}</th>
+        <ScrollReveal delay={1}>
+          <p className="text-xl font-light leading-relaxed mb-10 max-w-2xl">
+            {t("roomSize.description")}
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={2}>
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-2xl text-sm">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-4 pr-8 text-xs font-semibold uppercase tracking-widest text-gray-400">{t("roomSize.tableSize")}</th>
+                  <th className="text-left py-4 pr-8 text-xs font-semibold uppercase tracking-widest text-gray-400">{t("roomSize.minRoom")}</th>
+                  <th className="text-left py-4 text-xs font-semibold uppercase tracking-widest text-gray-400">{t("roomSize.recommended")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableData.map((row) => (
+                  <tr key={row.size} className="border-b border-gray-100">
+                    <td className="py-4 pr-8 font-medium">{row.size}</td>
+                    <td className="py-4 pr-8 text-gray-600">{row.min}</td>
+                    <td className="py-4 text-gray-600">{row.recommended}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {tableData.map((row) => (
-                    <tr key={row.size} className="border-b border-brown/10">
-                      <td className="py-4 pr-8 font-serif">{row.size}</td>
-                      <td className="py-4 pr-8 text-brown/70">{row.min}</td>
-                      <td className="py-4 text-brown/70">{row.recommended}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-10 max-w-2xl space-y-4 animate-fade-up animate-delay-4">
-              <p className="text-sm text-brown/60 leading-relaxed">
-                {t("roomSize.note1")}
-              </p>
-              <p className="text-sm text-brown/60 leading-relaxed">
-                {t("roomSize.note2")}
-              </p>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={3}>
+          <div className="mt-10 max-w-2xl space-y-4">
+            <p className="text-sm text-gray-500 leading-relaxed">
+              {t("roomSize.note1")}
+            </p>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              {t("roomSize.note2")}
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </div>
   );

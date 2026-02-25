@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import MuseumGrid from "@/components/home/MuseumGrid";
+import HomeSections from "@/components/home/HomeSections";
 
 export const metadata: Metadata = {
   title: "C.L. Bailey & Co. | Modern Heritage Billiards & Game Room Furniture",
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <MuseumGrid />
+      <HomeSections />
     </>
   );
 }

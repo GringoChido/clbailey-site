@@ -66,49 +66,49 @@ export default function PdfGateModal({
         setSubmitting(false);
       }
     },
-    [email, zip, productName, pdfUrl]
+    [email, zip, productName, pdfUrl],
   );
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-brown/60 backdrop-blur-sm z-50 data-[state=open]:animate-fade-in" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md bg-cream p-8 shadow-2xl data-[state=open]:animate-fade-up">
-          <Dialog.Title className="font-serif text-2xl mb-2">
+        <Dialog.Overlay className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 data-[state=open]:animate-fade-in" />
+        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md bg-white rounded-lg p-8 shadow-2xl data-[state=open]:animate-fade-up">
+          <Dialog.Title className="text-xl font-medium text-gray-900 mb-2">
             {t("title")}
           </Dialog.Title>
-          <Dialog.Description className="text-sm text-brown/60 mb-6">
+          <Dialog.Description className="text-sm text-gray-500 mb-6">
             {t("description", { productName })}
           </Dialog.Description>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label
-                htmlFor="gate-email"
-                className="block text-xs uppercase tracking-wider text-brown/50 mb-1"
+                htmlFor="pdf-gate-email"
+                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
               >
                 {t("emailLabel")}
               </label>
               <input
-                id="gate-email"
+                id="pdf-gate-email"
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("emailPlaceholder")}
-                className="w-full border border-brown/20 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brown transition-colors"
+                className="input-modern"
               />
             </div>
             <div>
               <label
-                htmlFor="gate-zip"
-                className="block text-xs uppercase tracking-wider text-brown/50 mb-1"
+                htmlFor="pdf-gate-zip"
+                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
               >
                 {t("zipLabel")}
               </label>
               <input
-                id="gate-zip"
+                id="pdf-gate-zip"
                 type="text"
                 required
                 pattern="\d{5}"
@@ -116,28 +116,28 @@ export default function PdfGateModal({
                 value={zip}
                 onChange={(e) => setZip(e.target.value.replace(/\D/g, ""))}
                 placeholder={t("zipPlaceholder")}
-                className="w-full border border-brown/20 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brown transition-colors"
+                className="input-modern"
               />
             </div>
 
             {error && (
-              <p className="text-sm text-red-700">{error}</p>
+              <p className="text-sm text-red-600">{error}</p>
             )}
 
             <button
               type="submit"
               disabled={submitting}
-              className="w-full bg-brown text-cream py-3 text-sm uppercase tracking-wider hover:bg-brown-light transition-colors disabled:opacity-50"
+              className="w-full btn-primary disabled:opacity-50"
             >
               {submitting ? t("submitting") : t("submit")}
             </button>
           </form>
 
-          <p className="text-xs text-brown/40 mt-4 leading-relaxed">
+          <p className="text-xs text-gray-400 mt-4 leading-relaxed">
             {t("disclaimer")}
           </p>
 
-          <Dialog.Close className="absolute top-4 right-4 text-brown/40 hover:text-brown transition-colors">
+          <Dialog.Close className="absolute top-4 right-4 text-gray-300 hover:text-gray-900 transition-colors">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>

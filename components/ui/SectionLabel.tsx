@@ -6,18 +6,15 @@ export default function SectionLabel({
   dark?: boolean;
 }) {
   return (
-    <div
-      className={`border-t pt-4 ${
-        dark ? "border-cream/20" : "border-brown/20"
-      }`}
-    >
+    <div className="mb-8">
       <span
-        className={`heritage-label ${
-          dark ? "text-cream/50" : "text-brown/50"
+        className={`text-xs font-semibold uppercase tracking-widest ${
+          dark ? "text-gray-400" : "text-gray-400"
         }`}
       >
         {label}
       </span>
+      <div className={`mt-3 h-px ${dark ? "bg-gray-700" : "bg-gray-200"}`} />
     </div>
   );
 }

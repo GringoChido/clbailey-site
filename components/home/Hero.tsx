@@ -6,41 +6,41 @@ export default async function Hero() {
   const t = await getTranslations("hero");
 
   return (
-    <section className="cine-strip cine-strip--full">
+    <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden">
       <Image
         src="/images/products/pool-tables/skylar/hero.jpg"
         alt={t("altImage")}
         fill
-        className="cine-strip__img"
+        className="object-cover"
         priority
         sizes="100vw"
       />
-      {/* Ink overlay — #121212 at 30% */}
-      <div className="absolute inset-0 bg-ink/30" />
+      <div className="absolute inset-0 bg-black/25" />
 
-      <div className="cine-strip__content flex flex-col items-center text-center">
-        <div className="max-w-3xl animate-fade-up">
-          <p className="heritage-label text-white/50 mb-12">
-            {t("craftsmanship")}
-          </p>
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-20 tracking-tight">
-            {t("headline")}
-          </h1>
-          <div className="flex flex-wrap justify-center gap-5">
-            <Link
-              href="/products"
-              className="btn-heritage border border-white/10"
-            >
-              {t("exploreCollection")}
-            </Link>
-          </div>
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
+        <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-6">
+          {t("craftsmanship")}
+        </p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight leading-[1.1] mb-6">
+          {t("headline")}
+        </h1>
+        <p className="text-lg text-white/70 font-normal max-w-lg mx-auto mb-10">
+          {t("subtitle")}
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            href="/products"
+            className="border border-white text-white px-8 py-3 text-sm font-medium tracking-wide hover:bg-white hover:text-gray-900 transition-all duration-300"
+          >
+            {t("exploreCollection")}
+          </Link>
+          <Link
+            href="/dealer"
+            className="bg-white text-gray-900 px-8 py-3 text-sm font-medium tracking-wide hover:bg-gray-100 transition-all duration-300"
+          >
+            {t("ctaDealer")}
+          </Link>
         </div>
-      </div>
-
-      {/* "The Archive" scroll indicator — absolute positioned at bottom */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 opacity-30">
-        <span className="heritage-label text-white">{t("archive")}</span>
-        <div className="w-[0.5px] h-20 bg-white" />
       </div>
     </section>
   );

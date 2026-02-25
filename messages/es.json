@@ -59,6 +59,23 @@
     "heritageDescription": "Tres décadas de experiencia en la industria. Sin aglomerado. Sin atajos. Sin compromisos. Cada mesa lleva una garantía estructural de por vida.",
     "ourStory": "Nuestra Historia"
   },
+  "home": {
+    "categoryHeading": "¿Qué estás buscando?",
+    "featuredHeading": "Transforma cualquier sala de juegos",
+    "featuredSubheading": "Explora nuestras mesas de billar y shuffleboards más populares",
+    "exploreCta": "Explorar Mesas de Billar",
+    "finishesHeading": "Fabricado en tu acabado",
+    "finishesDescription": "Cada mesa está disponible en múltiples acabados aplicados a mano. Elige el tono de madera que complemente tu espacio.",
+    "dealerCta": "Véalo en persona",
+    "dealerCtaDescription": "Visite un showroom de distribuidor autorizado cerca de usted para experimentar la calidad de primera mano.",
+    "dealerCtaButton": "Encontrar Distribuidor",
+    "helpHeading": "Déjenos ayudarle — sin compromisos",
+    "helpDescription": "Nuestro equipo y el Conserje de Showroom con IA pueden guiarlo hacia la mesa correcta para su espacio, estilo y presupuesto.",
+    "helpCta": "Contáctenos",
+    "heritageHeading": "Más de 25 años de artesanía texana",
+    "heritageDescription": "Fundada en 1999 en Tomball, Texas. Cada mesa lleva una garantía estructural de por vida.",
+    "heritageCta": "Nuestra historia"
+  },
   "footer": {
     "dealerLabel": "Red de Distribuidores",
     "dealerHeadline": "Cada mesa es entregada e instalada por un distribuidor autorizado en su área.",
@@ -118,11 +135,12 @@
     "specSheet": "Hoja de Especificaciones",
     "collection": "Colección",
     "browse": "Explorar",
-    "products": "Productos"
+    "products": "Productos",
+    "pricingLabel": "Residencial Premium — Exclusivo de Distribuidores"
   },
   "products": {
     "title": "Todos los Productos",
-    "description": "Cuatro categorías. Veintidós productos. Un estándar de calidad.",
+    "description": "Cuatro categorías. Veinte productos. Un estándar de calidad.",
     "moreCategoryName": "Más {categoryName}"
   },
   "concierge": {
@@ -160,7 +178,10 @@
     "principle2Desc": "Respaldamos la integridad estructural de cada producto mientras usted lo posea.",
     "principle3Title": "Instalación por Distribuidores a Nivel Nacional",
     "principle3Desc": "Cada mesa es entregada e instalada profesionalmente por un distribuidor autorizado en su área.",
-    "visitLabel": "Visítenos"
+    "visitLabel": "Visítenos",
+    "heritageLabel": "Tomball, Texas",
+    "heritageStatement": "Fabricado en Texas Desde 1999",
+    "heritageSubtext": "Cada mesa que sale de nuestra planta en Tomball lleva la misma promesa del primer día: madera maciza, garantía de por vida, sin compromisos."
   },
   "contact": {
     "title": "Contáctenos",
