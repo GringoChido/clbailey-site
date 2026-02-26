@@ -163,7 +163,40 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 4: Finishes — swatches with names ─── */
+/* ─── Section 4: Shuffleboard Category Block — full-bleed ─── */
+function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
+  return (
+    <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
+      <Image
+        src="/images/products/shuffleboards/viking-shuffleboard/lifestyle.jpg"
+        alt={t("home.shuffleboardAlt")}
+        fill
+        className="object-cover"
+        sizes="100vw"
+        quality={85}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/65 lg:via-black/30 lg:to-transparent" />
+      <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-lg">
+          <p className="section-label !text-white/40 mb-4">
+            {t("home.shuffleboardLabel")}
+          </p>
+          <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
+            {t("home.shuffleboardHeading")}
+          </h2>
+          <p className="text-base text-white/50 mb-10 leading-relaxed">
+            {t("home.shuffleboardDescription")}
+          </p>
+          <Link href="/products/shuffleboards" className="btn-outline-white">
+            {t("home.shuffleboardCta")}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 5: Finishes — swatches with names ─── */
 function FinishesSection({ t }: { t: (key: string) => string }) {
   const allFinishes = [
     { name: "Espresso", color: "#3C2415" },
@@ -206,31 +239,34 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 5: Dealer CTA — Arhaus-style full-bleed ─── */
-function DealerCTA({ t }: { t: (key: string) => string }) {
+/* ─── Section 7: Game Room Furniture — full-bleed ─── */
+function FurnitureBlock({ t }: { t: (key: string) => string }) {
   return (
-    <section className="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
       <Image
-        src="/images/brand/nameplate.jpg"
-        alt={t("museum.altNameplate")}
+        src="/images/products/game-room-furniture/skylar-furniture/hero.jpg"
+        alt={t("home.furnitureAlt")}
         fill
         className="object-cover"
         sizes="100vw"
+        quality={85}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
-      <div className="relative z-10 text-center px-6 py-20">
-        <p className="section-label !text-white/40 mb-4">
-          {t("home.dealerLabel")}
-        </p>
-        <h2 className="heading-display text-3xl md:text-[2.75rem] text-white mb-4">
-          {t("home.dealerCta")}
-        </h2>
-        <p className="text-base text-white/50 mb-10 max-w-md mx-auto leading-relaxed">
-          {t("home.dealerCtaDescription")}
-        </p>
-        <Link href="/dealer" className="btn-outline-white">
-          {t("home.dealerCtaButton")}
-        </Link>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/65 lg:via-black/30 lg:to-transparent" />
+      <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20">
+        <div className="max-w-lg">
+          <p className="section-label !text-white/40 mb-4">
+            {t("home.furnitureLabel")}
+          </p>
+          <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
+            {t("home.furnitureHeading")}
+          </h2>
+          <p className="text-base text-white/50 mb-10 leading-relaxed">
+            {t("home.furnitureDescription")}
+          </p>
+          <Link href="/products/game-room-furniture" className="btn-outline-white">
+            {t("home.furnitureCta")}
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -272,8 +308,9 @@ export default async function HomeSections() {
       <CategoryNav t={t} />
       <EditorialFeature t={t} />
       <FeaturedProducts t={t} />
+      <ShuffleboardBlock t={t} />
       <FinishesSection t={t} />
-      <DealerCTA t={t} />
+      <FurnitureBlock t={t} />
       <HeritageSection t={t} />
     </>
   );
