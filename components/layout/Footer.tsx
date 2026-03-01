@@ -131,6 +131,7 @@ export default async function Footer() {
                 <li><Link href="/about" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.aboutUs")}</Link></li>
                 <li><Link href="/dealer" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.findDealer")}</Link></li>
                 <li><Link href="/contact-us" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.contact")}</Link></li>
+                <li><Link href="/dealer-portal" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.dealerPortal")}</Link></li>
               </ul>
             </div>
           </div>
@@ -192,6 +193,7 @@ export default async function Footer() {
                 <li><Link href="/about" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.aboutUs")}</Link></li>
                 <li><Link href="/dealer" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.findDealer")}</Link></li>
                 <li><Link href="/contact-us" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.contact")}</Link></li>
+                <li><Link href="/dealer-portal" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.dealerPortal")}</Link></li>
               </ul>
             </details>
 

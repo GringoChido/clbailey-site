@@ -299,6 +299,61 @@ function HeritageSection({ t }: { t: (key: string) => string }) {
   );
 }
 
+/* ─── Section 8: Trade Program Block ─── */
+function TradeProgramBlock({ t }: { t: (key: string) => string }) {
+  return (
+    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+        <div className="max-w-2xl">
+          {/* Part 1: Hero message */}
+          <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-5">
+            {t("trade.heading")}
+          </h2>
+          <p className="text-base text-[var(--color-body)] leading-relaxed">
+            {t("trade.description")}
+          </p>
+
+          {/* Divider */}
+          <div className="border-t border-[var(--color-cloud)] my-12" />
+
+          {/* Part 2: Why Join */}
+          <h3 className="heading-sub mb-6">
+            {t("trade.whyJoinHeading")}
+          </h3>
+          <ul className="space-y-3 mb-8">
+            <li className="text-base text-[var(--color-body)] leading-relaxed">
+              {t("trade.benefit1")}
+            </li>
+            <li className="text-base text-[var(--color-body)] leading-relaxed">
+              {t("trade.benefit2")}
+            </li>
+            <li className="text-base text-[var(--color-body)] leading-relaxed">
+              {t("trade.benefit3")}
+            </li>
+          </ul>
+          <Link href="/dealer" className="btn-primary">
+            {t("trade.applyCta")}
+          </Link>
+
+          {/* Divider */}
+          <div className="border-t border-[var(--color-cloud)] my-12" />
+
+          {/* Part 3: Not a Trade Professional */}
+          <h3 className="heading-sub mb-5">
+            {t("trade.notTradeHeading")}
+          </h3>
+          <p className="text-base text-[var(--color-body)] leading-relaxed mb-8">
+            {t("trade.notTradeDescription")}
+          </p>
+          <Link href="/dealer" className="btn-primary">
+            {t("trade.findDealerCta")}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Export assembled homepage sections ─── */
 export default async function HomeSections() {
   const t = await getTranslations();
@@ -312,6 +367,7 @@ export default async function HomeSections() {
       <FinishesSection t={t} />
       <FurnitureBlock t={t} />
       <HeritageSection t={t} />
+      <TradeProgramBlock t={t} />
     </>
   );
 }

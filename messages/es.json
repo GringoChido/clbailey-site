@@ -15,7 +15,8 @@
     "findDealer": "Encontrar Distribuidor",
     "toggleMenu": "Alternar menú",
     "wordmark": "C.L. Bailey & Co.",
-    "announcement": "Exclusivo de Distribuidores \u2014 No Se Vende En L\u00ednea  |  Garant\u00eda Estructural de por Vida"
+    "announcement": "Exclusivo de Distribuidores \u2014 No Se Vende En L\u00ednea  |  Garant\u00eda Estructural de por Vida",
+    "dealerPortal": "Portal de Distribuidores"
   },
   "hero": {
     "label": "The C.L. Bailey Co.",
@@ -106,6 +107,7 @@
     "lifetimeGuarantee": "Garantía de por Vida",
     "aboutUs": "Sobre Nosotros",
     "contact": "Contacto",
+    "dealerPortal": "Portal de Distribuidores",
     "backToTop": "Volver Arriba",
     "newsletterLabel": "Mant\u00e9ngase Conectado",
     "newsletterHeading": "Suscr\u00edbase para actualizaciones por correo",
@@ -292,6 +294,18 @@
     "ctaDescription": "La tela worsted Velocity Pro está disponible como mejora premium en todas las mesas de billar C.L. Bailey a través de su distribuidor autorizado.",
     "findDealer": "Encontrar Distribuidor",
     "downloadSpec": "Descargar Ficha Técnica"
+  },
+  "trade": {
+    "heading": "Diseña con Facilidad",
+    "description": "Nos enorgullece apoyar a diseñadores de interiores, minoristas y profesionales de la industria con acceso directo a nuestros muebles personalizados para salas de juegos.",
+    "whyJoinHeading": "¿Por qué unirse a nuestro programa comercial?",
+    "benefit1": "Ofertas exclusivas para profesionales del sector",
+    "benefit2": "Sin pedidos mínimos: Pida lo que necesite, cuando lo necesite",
+    "benefit3": "Hojas de pedido fáciles de usar para una planificación perfecta",
+    "applyCta": "Solicite unirse al programa comercial",
+    "notTradeHeading": "¿No es un profesional del sector?",
+    "notTradeDescription": "No hay problema: nos asociamos con cientos de distribuidores autorizados en todo Estados Unidos que pueden ayudarle a diseñar la sala de juegos de sus sueños.",
+    "findDealerCta": "Encuentre un distribuidor autorizado"
   },
   "dealerPortal": {
     "title": "Portal de Distribuidores",

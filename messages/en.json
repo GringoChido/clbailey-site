@@ -15,7 +15,8 @@
     "findDealer": "Find a Dealer",
     "toggleMenu": "Toggle menu",
     "wordmark": "C.L. Bailey & Co.",
-    "announcement": "Dealer Exclusive \u2014 Not Sold Online  |  Lifetime Structural Guarantee"
+    "announcement": "Dealer Exclusive \u2014 Not Sold Online  |  Lifetime Structural Guarantee",
+    "dealerPortal": "Dealer Portal"
   },
   "hero": {
     "label": "The C.L. Bailey Co.",
@@ -106,6 +107,7 @@
     "lifetimeGuarantee": "Lifetime Guarantee",
     "aboutUs": "About Us",
     "contact": "Contact",
+    "dealerPortal": "Dealer Portal",
     "backToTop": "Back to Top",
     "newsletterLabel": "Stay Connected",
     "newsletterHeading": "Sign up for email updates",
@@ -292,6 +294,18 @@
     "ctaDescription": "Velocity Pro worsted cloth is available as a premium upgrade on all C.L. Bailey pool tables through your authorized dealer.",
     "findDealer": "Find a Dealer",
     "downloadSpec": "Download Spec Sheet"
+  },
+  "trade": {
+    "heading": "Design with Ease",
+    "description": "We're proud to support interior designers, retailers, and industry professionals with direct access to our custom game room furniture.",
+    "whyJoinHeading": "Why Join Our Trade Program?",
+    "benefit1": "Exclusive To the Trade Offers",
+    "benefit2": "No Minimums: Order what you need, when you need it",
+    "benefit3": "Easy-to-Use Order Sheets for seamless project planning",
+    "applyCta": "Apply to Our Trade Program",
+    "notTradeHeading": "Not a Trade Professional?",
+    "notTradeDescription": "No problem: we partner with hundreds of Authorized Dealers across the U.S. who can help you design the game room of your dreams.",
+    "findDealerCta": "Find an Authorized Dealer"
   },
   "dealerPortal": {
     "title": "Dealer Portal",
