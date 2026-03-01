@@ -24,7 +24,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
       label: t("museum.furniture"),
       subtitle: t("museum.completeTheRoom"),
       href: "/products/game-room-furniture",
-      image: "/images/products/game-room-furniture/skylar-furniture/hero.jpg",
+      image: "/images/products/game-room-furniture/viking-furniture/chair-detail.jpg",
       alt: t("museum.altFurniture"),
     },
     {

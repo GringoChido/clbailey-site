@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { company, categories } from "@/lib/products";
 import BackToTop from "@/components/ui/BackToTop";
+import NewsletterForm from "@/components/ui/NewsletterForm";
 
 export default async function Footer() {
   const t = await getTranslations();
@@ -24,19 +25,7 @@ export default async function Footer() {
             >
               {t("footer.newsletterHeading")}
             </h3>
-            <div className="flex border-b border-[var(--color-primary)]">
-              <input
-                type="email"
-                placeholder={t("footer.emailPlaceholder")}
-                aria-label={t("footer.emailPlaceholder")}
-                className="flex-1 bg-transparent border-none py-3.5 text-sm font-light tracking-wide text-[var(--color-silver)] placeholder:text-[var(--color-mid-gray)] focus:outline-none"
-              />
-              <button aria-label="Subscribe" className="py-3.5 px-3.5 text-[var(--color-mid-gray)] bg-transparent border-none cursor-pointer transition-colors duration-300 hover:text-[var(--color-silver)]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+            <NewsletterForm />
           </div>
         </div>
 

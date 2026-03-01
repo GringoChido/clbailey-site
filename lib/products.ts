@@ -101,6 +101,13 @@ export function getFeaturedProducts(): Product[] {
   return products.filter((p) => p.featured).sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
+export function getCrossCategoryProducts(currentCategory: string, limit = 4): Product[] {
+  return products
+    .filter((p) => p.category !== currentCategory && p.featured)
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .slice(0, limit);
+}
+
 /* Navigation data */
 export const navLinks = [
   {

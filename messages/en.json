@@ -15,7 +15,7 @@
     "findDealer": "Find a Dealer",
     "toggleMenu": "Toggle menu",
     "wordmark": "C.L. Bailey & Co.",
-    "announcement": "Dealer Exclusive \u2014 Not Sold Online  |  Lifetime Structural Guarantee",
+    "announcement": "Dealer Exclusive. Not Sold Online  |  Lifetime Structural Guarantee",
     "dealerPortal": "Dealer Portal"
   },
   "hero": {
@@ -30,7 +30,7 @@
     "headline": "Built for Homes That Endure.",
     "exploreCollection": "Explore the Collection",
     "archive": "The Archive",
-    "promoBanner": "2026 Collection \u2014 Now Available  |  View the Complete Lineup",
+    "promoBanner": "2026 Collection: Now Available  |  View the Complete Lineup",
     "scrollLabel": "Scroll"
   },
   "museum": {
@@ -54,8 +54,8 @@
     "altShuffleboards": "C.L. Bailey Shuffleboard Collection",
     "altFurniture": "C.L. Bailey Game Room Furniture",
     "altCueRacks": "C.L. Bailey Cue Rack Collection",
-    "altDutchess": "The Dutchess — featured in our collection catalog",
-    "altNameplate": "C.L. Bailey nameplate — since 1999",
+    "altDutchess": "The Dutchess, featured in our collection catalog",
+    "altNameplate": "C.L. Bailey nameplate, since 1999",
     "catalogLabel": "2026 Collection",
     "requestSourcebook": "Request Sourcebook",
     "catalogDescription": "Detailed specification sheets for every piece in the collection. Dimensions, finishes, features.",
@@ -86,8 +86,8 @@
     "furnitureHeading": "Complete Your Space",
     "furnitureDescription": "From spectator seating to pub sets. Furniture built for the modern host.",
     "furnitureCta": "Shop Game Room Furniture",
-    "furnitureAlt": "C.L. Bailey game room furniture — pub table, spectator chairs, and cue rack",
-    "helpHeading": "Let us help you — no obligations",
+    "furnitureAlt": "C.L. Bailey game room furniture: pub table, spectator chairs, and cue rack",
+    "helpHeading": "Let us help you, no obligations",
     "helpDescription": "Our team and AI-powered Showroom Concierge can guide you to the right table for your space, style, and budget.",
     "helpCta": "Get in touch",
     "heritageHeading": "More than 25 years of Texas craftsmanship",
@@ -112,6 +112,9 @@
     "newsletterLabel": "Stay Connected",
     "newsletterHeading": "Sign up for email updates",
     "emailPlaceholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "subscribeSuccess": "Thank you for subscribing.",
+    "subscribeError": "Something went wrong. Please try again.",
     "allRights": "All rights reserved.",
     "division": "A division of CLB Assets LLC",
     "location": "Tomball, Texas",
@@ -161,13 +164,15 @@
     "collection": "Collection",
     "browse": "Browse",
     "products": "Products",
-    "pricingLabel": "Premium Residential — Dealer Exclusive",
+    "pricingLabel": "Premium Residential. Dealer Exclusive",
     "learnMore": "Learn More"
   },
   "products": {
     "title": "All Products",
     "description": "Four categories. Twenty products. One standard of quality.",
-    "moreCategoryName": "More {categoryName}"
+    "moreCategoryName": "More {categoryName}",
+    "completeGameRoom": "Complete Your Game Room",
+    "completeGameRoomSub": "Explore complementary pieces from our other collections"
   },
   "concierge": {
     "openLabel": "Open Showroom Manager",
@@ -194,9 +199,9 @@
   "about": {
     "title": "About Us",
     "storyLabel": "Our Story",
-    "storyP1": "C.L. Bailey & Co. was founded in 1999 by Charles L. Bailey with a single conviction: that game room furniture should be built the way homes used to be — with solid wood, honest joinery, and no shortcuts.",
+    "storyP1": "C.L. Bailey & Co. was founded in 1999 by Charles L. Bailey with a single conviction: that game room furniture should be built the way homes used to be, with solid wood, honest joinery, and no shortcuts.",
     "storyP2": "What began as a small workshop in Tomball, Texas, has grown into one of the most respected names in billiards manufacturing. Every piece that leaves our facility carries the same promise it did on day one: real hardwood, real craftsmanship, and a lifetime structural guarantee.",
-    "storyP3": "We don't chase trends. We don't cut corners with particle board or veneer. We build furniture that belongs in homes where quality still matters — and we stand behind every piece for as long as you own it.",
+    "storyP3": "We don't chase trends. We don't cut corners with particle board or veneer. We build furniture that belongs in homes where quality still matters, and we stand behind every piece for as long as you own it.",
     "principlesLabel": "Principles",
     "principle1Title": "Solid Hardwood Only",
     "principle1Desc": "Every piece is built from genuine hardwood. No particle board. No MDF. No veneer over engineered substrates.",
@@ -212,7 +217,7 @@
   "contact": {
     "title": "Contact Us",
     "getInTouch": "Get in Touch",
-    "description": "Questions about our products, dealer program, or anything else — we are here to help.",
+    "description": "Questions about our products, dealer program, or anything else. We are here to help.",
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
@@ -232,18 +237,18 @@
   },
   "catalogs": {
     "title": "Catalogs & Downloads",
-    "description": "Download detailed specification sheets for any product. Dimensions, finishes, features — everything you need to make the right choice."
+    "description": "Download detailed specification sheets for any product. Dimensions, finishes, features: everything you need to make the right choice."
   },
   "careGuide": {
     "title": "Table Care Guide",
     "label": "Maintenance",
     "intro": "Proper care keeps your table playing true and looking sharp for decades. These guidelines apply to all C.L. Bailey products.",
     "section1Title": "Playing Surface",
-    "section1Body": "Brush the cloth after every session using a soft-bristle pool table brush, always moving in one direction. Vacuum gently on a low setting once a month. Never use water, solvents, or household cleaners on the felt. If a spill occurs, blot immediately with a dry cloth. Consider re-felting every 3–5 years depending on usage.",
+    "section1Body": "Brush the cloth after every session using a soft-bristle pool table brush, always moving in one direction. Vacuum gently on a low setting once a month. Never use water, solvents, or household cleaners on the felt. If a spill occurs, blot immediately with a dry cloth. Consider re-felting every 3 to 5 years depending on usage.",
     "section2Title": "Wood & Finish",
-    "section2Body": "Wipe the rails, legs, and frame with a soft, dry microfiber cloth weekly. For deeper cleaning, use a wood-safe furniture polish sparingly. Avoid placing drinks directly on the rails — use coasters. Keep the table out of direct sunlight to prevent fading and warping. Maintain consistent room humidity (40–60%) to prevent wood expansion or contraction.",
+    "section2Body": "Wipe the rails, legs, and frame with a soft, dry microfiber cloth weekly. For deeper cleaning, use a wood-safe furniture polish sparingly. Avoid placing drinks directly on the rails. Use coasters. Keep the table out of direct sunlight to prevent fading and warping. Maintain consistent room humidity (40 to 60%) to prevent wood expansion or contraction.",
     "section3Title": "Slate & Leveling",
-    "section3Body": "Check your table's level every 6 months using a machinist's level. Minor adjustments can be made at the leg levelers. If the slate shifts significantly, contact your authorized dealer for professional re-leveling. Never attempt to move a fully assembled table — always have it professionally disassembled and reassembled.",
+    "section3Body": "Check your table's level every 6 months using a machinist's level. Minor adjustments can be made at the leg levelers. If the slate shifts significantly, contact your authorized dealer for professional re-leveling. Never attempt to move a fully assembled table. Always have it professionally disassembled and reassembled.",
     "section4Title": "Pockets & Hardware",
     "section4Body": "Inspect pocket liners and bolts quarterly. Tighten any loose hardware gently. If pocket nets show wear or fraying, replacements are available through your dealer. Keep ball return tracks clean and free of debris.",
     "section5Title": "Shuffleboard Care",
@@ -276,7 +281,7 @@
     "minRoom": "Min. Room",
     "recommended": "Recommended",
     "note1": "These measurements assume a standard 52\u2033 (132 cm) cue. If you use shorter cues (48\u2033 or 36\u2033), the minimum room size can be reduced proportionally.",
-    "note2": "Recommended sizes add 6–12 inches on each side for comfortable cueing without wall interference. For rooms that double as living spaces, aim for the recommended dimensions."
+    "note2": "Recommended sizes add 6 to 12 inches on each side for comfortable cueing without wall interference. For rooms that double as living spaces, aim for the recommended dimensions."
   },
   "velocityPro": {
     "label": "Premium Cloth",
@@ -344,8 +349,8 @@
     "supportContact": "Support Contact",
     "phone": "Phone",
     "hours": "Hours",
-    "hoursMTh": "Mon–Thu: 8:00 AM – 4:30 PM CST",
-    "hoursFri": "Fri: 8:00 AM – 12:00 PM CST",
+    "hoursMTh": "Mon to Thu: 8:00 AM to 4:30 PM CST",
+    "hoursFri": "Fri: 8:00 AM to 12:00 PM CST",
     "contactSupport": "Contact Support",
     "territory": "Territory",
     "territoryDesc": "Territory assignments and dealer tiers are managed centrally. Contact your regional sales manager or dealer support for questions about territory boundaries, exclusivity, and dealer tier status.",

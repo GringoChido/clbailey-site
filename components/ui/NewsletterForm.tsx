@@ -1,0 +1,71 @@
+"use client";
+
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+
+export default function NewsletterForm() {
+  const t = useTranslations("footer");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <p className="text-sm text-[var(--color-silver)] tracking-wide">
+        {t("subscribeSuccess")}
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="flex border-b border-[var(--color-primary)]">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={t("emailPlaceholder")}
+          aria-label={t("emailPlaceholder")}
+          required
+          className="flex-1 bg-transparent border-none py-3.5 text-sm font-light tracking-wide text-[var(--color-silver)] placeholder:text-[var(--color-mid-gray)] focus:outline-none"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          aria-label={t("subscribe")}
+          className="py-3.5 px-3.5 text-[var(--color-mid-gray)] bg-transparent border-none cursor-pointer transition-colors duration-300 hover:text-[var(--color-silver)] disabled:opacity-50"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      {status === "error" && (
+        <p className="text-xs text-[var(--color-body)] mt-2">
+          {t("subscribeError")}
+        </p>
+      )}
+    </form>
+  );
+}

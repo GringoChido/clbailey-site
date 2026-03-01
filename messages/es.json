@@ -15,7 +15,7 @@
     "findDealer": "Encontrar Distribuidor",
     "toggleMenu": "Alternar menú",
     "wordmark": "C.L. Bailey & Co.",
-    "announcement": "Exclusivo de Distribuidores \u2014 No Se Vende En L\u00ednea  |  Garant\u00eda Estructural de por Vida",
+    "announcement": "Exclusivo de Distribuidores. No Se Vende En Línea  |  Garantía Estructural de por Vida",
     "dealerPortal": "Portal de Distribuidores"
   },
   "hero": {
@@ -30,7 +30,7 @@
     "headline": "Construidas para Hogares que Perduran.",
     "exploreCollection": "Explorar la Colección",
     "archive": "El Archivo",
-    "promoBanner": "Colección 2026 \u2014 Ya Disponible  |  Ver la Línea Completa",
+    "promoBanner": "Colección 2026: Ya Disponible  |  Ver la Línea Completa",
     "scrollLabel": "Desplazar"
   },
   "museum": {
@@ -54,8 +54,8 @@
     "altShuffleboards": "Colección de Shuffleboards C.L. Bailey",
     "altFurniture": "Muebles de Sala de Juegos C.L. Bailey",
     "altCueRacks": "Colección de Portatacos C.L. Bailey",
-    "altDutchess": "La Dutchess — presentada en nuestro catálogo de colección",
-    "altNameplate": "Placa de C.L. Bailey — desde 1999",
+    "altDutchess": "La Dutchess, presentada en nuestro catálogo de colección",
+    "altNameplate": "Placa de C.L. Bailey, desde 1999",
     "catalogLabel": "Colección 2026",
     "requestSourcebook": "Solicitar Catálogo",
     "catalogDescription": "Hojas de especificaciones detalladas para cada pieza de la colección. Dimensiones, acabados, características.",
@@ -86,8 +86,8 @@
     "furnitureHeading": "Completa Tu Espacio",
     "furnitureDescription": "Desde asientos para espectadores hasta sets de pub. Muebles diseñados para el anfitrión moderno.",
     "furnitureCta": "Ver Muebles de Sala de Juegos",
-    "furnitureAlt": "Muebles de sala de juegos C.L. Bailey — mesa pub, sillas y portatacos",
-    "helpHeading": "Déjenos ayudarle — sin compromisos",
+    "furnitureAlt": "Muebles de sala de juegos C.L. Bailey: mesa pub, sillas y portatacos",
+    "helpHeading": "Déjenos ayudarle, sin compromisos",
     "helpDescription": "Nuestro equipo y el Conserje de Showroom con IA pueden guiarlo hacia la mesa correcta para su espacio, estilo y presupuesto.",
     "helpCta": "Contáctenos",
     "heritageHeading": "Más de 25 años de artesanía texana",
@@ -111,7 +111,10 @@
     "backToTop": "Volver Arriba",
     "newsletterLabel": "Mant\u00e9ngase Conectado",
     "newsletterHeading": "Suscr\u00edbase para actualizaciones por correo",
-    "emailPlaceholder": "Ingrese su correo electr\u00f3nico",
+    "emailPlaceholder": "Ingrese su correo electrónico",
+    "subscribe": "Suscribirse",
+    "subscribeSuccess": "Gracias por suscribirse.",
+    "subscribeError": "Algo salió mal. Intente de nuevo.",
     "allRights": "Todos los derechos reservados.",
     "division": "Una divisi\u00f3n de CLB Assets LLC",
     "location": "Tomball, Texas",
@@ -161,13 +164,15 @@
     "collection": "Colección",
     "browse": "Explorar",
     "products": "Productos",
-    "pricingLabel": "Residencial Premium — Exclusivo de Distribuidores",
+    "pricingLabel": "Residencial Premium. Exclusivo de Distribuidores",
     "learnMore": "Más Información"
   },
   "products": {
     "title": "Todos los Productos",
     "description": "Cuatro categorías. Veinte productos. Un estándar de calidad.",
-    "moreCategoryName": "Más {categoryName}"
+    "moreCategoryName": "Más {categoryName}",
+    "completeGameRoom": "Complete Su Sala de Juegos",
+    "completeGameRoomSub": "Explore piezas complementarias de nuestras otras colecciones"
   },
   "concierge": {
     "openLabel": "Abrir Gerente de Showroom",
@@ -194,9 +199,9 @@
   "about": {
     "title": "Sobre Nosotros",
     "storyLabel": "Nuestra Historia",
-    "storyP1": "C.L. Bailey & Co. fue fundada en 1999 por Charles L. Bailey con una sola convicción: que los muebles de sala de juegos deben construirse como se construían las casas antes — con madera maciza, ensamblaje honesto y sin atajos.",
+    "storyP1": "C.L. Bailey & Co. fue fundada en 1999 por Charles L. Bailey con una sola convicción: que los muebles de sala de juegos deben construirse como se construían las casas antes, con madera maciza, ensamblaje honesto y sin atajos.",
     "storyP2": "Lo que comenzó como un pequeño taller en Tomball, Texas, se ha convertido en uno de los nombres más respetados en la fabricación de billares. Cada pieza que sale de nuestra instalación lleva la misma promesa que el primer día: madera real, artesanía real y una garantía estructural de por vida.",
-    "storyP3": "No seguimos tendencias. No cortamos esquinas con aglomerado o chapa. Construimos muebles que pertenecen a hogares donde la calidad aún importa — y respaldamos cada pieza mientras la posea.",
+    "storyP3": "No seguimos tendencias. No cortamos esquinas con aglomerado o chapa. Construimos muebles que pertenecen a hogares donde la calidad aún importa, y respaldamos cada pieza mientras la posea.",
     "principlesLabel": "Principios",
     "principle1Title": "Solo Madera Maciza",
     "principle1Desc": "Cada pieza está construida con madera genuina. Sin aglomerado. Sin MDF. Sin chapa sobre sustratos industriales.",
@@ -212,7 +217,7 @@
   "contact": {
     "title": "Contáctenos",
     "getInTouch": "Comuníquese",
-    "description": "Preguntas sobre nuestros productos, programa de distribuidores o cualquier otra cosa — estamos aquí para ayudar.",
+    "description": "Preguntas sobre nuestros productos, programa de distribuidores o cualquier otra cosa. Estamos aquí para ayudar.",
     "address": "Dirección",
     "phone": "Teléfono",
     "email": "Correo Electrónico",
@@ -232,18 +237,18 @@
   },
   "catalogs": {
     "title": "Catálogos y Descargas",
-    "description": "Descargue hojas de especificaciones detalladas para cualquier producto. Dimensiones, acabados, características — todo lo que necesita para tomar la decisión correcta."
+    "description": "Descargue hojas de especificaciones detalladas para cualquier producto. Dimensiones, acabados, características: todo lo que necesita para tomar la decisión correcta."
   },
   "careGuide": {
     "title": "Guía de Cuidado de Mesa",
     "label": "Mantenimiento",
     "intro": "El cuidado adecuado mantiene su mesa jugando correctamente y luciendo impecable durante décadas. Estas pautas aplican a todos los productos C.L. Bailey.",
     "section1Title": "Superficie de Juego",
-    "section1Body": "Cepille el paño después de cada sesión usando un cepillo suave para mesas de billar, siempre moviéndose en una dirección. Aspire suavemente en configuración baja una vez al mes. Nunca use agua, solventes o limpiadores domésticos en el fieltro. Si ocurre un derrame, seque inmediatamente con un paño seco. Considere cambiar el fieltro cada 3–5 años según el uso.",
+    "section1Body": "Cepille el paño después de cada sesión usando un cepillo suave para mesas de billar, siempre moviéndose en una dirección. Aspire suavemente en configuración baja una vez al mes. Nunca use agua, solventes o limpiadores domésticos en el fieltro. Si ocurre un derrame, seque inmediatamente con un paño seco. Considere cambiar el fieltro cada 3 a 5 años según el uso.",
     "section2Title": "Madera y Acabado",
-    "section2Body": "Limpie las bandas, patas y marco con un paño de microfibra suave y seco semanalmente. Para una limpieza más profunda, use un pulidor de muebles seguro para madera con moderación. Evite colocar bebidas directamente sobre las bandas — use posavasos. Mantenga la mesa alejada de la luz solar directa para prevenir decoloración y deformación. Mantenga una humedad constante en la habitación (40–60%) para prevenir la expansión o contracción de la madera.",
+    "section2Body": "Limpie las bandas, patas y marco con un paño de microfibra suave y seco semanalmente. Para una limpieza más profunda, use un pulidor de muebles seguro para madera con moderación. Evite colocar bebidas directamente sobre las bandas. Use posavasos. Mantenga la mesa alejada de la luz solar directa para prevenir decoloración y deformación. Mantenga una humedad constante en la habitación (40 a 60%) para prevenir la expansión o contracción de la madera.",
     "section3Title": "Pizarra y Nivelación",
-    "section3Body": "Verifique el nivel de su mesa cada 6 meses usando un nivel de precisión. Los ajustes menores se pueden hacer en los niveladores de las patas. Si la pizarra se desplaza significativamente, contacte a su distribuidor autorizado para una re-nivelación profesional. Nunca intente mover una mesa completamente ensamblada — siempre hágala desensamblar y reensamblar profesionalmente.",
+    "section3Body": "Verifique el nivel de su mesa cada 6 meses usando un nivel de precisión. Los ajustes menores se pueden hacer en los niveladores de las patas. Si la pizarra se desplaza significativamente, contacte a su distribuidor autorizado para una re-nivelación profesional. Nunca intente mover una mesa completamente ensamblada. Siempre hágala desensamblar y reensamblar profesionalmente.",
     "section4Title": "Troneras y Herrajes",
     "section4Body": "Inspeccione los revestimientos de las troneras y los tornillos trimestralmente. Apriete cualquier herraje suelto suavemente. Si las redes de las troneras muestran desgaste o deshilachado, los reemplazos están disponibles a través de su distribuidor. Mantenga las pistas de retorno de bolas limpias y libres de residuos.",
     "section5Title": "Cuidado del Shuffleboard",
@@ -276,7 +281,7 @@
     "minRoom": "Sala Mín.",
     "recommended": "Recomendado",
     "note1": "Estas medidas asumen un taco estándar de 52″ (132 cm). Si usa tacos más cortos (48″ o 36″), el tamaño mínimo de la sala puede reducirse proporcionalmente.",
-    "note2": "Los tamaños recomendados agregan 6–12 pulgadas a cada lado para un golpe cómodo sin interferencia de las paredes. Para salas que también funcionan como espacios de vida, apunte a las dimensiones recomendadas."
+    "note2": "Los tamaños recomendados agregan 6 a 12 pulgadas a cada lado para un golpe cómodo sin interferencia de las paredes. Para salas que también funcionan como espacios de vida, apunte a las dimensiones recomendadas."
   },
   "velocityPro": {
     "label": "Tela Premium",
@@ -344,8 +349,8 @@
     "supportContact": "Contacto de Soporte",
     "phone": "Teléfono",
     "hours": "Horario",
-    "hoursMTh": "Lun–Jue: 8:00 AM – 4:30 PM CST",
-    "hoursFri": "Vie: 8:00 AM – 12:00 PM CST",
+    "hoursMTh": "Lun a Jue: 8:00 AM a 4:30 PM CST",
+    "hoursFri": "Vie: 8:00 AM a 12:00 PM CST",
     "contactSupport": "Contactar Soporte",
     "territory": "Territorio",
     "territoryDesc": "Las asignaciones de territorio y niveles de distribuidores se administran centralmente. Contacte a su gerente de ventas regional o al soporte para distribuidores para preguntas sobre límites de territorio, exclusividad y estado de nivel de distribuidor.",

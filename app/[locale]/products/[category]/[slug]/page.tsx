@@ -8,6 +8,7 @@ import {
   getProduct,
   getCategory,
   getProductsByCategory,
+  getCrossCategoryProducts,
   img,
   pdf,
 } from "@/lib/products";
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return { title: "Product Not Found" };
 
   const cat = getCategory(category);
-  const title = `${product.name} ${cat?.name || ""} — C.L. Bailey & Co.`;
+  const title = `${product.name} ${cat?.name || ""} | C.L. Bailey & Co.`;
 
   return {
     title,
@@ -84,6 +85,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const relatedProducts = getProductsByCategory(category)
     .filter((p) => p.slug !== slug)
     .slice(0, 3);
+
+  const crossCategoryProducts = getCrossCategoryProducts(category, 4);
 
   /* ─── JSON-LD: Product + BreadcrumbList ─── */
   const productSchema = {
@@ -181,7 +184,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden bg-[var(--color-off-white)]">
                 <Image
                   src={img(product.images.hero)}
-                  alt={`${product.name} — ${product.tagline}`}
+                  alt={`${product.name}, ${product.tagline}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -331,6 +334,24 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map((rp) => (
                   <ProductCard key={rp.slug} product={rp} />
+                ))}
+              </div>
+            </ScrollReveal>
+          )}
+
+          {/* Cross-Category: Complete Your Game Room */}
+          {crossCategoryProducts.length > 0 && (
+            <ScrollReveal className="mt-20">
+              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
+                {t("products.completeGameRoom")}
+              </h2>
+              <div className="h-px bg-[var(--color-cloud)] mb-8" />
+              <p className="text-sm text-[var(--color-body)] mb-8">
+                {t("products.completeGameRoomSub")}
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {crossCategoryProducts.map((cp) => (
+                  <ProductCard key={cp.slug} product={cp} />
                 ))}
               </div>
             </ScrollReveal>

@@ -60,8 +60,14 @@
         "Graphite or Espresso finish",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Espresso", "Graphite"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Espresso",
+        "Graphite"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/skylar/hero.jpg",
         "gallery": [
@@ -88,8 +94,13 @@
         "Matching furniture collection",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Rustic"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Rustic"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/viking/hero.jpg",
         "gallery": [
@@ -116,8 +127,15 @@
         "Multiple finish options",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Traditional Mahogany", "Warm Chestnut", "Graphite"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Traditional Mahogany",
+        "Warm Chestnut",
+        "Graphite"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/dutchess/hero.jpg",
         "gallery": [
@@ -146,8 +164,13 @@
         "Timber finish",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Timber"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Timber"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/tunbridge/hero.jpg",
         "gallery": [
@@ -174,8 +197,14 @@
         "Multiple finish options",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Black", "Espresso"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Black",
+        "Espresso"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/duke/hero.jpg",
         "gallery": [
@@ -202,8 +231,13 @@
         "Carved leg detail",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Dark Walnut"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Dark Walnut"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/norwich/hero.jpg",
         "gallery": [
@@ -229,8 +263,13 @@
         "Espresso finish",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Espresso"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Espresso"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/elayna/hero.jpg",
         "gallery": [
@@ -256,8 +295,13 @@
         "Contemporary styling",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Espresso"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Espresso"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "pool-tables/adrian/hero.jpg",
         "gallery": [
@@ -283,8 +327,13 @@
         "Contemporary finish",
         "K66 rubber cushion system"
       ],
-      "finishes": ["Graphite"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Graphite"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": null,
         "gallery": [],
@@ -306,8 +355,12 @@
         "Matching Viking collection",
         "Score counter included"
       ],
-      "finishes": ["Rustic"],
-      "sizes": ["12'"],
+      "finishes": [
+        "Rustic"
+      ],
+      "sizes": [
+        "12'"
+      ],
       "images": {
         "hero": "shuffleboards/viking-shuffleboard/hero.jpg",
         "gallery": [
@@ -335,8 +388,12 @@
         "Matching Skylar collection",
         "Score counter included"
       ],
-      "finishes": ["Espresso"],
-      "sizes": ["12'"],
+      "finishes": [
+        "Espresso"
+      ],
+      "sizes": [
+        "12'"
+      ],
       "images": {
         "hero": "shuffleboards/skylar-shuffleboard/hero.jpg",
         "gallery": [
@@ -346,7 +403,7 @@
         "dimensions": "shuffleboards/skylar-shuffleboard/dimensions.jpg"
       },
       "pdf": "skylar-shuffleboard.pdf",
-      "featured": false,
+      "featured": true,
       "sortOrder": 2
     },
     {
@@ -361,8 +418,13 @@
         "Matching Tunbridge collection",
         "Score counter included"
       ],
-      "finishes": ["Timber"],
-      "sizes": ["12'", "14'"],
+      "finishes": [
+        "Timber"
+      ],
+      "sizes": [
+        "12'",
+        "14'"
+      ],
       "images": {
         "hero": "shuffleboards/tunbridge-shuffleboard/hero.jpg",
         "gallery": [
@@ -388,8 +450,13 @@
         "Accessory kits available",
         "Climatic adjusters"
       ],
-      "finishes": ["Various"],
-      "sizes": ["9'", "12'"],
+      "finishes": [
+        "Various"
+      ],
+      "sizes": [
+        "9'",
+        "12'"
+      ],
       "images": {
         "hero": "shuffleboards/level-best/hero.jpg",
         "gallery": [
@@ -416,7 +483,9 @@
         "Floor cue rack",
         "Dining dolly for table conversion"
       ],
-      "finishes": ["Espresso"],
+      "finishes": [
+        "Espresso"
+      ],
       "sizes": [],
       "images": {
         "hero": "game-room-furniture/skylar-furniture/hero.jpg",
@@ -429,7 +498,7 @@
         "dimensions": null
       },
       "pdf": "spectator-chairs.pdf",
-      "featured": false,
+      "featured": true,
       "sortOrder": 1
     },
     {
@@ -443,7 +512,9 @@
         "Storage bench with lid",
         "Floor cue rack"
       ],
-      "finishes": ["Timber"],
+      "finishes": [
+        "Timber"
+      ],
       "sizes": [],
       "images": {
         "hero": "game-room-furniture/tunbridge-furniture/hero.jpg",
@@ -468,7 +539,9 @@
         "Storage bench with lid",
         "Floor cue rack"
       ],
-      "finishes": ["Rustic"],
+      "finishes": [
+        "Rustic"
+      ],
       "sizes": [],
       "images": {
         "hero": "game-room-furniture/viking-furniture/hero.jpg",
@@ -480,7 +553,7 @@
         "dimensions": null
       },
       "pdf": "viking-accessories.pdf",
-      "featured": false,
+      "featured": true,
       "sortOrder": 3
     },
     {
@@ -495,7 +568,9 @@
         "Storage compartments",
         "Dining conversion"
       ],
-      "finishes": ["Various"],
+      "finishes": [
+        "Various"
+      ],
       "sizes": [],
       "images": {
         "hero": null,
@@ -518,7 +593,13 @@
         "Carved leg detail",
         "Five finish options"
       ],
-      "finishes": ["Traditional Mahogany", "Warm Chestnut", "Classic Oak", "Black", "Honey Maple"],
+      "finishes": [
+        "Traditional Mahogany",
+        "Warm Chestnut",
+        "Classic Oak",
+        "Black",
+        "Honey Maple"
+      ],
       "sizes": [],
       "images": {
         "hero": "cue-racks/carved-leg-cue-rack/hero.jpg",
@@ -531,7 +612,7 @@
         "dimensions": null
       },
       "pdf": "level-best-cue-racks.pdf",
-      "featured": false,
+      "featured": true,
       "sortOrder": 1
     },
     {
@@ -546,7 +627,13 @@
         "Five finish options",
         "Compact footprint"
       ],
-      "finishes": ["Traditional Mahogany", "Warm Chestnut", "Classic Oak", "Black", "Honey Maple"],
+      "finishes": [
+        "Traditional Mahogany",
+        "Warm Chestnut",
+        "Classic Oak",
+        "Black",
+        "Honey Maple"
+      ],
       "sizes": [],
       "images": {
         "hero": "cue-racks/corner-cue-rack/hero.jpg",
@@ -574,7 +661,9 @@
         "Multiple finish options",
         "Clean presentation"
       ],
-      "finishes": ["Various"],
+      "finishes": [
+        "Various"
+      ],
       "sizes": [],
       "images": {
         "hero": "cue-racks/deluxe-wall-rack/hero.jpg",
@@ -597,7 +686,9 @@
         "Fits standard pocket configurations",
         "Multiple leather colors available"
       ],
-      "finishes": ["Various"],
+      "finishes": [
+        "Various"
+      ],
       "sizes": [],
       "images": {
         "hero": "accessories/iron-leather-pockets/hero.jpg",
@@ -668,7 +759,9 @@
         "Individually inspected"
       ],
       "finishes": [],
-      "sizes": ["Regulation 2-1/4\""],
+      "sizes": [
+        "Regulation 2-1/4\""
+      ],
       "images": {
         "hero": "accessories/magnum-pool-ball-sets/hero.jpg",
         "gallery": [],
@@ -690,8 +783,13 @@
         "Pre-cut for standard sizes",
         "Suitable for recreational play"
       ],
-      "finishes": ["Classic Green"],
-      "sizes": ["7'", "8'"],
+      "finishes": [
+        "Classic Green"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
         "hero": "accessories/mali-basic-green-felt/hero.jpg",
         "gallery": [],
@@ -775,8 +873,23 @@
     }
   },
   "sizeChart": [
-    { "tableSize": "7' Table", "playfield": "39\" x 78\"", "minRoom": "13' x 16'", "cueLength": "52\"" },
-    { "tableSize": "8' Table", "playfield": "44\" x 88\"", "minRoom": "13'6\" x 17'", "cueLength": "52\"" },
-    { "tableSize": "9' Table", "playfield": "50\" x 100\"", "minRoom": "14'2\" x 18'", "cueLength": "52\"" }
+    {
+      "tableSize": "7' Table",
+      "playfield": "39\" x 78\"",
+      "minRoom": "13' x 16'",
+      "cueLength": "52\""
+    },
+    {
+      "tableSize": "8' Table",
+      "playfield": "44\" x 88\"",
+      "minRoom": "13'6\" x 17'",
+      "cueLength": "52\""
+    },
+    {
+      "tableSize": "9' Table",
+      "playfield": "50\" x 100\"",
+      "minRoom": "14'2\" x 18'",
+      "cueLength": "52\""
+    }
   ]
 }

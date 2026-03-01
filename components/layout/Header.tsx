@@ -20,6 +20,7 @@ export default function Header() {
     { label: t("nav.shuffleboards"), href: "/products/shuffleboards" },
     { label: t("nav.furniture"), href: "/products/game-room-furniture" },
     { label: t("nav.accessories"), href: "/products/accessories" },
+    { label: t("nav.cueRacks"), href: "/products/cue-racks" },
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.contact"), href: "/contact-us" },
     { label: t("nav.dealerPortal"), href: "/dealer-portal" },
@@ -74,7 +75,7 @@ export default function Header() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-1 transition-colors duration-300 ${
+              className={`xl:hidden p-1 transition-colors duration-300 ${
                 solid ? "text-[var(--color-primary)]" : "text-white"
               }`}
               aria-label={t("nav.toggleMenu")}
@@ -97,7 +98,7 @@ export default function Header() {
                 alt="The C.L. Bailey Co."
                 width={280}
                 height={75}
-                className={`h-[42px] lg:h-[44px] xl:h-[52px] w-auto select-none transition-[filter] duration-500 ${
+                className={`h-[42px] xl:h-[48px] w-auto select-none transition-[filter] duration-500 ${
                   solid
                     ? ""
                     : "[filter:drop-shadow(0_0_8px_rgba(255,255,255,0.95))_drop-shadow(0_0_4px_rgba(255,255,255,1))_drop-shadow(0_0_2px_rgba(255,255,255,1))]"
@@ -109,7 +110,7 @@ export default function Header() {
           </div>
 
           {/* Right: All nav links + Language toggle + Dealer CTA */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-5 ml-auto">
+          <div className="hidden xl:flex items-center gap-2 xl:gap-3 2xl:gap-5 ml-auto">
             {allNavItems.map((item) => (
               <Link
                 key={item.href}
@@ -154,7 +155,7 @@ export default function Header() {
             {/* Dealer CTA pill */}
             <Link
               href="/dealer"
-              className={solid ? "btn-primary" : "btn-outline-white"}
+              className={`text-[10px] xl:text-[11px] py-2 px-4 xl:px-5 ${solid ? "btn-primary" : "btn-outline-white"}`}
             >
               {t("nav.findDealer")}
             </Link>
@@ -163,7 +164,7 @@ export default function Header() {
           {/* Mobile: Dealer icon */}
           <Link
             href="/dealer"
-            className={`lg:hidden p-1 transition-colors duration-300 ${
+            className={`xl:hidden p-1 transition-colors duration-300 ${
               solid ? "text-[var(--color-primary)]" : "text-white"
             }`}
             aria-label={t("nav.findDealer")}
