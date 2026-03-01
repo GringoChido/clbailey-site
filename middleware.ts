@@ -3,6 +3,7 @@ import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
+const locales = new Set<string>(routing.locales);
 
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -11,7 +12,9 @@ export default function middleware(request: NextRequest) {
   if (pathname.includes("/dealer-portal") && !pathname.includes("/dealer-portal/login")) {
     const authCookie = request.cookies.get("dealer-auth");
     if (!authCookie?.value || authCookie.value !== "authorized") {
-      const locale = pathname.split("/")[1] || "en";
+      // Extract locale from path, falling back to default if segment isn't a known locale
+      const firstSegment = pathname.split("/")[1];
+      const locale = locales.has(firstSegment) ? firstSegment : routing.defaultLocale;
       const loginUrl = new URL(`/${locale}/dealer-portal/login`, request.url);
       return NextResponse.redirect(loginUrl);
     }
