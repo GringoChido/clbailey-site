@@ -18,22 +18,22 @@ export default async function RoomSizePage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+          <h1 className="heading-display text-3xl md:text-4xl mb-16">
             {t("roomSize.title")}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+          <p className="section-label mb-3">
             {t("roomSize.label")}
           </p>
-          <div className="h-px bg-gray-200 mb-8" />
+          <div className="h-px bg-[var(--color-cloud)] mb-8" />
         </ScrollReveal>
 
         <ScrollReveal delay={1}>
-          <p className="text-xl font-light leading-relaxed mb-10 max-w-2xl">
+          <p className="heading-sub text-xl mb-10 max-w-2xl">
             {t("roomSize.description")}
           </p>
         </ScrollReveal>
@@ -42,18 +42,18 @@ export default async function RoomSizePage() {
           <div className="overflow-x-auto">
             <table className="w-full max-w-2xl text-sm">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-4 pr-8 text-xs font-semibold uppercase tracking-widest text-gray-400">{t("roomSize.tableSize")}</th>
-                  <th className="text-left py-4 pr-8 text-xs font-semibold uppercase tracking-widest text-gray-400">{t("roomSize.minRoom")}</th>
-                  <th className="text-left py-4 text-xs font-semibold uppercase tracking-widest text-gray-400">{t("roomSize.recommended")}</th>
+                <tr className="border-b border-[var(--color-cloud)]">
+                  <th className="text-left py-4 pr-8 metadata !text-[var(--color-mid-gray)]">{t("roomSize.tableSize")}</th>
+                  <th className="text-left py-4 pr-8 metadata !text-[var(--color-mid-gray)]">{t("roomSize.minRoom")}</th>
+                  <th className="text-left py-4 metadata !text-[var(--color-mid-gray)]">{t("roomSize.recommended")}</th>
                 </tr>
               </thead>
               <tbody>
                 {tableData.map((row) => (
-                  <tr key={row.size} className="border-b border-gray-100">
-                    <td className="py-4 pr-8 font-medium">{row.size}</td>
-                    <td className="py-4 pr-8 text-gray-600">{row.min}</td>
-                    <td className="py-4 text-gray-600">{row.recommended}</td>
+                  <tr key={row.size} className="border-b border-[var(--color-cloud)]">
+                    <td className="py-4 pr-8 text-[var(--color-primary)] font-medium">{row.size}</td>
+                    <td className="py-4 pr-8 text-[var(--color-body)]">{row.min}</td>
+                    <td className="py-4 text-[var(--color-body)]">{row.recommended}</td>
                   </tr>
                 ))}
               </tbody>
@@ -63,10 +63,10 @@ export default async function RoomSizePage() {
 
         <ScrollReveal delay={3}>
           <div className="mt-10 max-w-2xl space-y-4">
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-[13px] text-[var(--color-body)] leading-[26px]">
               {t("roomSize.note1")}
             </p>
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-[13px] text-[var(--color-body)] leading-[26px]">
               {t("roomSize.note2")}
             </p>
           </div>

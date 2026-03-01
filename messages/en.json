@@ -11,6 +11,7 @@
     "roomSize": "Room Size",
     "guarantee": "Guarantee",
     "contact": "Contact",
+    "accessories": "Accessories",
     "findDealer": "Find a Dealer",
     "toggleMenu": "Toggle menu",
     "wordmark": "C.L. Bailey & Co.",
@@ -158,7 +159,8 @@
     "collection": "Collection",
     "browse": "Browse",
     "products": "Products",
-    "pricingLabel": "Premium Residential — Dealer Exclusive"
+    "pricingLabel": "Premium Residential — Dealer Exclusive",
+    "learnMore": "Learn More"
   },
   "products": {
     "title": "All Products",
@@ -273,6 +275,23 @@
     "recommended": "Recommended",
     "note1": "These measurements assume a standard 52\u2033 (132 cm) cue. If you use shorter cues (48\u2033 or 36\u2033), the minimum room size can be reduced proportionally.",
     "note2": "Recommended sizes add 6–12 inches on each side for comfortable cueing without wall interference. For rooms that double as living spaces, aim for the recommended dimensions."
+  },
+  "velocityPro": {
+    "label": "Premium Cloth",
+    "heading": "Velocity Pro Worsted Cloth",
+    "subheading": "87% wool worsted construction for professional-grade play",
+    "whyLabel": "The Advantage",
+    "whyHeading": "Why Worsted Matters",
+    "comparisonLabel": "Head to Head",
+    "comparisonHeading": "Velocity Pro vs. Standard Cloth",
+    "colorsLabel": "Colors",
+    "colorsHeading": "Available in Eight Colors",
+    "includedLabel": "Standard Equipment",
+    "includedHeading": "Standard on Select Models",
+    "ctaHeading": "Upgrade Your Playing Surface",
+    "ctaDescription": "Velocity Pro worsted cloth is available as a premium upgrade on all C.L. Bailey pool tables through your authorized dealer.",
+    "findDealer": "Find a Dealer",
+    "downloadSpec": "Download Spec Sheet"
   },
   "dealerPortal": {
     "title": "Dealer Portal",

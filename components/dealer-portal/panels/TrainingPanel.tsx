@@ -154,7 +154,7 @@ export default function TrainingPanel() {
       <div className="mb-8">
         <div className="h-1 bg-cloud w-full">
           <div
-            className="h-1 bg-primary transition-all duration-500"
+            className="h-1 bg-primary transition-[width] duration-500"
             style={{ width: `${(completedCount / totalCount) * 100}%` }}
           />
         </div>

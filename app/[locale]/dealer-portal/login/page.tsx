@@ -42,7 +42,7 @@ export default function DealerLoginPage() {
 
   return (
     <div className="pt-32 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <Image
           src="/images/brand/clb-logo.png"
           alt="The C.L. Bailey Co. — Tomball, Texas"
@@ -50,22 +50,22 @@ export default function DealerLoginPage() {
           height={59}
           className="h-[52px] w-auto mb-8 animate-fade-up"
         />
-        <h1 className="font-serif text-4xl lg:text-5xl mb-6 animate-fade-up">
+        <h1 className="heading-display text-3xl md:text-4xl mb-6 animate-fade-up">
           {t("title")}
         </h1>
-        <p className="text-brown/60 max-w-lg mb-16 animate-fade-up animate-delay-1">
+        <p className="text-[13px] text-[var(--color-body)] leading-[26px] max-w-lg mb-16 animate-fade-up animate-delay-1">
           {t("loginDescription")}
         </p>
 
         <div className="max-w-md animate-fade-up animate-delay-2">
-          <div className="border border-brown/10 p-8">
-            <p className="heritage-label text-brown/40 mb-6">{t("accessLabel")}</p>
+          <div className="border border-[var(--color-cloud)] p-8">
+            <p className="section-label mb-6">{t("accessLabel")}</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm text-brown/60 mb-2"
+                  className="block text-[13px] text-[var(--color-body)] mb-2"
                 >
                   {t("passwordLabel")}
                 </label>
@@ -76,25 +76,25 @@ export default function DealerLoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder={t("passwordPlaceholder")}
                   required
-                  className="w-full border border-brown/20 bg-transparent px-5 py-3.5 text-sm focus:outline-none focus:border-brown transition-colors"
+                  className="input-modern"
                 />
               </div>
 
               {error && (
-                <p className="text-sm text-red-600">{error}</p>
+                <p className="text-[13px] text-red-600">{error}</p>
               )}
 
               <button
                 type="submit"
                 disabled={!password || loading}
-                className="w-full bg-brown text-cream px-8 py-3.5 text-sm uppercase tracking-wider hover:bg-brown-light transition-colors disabled:opacity-40"
+                className="btn-primary w-full disabled:opacity-40"
               >
                 {loading ? t("verifying") : t("signIn")}
               </button>
             </form>
 
-            <div className="mt-8 pt-6 border-t border-brown/10">
-              <p className="text-xs text-brown/40 leading-relaxed">
+            <div className="mt-8 pt-6 border-t border-[var(--color-cloud)]">
+              <p className="text-xs text-[var(--color-mid-gray)] leading-relaxed">
                 {t("noAccess")}{" "}
                 <Link href="/contact-us" className="underline hover:no-underline">
                   {t("contactForAccess")}

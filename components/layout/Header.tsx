@@ -19,6 +19,7 @@ export default function Header() {
     { label: t("nav.poolTables"), href: "/products/pool-tables" },
     { label: t("nav.shuffleboards"), href: "/products/shuffleboards" },
     { label: t("nav.furniture"), href: "/products/game-room-furniture" },
+    { label: t("nav.accessories"), href: "/products/accessories" },
   ];
 
   const utilityItems = [
@@ -53,11 +54,11 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-500 ${
           solid
-            ? "bg-white/95 backdrop-blur-md border-b border-border"
+            ? "bg-[var(--overlay-nav)] backdrop-blur-md border-b border-[var(--color-cloud)]"
             : "bg-transparent"
         }`}
       >
-        {/* ── Announcement bar ── */}
+        {/* Announcement bar */}
         <div
           className={`announcement-bar transition-[max-height,opacity,padding] duration-500 overflow-hidden ${
             scrolled
@@ -68,15 +69,15 @@ export default function Header() {
           {t("nav.announcement")}
         </div>
 
-        {/* ── Main nav bar — Arhaus 3-column: hamburger+nav | wordmark | utility ── */}
+        {/* Main nav bar: hamburger+nav | wordmark | utility */}
         <nav className="flex items-center justify-between px-6 xl:px-12 h-[68px]">
-          {/* ── Left: Hamburger (mobile) + Primary nav (desktop) ── */}
+          {/* Left: Hamburger (mobile) + Primary nav (desktop) */}
           <div className="flex items-center gap-7 min-w-0">
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className={`lg:hidden p-1 transition-colors duration-300 ${
-                solid ? "text-ink" : "text-white"
+                solid ? "text-[var(--color-primary)]" : "text-white"
               }`}
               aria-label={t("nav.toggleMenu")}
             >
@@ -97,8 +98,8 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`heritage-label transition-colors duration-300 hover:text-estate whitespace-nowrap ${
-                    solid ? "text-ink" : "text-white"
+                  className={`heritage-label transition-colors duration-300 hover:text-[var(--color-silver)] whitespace-nowrap ${
+                    solid ? "text-[var(--color-primary)]" : "text-white"
                   }`}
                 >
                   {item.label}
@@ -107,14 +108,14 @@ export default function Header() {
             </div>
           </div>
 
-          {/* ── Center: Logo ── */}
+          {/* Center: Logo */}
           <Link
             href="/"
             className="absolute left-1/2 -translate-x-1/2 flex-shrink-0"
           >
             <Image
               src="/images/brand/clb-logo.png"
-              alt="The C.L. Bailey Co. — Tomball, Texas"
+              alt="The C.L. Bailey Co."
               width={280}
               height={75}
               className={`h-[42px] lg:h-[52px] w-auto select-none transition-[filter] duration-500 ${
@@ -127,14 +128,14 @@ export default function Header() {
             />
           </Link>
 
-          {/* ── Right: Utility nav + Language + Dealer CTA ── */}
+          {/* Right: Utility nav + Language + Dealer CTA */}
           <div className="hidden lg:flex items-center gap-6">
             {utilityItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`heritage-label transition-colors duration-300 hover:text-estate whitespace-nowrap ${
-                  solid ? "text-ink/50" : "text-white/50"
+                className={`heritage-label transition-colors duration-300 hover:text-[var(--color-silver)] whitespace-nowrap ${
+                  solid ? "text-[var(--color-primary)]/50" : "text-white/50"
                 }`}
               >
                 {item.label}
@@ -144,14 +145,14 @@ export default function Header() {
             {/* Language toggle */}
             <div
               className={`flex items-center gap-1.5 heritage-label ${
-                solid ? "text-ink/25" : "text-white/25"
+                solid ? "text-[var(--color-primary)]/25" : "text-white/25"
               }`}
             >
               <button
                 onClick={() => switchLocale("en")}
                 className={`transition-colors duration-300 hover:opacity-100 ${
                   locale === "en"
-                    ? solid ? "text-ink" : "text-white"
+                    ? solid ? "text-[var(--color-primary)]" : "text-white"
                     : ""
                 }`}
               >
@@ -162,7 +163,7 @@ export default function Header() {
                 onClick={() => switchLocale("es")}
                 className={`transition-colors duration-300 hover:opacity-100 ${
                   locale === "es"
-                    ? solid ? "text-ink" : "text-white"
+                    ? solid ? "text-[var(--color-primary)]" : "text-white"
                     : ""
                 }`}
               >
@@ -173,21 +174,17 @@ export default function Header() {
             {/* Dealer CTA pill */}
             <Link
               href="/dealer"
-              className={`heritage-label px-5 py-2 transition-colors duration-300 ${
-                solid
-                  ? "bg-ink text-white hover:bg-ink-light"
-                  : "bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm"
-              }`}
+              className={solid ? "btn-primary" : "btn-outline-white"}
             >
               {t("nav.findDealer")}
             </Link>
           </div>
 
-          {/* ── Mobile: Dealer icon ── */}
+          {/* Mobile: Dealer icon */}
           <Link
             href="/dealer"
             className={`lg:hidden p-1 transition-colors duration-300 ${
-              solid ? "text-ink" : "text-white"
+              solid ? "text-[var(--color-primary)]" : "text-white"
             }`}
             aria-label={t("nav.findDealer")}
           >
@@ -199,7 +196,7 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* ── Mobile fullscreen overlay ── */}
+      {/* Mobile fullscreen overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-white">
           <div className="pt-28 px-8 pb-8 h-full overflow-y-auto">
@@ -209,7 +206,8 @@ export default function Header() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-5 text-2xl font-light text-ink border-b border-border tracking-[0.01em]"
+                  className="block py-5 text-2xl text-[var(--color-primary)] border-b border-[var(--color-cloud)] tracking-[0.01em]"
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
                 >
                   {item.label}
                 </Link>
@@ -221,7 +219,7 @@ export default function Header() {
                     key={item.label}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-3 text-base text-muted"
+                    className="block py-3 heritage-label text-[var(--color-body)]"
                   >
                     {item.label}
                   </Link>
@@ -229,17 +227,17 @@ export default function Header() {
               </div>
 
               {/* Language switcher */}
-              <div className="pt-6 flex items-center gap-3 text-sm text-muted">
+              <div className="pt-6 flex items-center gap-3 heritage-label text-[var(--color-body)]">
                 <button
                   onClick={() => { switchLocale("en"); setMobileOpen(false); }}
-                  className={locale === "en" ? "text-ink font-medium" : ""}
+                  className={locale === "en" ? "text-[var(--color-primary)]" : ""}
                 >
                   English
                 </button>
                 <span className="opacity-30">|</span>
                 <button
                   onClick={() => { switchLocale("es"); setMobileOpen(false); }}
-                  className={locale === "es" ? "text-ink font-medium" : ""}
+                  className={locale === "es" ? "text-[var(--color-primary)]" : ""}
                 >
                   Espa&ntilde;ol
                 </button>
@@ -249,7 +247,7 @@ export default function Header() {
                 <Link
                   href="/dealer"
                   onClick={() => setMobileOpen(false)}
-                  className="block text-center py-4 bg-ink text-white heritage-label"
+                  className="btn-primary block text-center"
                 >
                   {t("nav.findDealer")}
                 </Link>

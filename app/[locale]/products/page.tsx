@@ -15,12 +15,15 @@ export default async function ProductsPage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-4">
+          <p className="section-label mb-3">
+            {t("museum.portfolioLabel")}
+          </p>
+          <h1 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-4">
             {t("products.title")}
           </h1>
-          <p className="text-gray-500 max-w-lg mb-16">
+          <p className="text-base text-[var(--color-body)] max-w-lg mb-16">
             {t("products.description")}
           </p>
         </ScrollReveal>
@@ -32,7 +35,7 @@ export default async function ProductsPage() {
                 href={`/products/${category.slug}`}
                 className="group block"
               >
-                <div className="aspect-[4/3] relative overflow-hidden bg-gray-100 mb-4">
+                <div className="aspect-[4/3] relative overflow-hidden bg-[var(--color-off-white)] border border-[var(--color-cloud)] mb-4">
                   <Image
                     src={img(category.heroImage)}
                     alt={category.name}
@@ -41,13 +44,13 @@ export default async function ProductsPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <h2 className="text-xl font-medium text-gray-900 mb-1">
+                <h2 className="heading-card mb-1">
                   {category.name}
-                  <span className="text-sm text-gray-400 ml-2">
+                  <span className="text-sm text-[var(--color-mid-gray)] ml-2">
                     {getProductsByCategory(category.slug).length}
                   </span>
                 </h2>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-[var(--color-body)]">
                   {category.description}
                 </p>
               </Link>

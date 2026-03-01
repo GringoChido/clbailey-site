@@ -46,10 +46,10 @@ export default function DealerSearch() {
   return (
     <div>
       <ScrollReveal>
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+        <p className="section-label mb-3">
           {t("searchLabel")}
         </p>
-        <div className="h-px bg-gray-200 mb-8" />
+        <div className="h-px bg-[var(--color-cloud)] mb-8" />
       </ScrollReveal>
 
       {/* Search Form */}
@@ -77,26 +77,26 @@ export default function DealerSearch() {
       {results.length > 0 && (
         <div className="space-y-4">
           {results.map((d) => (
-            <div key={d.id} className="border border-gray-200 rounded-lg p-6">
+            <div key={d.id} className="border border-[var(--color-cloud)] p-6">
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">{d.name}</h3>
+                  <h3 className="heading-card mb-1">{d.name}</h3>
                   {d.type === "premium" && (
-                    <span className="inline-block text-xs font-semibold uppercase tracking-widest bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+                    <span className="inline-block metadata !text-[var(--color-mid-gray)] bg-[var(--color-off-white)] px-2 py-0.5">
                       {t("premiumDealer")}
                     </span>
                   )}
                 </div>
-                <span className="text-sm text-gray-400">{d.distance} {t("mi")}</span>
+                <span className="text-[13px] text-[var(--color-mid-gray)]">{d.distance} {t("mi")}</span>
               </div>
-              <div className="text-sm text-gray-500 space-y-1 mb-3">
+              <div className="text-[13px] text-[var(--color-body)] space-y-1 mb-3">
                 <p>{d.address}</p>
                 <p>{d.city}, {d.state} {d.zip}</p>
               </div>
               <div className="flex gap-4">
                 <a
                   href={`tel:${d.phone.replace(/-/g, "")}`}
-                  className="text-sm text-gray-900 hover:text-gray-600 transition-colors"
+                  className="text-[13px] text-[var(--color-primary)] hover:text-[var(--color-mid-gray)] transition-colors duration-300"
                 >
                   {d.phone}
                 </a>
@@ -105,7 +105,7 @@ export default function DealerSearch() {
                     href={d.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-gray-400 hover:text-gray-900 transition-colors"
+                    className="text-[13px] text-[var(--color-mid-gray)] hover:text-[var(--color-primary)] transition-colors duration-300"
                   >
                     {t("website")} &rarr;
                   </a>
@@ -118,17 +118,17 @@ export default function DealerSearch() {
 
       {searched && results.length === 0 && (
         <div className="py-12 text-center">
-          <p className="text-gray-500 mb-4">{t("noResults")}</p>
-          <Link href="/contact-us" className="text-sm text-gray-900 underline hover:no-underline">
+          <p className="text-[13px] text-[var(--color-body)] mb-4">{t("noResults")}</p>
+          <Link href="/contact-us" className="text-[13px] text-[var(--color-primary)] underline hover:no-underline">
             {t("contactUs")}
           </Link>
         </div>
       )}
 
       {!searched && (
-        <div className="py-12 text-center text-gray-300">
-          <p className="text-xl font-light mb-2">{t("networkTitle")}</p>
-          <p className="text-sm">{t("networkDescription")}</p>
+        <div className="py-12 text-center">
+          <p className="heading-sub text-xl mb-2">{t("networkTitle")}</p>
+          <p className="text-[13px] text-[var(--color-body)]">{t("networkDescription")}</p>
         </div>
       )}
     </div>

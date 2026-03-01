@@ -15,20 +15,6 @@
   --color-warm-white: #faf9f5;    /* Warm white */
   --color-white: #ffffff;         /* Pure white */
 
-  /* ─── Legacy aliases (backward compat) ─── */
-  --color-ink: #231f20;
-  --color-ink-light: #7e7d84;
-  --color-muted: #919199;
-  --color-border: #ebecee;
-  --color-footer: #1b1b1b;
-  --color-vellum: #ffffff;
-  --color-vellum-dark: #f9f9fb;
-  --color-offwhite: #f6f6f7;
-  --color-light: #ebecee;
-  --color-estate: #b0b2bc;
-  --color-estate-light: #cdcdcd;
-  --color-gold: #b0b2bc;          /* Accent mapped to silver (no bright accents) */
-
   /* ─── Overlays ─── */
   --overlay-nav: rgba(176, 178, 188, 0.85);
   --overlay-section: rgba(235, 236, 238, 0.9);
@@ -155,7 +141,7 @@ body {
   text-transform: uppercase;
   padding: 12px 28px;
   border-radius: 0;
-  transition: all 300ms ease;
+  transition: background-color 300ms ease, color 300ms ease;
   display: inline-block;
   text-align: center;
 }
@@ -185,7 +171,7 @@ body {
   text-transform: uppercase;
   padding: 12px 28px;
   border-radius: 0;
-  transition: all 300ms ease;
+  transition: border-color 300ms ease, color 300ms ease;
   display: inline-block;
   text-align: center;
 }
@@ -209,11 +195,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
   background: transparent;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-family: var(--font-label), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 12px 28px;
   border-radius: 0;
   transition: background-color 300ms ease, color 300ms ease;
   display: inline-block;
@@ -222,11 +209,11 @@ body {
 
 .btn-outline-white:hover {
   background-color: white;
-  color: var(--color-ink);
+  color: var(--color-primary);
 }
 
 .btn-outline-white:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-silver);
   outline-offset: 2px;
 }
 
@@ -236,7 +223,7 @@ body {
 
 /* ─── Heritage button — backward compat ─── */
 .btn-heritage {
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -249,22 +236,23 @@ body {
 }
 
 .btn-heritage:hover {
-  background-color: var(--color-ink-light);
+  background-color: var(--color-mid-gray);
 }
 
 .btn-heritage:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-silver);
   outline-offset: 2px;
 }
 
 /* ─── Announcement bar ─── */
 .announcement-bar {
-  background-color: var(--color-ink);
-  color: white;
-  font-size: 0.6875rem;
-  font-weight: 400;
+  background-color: var(--color-deep);
+  color: var(--color-silver);
+  font-family: var(--font-label), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 2px;
   text-align: center;
   padding: 0.625rem 1rem;
 }
@@ -275,9 +263,9 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--color-muted);
+  color: var(--color-body);
   padding: 2rem 1.5rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-cloud);
   transition: color 300ms ease;
   cursor: pointer;
   width: 100%;
@@ -288,13 +276,13 @@ body {
 }
 
 .back-to-top:hover {
-  color: var(--color-ink);
+  color: var(--color-primary);
 }
 
 /* ─── Newsletter input (Arhaus-style) ─── */
 .newsletter-input {
   display: flex;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-cloud);
 }
 
 .newsletter-input input {
@@ -305,11 +293,11 @@ body {
   font-size: 0.875rem;
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: var(--color-ink);
+  color: var(--color-primary);
 }
 
 .newsletter-input input::placeholder {
-  color: var(--color-muted);
+  color: var(--color-body);
 }
 
 .newsletter-input input:focus {
@@ -318,7 +306,7 @@ body {
 
 .newsletter-input button {
   padding: 0.875rem;
-  color: var(--color-muted);
+  color: var(--color-body);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -326,7 +314,7 @@ body {
 }
 
 .newsletter-input button:hover {
-  color: var(--color-ink);
+  color: var(--color-primary);
 }
 
 /* ─── Footer accordion (mobile) ─── */
@@ -342,7 +330,7 @@ body {
 /* ─── Inputs — clean, thin borders ─── */
 .input-modern {
   width: 100%;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-cloud);
   padding: 0.875rem 1rem;
   font-size: 0.875rem;
   font-weight: 300;
@@ -352,36 +340,36 @@ body {
 }
 
 .input-modern:focus {
-  border-color: var(--color-ink);
+  border-color: var(--color-silver);
   outline: none;
 }
 
 .input-sourcebook {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-cloud);
   padding: 0.875rem 0;
   font-size: 0.875rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   transition: border-color 300ms ease;
-  color: var(--color-ink);
+  color: var(--color-primary);
   border-radius: 0;
 }
 
 .input-sourcebook:focus {
-  border-bottom-color: var(--color-ink);
+  border-bottom-color: var(--color-primary);
   outline: none;
 }
 
 /* ─── Dividers ─── */
 .divider {
   border: none;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-cloud);
 }
 
 .divider-thin {
-  background-color: var(--color-border);
+  background-color: var(--color-cloud);
   height: 1px;
   width: 100%;
 }

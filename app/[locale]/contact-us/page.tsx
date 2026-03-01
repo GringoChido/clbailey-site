@@ -13,50 +13,50 @@ export default async function ContactPage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+          <h1 className="heading-display text-3xl md:text-4xl mb-16">
             {t("contact.title")}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+          <p className="section-label mb-3">
             {t("contact.getInTouch")}
           </p>
-          <div className="h-px bg-gray-200 mb-8" />
+          <div className="h-px bg-[var(--color-cloud)] mb-8" />
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info */}
           <ScrollReveal delay={1}>
-            <p className="text-2xl font-light leading-relaxed mb-8">
+            <p className="heading-sub text-2xl mb-8">
               {t("contact.description")}
             </p>
             <div className="space-y-6">
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{t("contact.address")}</h3>
-                <div className="text-sm text-gray-600 space-y-1">
+                <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">{t("contact.address")}</h3>
+                <div className="text-[13px] text-[var(--color-body)] leading-[26px] space-y-1">
                   <p>{company.address.street}</p>
                   <p>{company.address.suite}</p>
                   <p>{company.address.city}, {company.address.state} {company.address.zip}</p>
                 </div>
               </div>
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{t("contact.phone")}</h3>
-                <a href={`tel:${company.phone.replace(/-/g, "")}`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">{t("contact.phone")}</h3>
+                <a href={`tel:${company.phone.replace(/-/g, "")}`} className="text-[13px] text-[var(--color-body)] hover:text-[var(--color-primary)] transition-colors duration-300">
                   {company.phone}
                 </a>
               </div>
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{t("contact.email")}</h3>
-                <a href={`mailto:${company.email}`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">{t("contact.email")}</h3>
+                <a href={`mailto:${company.email}`} className="text-[13px] text-[var(--color-body)] hover:text-[var(--color-primary)] transition-colors duration-300">
                   {company.email}
                 </a>
               </div>
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{t("contact.hours")}</h3>
-                <div className="text-sm text-gray-600 space-y-1">
+                <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">{t("contact.hours")}</h3>
+                <div className="text-[13px] text-[var(--color-body)] leading-[26px] space-y-1">
                   <p>{company.hours.weekday}</p>
                   <p>{company.hours.friday}</p>
                 </div>
@@ -69,32 +69,32 @@ export default async function ContactPage() {
             <form className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="first-name" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                  <label htmlFor="first-name" className="block metadata !text-[var(--color-mid-gray)] mb-2">
                     {t("contact.firstName")}
                   </label>
                   <input id="first-name" type="text" className="input-modern" />
                 </div>
                 <div>
-                  <label htmlFor="last-name" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                  <label htmlFor="last-name" className="block metadata !text-[var(--color-mid-gray)] mb-2">
                     {t("contact.lastName")}
                   </label>
                   <input id="last-name" type="text" className="input-modern" />
                 </div>
               </div>
               <div>
-                <label htmlFor="contact-email" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                <label htmlFor="contact-email" className="block metadata !text-[var(--color-mid-gray)] mb-2">
                   {t("contact.emailField")}
                 </label>
                 <input id="contact-email" type="email" className="input-modern" />
               </div>
               <div>
-                <label htmlFor="contact-phone" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                <label htmlFor="contact-phone" className="block metadata !text-[var(--color-mid-gray)] mb-2">
                   {t("contact.phoneField")}
                 </label>
                 <input id="contact-phone" type="tel" className="input-modern" />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                <label htmlFor="subject" className="block metadata !text-[var(--color-mid-gray)] mb-2">
                   {t("contact.subject")}
                 </label>
                 <select id="subject" className="input-modern">
@@ -106,7 +106,7 @@ export default async function ContactPage() {
                 </select>
               </div>
               <div>
-                <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                <label htmlFor="message" className="block metadata !text-[var(--color-mid-gray)] mb-2">
                   {t("contact.message")}
                 </label>
                 <textarea id="message" rows={5} className="input-modern resize-none" />

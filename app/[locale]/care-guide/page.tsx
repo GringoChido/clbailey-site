@@ -35,22 +35,22 @@ export default async function CareGuidePage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+          <h1 className="heading-display text-3xl md:text-4xl mb-16">
             {t("careGuide.title")}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+          <p className="section-label mb-3">
             {t("careGuide.label")}
           </p>
-          <div className="h-px bg-gray-200 mb-8" />
+          <div className="h-px bg-[var(--color-cloud)] mb-8" />
         </ScrollReveal>
 
         <ScrollReveal delay={1}>
-          <p className="text-xl font-light leading-relaxed mb-12 max-w-2xl">
+          <p className="heading-sub text-xl mb-12 max-w-2xl">
             {t("careGuide.intro")}
           </p>
         </ScrollReveal>
@@ -58,8 +58,8 @@ export default async function CareGuidePage() {
         <div className="space-y-12 max-w-2xl">
           {sections.map((section, i) => (
             <ScrollReveal key={section.title} delay={Math.min(i + 2, 6)}>
-              <h3 className="text-lg font-medium mb-4">{section.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{section.body}</p>
+              <h3 className="heading-card mb-4">{section.title}</h3>
+              <p className="text-[13px] text-[var(--color-body)] leading-[26px]">{section.body}</p>
             </ScrollReveal>
           ))}
         </div>

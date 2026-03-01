@@ -152,25 +152,25 @@ export default async function ProductDetailPage({ params }: PageProps) {
       />
 
       <div className="pt-28 pb-20 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
           {/* Breadcrumb */}
           <ScrollReveal>
             <nav
-              className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-8"
+              className="metadata !text-[var(--color-mid-gray)] mb-8"
               aria-label="Breadcrumb"
             >
-              <Link href="/products" className="hover:text-gray-900 transition-colors">
+              <Link href="/products" className="hover:text-[var(--color-primary)] transition-colors duration-300">
                 {t("common.products")}
               </Link>
               <span className="mx-2">/</span>
               <Link
                 href={`/products/${category}`}
-                className="hover:text-gray-900 transition-colors"
+                className="hover:text-[var(--color-primary)] transition-colors duration-300"
               >
                 {cat.name}
               </Link>
               <span className="mx-2">/</span>
-              <span className="text-gray-600">{product.name}</span>
+              <span className="text-[var(--color-body)]">{product.name}</span>
             </nav>
           </ScrollReveal>
 
@@ -178,7 +178,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-20">
             {/* Image */}
             <ScrollReveal>
-              <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden bg-[var(--color-off-white)]">
                 <Image
                   src={img(product.images.hero)}
                   alt={`${product.name} — ${product.tagline}`}
@@ -192,19 +192,19 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
             {/* Details */}
             <ScrollReveal delay={1} className="flex flex-col justify-center">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+              <p className="section-label mb-3">
                 {cat.name}
               </p>
-              <h1 className="text-3xl lg:text-4xl font-medium mb-4">
+              <h1 className="heading-display text-3xl lg:text-[2.5rem] text-[var(--color-primary)] mb-4">
                 {product.name}
               </h1>
-              <p className="text-lg text-gray-500 mb-2">
+              <p className="heading-sub mb-2">
                 {product.tagline}
               </p>
-              <p className="text-xs font-medium uppercase tracking-wider text-gold mb-4">
+              <p className="metadata !text-[var(--color-mid-gray)] mb-4">
                 {t("common.pricingLabel")}
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8 max-w-md">
+              <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-8 max-w-md">
                 {product.description}
               </p>
 
@@ -212,20 +212,20 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <div className="grid grid-cols-2 gap-6 mb-8">
                 {product.sizes.length > 0 && (
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                    <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">
                       {t("common.sizes")}
                     </h3>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-[var(--color-primary)]">
                       {product.sizes.join(", ")}
                     </p>
                   </div>
                 )}
                 {product.finishes.length > 0 && (
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                    <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">
                       {t("common.finishes")}
                     </h3>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-[var(--color-primary)]">
                       {product.finishes.join(", ")}
                     </p>
                   </div>
@@ -235,16 +235,16 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {/* Features */}
               {product.features.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+                  <h3 className="metadata !text-[var(--color-mid-gray)] mb-3">
                     {t("common.features")}
                   </h3>
                   <ul className="space-y-2">
                     {product.features.map((f) => (
                       <li
                         key={f}
-                        className="flex gap-3 text-sm text-gray-600"
+                        className="flex gap-3 text-sm text-[var(--color-body)]"
                       >
-                        <span className="w-1 h-1 rounded-full bg-gray-300 mt-2 flex-shrink-0" />
+                        <span className="w-1 h-1 bg-[var(--color-cloud)] mt-2 flex-shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -252,7 +252,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 </div>
               )}
 
-              {/* CTAs — Desktop */}
+              {/* CTAs */}
               <div className="hidden lg:flex flex-wrap gap-3">
                 {product.pdf && (
                   <LeadModal
@@ -277,15 +277,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {/* Gallery */}
           {product.images.gallery.length > 0 && (
             <ScrollReveal className="mb-20">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
                 {t("common.gallery")}
               </h2>
-              <div className="h-px bg-gray-200 mb-8" />
+              <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {product.images.gallery.map((imgPath, i) => (
                   <div
                     key={imgPath}
-                    className="relative aspect-square overflow-hidden bg-gray-100 group"
+                    className="relative aspect-square overflow-hidden bg-[var(--color-off-white)] group"
                   >
                     <Image
                       src={img(imgPath)}
@@ -303,12 +303,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {/* Dimensions */}
           {product.images.dimensions && (
             <ScrollReveal className="mb-20">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
                 {t("common.dimensions")}
               </h2>
-              <div className="h-px bg-gray-200 mb-8" />
+              <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="max-w-3xl">
-                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                <div className="relative aspect-[16/9] overflow-hidden bg-[var(--color-off-white)]">
                   <Image
                     src={img(product.images.dimensions)}
                     alt={`${product.name} dimensions`}
@@ -324,10 +324,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <ScrollReveal>
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
                 {t("products.moreCategoryName", { categoryName: cat.name })}
               </h2>
-              <div className="h-px bg-gray-200 mb-8" />
+              <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map((rp) => (
                   <ProductCard key={rp.slug} product={rp} />
@@ -339,7 +339,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       </div>
 
       {/* Sticky Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-gray-200 px-4 py-3 flex gap-3">
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-[var(--color-cloud)] px-4 py-3 flex gap-3">
         <Link
           href="/dealer"
           className="flex-1 text-center btn-primary"

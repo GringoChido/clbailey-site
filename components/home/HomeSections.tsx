@@ -42,7 +42,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
         <p className="section-label text-center mb-3">
           {t("museum.portfolioLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink text-center mb-16">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary text-center mb-16">
           {t("home.categoryHeading")}
         </h2>
 
@@ -54,7 +54,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
               href={item.href}
               className="group flex-shrink-0 w-[260px] lg:w-auto"
             >
-              <div className="aspect-[3/4] relative overflow-hidden bg-light">
+              <div className="aspect-[3/4] relative overflow-hidden bg-cloud">
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -113,23 +113,23 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
   const featured = getFeaturedProducts();
 
   return (
-    <section className="py-24 lg:py-32 bg-light">
+    <section className="py-24 lg:py-32 bg-cloud">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
             <p className="section-label mb-3">
               {t("museum.portfolioLabel")}
             </p>
-            <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink">
+            <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary">
               {t("home.featuredHeading")}
             </h2>
-            <p className="text-base text-muted mt-3 max-w-md leading-relaxed">
+            <p className="text-base text-body mt-3 max-w-md leading-relaxed">
               {t("home.featuredSubheading")}
             </p>
           </div>
           <Link
             href="/products/pool-tables"
-            className="text-sm font-medium text-ink border-b border-ink pb-0.5 hover:border-muted transition-[border-color] duration-300 whitespace-nowrap"
+            className="text-sm font-medium text-primary border-b border-primary pb-0.5 hover:border-body transition-[border-color] duration-300 whitespace-nowrap"
           >
             {t("home.exploreCta")} &rarr;
           </Link>
@@ -142,7 +142,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
               href={`/products/${product.category}/${product.slug}`}
               className="group flex-shrink-0 w-[280px] lg:w-[320px]"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-vellum-dark mb-5">
+              <div className="aspect-[4/3] overflow-hidden bg-whisper mb-5">
                 <Image
                   src={img(product.images.hero)}
                   alt={product.name}
@@ -151,10 +151,10 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
                   className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-base font-medium text-ink tracking-[0.01em]">
+              <h3 className="text-base font-medium text-primary tracking-[0.01em]">
                 {product.name}
               </h3>
-              <p className="text-sm text-muted mt-1">{product.tagline}</p>
+              <p className="text-sm text-body mt-1">{product.tagline}</p>
             </Link>
           ))}
         </div>
@@ -215,20 +215,20 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
         <p className="section-label mb-3">
           {t("home.finishesLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink mb-4">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary mb-4">
           {t("home.finishesHeading")}
         </h2>
-        <p className="text-base text-muted max-w-lg mx-auto mb-16 leading-relaxed">
+        <p className="text-base text-body max-w-lg mx-auto mb-16 leading-relaxed">
           {t("home.finishesDescription")}
         </p>
         <div className="flex flex-wrap justify-center gap-10 lg:gap-14">
           {allFinishes.map((finish) => (
-            <div key={finish.name} className="flex flex-col items-center gap-3">
+            <div key={finish.name} className="group flex flex-col items-center gap-3 cursor-pointer">
               <div
-                className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border border-border/50"
+                className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-[var(--color-cloud)] group-hover:border-[var(--color-primary)] transition-[border-color] duration-300"
                 style={{ backgroundColor: finish.color }}
               />
-              <span className="text-[0.6875rem] font-normal text-muted tracking-[0.06em]">
+              <span className="text-[0.6875rem] font-normal text-[var(--color-body)] tracking-[0.06em]">
                 {finish.name}
               </span>
             </div>
@@ -275,15 +275,15 @@ function FurnitureBlock({ t }: { t: (key: string) => string }) {
 /* ─── Section 6: Heritage closing ─── */
 function HeritageSection({ t }: { t: (key: string) => string }) {
   return (
-    <section className="py-24 lg:py-32 bg-light">
+    <section className="py-24 lg:py-32 bg-cloud">
       <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
         <p className="section-label mb-4">
           {t("museum.heritageLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-ink mb-5">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary mb-5">
           {t("home.heritageHeading")}
         </h2>
-        <p className="text-base text-muted max-w-lg mx-auto mb-12 leading-relaxed">
+        <p className="text-base text-body max-w-lg mx-auto mb-12 leading-relaxed">
           {t("home.heritageDescription")}
         </p>
         <div className="flex flex-wrap justify-center gap-4">

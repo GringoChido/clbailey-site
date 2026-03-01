@@ -132,6 +132,14 @@ export const navLinks = [
     href: "/products/cue-racks",
   },
   {
+    label: "Accessories",
+    href: "/products/accessories",
+    children: getProductsByCategory("accessories").map((p) => ({
+      label: p.name,
+      href: `/products/accessories/${p.slug}`,
+    })),
+  },
+  {
     label: "About",
     href: "/about",
   },

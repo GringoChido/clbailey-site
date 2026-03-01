@@ -8,13 +8,13 @@ export default function SectionLabel({
   return (
     <div className="mb-8">
       <span
-        className={`text-xs font-semibold uppercase tracking-widest ${
-          dark ? "text-gray-400" : "text-gray-400"
+        className={`section-label ${
+          dark ? "!text-[var(--color-silver)]" : ""
         }`}
       >
         {label}
       </span>
-      <div className={`mt-3 h-px ${dark ? "bg-gray-700" : "bg-gray-200"}`} />
+      <div className={`mt-3 h-px ${dark ? "bg-[var(--color-mid-gray)]" : "bg-[var(--color-cloud)]"}`} />
     </div>
   );
 }

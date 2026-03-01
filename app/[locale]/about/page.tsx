@@ -15,9 +15,9 @@ export default async function AboutPage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+          <h1 className="heading-display text-3xl md:text-4xl mb-16">
             {t("about.title")}
           </h1>
         </ScrollReveal>
@@ -25,24 +25,24 @@ export default async function AboutPage() {
         {/* Origin */}
         <div className="mb-24">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("about.storyLabel")}
             </p>
-            <div className="h-px bg-gray-200 mb-8" />
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
           </ScrollReveal>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <ScrollReveal delay={1}>
-              <p className="text-2xl lg:text-3xl font-light leading-relaxed mb-8">
+              <p className="heading-sub text-2xl lg:text-3xl mb-8">
                 Three decades of industry experience. One uncompromising standard.
               </p>
-              <div className="space-y-6 text-gray-600 leading-relaxed">
+              <div className="space-y-6 text-[13px] text-[var(--color-body)] leading-[26px]">
                 <p>{t("about.storyP1")}</p>
                 <p>{t("about.storyP2")}</p>
                 <p>{t("about.storyP3")}</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={2}>
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-off-white)]">
                 <Image
                   src="/images/brand/nameplate.jpg"
                   alt="C.L. Bailey nameplate"
@@ -57,14 +57,14 @@ export default async function AboutPage() {
 
         {/* Heritage Badge */}
         <ScrollReveal>
-          <div className="mb-24 py-16 border-y border-gray-200 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
+          <div className="mb-24 py-16 border-y border-[var(--color-cloud)] text-center">
+            <p className="section-label mb-4">
               {t("about.heritageLabel")}
             </p>
-            <p className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
+            <p className="heading-display text-4xl md:text-5xl lg:text-6xl">
               {t("about.heritageStatement")}
             </p>
-            <p className="text-sm text-gray-400 mt-4 max-w-md mx-auto">
+            <p className="text-sm text-[var(--color-mid-gray)] mt-4 max-w-md mx-auto">
               {t("about.heritageSubtext")}
             </p>
           </div>
@@ -73,10 +73,10 @@ export default async function AboutPage() {
         {/* Principles */}
         <div className="mb-24">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("about.principlesLabel")}
             </p>
-            <div className="h-px bg-gray-200 mb-8" />
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -94,8 +94,8 @@ export default async function AboutPage() {
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i + 1}>
-                <h3 className="text-lg font-medium mb-3">{item.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.text}</p>
+                <h3 className="heading-card mb-3">{item.title}</h3>
+                <p className="text-[13px] text-[var(--color-body)] leading-[26px]">{item.text}</p>
               </ScrollReveal>
             ))}
           </div>
@@ -104,32 +104,32 @@ export default async function AboutPage() {
         {/* Contact Info */}
         <div>
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("about.visitLabel")}
             </p>
-            <div className="h-px bg-gray-200 mb-8" />
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <div className="max-w-md">
-              <p className="text-xl font-medium mb-4">{company.name}</p>
-              <div className="text-sm text-gray-500 space-y-1 mb-4">
+              <p className="heading-card text-xl mb-4">{company.name}</p>
+              <div className="text-sm text-[var(--color-body)] space-y-1 mb-4">
                 <p>{company.address.street}</p>
                 <p>{company.address.suite}</p>
                 <p>{company.address.city}, {company.address.state} {company.address.zip}</p>
               </div>
-              <div className="text-sm text-gray-500 space-y-1 mb-4">
+              <div className="text-sm text-[var(--color-body)] space-y-1 mb-4">
                 <p>
-                  <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-gray-900 transition-colors">
+                  <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-[var(--color-primary)] transition-colors duration-300">
                     {company.phone}
                   </a>
                 </p>
                 <p>
-                  <a href={`mailto:${company.email}`} className="hover:text-gray-900 transition-colors">
+                  <a href={`mailto:${company.email}`} className="hover:text-[var(--color-primary)] transition-colors duration-300">
                     {company.email}
                   </a>
                 </p>
               </div>
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-[var(--color-mid-gray)]">
                 <p>{company.hours.weekday}</p>
                 <p>{company.hours.friday}</p>
               </div>

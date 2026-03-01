@@ -12,9 +12,9 @@ export default async function LifetimeGuaranteePage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-16">
+          <h1 className="heading-display text-3xl md:text-4xl mb-16">
             {t("guarantee.title")}
           </h1>
         </ScrollReveal>
@@ -22,16 +22,16 @@ export default async function LifetimeGuaranteePage() {
         {/* Promise */}
         <div className="mb-24">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("guarantee.promiseLabel")}
             </p>
-            <div className="h-px bg-gray-200 mb-8" />
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <p className="text-2xl lg:text-3xl font-light leading-relaxed mb-8 max-w-xl">
+            <p className="heading-sub text-2xl lg:text-3xl mb-8 max-w-xl">
               We guarantee the structural integrity of every table for the lifetime of the original owner.
             </p>
-            <div className="space-y-6 text-gray-600 leading-relaxed max-w-2xl">
+            <div className="space-y-6 text-[13px] text-[var(--color-body)] leading-[26px] max-w-2xl">
               <p>{t("guarantee.promiseP1")}</p>
               <p>{t("guarantee.promiseP2")}</p>
             </div>
@@ -41,10 +41,10 @@ export default async function LifetimeGuaranteePage() {
         {/* What is Covered */}
         <div className="mb-24">
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("guarantee.coveredLabel")}
             </p>
-            <div className="h-px bg-gray-200 mb-8" />
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -54,8 +54,8 @@ export default async function LifetimeGuaranteePage() {
               { title: t("guarantee.covered4Title"), text: t("guarantee.covered4Desc") },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i + 1}>
-                <h3 className="text-base font-medium mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.text}</p>
+                <h3 className="heading-card mb-2">{item.title}</h3>
+                <p className="text-[13px] text-[var(--color-body)] leading-[26px]">{item.text}</p>
               </ScrollReveal>
             ))}
           </div>
@@ -64,13 +64,13 @@ export default async function LifetimeGuaranteePage() {
         {/* How to Claim */}
         <div>
           <ScrollReveal>
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {t("guarantee.claimLabel")}
             </p>
-            <div className="h-px bg-gray-200 mb-8" />
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <div className="max-w-2xl space-y-4 text-gray-600 leading-relaxed">
+            <div className="max-w-2xl space-y-4 text-[13px] text-[var(--color-body)] leading-[26px]">
               <p>{t("guarantee.claimP1")}</p>
               <p>{t("guarantee.claimP2")}</p>
               <p>{t("guarantee.claimP3")}</p>

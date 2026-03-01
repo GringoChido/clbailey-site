@@ -17,6 +17,7 @@
 **What exists today:**
 - Homepage with Hero, CategoryNav, EditorialFeature, FeaturedProducts, ShuffleboardBlock, FinishesSection, FurnitureBlock, HeritageSection
 - Product pages: pool-tables, shuffleboards, cue-racks, game-room-furniture, plus dynamic `[category]/[slug]` routes
+- **Missing from rebuild:** Accessories category (7 products) and Velocity Pro Cloth feature page. See `/docs/accessories-velocity-pro-prompt.md` for full spec.
 - Content pages: about, contact-us, catalogs, care-guide, lifetime-guarantee, room-size
 - Dealer finder (`/dealer`) with ZIP-based Haversine search
 - Basic dealer portal (`/dealer-portal`) with Overview, Downloads, Account tabs
@@ -112,7 +113,16 @@ The homepage already has good bones (CategoryNav, EditorialFeature, FeaturedProd
   - Related products carousel at bottom
   - All product data pulled from `/data/products.json` via `getProduct()` helper
 
-### 2C. Content Pages
+### 2C. Accessories Category and Velocity Pro Cloth
+
+Two sections from the live site that are completely missing from the rebuild. Full spec is in `/docs/accessories-velocity-pro-prompt.md`. Summary:
+
+- **Accessories category page** (`/products/accessories`): 7 products (Iron Leather Pockets, Basic/Deluxe/Premium/Platinum Accessory Kits, Magnum Pool Ball Sets, Mali Basic Green Felt). Add products to `products.json`, create category route, add to nav.
+- **Velocity Pro Cloth feature page** (`/velocity-pro-cloth`): Dedicated marketing page for C.L. Bailey's premium 87% wool worsted cloth. Hero, benefits section, comparison table (worsted vs. standard), color swatches, which-tables-include-it section, dealer CTA. This is a top-level page, not under `/products/`.
+- Update nav to include Accessories (with Velocity Pro Cloth as sub-item)
+- Cross-link from product detail felt color sections and homepage
+
+### 2D. Content Pages
 
 - **About page** (`/about`):
   - Heritage narrative layout: alternating image + text sections (50/50 split)
@@ -147,7 +157,7 @@ The homepage already has good bones (CategoryNav, EditorialFeature, FeaturedProd
   - Diagram with measurements
   - Recommendation table: table size, minimum room size, ideal room size
 
-### 2D. Dealer Finder (`/dealer`)
+### 2E. Dealer Finder (`/dealer`)
 
 - **Hero:** `.heading-display` title, `.heading-sub` description
 - **Search:** ZIP code input field + `.btn-primary` search button
@@ -155,7 +165,7 @@ The homepage already has good bones (CategoryNav, EditorialFeature, FeaturedProd
 - **Map:** Optional Google Maps embed or static map area
 - Existing Haversine logic in `/lib/dealers.ts` stays as-is
 
-### 2E. i18n Verification
+### 2F. i18n Verification
 
 - All new text content must have corresponding entries in `/messages/en.json` and `/messages/es.json`
 - Use `useTranslations("namespace")` in client components, `getTranslations()` in server components

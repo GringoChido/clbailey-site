@@ -35,7 +35,7 @@ export default async function Hero() {
             <Link href="/products" className="btn-outline-white">
               {t("exploreCollection")}
             </Link>
-            <Link href="/dealer" className="btn-primary !bg-white !text-ink hover:!bg-white/90">
+            <Link href="/dealer" className="btn-outline-white">
               {t("ctaDealer")}
             </Link>
           </div>

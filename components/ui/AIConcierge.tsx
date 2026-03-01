@@ -58,7 +58,7 @@ export default function AIConcierge() {
 
       {/* Sidebar Panel */}
       {open && (
-        <div className="fixed top-0 right-0 bottom-0 z-50 w-[400px] max-w-[100vw] bg-gray-900 flex flex-col shadow-2xl">
+        <div className="fixed top-0 right-0 bottom-0 z-50 w-[400px] max-w-[100vw] bg-gray-900 flex flex-col">
           {/* Header */}
           <div className="px-8 py-6 border-b border-gray-800">
             <div className="flex items-center justify-between">

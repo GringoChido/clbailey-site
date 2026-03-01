@@ -37,6 +37,14 @@
       "description": "Floor, wall, and corner cue racks in matching finishes.",
       "heroImage": "cue-racks/carved-leg-cue-rack/hero.jpg",
       "sortOrder": 4
+    },
+    {
+      "slug": "accessories",
+      "name": "Accessories",
+      "headline": "Complete Your Game Room",
+      "description": "Premium billiard accessories, from professional-grade ball sets to handcrafted leather pockets.",
+      "heroImage": "accessories/deluxe-accessory-kit/hero.jpg",
+      "sortOrder": 5
     }
   ],
   "products": [
@@ -576,6 +584,168 @@
       "pdf": "level-best-cue-racks.pdf",
       "featured": false,
       "sortOrder": 3
+    },
+    {
+      "slug": "iron-leather-pockets",
+      "name": "#6 Iron Leather Pockets",
+      "category": "accessories",
+      "tagline": "Handcrafted #6 iron leather pockets with reinforced construction",
+      "description": "Professional-grade replacement pockets featuring genuine leather construction with #6 irons. Designed to fit C.L. Bailey pool tables and most standard pocket configurations. Available in multiple leather colors to complement your table finish.",
+      "features": [
+        "Genuine leather construction",
+        "#6 iron reinforcement",
+        "Fits standard pocket configurations",
+        "Multiple leather colors available"
+      ],
+      "finishes": ["Various"],
+      "sizes": [],
+      "images": {
+        "hero": "accessories/iron-leather-pockets/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 1
+    },
+    {
+      "slug": "basic-accessory-kit",
+      "name": "Basic Accessory Kit",
+      "category": "accessories",
+      "tagline": "Everything you need to start playing",
+      "description": "A curated starter kit with the essentials for your new pool table. Includes a complete ball set, two standard cues, a triangle rack, chalk, and a table brush. An ideal addition when purchasing your first C.L. Bailey table.",
+      "features": [
+        "Complete ball set",
+        "2 standard cues",
+        "Triangle rack",
+        "Chalk and table brush"
+      ],
+      "finishes": [],
+      "sizes": [],
+      "images": {
+        "hero": "accessories/basic-accessory-kit/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 2
+    },
+    {
+      "slug": "deluxe-accessory-kit",
+      "name": "Deluxe Accessory Kit",
+      "category": "accessories",
+      "tagline": "Premium essentials for the complete game room",
+      "description": "Step up from the basics with higher-quality cues, a full accessory complement, and extras that elevate your playing experience. Includes premium maple cues, Magnum ball set, triangle and diamond racks, leather chalk holders, and a table cover.",
+      "features": [
+        "Magnum ball set",
+        "4 premium maple cues",
+        "Triangle and diamond racks",
+        "Leather chalk holders",
+        "Table brush and table cover"
+      ],
+      "finishes": [],
+      "sizes": [],
+      "images": {
+        "hero": "accessories/deluxe-accessory-kit/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 3
+    },
+    {
+      "slug": "magnum-pool-ball-sets",
+      "name": "Magnum Pool Ball Sets",
+      "category": "accessories",
+      "tagline": "Tournament-grade ball sets with superior balance and clarity",
+      "description": "Professional-quality phenolic resin ball sets engineered for consistent roll and lasting color vibrancy. Regulation size and weight. Each set is individually inspected for roundness and balance.",
+      "features": [
+        "Phenolic resin construction",
+        "Regulation 2-1/4\" size",
+        "Balanced to regulation standards",
+        "Individually inspected"
+      ],
+      "finishes": [],
+      "sizes": ["Regulation 2-1/4\""],
+      "images": {
+        "hero": "accessories/magnum-pool-ball-sets/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "mali-basic-green-felt",
+      "name": "Mali Basic Green Felt",
+      "category": "accessories",
+      "tagline": "Standard woolen cloth in classic green",
+      "description": "Traditional wool-blend billiard cloth suitable for recreational play. A cost-effective option for those who prefer a classic table surface. Pre-cut for standard C.L. Bailey table sizes.",
+      "features": [
+        "Wool-nylon blend construction",
+        "Classic green color",
+        "Pre-cut for standard sizes",
+        "Suitable for recreational play"
+      ],
+      "finishes": ["Classic Green"],
+      "sizes": ["7'", "8'"],
+      "images": {
+        "hero": "accessories/mali-basic-green-felt/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 5
+    },
+    {
+      "slug": "platinum-accessory-kit",
+      "name": "Platinum Accessory Kit",
+      "category": "accessories",
+      "tagline": "The ultimate accessory collection for discerning players",
+      "description": "Our top-tier accessory package, curated for players who demand the best. Includes everything in the Deluxe kit plus premium cue cases, advanced cleaning supplies, and exclusive C.L. Bailey branded accessories. The complete game room solution.",
+      "features": [
+        "Everything in the Deluxe kit",
+        "Premium cue cases",
+        "Advanced cleaning supplies",
+        "Exclusive C.L. Bailey branded accessories"
+      ],
+      "finishes": [],
+      "sizes": [],
+      "images": {
+        "hero": "accessories/platinum-accessory-kit/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 6
+    },
+    {
+      "slug": "premium-accessory-kit",
+      "name": "Premium Accessory Kit",
+      "category": "accessories",
+      "tagline": "Upgraded essentials for serious players",
+      "description": "A mid-tier kit bridging the gap between Basic and Deluxe. Features better cue construction, a Magnum ball set, and additional accessories for a more complete setup.",
+      "features": [
+        "Magnum ball set",
+        "2 premium cues",
+        "Triangle rack",
+        "Chalk, brush, and table cover"
+      ],
+      "finishes": [],
+      "sizes": [],
+      "images": {
+        "hero": "accessories/premium-accessory-kit/hero.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 7
     }
   ],
   "company": {

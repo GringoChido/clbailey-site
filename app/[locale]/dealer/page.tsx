@@ -21,12 +21,12 @@ export default async function DealerPage() {
 
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-4">
+          <h1 className="heading-display text-3xl md:text-4xl mb-4">
             {t("dealer.title")}
           </h1>
-          <p className="text-gray-500 max-w-lg mb-16">
+          <p className="text-[13px] text-[var(--color-body)] leading-[26px] max-w-lg mb-16">
             {t("dealer.description")}
           </p>
         </ScrollReveal>

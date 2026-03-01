@@ -25,43 +25,44 @@ const categoryLabels: Record<string, string> = {
   shuffleboards: "Shuffleboards",
   "game-room-furniture": "Game Room Furniture",
   "cue-racks": "Cue Racks",
+  accessories: "Accessories",
 };
 
 export default function CatalogsPage() {
   return (
     <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-medium mb-4">
+          <h1 className="heading-display text-3xl md:text-4xl mb-4">
             Catalogs &amp; Downloads
           </h1>
-          <p className="text-gray-500 max-w-lg mb-16">
+          <p className="text-[13px] text-[var(--color-body)] leading-[26px] max-w-lg mb-16">
             Download detailed specification sheets for any product. Dimensions,
-            finishes, features — everything you need to make the right choice.
+            finishes, features: everything you need to make the right choice.
           </p>
         </ScrollReveal>
 
         {Object.entries(grouped).map(([category, prods], idx) => (
           <ScrollReveal key={category} delay={idx + 1} className="mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            <p className="section-label mb-3">
               {categoryLabels[category] || category}
             </p>
-            <div className="h-px bg-gray-200 mb-6" />
+            <div className="h-px bg-[var(--color-cloud)] mb-6" />
             <div className="space-y-4">
               {prods.map((product) => (
                 <div
                   key={product.slug}
-                  className="flex items-center justify-between border-b border-gray-100 pb-4"
+                  className="flex items-center justify-between border-b border-[var(--color-cloud)] pb-4"
                 >
                   <div>
-                    <h3 className="text-base font-medium text-gray-900">{product.name}</h3>
-                    <p className="text-sm text-gray-500">{product.tagline}</p>
+                    <h3 className="heading-card">{product.name}</h3>
+                    <p className="text-[13px] text-[var(--color-body)]">{product.tagline}</p>
                   </div>
                   <LeadModal
                     productName={product.name}
                     pdfUrl={pdf(product.pdf)}
                   >
-                    <button className="text-xs font-semibold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors flex-shrink-0 ml-4">
+                    <button className="metadata !text-[var(--color-mid-gray)] hover:text-[var(--color-primary)] transition-colors duration-300 flex-shrink-0 ml-4">
                       Download PDF
                     </button>
                   </LeadModal>

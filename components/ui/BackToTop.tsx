@@ -14,7 +14,7 @@ export default function BackToTop({ label }: { label: string }) {
         fill="none"
         stroke="currentColor"
         strokeWidth="1.5"
-        className="text-muted group-hover:text-ink transition-colors duration-300"
+        className="text-body group-hover:text-primary transition-colors duration-300"
       >
         <path d="M18 15l-6-6-6 6" />
       </svg>

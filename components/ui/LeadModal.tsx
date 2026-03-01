@@ -77,11 +77,11 @@ export default function LeadModal({
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 data-[state=open]:animate-fade-in" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md bg-white rounded-lg p-8 shadow-2xl data-[state=open]:animate-fade-up">
-          <Dialog.Title className="text-xl font-medium text-gray-900 mb-2">
+        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md bg-white p-8 data-[state=open]:animate-fade-up">
+          <Dialog.Title className="heading-card text-xl mb-2">
             {t("title")}
           </Dialog.Title>
-          <Dialog.Description className="text-sm text-gray-500 mb-8">
+          <Dialog.Description className="text-[13px] text-[var(--color-body)] mb-8">
             {t("description", { productName })}
           </Dialog.Description>
 
@@ -89,7 +89,7 @@ export default function LeadModal({
             <div>
               <label
                 htmlFor="gate-name"
-                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
+                className="block metadata mb-2"
               >
                 {t("nameLabel")}
               </label>
@@ -106,7 +106,7 @@ export default function LeadModal({
             <div>
               <label
                 htmlFor="gate-email"
-                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
+                className="block metadata mb-2"
               >
                 {t("emailLabel")}
               </label>
@@ -123,7 +123,7 @@ export default function LeadModal({
             <div>
               <label
                 htmlFor="gate-zip"
-                className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2"
+                className="block metadata mb-2"
               >
                 {t("zipLabel")}
               </label>
@@ -153,11 +153,11 @@ export default function LeadModal({
             </button>
           </form>
 
-          <p className="text-xs text-gray-400 mt-6 leading-relaxed">
+          <p className="text-xs text-[var(--color-mid-gray)] mt-6 leading-relaxed">
             {t("disclaimer")}
           </p>
 
-          <Dialog.Close className="absolute top-4 right-4 text-gray-300 hover:text-gray-900 transition-colors">
+          <Dialog.Close className="absolute top-4 right-4 text-[var(--color-silver)] hover:text-[var(--color-primary)] transition-colors duration-300">
             <svg
               width="20"
               height="20"

@@ -15,7 +15,7 @@ export default function ProgressBar({ current, target, label, showValues = true 
       {label && <p className="section-label mb-2">{label}</p>}
       <div className="h-2 bg-cloud w-full">
         <div
-          className="h-full bg-primary transition-all duration-500"
+          className="h-full bg-primary transition-[width] duration-500"
           style={{ width: `${percent}%` }}
         />
       </div>
