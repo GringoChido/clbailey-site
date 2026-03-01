@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { company, categories } from "@/lib/products";
 import BackToTop from "@/components/ui/BackToTop";
@@ -68,7 +69,13 @@ export default async function Footer() {
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {/* Company Contact */}
             <div className="space-y-4">
-              <span className="section-label !text-ink">{company.name}</span>
+              <Image
+                src="/images/brand/clb-logo.png"
+                alt="The C.L. Bailey Co. — Tomball, Texas"
+                width={160}
+                height={43}
+                className="h-[40px] w-auto mb-2"
+              />
               <div className="space-y-1 text-sm text-muted">
                 <p>{company.address.street}</p>
                 <p>{company.address.suite}</p>
@@ -186,7 +193,13 @@ export default async function Footer() {
 
             {/* Contact info — mobile */}
             <div className="pt-6 space-y-3 text-sm text-muted">
-              <p className="font-medium text-ink">{company.name}</p>
+              <Image
+                src="/images/brand/clb-logo.png"
+                alt="The C.L. Bailey Co. — Tomball, Texas"
+                width={140}
+                height={38}
+                className="h-[36px] w-auto mb-1"
+              />
               <p>{company.address.street}, {company.address.city}, {company.address.state} {company.address.zip}</p>
               <p>
                 <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-ink transition-colors duration-300">{company.phone}</a>

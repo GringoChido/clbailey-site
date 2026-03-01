@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Roboto, Roboto_Condensed, Raleway } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "700"],
+  weight: ["300", "400", "500", "700"],
+});
+
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+});
+
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -134,7 +146,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${montserrat.variable} antialiased`}
+        className={`${roboto.variable} ${robotoCondensed.variable} ${raleway.variable} antialiased`}
       >
         {children}
       </body>

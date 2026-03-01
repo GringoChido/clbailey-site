@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function DealerLoginPage() {
   const router = useRouter();
@@ -42,6 +43,13 @@ export default function DealerLoginPage() {
   return (
     <div className="pt-32 pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <Image
+          src="/images/brand/clb-logo.png"
+          alt="The C.L. Bailey Co. — Tomball, Texas"
+          width={220}
+          height={59}
+          className="h-[52px] w-auto mb-8 animate-fade-up"
+        />
         <h1 className="font-serif text-4xl lg:text-5xl mb-6 animate-fade-up">
           {t("title")}
         </h1>

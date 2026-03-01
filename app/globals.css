@@ -1,22 +1,45 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-vellum: #FFFFFF;
-  --color-vellum-dark: #F7F7F5;
-  --color-offwhite: #F7F7F5;
-  --color-light: #F1F1F1;
-  --color-ink: #1D1D1D;
-  --color-ink-light: #333333;
-  --color-body: #222222;
-  --color-muted: #999999;
-  --color-border: #E5E5E5;
-  --color-estate: #999999;
-  --color-estate-light: #BBBBBB;
-  --color-gold: #C5A47E;
-  --color-footer: #F8F8F8;
+  /* ─── California House Color System ─── */
+  --color-primary: #231f20;       /* Primary dark charcoal */
+  --color-deep: #1b1b1b;          /* Deep black (footer, dark sections) */
+  --color-true-black: #141413;    /* True black (hover states) */
+  --color-mid-gray: #7e7d84;      /* Mid gray (subheadings, labels) */
+  --color-body: #919199;          /* Body text gray */
+  --color-silver: #b0b2bc;        /* Silver (display headings, borders) */
+  --color-light-silver: #cdcdcd;  /* Light silver */
+  --color-cloud: #ebecee;         /* Cloud (section backgrounds, borders) */
+  --color-off-white: #f6f6f7;     /* Off white (alt backgrounds) */
+  --color-whisper: #f9f9fb;       /* Whisper (subtle backgrounds) */
+  --color-warm-white: #faf9f5;    /* Warm white */
+  --color-white: #ffffff;         /* Pure white */
 
-  --font-serif: var(--font-montserrat);
-  --font-sans: var(--font-montserrat);
+  /* ─── Legacy aliases (backward compat) ─── */
+  --color-ink: #231f20;
+  --color-ink-light: #7e7d84;
+  --color-muted: #919199;
+  --color-border: #ebecee;
+  --color-footer: #1b1b1b;
+  --color-vellum: #ffffff;
+  --color-vellum-dark: #f9f9fb;
+  --color-offwhite: #f6f6f7;
+  --color-light: #ebecee;
+  --color-estate: #b0b2bc;
+  --color-estate-light: #cdcdcd;
+  --color-gold: #b0b2bc;          /* Accent mapped to silver (no bright accents) */
+
+  /* ─── Overlays ─── */
+  --overlay-nav: rgba(176, 178, 188, 0.85);
+  --overlay-section: rgba(235, 236, 238, 0.9);
+  --overlay-soft: rgba(176, 178, 188, 0.45);
+  --overlay-white: rgba(255, 255, 255, 0.9);
+
+  /* ─── Fonts ─── */
+  --font-display: var(--font-roboto-condensed);  /* Headings: light weight */
+  --font-label: var(--font-raleway);              /* Labels, nav: uppercase */
+  --font-serif: var(--font-roboto);               /* Body text */
+  --font-sans: var(--font-roboto);                /* Body text */
 }
 
 /* ─── Base ─── */
@@ -27,53 +50,84 @@ html {
 body {
   color: var(--color-body);
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 26px;
   background: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Display heading — ultra thin (Arhaus weight 200) ─── */
+::selection {
+  background: var(--color-silver);
+  color: var(--color-white);
+}
+
+/* ─── Display heading — Roboto Condensed Light (California House) ─── */
 .heading-display {
-  font-weight: 200;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 300;
+  letter-spacing: normal;
   line-height: 1.08;
+  color: var(--color-silver);
 }
 
 /* ─── Hero heading — responsive clamp sizing ─── */
 .heading-hero {
-  font-weight: 200;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 300;
+  letter-spacing: normal;
   line-height: 1.05;
   font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
 }
 
-/* ─── Section label — small uppercase tracking ─── */
+/* ─── Section label — Raleway uppercase with wide tracking ─── */
 .section-label {
-  font-size: 0.6875rem;
-  font-weight: 400;
+  font-family: var(--font-label), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-muted);
+  letter-spacing: 3px;
+  color: var(--color-mid-gray);
+  line-height: 16px;
 }
 
-/* ─── Heritage label — backward compat, now maps to section-label ─── */
+/* ─── Heritage label — backward compat, maps to section-label ─── */
 .heritage-label {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 400;
+  font-family: var(--font-label), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 3px;
 }
 
 /* ─── Metadata label ─── */
 .metadata {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-weight: 400;
+  font-family: var(--font-label), sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.6875rem;
-  color: var(--color-muted);
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: var(--color-mid-gray);
+}
+
+/* ─── Subheading — Roboto Condensed Light ─── */
+.heading-sub {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: var(--color-mid-gray);
+  line-height: 28px;
+}
+
+/* ─── Card title — Roboto Condensed Regular ─── */
+.heading-card {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--color-primary);
+  line-height: 24px;
 }
 
 /* ─── Page container ─── */
@@ -89,27 +143,30 @@ body {
   }
 }
 
-/* ─── Buttons — square corners, wide tracking (Arhaus pattern) ─── */
+/* ─── Buttons — California House: Raleway uppercase, outlined primary ─── */
 .btn-primary {
-  background-color: var(--color-ink);
-  color: white;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  font-family: var(--font-label), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 12px 28px;
   border-radius: 0;
-  transition: background-color 300ms ease, color 300ms ease;
+  transition: all 300ms ease;
   display: inline-block;
   text-align: center;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-ink-light);
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .btn-primary:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-silver);
   outline-offset: 2px;
 }
 
@@ -118,27 +175,28 @@ body {
 }
 
 .btn-outline {
-  border: 1px solid var(--color-ink);
-  color: var(--color-ink);
+  border: 1px solid var(--color-silver);
+  color: var(--color-mid-gray);
   background: transparent;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-family: var(--font-label), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 12px 28px;
   border-radius: 0;
-  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+  transition: all 300ms ease;
   display: inline-block;
   text-align: center;
 }
 
 .btn-outline:hover {
-  background-color: var(--color-ink);
-  color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .btn-outline:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-silver);
   outline-offset: 2px;
 }
 

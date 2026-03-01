@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -106,22 +107,24 @@ export default function Header() {
             </div>
           </div>
 
-          {/* ── Center: Text wordmark ── */}
+          {/* ── Center: Logo ── */}
           <Link
             href="/"
             className="absolute left-1/2 -translate-x-1/2 flex-shrink-0"
           >
-            <span
-              className={`font-serif text-xl xl:text-[1.375rem] tracking-[0.06em] uppercase whitespace-nowrap transition-colors duration-500 select-none ${
-                solid ? "text-ink" : "text-white"
+            <Image
+              src="/images/brand/clb-logo.png"
+              alt="The C.L. Bailey Co. — Tomball, Texas"
+              width={280}
+              height={75}
+              className={`h-[42px] lg:h-[52px] w-auto select-none transition-[filter] duration-500 ${
+                solid
+                  ? ""
+                  : "[filter:drop-shadow(0_0_8px_rgba(255,255,255,0.95))_drop-shadow(0_0_4px_rgba(255,255,255,1))_drop-shadow(0_0_2px_rgba(255,255,255,1))]"
               }`}
-            >
-              C.L. Bailey{" "}
-              <span className="italic font-normal opacity-50 lowercase mx-0.5">
-                &amp;
-              </span>{" "}
-              Co.
-            </span>
+              priority
+              unoptimized
+            />
           </Link>
 
           {/* ── Right: Utility nav + Language + Dealer CTA ── */}
