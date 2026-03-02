@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import HeroVideo from "./HeroVideo";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -9,16 +9,8 @@ export default async function Hero() {
     <>
       {/* ── Hero ── */}
       <section className="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/products/pool-tables/skylar/hero.jpg"
-          alt={t("altImage")}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-          quality={85}
-        />
-        {/* Cinematic overlay — darker at bottom for text legibility */}
+        <HeroVideo />
+        {/* Cinematic overlay: darker at bottom for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/15" />
 
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
