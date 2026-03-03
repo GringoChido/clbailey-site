@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { IMAGEKIT_BASE } from "@/lib/products";
 
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -21,7 +22,7 @@ export default function HeroVideo() {
       loop
       playsInline
       preload="auto"
-      poster="/images/products/pool-tables/skylar/hero.jpg"
+      poster={`${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`}
       className="absolute inset-0 w-full h-full object-cover"
     >
       <source src="/videos/golden-hour-carousel.mp4" type="video/mp4" />

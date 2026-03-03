@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { getFeaturedProducts, img } from "@/lib/products";
+import { getFeaturedProducts, img, IMAGEKIT_BASE } from "@/lib/products";
 
 /* ─── Section 1: Category Navigation ─── */
 function CategoryNav({ t }: { t: (key: string) => string }) {
@@ -10,28 +10,28 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
       label: t("museum.poolTables"),
       subtitle: t("museum.nineModels"),
       href: "/products/pool-tables",
-      image: "/images/products/pool-tables/viking/hero.jpg",
+      image: `${IMAGEKIT_BASE}/pool-tables/viking/hero.jpg`,
       alt: t("museum.altPoolTables"),
     },
     {
       label: t("museum.shuffleboards"),
       subtitle: t("museum.nineToFourteen"),
       href: "/products/shuffleboards",
-      image: "/images/products/shuffleboards/viking-shuffleboard/hero.jpg",
+      image: `${IMAGEKIT_BASE}/shuffleboards/viking-shuffleboard/hero.jpg`,
       alt: t("museum.altShuffleboards"),
     },
     {
       label: t("museum.furniture"),
       subtitle: t("museum.completeTheRoom"),
       href: "/products/game-room-furniture",
-      image: "/images/products/game-room-furniture/viking-furniture/chair-detail.jpg",
+      image: `${IMAGEKIT_BASE}/game-room-furniture/viking-furniture/chair-detail.jpg`,
       alt: t("museum.altFurniture"),
     },
     {
       label: t("museum.cueRacks"),
       subtitle: t("museum.wallAndFloor"),
       href: "/products/cue-racks",
-      image: "/images/products/cue-racks/carved-leg-cue-rack/hero.jpg",
+      image: `${IMAGEKIT_BASE}/cue-racks/carved-leg-cue-rack/hero.jpg`,
       alt: t("museum.altCueRacks"),
     },
   ];
@@ -84,7 +84,7 @@ function EditorialFeature({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
       <Image
-        src="/images/products/pool-tables/dutchess/hero.jpg"
+        src={`${IMAGEKIT_BASE}/pool-tables/dutchess/hero.jpg`}
         alt={t("museum.altDutchess")}
         fill
         className="object-cover"
@@ -167,7 +167,7 @@ function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
       <Image
-        src="/images/products/shuffleboards/viking-shuffleboard/lifestyle.jpg"
+        src={`${IMAGEKIT_BASE}/shuffleboards/viking-shuffleboard/lifestyle.jpg`}
         alt={t("home.shuffleboardAlt")}
         fill
         className="object-cover"
@@ -243,7 +243,7 @@ function FurnitureBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
       <Image
-        src="/images/products/game-room-furniture/skylar-furniture/hero.jpg"
+        src={`${IMAGEKIT_BASE}/game-room-furniture/skylar-furniture/hero.jpg`}
         alt={t("home.furnitureAlt")}
         fill
         className="object-cover"

@@ -11,6 +11,7 @@ import {
   getCrossCategoryProducts,
   img,
   pdf,
+  IMAGEKIT_BASE,
 } from "@/lib/products";
 import LeadModal from "@/components/ui/LeadModal";
 import ProductCard from "@/components/ui/ProductCard";
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: product.images.hero
         ? [
             {
-              url: `/images/products/${product.images.hero}`,
+              url: `${IMAGEKIT_BASE}/${product.images.hero}`,
               width: 1200,
               height: 630,
               alt: product.name,
@@ -58,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description: product.tagline,
       images: product.images.hero
-        ? [`/images/products/${product.images.hero}`]
+        ? [`${IMAGEKIT_BASE}/${product.images.hero}`]
         : undefined,
     },
     alternates: {
@@ -95,7 +96,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
     name: product.name,
     description: product.description,
     image: product.images.hero
-      ? `https://clbailey.com/images/products/${product.images.hero}`
+      ? `${IMAGEKIT_BASE}/${product.images.hero}`
       : undefined,
     brand: {
       "@type": "Brand",

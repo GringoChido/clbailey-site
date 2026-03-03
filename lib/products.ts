@@ -72,10 +72,17 @@ export const products: Product[] = data.products;
 export const company: CompanyInfo = data.company;
 export const sizeChart = data.sizeChart;
 
-/* ─── Helpers ─── */
+/* ─── Image helpers ─── */
+export const IMAGEKIT_BASE = meta.imageBasePath;
+
 export function img(relativePath: string | null): string {
-  if (!relativePath) return "/images/products/placeholder.jpg";
-  return `${meta.imageBasePath}/${relativePath}`;
+  if (!relativePath) return `${IMAGEKIT_BASE}/placeholder.jpg`;
+  return `${IMAGEKIT_BASE}/${relativePath}`;
+}
+
+/** Convert a local /images/products/... path to its ImageKit equivalent */
+export function ik(localPath: string): string {
+  return localPath.replace(/^\/images\/products/, IMAGEKIT_BASE);
 }
 
 export function pdf(filename: string | null): string {

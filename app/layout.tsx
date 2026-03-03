@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Condensed, Raleway } from "next/font/google";
+import { IMAGEKIT_BASE } from "@/lib/products";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "C.L. Bailey & Co.",
     images: [
       {
-        url: "/images/products/pool-tables/skylar/hero.jpg",
+        url: `${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`,
         width: 1200,
         height: 630,
         alt: "C.L. Bailey & Co. — Handcrafted Pool Tables",
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     title: "C.L. Bailey & Co. | Modern Heritage Billiards",
     description:
       "Solid hardwood pool tables, shuffleboards, and game room furniture. Handcrafted in Tomball, Texas.",
-    images: ["/images/products/pool-tables/skylar/hero.jpg"],
+    images: [`${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`],
   },
   alternates: {
     canonical: "https://clbailey.com",
@@ -102,7 +103,7 @@ export default function RootLayout({
               name: "C.L. Bailey & Co.",
               url: "https://clbailey.com",
               logo: "https://clbailey.com/images/brand/logo.png",
-              image: "https://clbailey.com/images/products/pool-tables/skylar/hero.jpg",
+              image: `${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`,
               description:
                 "Handcrafted solid hardwood pool tables, shuffleboards, and game room furniture. Built in Tomball, Texas since 1999.",
               foundingDate: "1999",
