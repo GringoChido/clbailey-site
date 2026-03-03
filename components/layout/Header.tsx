@@ -140,15 +140,15 @@ export default function Header() {
             </Link>
 
             {/* Right: Find a Dealer */}
-            <div className="flex items-center justify-end w-[120px]">
+            <div className="flex items-center justify-end w-auto">
               <Link
                 href="/dealer"
-                className="hidden xl:inline-flex items-center gap-1.5 bg-[var(--color-primary)] text-white font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[1.5px] px-4 py-2 rounded-sm hover:bg-[var(--color-mid-gray)] transition-colors duration-300"
+                className={`hidden xl:inline-flex items-center whitespace-nowrap font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[2px] px-5 py-2 rounded-full border transition-all duration-300 ${
+                  solid
+                    ? "border-[var(--color-primary)]/30 text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white"
+                    : "border-white/30 text-white hover:bg-white hover:text-[var(--color-primary)]"
+                }`}
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
                 {t("nav.findDealer")}
               </Link>
               <Link
@@ -231,12 +231,8 @@ export default function Header() {
             </div>
             <Link
               href="/dealer"
-              className="inline-flex items-center gap-1.5 bg-[var(--color-primary)] text-white font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[1.5px] px-3.5 py-1.5 rounded-sm hover:bg-[var(--color-mid-gray)] transition-colors duration-300"
+              className="inline-flex items-center font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[2px] px-4 py-1.5 rounded-full border border-[var(--color-primary)]/30 text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300"
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
               {t("nav.findDealer")}
             </Link>
           </div>
