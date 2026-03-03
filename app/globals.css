@@ -24,6 +24,10 @@
   --overlay-soft: rgba(212, 201, 184, 0.45);
   --overlay-white: rgba(255, 255, 255, 0.9);
 
+  /* ─── Layout ─── */
+  --header-height: 140px;
+  --header-height-xl: 160px;
+
   /* ─── Fonts ─── */
   --font-display: var(--font-roboto-condensed);  /* Headings: light weight */
   --font-label: var(--font-raleway);              /* Labels, nav: uppercase */

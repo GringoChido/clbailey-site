@@ -35,7 +35,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       />
       <NextIntlClientProvider>
         <Header />
-        <main>{children}</main>
+        <main className="pt-[var(--header-height)] xl:pt-[var(--header-height-xl)]">{children}</main>
         <Footer />
         <AIConcierge />
       </NextIntlClientProvider>

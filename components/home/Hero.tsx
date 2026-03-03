@@ -8,7 +8,7 @@ export default async function Hero() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden -mt-[var(--header-height)] xl:-mt-[var(--header-height-xl)]">
         <HeroVideo />
         {/* Cinematic overlay: darker at bottom for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/15" />
