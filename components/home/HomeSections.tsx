@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { getFeaturedProducts, img } from "@/lib/products";
 
-/* ─── Section 1: Category Navigation — Arhaus "Shop Everything New" pattern ─── */
+/* ─── Section 1: Category Navigation ─── */
 function CategoryNav({ t }: { t: (key: string) => string }) {
   const items = [
     {
@@ -37,16 +37,15 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <p className="section-label text-center mb-3">
           {t("museum.portfolioLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary text-center mb-16">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] text-center mb-16">
           {t("home.categoryHeading")}
         </h2>
 
-        {/* Horizontal scroll on mobile, 4-col grid on desktop */}
         <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:pb-0">
           {items.map((item) => (
             <Link
@@ -54,7 +53,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
               href={item.href}
               className="group flex-shrink-0 w-[260px] lg:w-auto"
             >
-              <div className="aspect-[3/4] relative overflow-hidden bg-cloud">
+              <div className="aspect-[3/4] relative overflow-hidden bg-[var(--color-cloud)]">
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -80,7 +79,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 2: Editorial Feature — Arhaus "The Outdoor Preview" full-bleed ─── */
+/* ─── Section 2: Editorial Feature (Sourcebook) ─── */
 function EditorialFeature({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -94,7 +93,7 @@ function EditorialFeature({ t }: { t: (key: string) => string }) {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
       <div className="relative z-10 text-center px-6 py-20">
-        <p className="section-label !text-white/40 mb-4">
+        <p className="section-label !text-[var(--color-light-on-dark)]/40 mb-4">
           {t("museum.catalogLabel")}
         </p>
         <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-8">
@@ -108,28 +107,28 @@ function EditorialFeature({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 3: Featured Products — horizontal scroll ─── */
+/* ─── Section 3: Featured Products ─── */
 function FeaturedProducts({ t }: { t: (key: string) => string }) {
   const featured = getFeaturedProducts();
 
   return (
-    <section className="py-24 lg:py-32 bg-cloud">
+    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
             <p className="section-label mb-3">
               {t("museum.portfolioLabel")}
             </p>
-            <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary">
+            <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)]">
               {t("home.featuredHeading")}
             </h2>
-            <p className="text-base text-body mt-3 max-w-md leading-relaxed">
+            <p className="text-base text-[var(--color-body)] mt-3 max-w-md leading-relaxed">
               {t("home.featuredSubheading")}
             </p>
           </div>
           <Link
             href="/products/pool-tables"
-            className="text-sm font-medium text-primary border-b border-primary pb-0.5 hover:border-body transition-[border-color] duration-300 whitespace-nowrap"
+            className="text-sm font-medium text-[var(--color-primary)] border-b border-[var(--color-primary)] pb-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] transition-colors duration-300 whitespace-nowrap"
           >
             {t("home.exploreCta")} &rarr;
           </Link>
@@ -142,7 +141,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
               href={`/products/${product.category}/${product.slug}`}
               className="group flex-shrink-0 w-[280px] lg:w-[320px]"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-whisper mb-5">
+              <div className="aspect-[4/3] overflow-hidden bg-white mb-5">
                 <Image
                   src={img(product.images.hero)}
                   alt={product.name}
@@ -151,10 +150,10 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
                   className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-base font-medium text-primary tracking-[0.01em]">
+              <h3 className="text-base font-medium text-[var(--color-primary)] tracking-[0.01em]">
                 {product.name}
               </h3>
-              <p className="text-sm text-body mt-1">{product.tagline}</p>
+              <p className="text-sm text-[var(--color-body)] mt-1">{product.tagline}</p>
             </Link>
           ))}
         </div>
@@ -163,7 +162,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 4: Shuffleboard Category Block — full-bleed ─── */
+/* ─── Section 4: Shuffleboard Block ─── */
 function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
@@ -175,16 +174,16 @@ function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
         sizes="100vw"
         quality={85}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/65 lg:via-black/30 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/80 via-[var(--color-deep)]/40 to-transparent" />
       <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20">
         <div className="max-w-lg">
-          <p className="section-label !text-white/40 mb-4">
+          <p className="section-label !text-[var(--color-light-on-dark)]/40 mb-4">
             {t("home.shuffleboardLabel")}
           </p>
           <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
             {t("home.shuffleboardHeading")}
           </h2>
-          <p className="text-base text-white/50 mb-10 leading-relaxed">
+          <p className="text-base text-[var(--color-light-on-dark)]/50 mb-10 leading-relaxed">
             {t("home.shuffleboardDescription")}
           </p>
           <Link href="/products/shuffleboards" className="btn-outline-white">
@@ -196,7 +195,7 @@ function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 5: Finishes — swatches with names ─── */
+/* ─── Section 5: Finishes ─── */
 function FinishesSection({ t }: { t: (key: string) => string }) {
   const allFinishes = [
     { name: "Espresso", color: "#3C2415" },
@@ -210,22 +209,22 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 lg:py-32 bg-white">
       <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
         <p className="section-label mb-3">
           {t("home.finishesLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary mb-4">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-4">
           {t("home.finishesHeading")}
         </h2>
-        <p className="text-base text-body max-w-lg mx-auto mb-16 leading-relaxed">
+        <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-16 leading-relaxed">
           {t("home.finishesDescription")}
         </p>
         <div className="flex flex-wrap justify-center gap-10 lg:gap-14">
           {allFinishes.map((finish) => (
             <div key={finish.name} className="group flex flex-col items-center gap-3 cursor-pointer">
               <div
-                className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-[var(--color-cloud)] group-hover:border-[var(--color-primary)] transition-[border-color] duration-300"
+                className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-[var(--color-cloud)] group-hover:border-[var(--color-bronze)] transition-[border-color] duration-300"
                 style={{ backgroundColor: finish.color }}
               />
               <span className="text-[0.6875rem] font-normal text-[var(--color-body)] tracking-[0.06em]">
@@ -239,7 +238,7 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 7: Game Room Furniture — full-bleed ─── */
+/* ─── Section 6: Game Room Furniture ─── */
 function FurnitureBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
@@ -251,16 +250,16 @@ function FurnitureBlock({ t }: { t: (key: string) => string }) {
         sizes="100vw"
         quality={85}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/65 lg:via-black/30 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/80 via-[var(--color-deep)]/40 to-transparent" />
       <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20">
         <div className="max-w-lg">
-          <p className="section-label !text-white/40 mb-4">
+          <p className="section-label !text-[var(--color-light-on-dark)]/40 mb-4">
             {t("home.furnitureLabel")}
           </p>
           <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
             {t("home.furnitureHeading")}
           </h2>
-          <p className="text-base text-white/50 mb-10 leading-relaxed">
+          <p className="text-base text-[var(--color-light-on-dark)]/50 mb-10 leading-relaxed">
             {t("home.furnitureDescription")}
           </p>
           <Link href="/products/game-room-furniture" className="btn-outline-white">
@@ -272,18 +271,18 @@ function FurnitureBlock({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 6: Heritage closing ─── */
+/* ─── Section 7: Heritage ─── */
 function HeritageSection({ t }: { t: (key: string) => string }) {
   return (
-    <section className="py-24 lg:py-32 bg-cloud">
+    <section className="py-24 lg:py-32 bg-[var(--color-cloud)]">
       <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
         <p className="section-label mb-4">
           {t("museum.heritageLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-primary mb-5">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-5">
           {t("home.heritageHeading")}
         </h2>
-        <p className="text-base text-body max-w-lg mx-auto mb-12 leading-relaxed">
+        <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-12 leading-relaxed">
           {t("home.heritageDescription")}
         </p>
         <div className="flex flex-wrap justify-center gap-4">
@@ -299,56 +298,99 @@ function HeritageSection({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 8: Trade Program Block ─── */
+/* ─── Section 8: Trade Program ─── */
 function TradeProgramBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
-        <div className="max-w-2xl">
-          {/* Part 1: Hero message */}
-          <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-5">
-            {t("trade.heading")}
-          </h2>
-          <p className="text-base text-[var(--color-body)] leading-relaxed">
-            {t("trade.description")}
-          </p>
-
-          {/* Divider */}
-          <div className="border-t border-[var(--color-cloud)] my-12" />
-
-          {/* Part 2: Why Join */}
-          <h3 className="heading-sub mb-6">
+        <div className="text-center mb-16">
+          <p className="section-label mb-3">{t("trade.heading")}</p>
+          <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)]">
             {t("trade.whyJoinHeading")}
-          </h3>
-          <ul className="space-y-3 mb-8">
-            <li className="text-base text-[var(--color-body)] leading-relaxed">
-              {t("trade.benefit1")}
-            </li>
-            <li className="text-base text-[var(--color-body)] leading-relaxed">
-              {t("trade.benefit2")}
-            </li>
-            <li className="text-base text-[var(--color-body)] leading-relaxed">
-              {t("trade.benefit3")}
-            </li>
-          </ul>
-          <Link href="/dealer" className="btn-primary">
-            {t("trade.applyCta")}
-          </Link>
-
-          {/* Divider */}
-          <div className="border-t border-[var(--color-cloud)] my-12" />
-
-          {/* Part 3: Not a Trade Professional */}
-          <h3 className="heading-sub mb-5">
-            {t("trade.notTradeHeading")}
-          </h3>
-          <p className="text-base text-[var(--color-body)] leading-relaxed mb-8">
-            {t("trade.notTradeDescription")}
-          </p>
-          <Link href="/dealer" className="btn-primary">
-            {t("trade.findDealerCta")}
-          </Link>
+          </h2>
         </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Card 1: For Trade Professionals */}
+          <div className="bg-white border border-[var(--color-cloud)] p-10 lg:p-12">
+            <h3 className="heading-card mb-6">{t("trade.whyJoinHeading")}</h3>
+            <p className="text-base text-[var(--color-body)] leading-relaxed mb-6">
+              {t("trade.description")}
+            </p>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-start gap-3">
+                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[var(--color-bronze)]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm text-[var(--color-body)] leading-relaxed">{t("trade.benefit1")}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[var(--color-bronze)]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm text-[var(--color-body)] leading-relaxed">{t("trade.benefit2")}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[var(--color-bronze)]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm text-[var(--color-body)] leading-relaxed">{t("trade.benefit3")}</span>
+              </li>
+            </ul>
+            <Link href="/dealer" className="btn-primary">
+              {t("trade.applyCta")}
+            </Link>
+          </div>
+
+          {/* Card 2: Not a Trade Professional */}
+          <div className="bg-white border border-[var(--color-cloud)] p-10 lg:p-12">
+            <h3 className="heading-card mb-6">{t("trade.notTradeHeading")}</h3>
+            <p className="text-base text-[var(--color-body)] leading-relaxed mb-8">
+              {t("trade.notTradeDescription")}
+            </p>
+            <Link href="/dealer" className="btn-outline">
+              {t("trade.findDealerCta")}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Editorial Interstitial: About the Products ─── */
+function EditorialProducts({ t }: { t: (key: string) => string }) {
+  return (
+    <section className="bg-[var(--color-deep)] py-20 lg:py-28">
+      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+        <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-6">
+          {t("home.editorialProductsLabel")}
+        </p>
+        <p className="font-[family-name:var(--font-display)] text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] font-light italic text-[var(--color-light-on-dark)]/85 leading-relaxed mb-10">
+          {t("home.editorialProducts")}
+        </p>
+        <Link href="/products" className="btn-outline-white">
+          {t("home.editorialProductsCta")}
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Editorial Interstitial: About the Dealer Portal ─── */
+function EditorialDealer({ t }: { t: (key: string) => string }) {
+  return (
+    <section className="bg-[var(--color-deep)] py-20 lg:py-28">
+      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+        <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-6">
+          {t("home.editorialDealerLabel")}
+        </p>
+        <p className="font-[family-name:var(--font-display)] text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] font-light italic text-[var(--color-light-on-dark)]/85 leading-relaxed mb-10">
+          {t("home.editorialDealer")}
+        </p>
+        <Link href="/dealer" className="btn-outline-white">
+          {t("home.editorialDealerCta")}
+        </Link>
       </div>
     </section>
   );
@@ -361,10 +403,12 @@ export default async function HomeSections() {
   return (
     <>
       <CategoryNav t={t} />
+      <EditorialProducts t={t} />
       <EditorialFeature t={t} />
       <FeaturedProducts t={t} />
       <ShuffleboardBlock t={t} />
       <FinishesSection t={t} />
+      <EditorialDealer t={t} />
       <FurnitureBlock t={t} />
       <HeritageSection t={t} />
       <TradeProgramBlock t={t} />

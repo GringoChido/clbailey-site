@@ -92,7 +92,13 @@
     "helpCta": "Get in touch",
     "heritageHeading": "More than 25 years of Texas craftsmanship",
     "heritageDescription": "Founded in 1999 in Tomball, Texas. Every table carries a lifetime structural guarantee.",
-    "heritageCta": "Our history"
+    "heritageCta": "Our history",
+    "editorialProducts": "Solid hardwood. Hand-applied finishes. Every table built to last generations.",
+    "editorialProductsLabel": "The Collection",
+    "editorialProductsCta": "Explore Products",
+    "editorialDealer": "Every table is delivered and professionally installed by an authorized dealer in your area.",
+    "editorialDealerLabel": "Dealer Network",
+    "editorialDealerCta": "Find a Dealer Near You"
   },
   "footer": {
     "dealerLabel": "Dealer Network",

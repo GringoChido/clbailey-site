@@ -92,7 +92,13 @@
     "helpCta": "Contáctenos",
     "heritageHeading": "Más de 25 años de artesanía texana",
     "heritageDescription": "Fundada en 1999 en Tomball, Texas. Cada mesa lleva una garantía estructural de por vida.",
-    "heritageCta": "Nuestra historia"
+    "heritageCta": "Nuestra historia",
+    "editorialProducts": "Madera maciza. Acabados aplicados a mano. Cada mesa construida para durar generaciones.",
+    "editorialProductsLabel": "La Colección",
+    "editorialProductsCta": "Explorar Productos",
+    "editorialDealer": "Cada mesa es entregada e instalada profesionalmente por un distribuidor autorizado en su área.",
+    "editorialDealerLabel": "Red de Distribuidores",
+    "editorialDealerCta": "Encuentre un Distribuidor"
   },
   "footer": {
     "dealerLabel": "Red de Distribuidores",

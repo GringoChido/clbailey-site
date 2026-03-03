@@ -32,7 +32,7 @@ export default function NewsletterForm() {
 
   if (status === "success") {
     return (
-      <p className="text-sm text-[var(--color-silver)] tracking-wide">
+      <p className="text-sm text-[var(--color-sand)] tracking-wide">
         {t("subscribeSuccess")}
       </p>
     );
@@ -40,7 +40,7 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex border-b border-[var(--color-primary)]">
+      <div className="flex border-b border-[rgba(212,201,184,0.3)]">
         <input
           type="email"
           value={email}
@@ -48,13 +48,13 @@ export default function NewsletterForm() {
           placeholder={t("emailPlaceholder")}
           aria-label={t("emailPlaceholder")}
           required
-          className="flex-1 bg-transparent border-none py-3.5 text-sm font-light tracking-wide text-[var(--color-silver)] placeholder:text-[var(--color-mid-gray)] focus:outline-none"
+          className="flex-1 bg-transparent border-none py-3.5 text-sm font-light tracking-wide text-[var(--color-light-on-dark)] placeholder:text-[var(--color-sand)]/40 focus:outline-none"
         />
         <button
           type="submit"
           disabled={status === "loading"}
           aria-label={t("subscribe")}
-          className="py-3.5 px-3.5 text-[var(--color-mid-gray)] bg-transparent border-none cursor-pointer transition-colors duration-300 hover:text-[var(--color-silver)] disabled:opacity-50"
+          className="py-3.5 px-3.5 text-[var(--color-sand)] bg-transparent border-none cursor-pointer transition-colors duration-300 hover:text-[var(--color-light-on-dark)] disabled:opacity-50"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -62,7 +62,7 @@ export default function NewsletterForm() {
         </button>
       </div>
       {status === "error" && (
-        <p className="text-xs text-[var(--color-body)] mt-2">
+        <p className="text-xs text-[var(--color-sand)]/60 mt-2">
           {t("subscribeError")}
         </p>
       )}

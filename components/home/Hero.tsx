@@ -20,11 +20,11 @@ export default async function Hero() {
           <h1 className="heading-hero text-white mb-6 animate-fade-up animate-delay-1">
             {t("headline")}
           </h1>
-          <p className="text-lg font-light text-white/55 max-w-lg mx-auto mb-14 leading-relaxed animate-fade-up animate-delay-2">
+          <p className="text-lg font-light text-[var(--color-light-on-dark)]/60 max-w-lg mx-auto mb-14 leading-relaxed animate-fade-up animate-delay-2">
             {t("subtitle")}
           </p>
           <div className="flex flex-wrap justify-center gap-4 animate-fade-up animate-delay-3">
-            <Link href="/products" className="btn-outline-white">
+            <Link href="/products" className="btn-sand">
               {t("exploreCollection")}
             </Link>
             <Link href="/dealer" className="btn-outline-white">

@@ -14,13 +14,13 @@ export default async function Footer() {
 
       <footer className="bg-[var(--color-deep)]">
         {/* Newsletter */}
-        <div className="border-b border-[var(--color-primary)]">
+        <div className="border-b border-[rgba(212,201,184,0.15)]">
           <div className="max-w-xl mx-auto px-6 py-16 text-center">
-            <p className="section-label mb-3 !text-[var(--color-silver)]">
+            <p className="section-label mb-3 !text-[var(--color-sand)]">
               {t("footer.newsletterLabel")}
             </p>
             <h3
-              className="text-2xl mb-8 text-[var(--color-silver)]"
+              className="text-2xl mb-8 text-[var(--color-light-on-dark)]"
               style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
             >
               {t("footer.newsletterHeading")}
@@ -31,23 +31,23 @@ export default async function Footer() {
 
         {/* Social Icons */}
         {company.social && (
-          <div className="flex justify-center gap-6 py-8 border-b border-[var(--color-primary)]">
+          <div className="flex justify-center gap-6 py-8 border-b border-[rgba(212,201,184,0.15)]">
             {company.social.instagram && (
-              <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label={t("footer.instagram")} className="text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">
+              <a href={company.social.instagram} target="_blank" rel="noopener noreferrer" aria-label={t("footer.instagram")} className="text-[var(--color-sand)] hover:text-[var(--color-light-on-dark)] transition-colors duration-300">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
                 </svg>
               </a>
             )}
             {company.social.facebook && (
-              <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label={t("footer.facebook")} className="text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">
+              <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label={t("footer.facebook")} className="text-[var(--color-sand)] hover:text-[var(--color-light-on-dark)] transition-colors duration-300">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                 </svg>
               </a>
             )}
             {company.social.pinterest && (
-              <a href={company.social.pinterest} target="_blank" rel="noopener noreferrer" aria-label={t("footer.pinterest")} className="text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">
+              <a href={company.social.pinterest} target="_blank" rel="noopener noreferrer" aria-label={t("footer.pinterest")} className="text-[var(--color-sand)] hover:text-[var(--color-light-on-dark)] transition-colors duration-300">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
                 </svg>
@@ -69,20 +69,20 @@ export default async function Footer() {
                 height={43}
                 className="h-[40px] w-auto mb-2 brightness-0 invert opacity-70"
               />
-              <div className="space-y-1 text-sm text-[var(--color-body)]">
+              <div className="space-y-1 text-sm text-[var(--color-sand)]/70">
                 <p>{company.address.street}</p>
                 <p>{company.address.suite}</p>
                 <p>{company.address.city}, {company.address.state} {company.address.zip}</p>
               </div>
-              <div className="space-y-1 text-sm text-[var(--color-body)] pt-2">
+              <div className="space-y-1 text-sm text-[var(--color-sand)]/70 pt-2">
                 <p>
-                  <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-[var(--color-silver)] transition-colors duration-300">{company.phone}</a>
+                  <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{company.phone}</a>
                 </p>
                 <p>
-                  <a href={`mailto:${company.email}`} className="hover:text-[var(--color-silver)] transition-colors duration-300">{company.email}</a>
+                  <a href={`mailto:${company.email}`} className="hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{company.email}</a>
                 </p>
               </div>
-              <div className="text-sm text-[var(--color-body)] pt-2">
+              <div className="text-sm text-[var(--color-sand)]/70 pt-2">
                 <p>{company.hours.weekday}</p>
                 <p>{company.hours.friday}</p>
               </div>
@@ -90,37 +90,37 @@ export default async function Footer() {
 
             {/* Products */}
             <div>
-              <h4 className="section-label mb-5 !text-[var(--color-silver)]">{t("footer.products")}</h4>
+              <h4 className="section-label mb-5 !text-[var(--color-sand)]">{t("footer.products")}</h4>
               <ul className="space-y-2.5">
                 {categories.map((cat) => (
                   <li key={cat.slug}>
-                    <Link href={`/products/${cat.slug}`} className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{cat.name}</Link>
+                    <Link href={`/products/${cat.slug}`} className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{cat.name}</Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/catalogs" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.catalogsDownloads")}</Link>
+                  <Link href="/catalogs" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.catalogsDownloads")}</Link>
                 </li>
               </ul>
             </div>
 
             {/* Resources */}
             <div>
-              <h4 className="section-label mb-5 !text-[var(--color-silver)]">{t("footer.resources")}</h4>
+              <h4 className="section-label mb-5 !text-[var(--color-sand)]">{t("footer.resources")}</h4>
               <ul className="space-y-2.5">
-                <li><Link href="/room-size" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.roomSizeChart")}</Link></li>
-                <li><Link href="/care-guide" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.tableCareGuide")}</Link></li>
-                <li><Link href="/lifetime-guarantee" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.lifetimeGuarantee")}</Link></li>
+                <li><Link href="/room-size" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.roomSizeChart")}</Link></li>
+                <li><Link href="/care-guide" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.tableCareGuide")}</Link></li>
+                <li><Link href="/lifetime-guarantee" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.lifetimeGuarantee")}</Link></li>
               </ul>
             </div>
 
             {/* Company */}
             <div>
-              <h4 className="section-label mb-5 !text-[var(--color-silver)]">{t("footer.company")}</h4>
+              <h4 className="section-label mb-5 !text-[var(--color-sand)]">{t("footer.company")}</h4>
               <ul className="space-y-2.5">
-                <li><Link href="/about" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.aboutUs")}</Link></li>
-                <li><Link href="/dealer" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.findDealer")}</Link></li>
-                <li><Link href="/contact-us" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.contact")}</Link></li>
-                <li><Link href="/dealer-portal" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.dealerPortal")}</Link></li>
+                <li><Link href="/about" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.aboutUs")}</Link></li>
+                <li><Link href="/dealer" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.findDealer")}</Link></li>
+                <li><Link href="/contact-us" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.contact")}</Link></li>
+                <li><Link href="/dealer-portal" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.dealerPortal")}</Link></li>
               </ul>
             </div>
           </div>
@@ -128,9 +128,9 @@ export default async function Footer() {
           {/* Mobile: Accordion */}
           <div className="md:hidden space-y-0">
             {/* Dealer CTA band */}
-            <div className="pb-6 mb-6 border-b border-[var(--color-primary)]">
-              <p className="section-label mb-3 !text-[var(--color-silver)]">{t("footer.dealerLabel")}</p>
-              <p className="text-lg text-[var(--color-silver)] mb-4 leading-relaxed" style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}>
+            <div className="pb-6 mb-6 border-b border-[rgba(212,201,184,0.15)]">
+              <p className="section-label mb-3 !text-[var(--color-sand)]">{t("footer.dealerLabel")}</p>
+              <p className="text-lg text-[var(--color-light-on-dark)] mb-4 leading-relaxed" style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}>
                 {t("footer.dealerHeadline")}
               </p>
               <Link href="/dealer" className="btn-outline-white text-sm py-3 px-6">
@@ -138,56 +138,56 @@ export default async function Footer() {
               </Link>
             </div>
 
-            <details className="footer-accordion border-b border-[var(--color-primary)]">
+            <details className="footer-accordion border-b border-[rgba(212,201,184,0.15)]">
               <summary className="flex items-center justify-between py-4">
-                <span className="section-label !text-[var(--color-silver)]">{t("footer.products")}</span>
-                <svg className="w-4 h-4 text-[var(--color-mid-gray)]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <span className="section-label !text-[var(--color-sand)]">{t("footer.products")}</span>
+                <svg className="w-4 h-4 text-[var(--color-sand)]/50" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path d="M9 5l7 7-7 7" />
                 </svg>
               </summary>
               <ul className="space-y-2.5 pb-4">
                 {categories.map((cat) => (
                   <li key={cat.slug}>
-                    <Link href={`/products/${cat.slug}`} className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{cat.name}</Link>
+                    <Link href={`/products/${cat.slug}`} className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{cat.name}</Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/catalogs" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.catalogsDownloads")}</Link>
+                  <Link href="/catalogs" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.catalogsDownloads")}</Link>
                 </li>
               </ul>
             </details>
 
-            <details className="footer-accordion border-b border-[var(--color-primary)]">
+            <details className="footer-accordion border-b border-[rgba(212,201,184,0.15)]">
               <summary className="flex items-center justify-between py-4">
-                <span className="section-label !text-[var(--color-silver)]">{t("footer.resources")}</span>
-                <svg className="w-4 h-4 text-[var(--color-mid-gray)]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <span className="section-label !text-[var(--color-sand)]">{t("footer.resources")}</span>
+                <svg className="w-4 h-4 text-[var(--color-sand)]/50" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path d="M9 5l7 7-7 7" />
                 </svg>
               </summary>
               <ul className="space-y-2.5 pb-4">
-                <li><Link href="/room-size" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.roomSizeChart")}</Link></li>
-                <li><Link href="/care-guide" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.tableCareGuide")}</Link></li>
-                <li><Link href="/lifetime-guarantee" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.lifetimeGuarantee")}</Link></li>
+                <li><Link href="/room-size" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.roomSizeChart")}</Link></li>
+                <li><Link href="/care-guide" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.tableCareGuide")}</Link></li>
+                <li><Link href="/lifetime-guarantee" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.lifetimeGuarantee")}</Link></li>
               </ul>
             </details>
 
-            <details className="footer-accordion border-b border-[var(--color-primary)]">
+            <details className="footer-accordion border-b border-[rgba(212,201,184,0.15)]">
               <summary className="flex items-center justify-between py-4">
-                <span className="section-label !text-[var(--color-silver)]">{t("footer.company")}</span>
-                <svg className="w-4 h-4 text-[var(--color-mid-gray)]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <span className="section-label !text-[var(--color-sand)]">{t("footer.company")}</span>
+                <svg className="w-4 h-4 text-[var(--color-sand)]/50" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path d="M9 5l7 7-7 7" />
                 </svg>
               </summary>
               <ul className="space-y-2.5 pb-4">
-                <li><Link href="/about" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.aboutUs")}</Link></li>
-                <li><Link href="/dealer" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.findDealer")}</Link></li>
-                <li><Link href="/contact-us" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.contact")}</Link></li>
-                <li><Link href="/dealer-portal" className="text-sm text-[var(--color-body)] hover:text-[var(--color-silver)] transition-colors duration-300">{t("footer.dealerPortal")}</Link></li>
+                <li><Link href="/about" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.aboutUs")}</Link></li>
+                <li><Link href="/dealer" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.findDealer")}</Link></li>
+                <li><Link href="/contact-us" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.contact")}</Link></li>
+                <li><Link href="/dealer-portal" className="text-sm text-[var(--color-sand)]/70 hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{t("footer.dealerPortal")}</Link></li>
               </ul>
             </details>
 
             {/* Contact info */}
-            <div className="pt-6 space-y-3 text-sm text-[var(--color-body)]">
+            <div className="pt-6 space-y-3 text-sm text-[var(--color-sand)]/70">
               <Image
                 src="/images/brand/clb-logo.png"
                 alt="The C.L. Bailey Co."
@@ -197,24 +197,24 @@ export default async function Footer() {
               />
               <p>{company.address.street}, {company.address.city}, {company.address.state} {company.address.zip}</p>
               <p>
-                <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-[var(--color-silver)] transition-colors duration-300">{company.phone}</a>
+                <a href={`tel:${company.phone.replace(/-/g, "")}`} className="hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{company.phone}</a>
                 {" "}&middot;{" "}
-                <a href={`mailto:${company.email}`} className="hover:text-[var(--color-silver)] transition-colors duration-300">{company.email}</a>
+                <a href={`mailto:${company.email}`} className="hover:text-[var(--color-light-on-dark)] transition-colors duration-300">{company.email}</a>
               </p>
             </div>
           </div>
         </div>
 
         {/* Your Local Dealer */}
-        <div className="border-t border-[var(--color-primary)]">
+        <div className="border-t border-[rgba(212,201,184,0.15)]">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 lg:py-12">
-            <p className="section-label mb-4 !text-[var(--color-silver)]">{t("footer.yourLocalDealer")}</p>
-            <p className="text-sm text-[var(--color-body)] mb-4 max-w-md leading-relaxed">
+            <p className="section-label mb-4 !text-[var(--color-sand)]">{t("footer.yourLocalDealer")}</p>
+            <p className="text-sm text-[var(--color-sand)]/70 mb-4 max-w-md leading-relaxed">
               {t("footer.dealerHeadline")}
             </p>
             <Link
               href="/dealer"
-              className="text-sm font-medium text-[var(--color-silver)] border-b border-[var(--color-silver)] pb-0.5 hover:border-[var(--color-body)] transition-[border-color] duration-300"
+              className="text-sm font-medium text-[var(--color-sand)] border-b border-[var(--color-sand)] pb-0.5 hover:text-[var(--color-light-on-dark)] hover:border-[var(--color-light-on-dark)] transition-colors duration-300"
             >
               {t("footer.findNearestDealer")}
             </Link>
@@ -222,12 +222,12 @@ export default async function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[var(--color-primary)]">
+        <div className="border-t border-[rgba(212,201,184,0.15)]">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="metadata text-[var(--color-body)]">
+            <p className="metadata text-[var(--color-sand)]/50">
               &copy; {new Date().getFullYear()} {company.name}. {t("footer.allRights")}
             </p>
-            <p className="metadata text-[var(--color-body)]">
+            <p className="metadata text-[var(--color-sand)]/50">
               {t("footer.division")} &middot; {t("footer.location")}
             </p>
           </div>
