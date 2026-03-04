@@ -45,7 +45,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
+    <section className="py-16 lg:py-32 bg-[var(--color-off-white)]">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <p className="section-label text-center mb-3">
           {t("museum.portfolioLabel")}
@@ -62,33 +62,35 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
           </Link>
         </div>
 
-        <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:pb-0">
-          {items.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="group flex-shrink-0 w-[260px] lg:w-auto"
-            >
-              <div className="aspect-[3/4] relative overflow-hidden bg-[var(--color-cloud)]">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  className="object-cover group-hover:scale-[1.04] transition-transform duration-700"
-                  sizes="(max-width: 1024px) 260px, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-[1.125rem] font-light text-white uppercase tracking-[0.04em]">
-                    {item.label}
-                  </h3>
-                  <p className="text-[0.6875rem] text-white/40 uppercase tracking-[0.1em] mt-1.5">
-                    {item.subtitle}
-                  </p>
+        <div className="overflow-hidden -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
+          <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:pb-0">
+            {items.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="group flex-shrink-0 w-[260px] lg:w-auto"
+              >
+                <div className="aspect-[3/4] relative overflow-hidden bg-[var(--color-cloud)]">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover group-hover:scale-[1.04] transition-transform duration-700"
+                    sizes="(max-width: 1024px) 260px, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-[1.125rem] font-light text-white uppercase tracking-[0.04em]">
+                      {item.label}
+                    </h3>
+                    <p className="text-[0.6875rem] text-white/40 uppercase tracking-[0.1em] mt-1.5">
+                      {item.subtitle}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -105,7 +107,7 @@ function DealerPortalBlock({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
+    <section className="py-16 lg:py-32 bg-[var(--color-off-white)] overflow-hidden">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <p className="section-label text-center mb-3">
           {t("dealerBlock.label")}
@@ -114,12 +116,14 @@ function DealerPortalBlock({ t }: { t: (key: string) => string }) {
           {t("dealerBlock.heading")}
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-0">
+        <div className="grid lg:grid-cols-2 gap-0 overflow-hidden">
           {/* Left: Catalog Browser */}
-          <CatalogBrowser />
+          <div className="min-w-0">
+            <CatalogBrowser />
+          </div>
 
           {/* Right: Dealer Portal promo */}
-          <div className="bg-[var(--color-deep)] p-10 lg:p-14 flex flex-col justify-between">
+          <div className="min-w-0 bg-[var(--color-deep)] p-6 md:p-10 lg:p-14 flex flex-col justify-between">
             <div>
               <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-4">
                 {t("dealerBlock.dealerLabel")}
@@ -183,7 +187,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
   const featured = getFeaturedProducts();
 
   return (
-    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
+    <section className="py-16 lg:py-32 bg-[var(--color-off-white)]">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
@@ -205,28 +209,30 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
           </Link>
         </div>
 
-        <div className="flex gap-6 overflow-x-auto no-scrollbar pb-4">
-          {featured.map((product) => (
-            <Link
-              key={product.slug}
-              href={`/products/${product.category}/${product.slug}`}
-              className="group flex-shrink-0 w-[280px] lg:w-[320px]"
-            >
-              <div className="aspect-[4/3] overflow-hidden bg-white mb-5">
-                <Image
-                  src={img(product.images.hero)}
-                  alt={product.name}
-                  width={640}
-                  height={480}
-                  className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500"
-                />
-              </div>
-              <h3 className="text-base font-medium text-[var(--color-primary)] tracking-[0.01em]">
-                {product.name}
-              </h3>
-              <p className="text-sm text-[var(--color-body)] mt-1">{product.tagline}</p>
-            </Link>
-          ))}
+        <div className="overflow-hidden -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
+          <div className="flex gap-6 overflow-x-auto no-scrollbar pb-4">
+            {featured.map((product) => (
+              <Link
+                key={product.slug}
+                href={`/products/${product.category}/${product.slug}`}
+                className="group flex-shrink-0 w-[280px] lg:w-[320px]"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-white mb-5">
+                  <Image
+                    src={img(product.images.hero)}
+                    alt={product.name}
+                    width={640}
+                    height={480}
+                    className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="text-base font-medium text-[var(--color-primary)] tracking-[0.01em]">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-[var(--color-body)] mt-1">{product.tagline}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -236,7 +242,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
 /* ─── Section 4: Shuffleboard Block ─── */
 function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
   return (
-    <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
+    <section className="relative w-full min-h-[50vh] lg:min-h-[70vh] flex items-center overflow-hidden">
       <Image
         src={`${IMAGEKIT_BASE}/shuffleboards/viking-shuffleboard/lifestyle.jpg`}
         alt={t("home.shuffleboardAlt")}
@@ -291,7 +297,7 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
         <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-16 leading-relaxed">
           {t("home.finishesDescription")}
         </p>
-        <div className="flex flex-wrap justify-center gap-10 lg:gap-14">
+        <div className="grid grid-cols-4 gap-6 md:flex md:flex-wrap md:justify-center md:gap-10 lg:gap-14">
           {allFinishes.map((finish) => (
             <div key={finish.name} className="group flex flex-col items-center gap-3 cursor-pointer">
               <div
@@ -312,7 +318,7 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
 /* ─── Section 6: Game Room Furniture ─── */
 function FurnitureBlock({ t }: { t: (key: string) => string }) {
   return (
-    <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden">
+    <section className="relative w-full min-h-[50vh] lg:min-h-[70vh] flex items-center overflow-hidden">
       <Image
         src={`${IMAGEKIT_BASE}/game-room-furniture/skylar-furniture/hero.jpg`}
         alt={t("home.furnitureAlt")}
@@ -345,7 +351,7 @@ function FurnitureBlock({ t }: { t: (key: string) => string }) {
 /* ─── Section 7: Heritage ─── */
 function HeritageSection({ t }: { t: (key: string) => string }) {
   return (
-    <section className="py-24 lg:py-32 bg-[var(--color-cloud)]">
+    <section className="py-16 lg:py-32 bg-[var(--color-cloud)]">
       <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
         <p className="section-label mb-4">
           {t("museum.heritageLabel")}
@@ -372,25 +378,25 @@ function HeritageSection({ t }: { t: (key: string) => string }) {
 /* ─── Section 8: Trade Program ─── */
 function TradeProgramBlock({ t }: { t: (key: string) => string }) {
   return (
-    <section className="bg-[var(--color-off-white)]">
+    <section className="bg-[var(--color-off-white)] overflow-hidden">
       <div className="max-w-[90rem] mx-auto">
-        <div className="grid lg:grid-cols-2 min-h-[70vh]">
+        <div className="grid lg:grid-cols-2 lg:min-h-[70vh]">
 
           {/* Left: Full-height lifestyle image */}
-          <div className="relative min-h-[400px] lg:min-h-0 overflow-hidden">
+          <div className="relative min-h-[320px] lg:min-h-0 overflow-hidden">
             <Image
-              src={`${IMAGEKIT_BASE}/pool-tables/dutchess/lifestyle.jpg`}
+              src="/images/trade-lifestyle.jpg"
               alt={t("trade.imageAlt")}
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={85}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </div>
 
           {/* Right: Content panel */}
-          <div className="flex flex-col justify-center px-10 py-16 lg:px-16 lg:py-20 xl:px-20">
+          <div className="flex flex-col justify-center px-6 py-12 md:px-10 md:py-16 lg:px-16 lg:py-20 xl:px-20">
 
             <p className="section-label mb-4">
               {t("trade.heading")}

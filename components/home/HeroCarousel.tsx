@@ -28,7 +28,7 @@ const HeroCarouselNav = ({
   <div
     role="tablist"
     aria-label="Category slides"
-    className="flex gap-6 md:gap-10 overflow-x-auto no-scrollbar px-8 md:px-16 lg:px-24"
+    className="flex gap-4 md:gap-10 overflow-x-auto no-scrollbar px-6 md:px-16 lg:px-24 max-w-full"
   >
     {cats.map((cat, i) => {
       const isActive = i === activeIndex;
@@ -40,7 +40,7 @@ const HeroCarouselNav = ({
           aria-controls={`slide-${cat.slug}`}
           onClick={() => onSelect(i)}
           className={`relative pb-3 whitespace-nowrap transition-colors duration-300 cursor-pointer
-            font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px]
+            font-[family-name:var(--font-label)] text-[9px] md:text-[10px] font-medium uppercase tracking-[2px] md:tracking-[3px]
             ${isActive ? "text-white" : "text-white/40 hover:text-white/60"}`}
         >
           {cat.name}
@@ -211,7 +211,7 @@ const HeroCarousel = () => {
         key={`text-${displayIndex}`}
         className="absolute inset-0 z-10 flex items-center"
       >
-        <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32 pb-8">
+        <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 pb-24 md:pb-8">
           <p className="section-label !text-white/50 mb-6 animate-fade-up">
             {t(`slides.${slideKey}.label`)}
           </p>

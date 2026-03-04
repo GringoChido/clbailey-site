@@ -25,27 +25,29 @@ const CatalogBrowser = () => {
     .slice(0, 4);
 
   return (
-    <div className="bg-white border border-[var(--color-cloud)] p-8 lg:p-10">
+    <div className="bg-white border border-[var(--color-cloud)] p-4 md:p-8 lg:p-10 min-w-0 overflow-hidden">
       {/* Category tabs */}
-      <div className="flex gap-6 overflow-x-auto no-scrollbar mb-8">
-        {CATALOG_CATEGORIES.map((cat) => (
-          <button
-            key={cat.slug}
-            type="button"
-            onClick={() => setActiveCategory(cat.slug)}
-            className={`whitespace-nowrap font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] pb-2 transition-colors duration-300 cursor-pointer ${
-              activeCategory === cat.slug
-                ? "text-[var(--color-primary)] border-b-2 border-[var(--color-bronze)]"
-                : "text-[var(--color-mid-gray)] hover:text-[var(--color-primary)]"
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
+      <div className="overflow-hidden -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10 mb-8">
+        <div className="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar">
+          {CATALOG_CATEGORIES.map((cat) => (
+            <button
+              key={cat.slug}
+              type="button"
+              onClick={() => setActiveCategory(cat.slug)}
+              className={`whitespace-nowrap font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] pb-2 transition-colors duration-300 cursor-pointer ${
+                activeCategory === cat.slug
+                  ? "text-[var(--color-primary)] border-b-2 border-[var(--color-bronze)]"
+                  : "text-[var(--color-mid-gray)] hover:text-[var(--color-primary)]"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Product card grid */}
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-3 md:gap-5">
         {filteredProducts.map((product) => (
           <LeadModal
             key={product.slug}
