@@ -1,20 +1,27 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   products,
   getProduct,
   getCategory,
   getProductsByCategory,
+  getCollectionMatches,
   getCrossCategoryProducts,
+  isConvertible,
   img,
   pdf,
   IMAGEKIT_BASE,
 } from "@/lib/products";
-import LeadModal from "@/components/ui/LeadModal";
+import PDPGalleryClient from "@/components/ui/PDPGalleryClient";
+import FinishSwatches from "@/components/ui/FinishSwatches";
+import ProductAccordion from "@/components/ui/ProductAccordion";
+import ProductConfigurator from "@/components/ui/ProductConfigurator";
+import CraftSection from "@/components/ui/CraftSection";
 import ProductCard from "@/components/ui/ProductCard";
+import LeadModal from "@/components/ui/LeadModal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface PageProps {
@@ -34,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return { title: "Product Not Found" };
 
   const cat = getCategory(category);
-  const title = `${product.name} ${cat?.name || ""} | C.L. Bailey & Co.`;
+  const title = `${product.name} ${cat?.name || ""}`;
 
   return {
     title,
@@ -74,6 +81,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const { locale, category, slug } = await params;
+  setRequestLocale(locale);
+
   const product = getProduct(slug);
   const cat = getCategory(category);
 
@@ -83,13 +92,30 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   const t = await getTranslations();
 
+  // Check dealer auth cookie
+  const cookieStore = await cookies();
+  const dealerAuth = cookieStore.get("dealer-auth");
+  const isDealer = dealerAuth?.value === "authorized";
+
+  // Collect all images: hero first, then gallery
+  const allImages = [
+    product.images.hero,
+    ...product.images.gallery,
+  ].filter(Boolean) as string[];
+
+  const convertible = isConvertible(product);
+
+  // Smart cross-sell: collection matches first, then fallback
+  const collectionProducts = getCollectionMatches(product.name, category);
   const relatedProducts = getProductsByCategory(category)
     .filter((p) => p.slug !== slug)
     .slice(0, 3);
+  const crossCategoryProducts =
+    collectionProducts.length > 0
+      ? collectionProducts
+      : getCrossCategoryProducts(category, 4);
 
-  const crossCategoryProducts = getCrossCategoryProducts(category, 4);
-
-  /* ─── JSON-LD: Product + BreadcrumbList ─── */
+  /* ─── JSON-LD ─── */
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -147,7 +173,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   return (
     <>
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -158,201 +183,179 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <div className="pt-28 pb-20 lg:pb-28">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
           {/* Breadcrumb */}
-          <ScrollReveal>
-            <nav
-              className="metadata !text-[var(--color-mid-gray)] mb-8"
-              aria-label="Breadcrumb"
+          <nav
+            className="metadata !text-[var(--color-mid-gray)] mb-8"
+            aria-label="Breadcrumb"
+          >
+            <Link
+              href={`/${locale}/products`}
+              className="hover:text-[var(--color-primary)] transition-colors duration-300"
             >
-              <Link href="/products" className="hover:text-[var(--color-primary)] transition-colors duration-300">
-                {t("common.products")}
-              </Link>
-              <span className="mx-2">/</span>
-              <Link
-                href={`/products/${category}`}
-                className="hover:text-[var(--color-primary)] transition-colors duration-300"
-              >
-                {cat.name}
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="text-[var(--color-body)]">{product.name}</span>
-            </nav>
-          </ScrollReveal>
+              {t("common.products")}
+            </Link>
+            <span className="mx-2">/</span>
+            <Link
+              href={`/${locale}/products/${category}`}
+              className="hover:text-[var(--color-primary)] transition-colors duration-300"
+            >
+              {cat.name}
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-[var(--color-body)]">{product.name}</span>
+          </nav>
 
-          {/* Hero Section */}
+          {/* Two-column layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-20">
-            {/* Image */}
-            <ScrollReveal>
-              <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden bg-[var(--color-off-white)]">
-                <Image
-                  src={img(product.images.hero)}
-                  alt={`${product.name}, ${product.tagline}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </ScrollReveal>
+            {/* Left: Gallery */}
+            <PDPGalleryClient
+              images={allImages}
+              productName={product.name}
+            />
 
-            {/* Details */}
-            <ScrollReveal delay={1} className="flex flex-col justify-center">
-              <p className="section-label mb-3">
-                {cat.name}
-              </p>
-              <h1 className="heading-display text-3xl lg:text-[2.5rem] text-[var(--color-primary)] mb-4">
-                {product.name}
-              </h1>
-              <p className="heading-sub mb-2">
-                {product.tagline}
-              </p>
-              <p className="metadata !text-[var(--color-mid-gray)] mb-4">
-                {t("common.pricingLabel")}
-              </p>
-              <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-8 max-w-md">
-                {product.description}
-              </p>
+            {/* Right: Product info */}
+            <div>
+              <ScrollReveal>
+                <p className="section-label mb-3">{cat.name}</p>
+                <h1 className="heading-display text-3xl lg:text-[2.5rem] text-[var(--color-primary)] mb-3">
+                  {product.name}
+                </h1>
+                <p className="heading-sub mb-3">{product.tagline}</p>
 
-              {/* Sizes & Finishes */}
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                {product.sizes.length > 0 && (
-                  <div>
-                    <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">
-                      {t("common.sizes")}
-                    </h3>
-                    <p className="text-sm text-[var(--color-primary)]">
-                      {product.sizes.join(", ")}
-                    </p>
-                  </div>
-                )}
-                {product.finishes.length > 0 && (
-                  <div>
-                    <h3 className="metadata !text-[var(--color-mid-gray)] mb-2">
-                      {t("common.finishes")}
-                    </h3>
-                    <p className="text-sm text-[var(--color-primary)]">
-                      {product.finishes.join(", ")}
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              {/* Features */}
-              {product.features.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="metadata !text-[var(--color-mid-gray)] mb-3">
-                    {t("common.features")}
-                  </h3>
-                  <ul className="space-y-2">
-                    {product.features.map((f) => (
-                      <li
-                        key={f}
-                        className="flex gap-3 text-sm text-[var(--color-body)]"
-                      >
-                        <span className="w-1 h-1 bg-[var(--color-cloud)] mt-2 flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Badges */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="metadata !text-[var(--color-mid-gray)]">
+                    {t("common.pricingLabel")}
+                  </span>
+                  {convertible && (
+                    <span className="metadata bg-[var(--color-cloud)] px-2 py-1">
+                      Convertible
+                    </span>
+                  )}
                 </div>
-              )}
 
-              {/* CTAs */}
-              <div className="hidden lg:flex flex-wrap gap-3">
-                {product.pdf && (
-                  <LeadModal
-                    productName={product.name}
-                    pdfUrl={pdf(product.pdf)}
-                  >
-                    <button className="btn-primary">
-                      {t("common.downloadSpecSheet")}
-                    </button>
-                  </LeadModal>
-                )}
-                <Link
-                  href="/dealer"
-                  className="btn-outline"
-                >
-                  {t("nav.findDealer")}
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
+                <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-8 max-w-md">
+                  {product.description}
+                </p>
 
-          {/* Gallery */}
-          {product.images.gallery.length > 0 && (
-            <ScrollReveal className="mb-20">
-              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
-                {t("common.gallery")}
-              </h2>
-              <div className="h-px bg-[var(--color-cloud)] mb-8" />
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {product.images.gallery.map((imgPath, i) => (
-                  <div
-                    key={imgPath}
-                    className="relative aspect-square overflow-hidden bg-[var(--color-off-white)] group"
-                  >
-                    <Image
-                      src={img(imgPath)}
-                      alt={`${product.name} detail ${i + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                      sizes="(max-width: 1024px) 50vw, 25vw"
-                    />
+                {/* Finish swatches (small dots) */}
+                {product.finishes.length > 0 &&
+                  product.finishes[0] !== "Various" && (
+                    <div className="mb-8">
+                      <FinishSwatches
+                        finishes={product.finishes}
+                        size="sm"
+                      />
+                    </div>
+                  )}
+              </ScrollReveal>
+
+              {/* Accordion */}
+              <ScrollReveal delay={1}>
+                <ProductAccordion
+                  features={product.features}
+                  sizes={product.sizes}
+                  finishes={product.finishes}
+                  dimensionsImage={product.images.dimensions}
+                  locale={locale}
+                />
+              </ScrollReveal>
+
+              {/* Configurator or Dealer CTAs */}
+              <ScrollReveal delay={2}>
+                {isDealer ? (
+                  <div className="py-8 border-t border-[var(--color-cloud)]">
+                    <p className="section-label mb-4">Dealer Tools</p>
+                    <div className="flex flex-wrap gap-3">
+                      {product.pdf && (
+                        <a
+                          href={pdf(product.pdf)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary"
+                        >
+                          {t("common.downloadSpecSheet")}
+                        </a>
+                      )}
+                      <Link
+                        href={`/${locale}/dealer-portal`}
+                        className="btn-outline"
+                      >
+                        Dealer Portal
+                      </Link>
+                    </div>
                   </div>
+                ) : (
+                  <div className="border-t border-[var(--color-cloud)]">
+                    <ProductConfigurator
+                      productName={product.name}
+                      productSlug={product.slug}
+                      sizes={product.sizes}
+                      finishes={product.finishes}
+                      locale={locale}
+                    />
+
+                    {/* Secondary CTAs below configurator */}
+                    <div className="hidden lg:flex flex-wrap gap-3 pb-8">
+                      {product.pdf && (
+                        <LeadModal
+                          productName={product.name}
+                          pdfUrl={pdf(product.pdf)}
+                        >
+                          <button className="btn-outline">
+                            {t("common.downloadSpecSheet")}
+                          </button>
+                        </LeadModal>
+                      )}
+                      <Link
+                        href={`/${locale}/dealer`}
+                        className="btn-outline"
+                      >
+                        {t("nav.findDealer")}
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+
+        {/* Full-bleed CraftSection break */}
+        <CraftSection backgroundImage="pool-tables/dutchess/hero.jpg" />
+
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10 mt-20">
+          {/* Collection / Cross-category products */}
+          {crossCategoryProducts.length > 0 && (
+            <ScrollReveal className="mb-20">
+              <h2 className="section-label mb-3">
+                {collectionProducts.length > 0
+                  ? t("common.collection")
+                  : t("products.completeGameRoom")}
+              </h2>
+              <h3 className="heading-display text-2xl lg:text-3xl text-[var(--color-primary)] mb-3">
+                {collectionProducts.length > 0
+                  ? `${product.name.replace(/^The\s+/i, "").replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture)s?$/i, "")} Collection`
+                  : t("products.completeGameRoomSub")}
+              </h3>
+              <div className="h-px bg-[var(--color-cloud)] mb-8" />
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {crossCategoryProducts.slice(0, 4).map((cp) => (
+                  <ProductCard key={cp.slug} product={cp} locale={locale} />
                 ))}
               </div>
             </ScrollReveal>
           )}
 
-          {/* Dimensions */}
-          {product.images.dimensions && (
-            <ScrollReveal className="mb-20">
-              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
-                {t("common.dimensions")}
-              </h2>
-              <div className="h-px bg-[var(--color-cloud)] mb-8" />
-              <div className="max-w-3xl">
-                <div className="relative aspect-[16/9] overflow-hidden bg-[var(--color-off-white)]">
-                  <Image
-                    src={img(product.images.dimensions)}
-                    alt={`${product.name} dimensions`}
-                    fill
-                    className="object-contain"
-                    sizes="800px"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-          )}
-
-          {/* Related Products */}
+          {/* More from this category */}
           {relatedProducts.length > 0 && (
             <ScrollReveal>
-              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
+              <h2 className="section-label mb-3">
                 {t("products.moreCategoryName", { categoryName: cat.name })}
               </h2>
               <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map((rp) => (
-                  <ProductCard key={rp.slug} product={rp} />
-                ))}
-              </div>
-            </ScrollReveal>
-          )}
-
-          {/* Cross-Category: Complete Your Game Room */}
-          {crossCategoryProducts.length > 0 && (
-            <ScrollReveal className="mt-20">
-              <h2 className="metadata !text-[var(--color-mid-gray)] mb-4">
-                {t("products.completeGameRoom")}
-              </h2>
-              <div className="h-px bg-[var(--color-cloud)] mb-8" />
-              <p className="text-sm text-[var(--color-body)] mb-8">
-                {t("products.completeGameRoomSub")}
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {crossCategoryProducts.map((cp) => (
-                  <ProductCard key={cp.slug} product={cp} />
+                  <ProductCard key={rp.slug} product={rp} locale={locale} />
                 ))}
               </div>
             </ScrollReveal>
@@ -362,21 +365,44 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
       {/* Sticky Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-[var(--color-cloud)] px-4 py-3 flex gap-3">
-        <Link
-          href="/dealer"
-          className="flex-1 text-center btn-primary"
-        >
-          {t("common.contactDealer")}
-        </Link>
-        {product.pdf && (
-          <LeadModal
-            productName={product.name}
-            pdfUrl={pdf(product.pdf)}
-          >
-            <button className="flex-1 text-center btn-outline">
-              {t("common.specSheet")}
-            </button>
-          </LeadModal>
+        {isDealer ? (
+          <>
+            {product.pdf && (
+              <a
+                href={pdf(product.pdf)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center btn-primary"
+              >
+                {t("common.specSheet")}
+              </a>
+            )}
+            <Link
+              href={`/${locale}/dealer-portal`}
+              className="flex-1 text-center btn-outline"
+            >
+              Dealer Portal
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              href={`/${locale}/dealer`}
+              className="flex-1 text-center btn-primary"
+            >
+              {t("common.contactDealer")}
+            </Link>
+            {product.pdf && (
+              <LeadModal
+                productName={product.name}
+                pdfUrl={pdf(product.pdf)}
+              >
+                <button className="flex-1 text-center btn-outline">
+                  {t("common.specSheet")}
+                </button>
+              </LeadModal>
+            )}
+          </>
         )}
       </div>
     </>

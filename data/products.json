@@ -17,7 +17,7 @@
     {
       "slug": "shuffleboards",
       "name": "Shuffleboards",
-      "headline": "Crafted for the Long Game",
+      "headline": "Fourteen Feet of Solid Hardwood",
       "description": "Premium shuffleboards from 9' to 14'. Solid playfield. Precision scoring.",
       "heroImage": "shuffleboards/viking-shuffleboard/hero.jpg",
       "sortOrder": 2
@@ -33,7 +33,7 @@
     {
       "slug": "cue-racks",
       "name": "Cue Racks",
-      "headline": "Organize with Intent",
+      "headline": "Floor, Wall, and Corner. Five Finishes.",
       "description": "Floor, wall, and corner cue racks in matching finishes.",
       "heroImage": "cue-racks/carved-leg-cue-rack/hero.jpg",
       "sortOrder": 4
@@ -41,7 +41,7 @@
     {
       "slug": "accessories",
       "name": "Accessories",
-      "headline": "Complete Your Game Room",
+      "headline": "From First Break to Final Touch",
       "description": "Premium billiard accessories, from professional-grade ball sets to handcrafted leather pockets.",
       "heroImage": "accessories/deluxe-accessory-kit/hero.jpg",
       "sortOrder": 5
@@ -52,7 +52,7 @@
       "slug": "skylar",
       "name": "The Skylar",
       "category": "pool-tables",
-      "tagline": "Beautiful as it is Versatile",
+      "tagline": "Clean Lines. Convertible Top. Modern in Every Detail.",
       "description": "Clean lines. Convertible dining top. The Skylar fits modern homes without compromising on play.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -86,7 +86,7 @@
       "slug": "viking",
       "name": "The Viking",
       "category": "pool-tables",
-      "tagline": "Bold. Rustic. Uncompromising.",
+      "tagline": "Distressed Hardwood. Industrial Hardware. Built to Command the Room.",
       "description": "Distressed hardwood. Industrial hardware. The Viking commands the room.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -119,7 +119,7 @@
       "slug": "dutchess",
       "name": "The Dutchess",
       "category": "pool-tables",
-      "tagline": "Distinctively Traditional",
+      "tagline": "Diamond Inlays. Rich Wood Tones. Heirloom Presence.",
       "description": "Double-diamond inlays. Rich wood tones. The Dutchess is heirloom craftsmanship.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -156,7 +156,7 @@
       "slug": "tunbridge",
       "name": "The Tunbridge",
       "category": "pool-tables",
-      "tagline": "Timeless by Design",
+      "tagline": "Anchors the Whole Room. Matches the Whole Collection.",
       "description": "Transitional styling. Full furniture collection. The Tunbridge anchors the whole room.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -189,7 +189,7 @@
       "slug": "duke",
       "name": "The Duke",
       "category": "pool-tables",
-      "tagline": "Refined Storage",
+      "tagline": "Built-in Ball Return. Clean Geometry. Nothing Out of Place.",
       "description": "Ball-return drawer. Clean geometry. The Duke keeps the game room tidy.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -223,7 +223,7 @@
       "slug": "norwich",
       "name": "The Norwich",
       "category": "pool-tables",
-      "tagline": "Classic Sophistication",
+      "tagline": "Carved Legs. Ball Return. Old World Craft, Practical Design.",
       "description": "Ball-return system. Carved legs. The Norwich blends Old World craft with practical design.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -255,7 +255,7 @@
       "slug": "elayna",
       "name": "The Elayna",
       "category": "pool-tables",
-      "tagline": "Warm. Inviting. Home.",
+      "tagline": "Soft Curves. Deep Espresso. A Table That Feels Like the Living Room.",
       "description": "Soft curves. Espresso finish. The Elayna makes the game room feel like the living room.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -287,7 +287,7 @@
       "slug": "adrian",
       "name": "The Adrian",
       "category": "pool-tables",
-      "tagline": "Modern Minimalism",
+      "tagline": "Flat Rail. Slim Profile. Disappears into Contemporary Interiors.",
       "description": "Flat rail. Slim profile. The Adrian disappears into contemporary interiors.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -319,7 +319,7 @@
       "slug": "addison",
       "name": "The Addison",
       "category": "pool-tables",
-      "tagline": "Sleek. Contemporary. Statement.",
+      "tagline": "Geometric Lines. Architectural Presence. For the Room That Makes No Apologies.",
       "description": "Geometric lines. Premium materials. The Addison is architecture for the game room.",
       "features": [
         "Available in 7' and 8' sizes",
@@ -380,7 +380,7 @@
       "slug": "skylar-shuffleboard",
       "name": "Skylar Shuffleboard",
       "category": "shuffleboards",
-      "tagline": "Refined Play Surface",
+      "tagline": "Modern Lines. Matched to the Skylar Collection.",
       "description": "Clean modern lines to match the Skylar pool table. Climatic adjusters included.",
       "features": [
         "12' playing surface",
@@ -442,7 +442,7 @@
       "slug": "level-best",
       "name": "Level Best Shuffleboard",
       "category": "shuffleboards",
-      "tagline": "Classic Shuffleboard Play",
+      "tagline": "Multiple Styles. Proven Playfield. The Original Level Best.",
       "description": "Our original shuffleboard line. Multiple styles, proven playfield.",
       "features": [
         "Multiple size options",
@@ -475,7 +475,7 @@
       "slug": "skylar-furniture",
       "name": "Skylar Game Room Furniture",
       "category": "game-room-furniture",
-      "tagline": "Complete the Room",
+      "tagline": "Spectator Chair. Storage Bench. Cue Rack. All Matched to the Skylar.",
       "description": "Spectator chair. Storage bench. Cue rack. Dining dolly. All matched to the Skylar.",
       "features": [
         "Spectator chair with swivel",
@@ -532,7 +532,7 @@
       "slug": "viking-furniture",
       "name": "Viking Game Room Furniture",
       "category": "game-room-furniture",
-      "tagline": "Rugged Match",
+      "tagline": "Distressed Finish. Same Toughness. The Full Viking Experience.",
       "description": "Spectator chair. Storage bench. Cue rack. All in the Viking Rustic finish.",
       "features": [
         "Spectator chair with swivel",
@@ -560,7 +560,7 @@
       "slug": "game-table-sets",
       "name": "Game Table Sets",
       "category": "game-room-furniture",
-      "tagline": "Multi-Game Ready",
+      "tagline": "Poker. Bumper Pool. Dining. One Table, Every Occasion.",
       "description": "Convertible game table with matching chairs. Poker, bumper pool, dining.",
       "features": [
         "Multi-game playing surface",
@@ -678,7 +678,7 @@
       "slug": "iron-leather-pockets",
       "name": "#6 Iron Leather Pockets",
       "category": "accessories",
-      "tagline": "Handcrafted #6 iron leather pockets with reinforced construction",
+      "tagline": "Genuine Leather. Reinforced Iron. Built to Last the Table.",
       "description": "Professional-grade replacement pockets featuring genuine leather construction with #6 irons. Designed to fit C.L. Bailey pool tables and most standard pocket configurations. Available in multiple leather colors to complement your table finish.",
       "features": [
         "Genuine leather construction",
@@ -703,7 +703,7 @@
       "slug": "basic-accessory-kit",
       "name": "Basic Accessory Kit",
       "category": "accessories",
-      "tagline": "Everything you need to start playing",
+      "tagline": "The Essentials, Ready to Play",
       "description": "A curated starter kit with the essentials for your new pool table. Includes a complete ball set, two standard cues, a triangle rack, chalk, and a table brush. An ideal addition when purchasing your first C.L. Bailey table.",
       "features": [
         "Complete ball set",
@@ -726,7 +726,7 @@
       "slug": "deluxe-accessory-kit",
       "name": "Deluxe Accessory Kit",
       "category": "accessories",
-      "tagline": "Premium essentials for the complete game room",
+      "tagline": "Premium Cues. Full Rack Set. Everything Beyond the Basics.",
       "description": "Step up from the basics with higher-quality cues, a full accessory complement, and extras that elevate your playing experience. Includes premium maple cues, Magnum ball set, triangle and diamond racks, leather chalk holders, and a table cover.",
       "features": [
         "Magnum ball set",
@@ -750,7 +750,7 @@
       "slug": "magnum-pool-ball-sets",
       "name": "Magnum Pool Ball Sets",
       "category": "accessories",
-      "tagline": "Tournament-grade ball sets with superior balance and clarity",
+      "tagline": "Phenolic Resin. Regulation Weight. Inspected Individually.",
       "description": "Professional-quality phenolic resin ball sets engineered for consistent roll and lasting color vibrancy. Regulation size and weight. Each set is individually inspected for roundness and balance.",
       "features": [
         "Phenolic resin construction",
@@ -775,7 +775,7 @@
       "slug": "mali-basic-green-felt",
       "name": "Mali Basic Green Felt",
       "category": "accessories",
-      "tagline": "Standard woolen cloth in classic green",
+      "tagline": "Classic Green. Wool Blend. Pre-Cut for Every C.L. Bailey Table.",
       "description": "Traditional wool-blend billiard cloth suitable for recreational play. A cost-effective option for those who prefer a classic table surface. Pre-cut for standard C.L. Bailey table sizes.",
       "features": [
         "Wool-nylon blend construction",
@@ -803,7 +803,7 @@
       "slug": "platinum-accessory-kit",
       "name": "Platinum Accessory Kit",
       "category": "accessories",
-      "tagline": "The ultimate accessory collection for discerning players",
+      "tagline": "Everything. No Compromises.",
       "description": "Our top-tier accessory package, curated for players who demand the best. Includes everything in the Deluxe kit plus premium cue cases, advanced cleaning supplies, and exclusive C.L. Bailey branded accessories. The complete game room solution.",
       "features": [
         "Everything in the Deluxe kit",
@@ -826,7 +826,7 @@
       "slug": "premium-accessory-kit",
       "name": "Premium Accessory Kit",
       "category": "accessories",
-      "tagline": "Upgraded essentials for serious players",
+      "tagline": "Better Cues. Better Balls. The Serious Player's Starting Point.",
       "description": "A mid-tier kit bridging the gap between Basic and Deluxe. Features better cue construction, a Magnum ball set, and additional accessories for a more complete setup.",
       "features": [
         "Magnum ball set",

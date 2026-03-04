@@ -1,18 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import { img, type Product } from "@/lib/products";
+import { img, isConvertible, type Product } from "@/lib/products";
+import { getFinishColor } from "@/lib/finishes";
 
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
+  locale?: string;
 }
 
-export default function ProductCard({ product, priority = false }: ProductCardProps) {
+export default function ProductCard({
+  product,
+  priority = false,
+  locale = "en",
+}: ProductCardProps) {
+  const convertible = isConvertible(product);
+  const showDots =
+    product.finishes.length > 0 && product.finishes[0] !== "Various";
+
   return (
     <Link
-      href={`/products/${product.category}/${product.slug}`}
+      href={`/${locale}/products/${product.category}/${product.slug}`}
       className="group block"
     >
+      {/* Image container with hover overlay */}
       <div className="aspect-[4/3] relative overflow-hidden bg-[var(--color-off-white)] border border-[var(--color-cloud)] mb-4">
         <Image
           src={img(product.images.hero)}
@@ -22,17 +33,49 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={priority}
         />
+
+        {/* Convertible badge */}
+        {convertible && (
+          <span className="absolute top-3 left-3 z-10 metadata bg-white/90 px-3 py-1.5 text-[var(--color-primary)]">
+            Convertible
+          </span>
+        )}
+
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-[var(--color-primary)]/0 group-hover:bg-[var(--color-primary)]/40 transition-colors duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
+          <p className="text-white text-sm max-w-[80%] text-center mb-4 line-clamp-2">
+            {product.tagline}
+          </p>
+          <span className="metadata text-white border border-white px-5 py-2">
+            View Details
+          </span>
+        </div>
       </div>
+
+      {/* Card content */}
       <h3 className="heading-card mb-1">{product.name}</h3>
-      <p className="text-sm text-[var(--color-body)] line-clamp-1 mb-2">{product.tagline}</p>
-      {product.finishes.length > 0 && product.finishes[0] !== "Various" && (
-        <p className="text-xs text-[var(--color-mid-gray)]">
-          {product.finishes.join(" / ")}
-        </p>
-      )}
-      <p className="metadata mt-2">
-        Dealer Exclusive
+      <p className="text-sm text-[var(--color-body)] line-clamp-1 mb-2">
+        {product.tagline}
       </p>
+
+      {/* Finish swatch dots */}
+      {showDots && (
+        <div className="flex items-center gap-1.5 mb-2">
+          {product.finishes.map((finish) => {
+            const color = getFinishColor(finish);
+            return (
+              <span
+                key={finish}
+                title={finish}
+                className="w-3 h-3 rounded-full inline-block"
+                style={{ backgroundColor: color }}
+              />
+            );
+          })}
+        </div>
+      )}
+
+      <p className="metadata">Dealer Exclusive</p>
     </Link>
   );
 }

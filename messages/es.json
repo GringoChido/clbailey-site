@@ -66,8 +66,8 @@
     "ourStory": "Nuestra Historia"
   },
   "home": {
-    "categoryHeading": "¿Qué estás buscando?",
-    "featuredHeading": "Transforma cualquier sala de juegos",
+    "categoryHeading": "La Colección",
+    "featuredHeading": "Nuestras Mesas Más Solicitadas",
     "featuredSubheading": "Explora nuestras mesas de billar y shuffleboards más populares",
     "exploreCta": "Explorar Mesas de Billar",
     "finishesLabel": "Materiales",
@@ -78,12 +78,12 @@
     "dealerCtaDescription": "Visite un showroom de distribuidor autorizado cerca de usted para experimentar la calidad de primera mano.",
     "dealerCtaButton": "Encontrar Distribuidor",
     "shuffleboardLabel": "Shuffleboards",
-    "shuffleboardHeading": "El Juego Secundario Definitivo",
+    "shuffleboardHeading": "Una Pieza Destacada por Derecho Propio",
     "shuffleboardDescription": "Shuffleboards artesanales diseñados para combinar con nuestros acabados de mesa más populares.",
     "shuffleboardCta": "Ver Todos los Shuffleboards",
     "shuffleboardAlt": "Shuffleboard Viking de C.L. Bailey en una sala de juegos de lujo",
     "furnitureLabel": "Muebles de Sala de Juegos",
-    "furnitureHeading": "Completa Tu Espacio",
+    "furnitureHeading": "Cada Asiento. Cada Superficie. Construido para Combinar.",
     "furnitureDescription": "Desde asientos para espectadores hasta sets de pub. Muebles diseñados para el anfitrión moderno.",
     "furnitureCta": "Ver Muebles de Sala de Juegos",
     "furnitureAlt": "Muebles de sala de juegos C.L. Bailey: mesa pub, sillas y portatacos",
@@ -115,14 +115,14 @@
     "contact": "Contacto",
     "dealerPortal": "Portal de Distribuidores",
     "backToTop": "Volver Arriba",
-    "newsletterLabel": "Mant\u00e9ngase Conectado",
-    "newsletterHeading": "Suscr\u00edbase para actualizaciones por correo",
+    "newsletterLabel": "Manténgase Conectado",
+    "newsletterHeading": "Suscríbase para actualizaciones por correo",
     "emailPlaceholder": "Ingrese su correo electrónico",
     "subscribe": "Suscribirse",
     "subscribeSuccess": "Gracias por suscribirse.",
     "subscribeError": "Algo salió mal. Intente de nuevo.",
     "allRights": "Todos los derechos reservados.",
-    "division": "Una divisi\u00f3n de CLB Assets LLC",
+    "division": "Una división de CLB Assets LLC",
     "location": "Tomball, Texas",
     "yourLocalDealer": "Su Distribuidor Local",
     "findNearestDealer": "Encontrar el distribuidor más cercano",
@@ -171,7 +171,13 @@
     "browse": "Explorar",
     "products": "Productos",
     "pricingLabel": "Residencial Premium. Exclusivo de Distribuidores",
-    "learnMore": "Más Información"
+    "learnMore": "Más Información",
+    "findDealer": "Encontrar Distribuidor",
+    "shareWithCustomer": "Compartir con Cliente",
+    "linkCopied": "Enlace copiado",
+    "downloadImages": "Descargar Imágenes",
+    "dealerExclusive": "Exclusivo de Distribuidores. No Se Vende En Línea.",
+    "convertibleBadge": "Convertible"
   },
   "products": {
     "title": "Todos los Productos",
@@ -485,5 +491,57 @@
     "annualTarget": "Meta Anual",
     "amountToNextTier": "Monto para el Siguiente Nivel",
     "of": "de"
+  },
+  "accordion": {
+    "featuresConstruction": "Características y Construcción",
+    "availableSizes": "Tamaños Disponibles",
+    "finishOptions": "Opciones de Acabado",
+    "warrantyCare": "Garantía y Cuidado",
+    "warrantyText": "Garantía estructural de por vida en todos los productos de madera maciza. Se recomienda instalación profesional. Contacte a su distribuidor autorizado para detalles completos de la garantía."
+  },
+  "configurator": {
+    "stepLabel": "Paso {step} de {total}",
+    "selectSize": "Seleccionar Tamaño",
+    "selectFinish": "Seleccionar Acabado",
+    "sendToDealer": "Enviar a un Distribuidor",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "usted@correo.com",
+    "zipLabel": "Código Postal",
+    "zipPlaceholder": "77377",
+    "submit": "Enviar Configuración a un Distribuidor",
+    "submitting": "Enviando...",
+    "successTitle": "Su configuración del {productName} ha sido enviada a {dealerName} en {dealerLocation}.",
+    "successExpect": "Espere noticias de ellos dentro de las próximas 24 horas.",
+    "successFallback": "Encontrar Más Distribuidores",
+    "noDealerTitle": "Su configuración ha sido recibida.",
+    "noDealerText": "Lo conectaremos con su distribuidor autorizado más cercano en breve.",
+    "error": "Algo salió mal. Por favor intente de nuevo."
+  },
+  "craft": {
+    "headline": "Madera maciza. Garantía de por vida. Fabricado a mano en Tomball, Texas.",
+    "since": "Desde 1999"
+  },
+  "categoryPage": {
+    "models": "Modelos",
+    "products": "Productos",
+    "sortFeatured": "Destacados",
+    "sortAZ": "A a Z",
+    "sortZA": "Z a A",
+    "allSizes": "Todos",
+    "seoTitle": "Por Qué C.L. Bailey {categoryName}",
+    "fromCollection": "De la Colección {collectionName}"
+  },
+  "tradeBlock": {
+    "tradeLabel": "Programa Comercial",
+    "tradeHeading": "Conviértase en Distribuidor Autorizado",
+    "tradeDescription": "Diseñadores de interiores, minoristas y profesionales de la industria obtienen acceso directo a nuestros muebles personalizados para salas de juegos. Sin mínimos. Pedidos fáciles.",
+    "tradeCta": "Conozca el Programa Comercial",
+    "dealerLabel": "Encontrar Distribuidor",
+    "dealerHeading": "Encuentre un Distribuidor Autorizado",
+    "dealerDescription": "Cada mesa C.L. Bailey se vende, entrega e instala por un distribuidor autorizado cerca de usted.",
+    "zipPlaceholder": "Código Postal",
+    "searchCta": "Buscar"
   }
 }

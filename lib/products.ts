@@ -115,6 +115,47 @@ export function getCrossCategoryProducts(currentCategory: string, limit = 4): Pr
     .slice(0, limit);
 }
 
+/**
+ * Find products in OTHER categories that share a name word with the given product.
+ * e.g., "The Skylar" pool table matches "Skylar Game Room Furniture" and "Skylar Shuffleboard".
+ */
+export function getCollectionMatches(productName: string, currentCategory: string): Product[] {
+  const nameWords = productName
+    .replace(/^The\s+/i, "")
+    .replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture|Cue Rack)s?$/i, "")
+    .trim()
+    .toLowerCase()
+    .split(/\s+/);
+
+  if (nameWords.length === 0) return [];
+
+  return products.filter((p) => {
+    if (p.category === currentCategory) return false;
+    const pNameLower = p.name.toLowerCase();
+    return nameWords.some((word) => word.length >= 3 && pNameLower.includes(word));
+  });
+}
+
+/**
+ * Get all unique sizes across products in a category.
+ */
+export function getAllCategorySizes(categorySlug: string): string[] {
+  const sizes = new Set<string>();
+  products
+    .filter((p) => p.category === categorySlug)
+    .forEach((p) => p.sizes.forEach((s) => sizes.add(s)));
+  return Array.from(sizes);
+}
+
+/**
+ * Check if a product is convertible (has dining top or convertible features).
+ */
+export function isConvertible(product: Product): boolean {
+  return product.features.some((f) =>
+    /dining top|convertible/i.test(f)
+  );
+}
+
 /* Navigation data */
 export const navLinks = [
   {

@@ -66,8 +66,8 @@
     "ourStory": "Our Story"
   },
   "home": {
-    "categoryHeading": "What are you looking for?",
-    "featuredHeading": "Transform any game room",
+    "categoryHeading": "The Collection",
+    "featuredHeading": "Our Most Requested Tables",
     "featuredSubheading": "Explore our most popular pool tables and shuffleboards",
     "exploreCta": "Explore Pool Tables",
     "finishesLabel": "Materials",
@@ -78,12 +78,12 @@
     "dealerCtaDescription": "Visit an authorized dealer showroom near you to experience the quality firsthand.",
     "dealerCtaButton": "Find a Dealer",
     "shuffleboardLabel": "Shuffleboards",
-    "shuffleboardHeading": "The Ultimate Side Game",
+    "shuffleboardHeading": "A Statement Piece of Its Own",
     "shuffleboardDescription": "Handcrafted shuffleboards designed to match our most popular table finishes.",
     "shuffleboardCta": "View All Shuffleboards",
     "shuffleboardAlt": "C.L. Bailey Viking Shuffleboard in a luxury game room",
     "furnitureLabel": "Game Room Furniture",
-    "furnitureHeading": "Complete Your Space",
+    "furnitureHeading": "Every Seat. Every Surface. Built to Match.",
     "furnitureDescription": "From spectator seating to pub sets. Furniture built for the modern host.",
     "furnitureCta": "Shop Game Room Furniture",
     "furnitureAlt": "C.L. Bailey game room furniture: pub table, spectator chairs, and cue rack",
@@ -171,7 +171,13 @@
     "browse": "Browse",
     "products": "Products",
     "pricingLabel": "Premium Residential. Dealer Exclusive",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "findDealer": "Find a Dealer",
+    "shareWithCustomer": "Share With Customer",
+    "linkCopied": "Link copied",
+    "downloadImages": "Download Images",
+    "dealerExclusive": "Dealer Exclusive. Not Sold Online.",
+    "convertibleBadge": "Convertible"
   },
   "products": {
     "title": "All Products",
@@ -485,5 +491,57 @@
     "annualTarget": "Annual Target",
     "amountToNextTier": "Amount to Next Tier",
     "of": "of"
+  },
+  "accordion": {
+    "featuresConstruction": "Features & Construction",
+    "availableSizes": "Available Sizes",
+    "finishOptions": "Finish Options",
+    "warrantyCare": "Warranty & Care",
+    "warrantyText": "Lifetime structural warranty on all solid hardwood products. Professional installation recommended. Contact your authorized dealer for complete warranty details."
+  },
+  "configurator": {
+    "stepLabel": "Step {step} of {total}",
+    "selectSize": "Select Size",
+    "selectFinish": "Select Finish",
+    "sendToDealer": "Send to a Dealer",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "zipLabel": "ZIP Code",
+    "zipPlaceholder": "77377",
+    "submit": "Send Configuration to a Dealer",
+    "submitting": "Sending...",
+    "successTitle": "Your {productName} configuration has been sent to {dealerName} in {dealerLocation}.",
+    "successExpect": "Expect to hear from them within 24 hours.",
+    "successFallback": "Find More Dealers",
+    "noDealerTitle": "Your configuration has been received.",
+    "noDealerText": "We will connect you with your nearest authorized dealer shortly.",
+    "error": "Something went wrong. Please try again."
+  },
+  "craft": {
+    "headline": "Solid hardwood. Lifetime guarantee. Handcrafted in Tomball, Texas.",
+    "since": "Since 1999"
+  },
+  "categoryPage": {
+    "models": "Models",
+    "products": "Products",
+    "sortFeatured": "Featured",
+    "sortAZ": "A to Z",
+    "sortZA": "Z to A",
+    "allSizes": "All",
+    "seoTitle": "Why C.L. Bailey {categoryName}",
+    "fromCollection": "From the {collectionName} Collection"
+  },
+  "tradeBlock": {
+    "tradeLabel": "Trade Program",
+    "tradeHeading": "Become an Authorized Dealer",
+    "tradeDescription": "Interior designers, retailers, and industry professionals get direct access to our custom game room furniture. No minimums. Easy ordering.",
+    "tradeCta": "Learn About the Trade Program",
+    "dealerLabel": "Find a Dealer",
+    "dealerHeading": "Find an Authorized Dealer",
+    "dealerDescription": "Every C.L. Bailey table is sold, delivered, and installed by an authorized dealer near you.",
+    "zipPlaceholder": "ZIP Code",
+    "searchCta": "Search"
   }
 }
