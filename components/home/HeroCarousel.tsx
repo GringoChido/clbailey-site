@@ -1,0 +1,251 @@
+"use client";
+
+import { useState, useEffect, useRef, useCallback } from "react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { categories, img } from "@/lib/products";
+
+const SLIDE_DURATION = 6000;
+const FADE_DURATION = 700;
+
+const SLIDE_CATEGORIES = categories
+  .filter((c) => c.slug !== "accessories")
+  .sort((a, b) => a.sortOrder - b.sortOrder)
+  .slice(0, 4);
+
+const SLIDE_KEYS = ["poolTables", "shuffleboards", "furniture", "cueRacks"] as const;
+
+const HeroCarouselNav = ({
+  categories: cats,
+  activeIndex,
+  onSelect,
+  isPaused,
+}: {
+  categories: typeof SLIDE_CATEGORIES;
+  activeIndex: number;
+  onSelect: (i: number) => void;
+  isPaused: boolean;
+}) => (
+  <div
+    role="tablist"
+    aria-label="Category slides"
+    className="flex gap-6 md:gap-10 overflow-x-auto no-scrollbar px-8 md:px-16 lg:px-24"
+  >
+    {cats.map((cat, i) => {
+      const isActive = i === activeIndex;
+      return (
+        <button
+          key={cat.slug}
+          role="tab"
+          aria-selected={isActive}
+          aria-controls={`slide-${cat.slug}`}
+          onClick={() => onSelect(i)}
+          className={`relative pb-3 whitespace-nowrap transition-colors duration-300 cursor-pointer
+            font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px]
+            ${isActive ? "text-white" : "text-white/40 hover:text-white/60"}`}
+        >
+          {cat.name}
+          {/* Progress bar track */}
+          <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10" />
+          {/* Progress bar fill */}
+          {isActive && (
+            <span
+              className="absolute bottom-0 left-0 h-[2px] bg-white/80"
+              style={{
+                animation: isPaused
+                  ? "none"
+                  : `heroProgress ${SLIDE_DURATION}ms linear forwards`,
+                width: isPaused ? undefined : "0%",
+              }}
+            />
+          )}
+        </button>
+      );
+    })}
+  </div>
+);
+
+const HeroCarousel = () => {
+  const t = useTranslations("hero");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [displayIndex, setDisplayIndex] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const isPausedRef = useRef(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const reducedMotionRef = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const touchStartRef = useRef<number | null>(null);
+
+  // Check reduced motion preference
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    reducedMotionRef.current = mq.matches;
+    const handler = (e: MediaQueryListEvent) => {
+      reducedMotionRef.current = e.matches;
+    };
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  // Sync displayIndex for text animation
+  useEffect(() => {
+    setDisplayIndex(activeIndex);
+  }, [activeIndex]);
+
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (reducedMotionRef.current) return;
+    timerRef.current = setInterval(() => {
+      if (!isPausedRef.current) {
+        setActiveIndex((prev) => (prev + 1) % SLIDE_CATEGORIES.length);
+      }
+    }, SLIDE_DURATION);
+  }, []);
+
+  const goToSlide = useCallback(
+    (index: number) => {
+      setActiveIndex(index);
+      startTimer();
+    },
+    [startTimer]
+  );
+
+  // Auto-advance timer
+  useEffect(() => {
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [startTimer]);
+
+  // Pause on hover/focus
+  const pause = useCallback(() => {
+    isPausedRef.current = true;
+    setIsPaused(true);
+  }, []);
+
+  const resume = useCallback(() => {
+    isPausedRef.current = false;
+    setIsPaused(false);
+  }, []);
+
+  // Touch swipe support
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartRef.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStartRef.current === null) return;
+      const diff = touchStartRef.current - e.changedTouches[0].clientX;
+      const threshold = 50;
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          goToSlide((activeIndex + 1) % SLIDE_CATEGORIES.length);
+        } else {
+          goToSlide(
+            (activeIndex - 1 + SLIDE_CATEGORIES.length) %
+              SLIDE_CATEGORIES.length
+          );
+        }
+      }
+      touchStartRef.current = null;
+    },
+    [activeIndex, goToSlide]
+  );
+
+  const slideKey = SLIDE_KEYS[displayIndex];
+
+  return (
+    <div
+      ref={containerRef}
+      role="region"
+      aria-label="Product category showcase"
+      aria-roledescription="carousel"
+      className="relative w-full h-full"
+      onMouseEnter={pause}
+      onMouseLeave={resume}
+      onFocus={pause}
+      onBlur={resume}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Slide images */}
+      {SLIDE_CATEGORIES.map((cat, i) => (
+        <div
+          key={cat.slug}
+          id={`slide-${cat.slug}`}
+          role="tabpanel"
+          aria-label={cat.name}
+          className="absolute inset-0"
+          aria-hidden={i !== activeIndex}
+        >
+          <img
+            src={img(cat.heroImage)}
+            alt={`${cat.name} collection by C.L. Bailey`}
+            className={`w-full h-full object-cover transition-opacity ease-in-out ${
+              i === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ transitionDuration: `${FADE_DURATION}ms` }}
+            sizes="100vw"
+            fetchPriority={i === 0 ? "high" : undefined}
+            loading="eager"
+          />
+        </div>
+      ))}
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/10" />
+
+      {/* Dealer login link */}
+      <Link
+        href="/dealer"
+        className="absolute top-[calc(var(--header-height)+1rem)] xl:top-[calc(var(--header-height-xl)+1rem)] right-6 md:right-16 lg:right-24 z-20 font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-white/30 hover:text-white/60 transition-colors duration-300"
+      >
+        {t("dealerLogin")}
+      </Link>
+
+      {/* Text overlay — bottom-left, keyed to remount on slide change */}
+      <div
+        key={`text-${displayIndex}`}
+        className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-16 lg:px-24 pb-32 md:pb-36"
+      >
+        <p className="section-label !text-white/40 mb-4 animate-fade-up">
+          {t(`slides.${slideKey}.label`)}
+        </p>
+        <h1 className="heading-hero text-white mb-3 max-w-[600px] animate-fade-up animate-delay-1">
+          {SLIDE_CATEGORIES[displayIndex].headline}
+        </h1>
+        <p className="text-sm font-light text-white/50 max-w-[500px] mb-8 animate-fade-up animate-delay-2">
+          {SLIDE_CATEGORIES[displayIndex].description}
+        </p>
+        <Link
+          href={`/products/${SLIDE_CATEGORIES[displayIndex].slug}`}
+          className="btn-outline-white animate-fade-up animate-delay-3"
+        >
+          {t(`slides.${slideKey}.cta`)}
+        </Link>
+      </div>
+
+      {/* Navigation strip */}
+      <div className="absolute bottom-16 md:bottom-20 left-0 right-0 z-10">
+        <HeroCarouselNav
+          categories={SLIDE_CATEGORIES}
+          activeIndex={activeIndex}
+          onSelect={goToSlide}
+          isPaused={isPaused}
+        />
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 text-center animate-fade-in animate-delay-5">
+        <div className="w-[1px] h-10 bg-white/20 mx-auto mb-2" />
+        <span className="text-[0.625rem] tracking-[0.2em] uppercase text-white/30">
+          {t("scrollLabel")}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default HeroCarousel;

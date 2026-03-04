@@ -31,7 +31,26 @@
     "exploreCollection": "Explore the Collection",
     "archive": "The Archive",
     "promoBanner": "2026 Collection: Now Available  |  View the Complete Lineup",
-    "scrollLabel": "Scroll"
+    "scrollLabel": "Scroll",
+    "dealerLogin": "Dealer Login",
+    "slides": {
+      "poolTables": {
+        "label": "The Collection",
+        "cta": "Explore Pool Tables"
+      },
+      "shuffleboards": {
+        "label": "The Collection",
+        "cta": "Explore Shuffleboards"
+      },
+      "furniture": {
+        "label": "The Collection",
+        "cta": "Explore Furniture"
+      },
+      "cueRacks": {
+        "label": "The Collection",
+        "cta": "Explore Cue Racks"
+      }
+    }
   },
   "museum": {
     "poolTables": "Pool Tables",

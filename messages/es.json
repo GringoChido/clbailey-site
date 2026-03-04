@@ -31,7 +31,26 @@
     "exploreCollection": "Explorar la Colección",
     "archive": "El Archivo",
     "promoBanner": "Colección 2026: Ya Disponible  |  Ver la Línea Completa",
-    "scrollLabel": "Desplazar"
+    "scrollLabel": "Desplazar",
+    "dealerLogin": "Acceso Distribuidores",
+    "slides": {
+      "poolTables": {
+        "label": "La Colección",
+        "cta": "Ver Mesas de Billar"
+      },
+      "shuffleboards": {
+        "label": "La Colección",
+        "cta": "Ver Shuffleboards"
+      },
+      "furniture": {
+        "label": "La Colección",
+        "cta": "Ver Muebles"
+      },
+      "cueRacks": {
+        "label": "La Colección",
+        "cta": "Ver Taqueras"
+      }
+    }
   },
   "museum": {
     "poolTables": "Mesas de Billar",
