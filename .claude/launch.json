@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "sell-sheet-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "public/sell-sheets", "-l", "8111", "--no-clipboard"],
+      "port": 8111
     }
   ]
 }

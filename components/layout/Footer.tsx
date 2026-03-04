@@ -67,7 +67,8 @@ export default async function Footer() {
                 alt="The C.L. Bailey Co."
                 width={160}
                 height={43}
-                className="h-[40px] w-auto mb-2 brightness-0 invert opacity-70"
+                className="h-[48px] w-auto object-contain mb-2 invert hue-rotate-180"
+                unoptimized
               />
               <div className="space-y-1 text-sm text-[var(--color-sand)]/70">
                 <p>{company.address.street}</p>
@@ -193,7 +194,8 @@ export default async function Footer() {
                 alt="The C.L. Bailey Co."
                 width={140}
                 height={38}
-                className="h-[36px] w-auto mb-1 brightness-0 invert opacity-70"
+                className="h-[40px] w-auto object-contain mb-1 invert hue-rotate-180"
+                unoptimized
               />
               <p>{company.address.street}, {company.address.city}, {company.address.state} {company.address.zip}</p>
               <p>

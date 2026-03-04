@@ -129,11 +129,7 @@ export default function Header() {
                 alt="The C.L. Bailey Co."
                 width={280}
                 height={75}
-                className={`h-[48px] xl:h-[56px] w-auto select-none transition-[filter] duration-500 ${
-                  solid
-                    ? ""
-                    : "[filter:drop-shadow(0_0_8px_rgba(255,255,255,0.95))_drop-shadow(0_0_4px_rgba(255,255,255,1))_drop-shadow(0_0_2px_rgba(255,255,255,1))]"
-                }`}
+                className="h-[48px] xl:h-[56px] w-auto select-none"
                 priority
                 unoptimized
               />
@@ -185,9 +181,7 @@ export default function Header() {
               alt="The C.L. Bailey Co."
               width={280}
               height={75}
-              className={`h-[32px] w-auto select-none ${
-                solid ? "" : "[filter:drop-shadow(0_0_4px_rgba(255,255,255,0.9))]"
-              }`}
+              className="h-[32px] w-auto select-none"
               unoptimized
             />
           </Link>
