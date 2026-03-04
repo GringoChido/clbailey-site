@@ -9,11 +9,10 @@ const SLIDE_DURATION = 6000;
 const FADE_DURATION = 700;
 
 const SLIDE_CATEGORIES = categories
-  .filter((c) => c.slug !== "accessories")
   .sort((a, b) => a.sortOrder - b.sortOrder)
-  .slice(0, 4);
+  .slice(0, 5);
 
-const SLIDE_KEYS = ["poolTables", "shuffleboards", "furniture", "cueRacks"] as const;
+const SLIDE_KEYS = ["poolTables", "shuffleboards", "furniture", "cueRacks", "accessories"] as const;
 
 const HeroCarouselNav = ({
   categories: cats,

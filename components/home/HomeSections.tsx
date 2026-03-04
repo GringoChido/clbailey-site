@@ -35,6 +35,13 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
       image: `${IMAGEKIT_BASE}/cue-racks/carved-leg-cue-rack/hero.jpg`,
       alt: t("museum.altCueRacks"),
     },
+    {
+      label: t("museum.accessories"),
+      subtitle: t("museum.fromFirstBreak"),
+      href: "/products/accessories",
+      image: `${IMAGEKIT_BASE}/accessories/deluxe-accessory-kit/hero.jpg`,
+      alt: t("museum.altAccessories"),
+    },
   ];
 
   return (
@@ -43,11 +50,19 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
         <p className="section-label text-center mb-3">
           {t("museum.portfolioLabel")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] text-center mb-16">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] text-center mb-4">
           {t("home.categoryHeading")}
         </h2>
+        <p className="text-base text-[var(--color-body)] text-center max-w-lg mx-auto mb-6 leading-relaxed">
+          {t("home.editorialProducts")}
+        </p>
+        <div className="text-center mb-16">
+          <Link href="/products" className="btn-outline">
+            {t("home.editorialProductsCta")}
+          </Link>
+        </div>
 
-        <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:pb-0">
+        <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:pb-0">
           {items.map((item) => (
             <Link
               key={item.label}
@@ -414,25 +429,6 @@ function TradeProgramBlock({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Editorial Interstitial: About the Products ─── */
-function EditorialProducts({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="bg-[var(--color-deep)] py-20 lg:py-28">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-        <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-6">
-          {t("home.editorialProductsLabel")}
-        </p>
-        <p className="font-[family-name:var(--font-display)] text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] font-light italic text-[var(--color-light-on-dark)]/85 leading-relaxed mb-10">
-          {t("home.editorialProducts")}
-        </p>
-        <Link href="/products" className="btn-outline-white">
-          {t("home.editorialProductsCta")}
-        </Link>
-      </div>
-    </section>
-  );
-}
-
 /* ─── Export assembled homepage sections ─── */
 export default async function HomeSections() {
   const t = await getTranslations();
@@ -440,10 +436,9 @@ export default async function HomeSections() {
   return (
     <>
       <CategoryNav t={t} />
-      <EditorialProducts t={t} />
       <DealerPortalBlock t={t} />
-      <FeaturedProducts t={t} />
       <ShuffleboardBlock t={t} />
+      <FeaturedProducts t={t} />
       <FurnitureBlock t={t} />
       <HeritageSection t={t} />
       <TradeProgramBlock t={t} />

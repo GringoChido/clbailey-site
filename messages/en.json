@@ -49,6 +49,10 @@
       "cueRacks": {
         "label": "The Collection",
         "cta": "Explore Cue Racks"
+      },
+      "accessories": {
+        "label": "The Collection",
+        "cta": "Explore Accessories"
       }
     }
   },
@@ -73,6 +77,9 @@
     "altShuffleboards": "C.L. Bailey Shuffleboard Collection",
     "altFurniture": "C.L. Bailey Game Room Furniture",
     "altCueRacks": "C.L. Bailey Cue Rack Collection",
+    "accessories": "Accessories",
+    "fromFirstBreak": "From First Break",
+    "altAccessories": "C.L. Bailey Billiard Accessories",
     "altDutchess": "The Dutchess, featured in our collection catalog",
     "altNameplate": "C.L. Bailey nameplate, since 1999",
     "catalogLabel": "2026 Collection",

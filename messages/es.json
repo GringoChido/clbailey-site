@@ -49,6 +49,10 @@
       "cueRacks": {
         "label": "La Colección",
         "cta": "Ver Taqueras"
+      },
+      "accessories": {
+        "label": "La Colección",
+        "cta": "Ver Accesorios"
       }
     }
   },
@@ -73,6 +77,9 @@
     "altShuffleboards": "Colección de Shuffleboards C.L. Bailey",
     "altFurniture": "Muebles de Sala de Juegos C.L. Bailey",
     "altCueRacks": "Colección de Portatacos C.L. Bailey",
+    "accessories": "Accesorios",
+    "fromFirstBreak": "Desde el Primer Tiro",
+    "altAccessories": "Accesorios de Billar C.L. Bailey",
     "altDutchess": "La Dutchess, presentada en nuestro catálogo de colección",
     "altNameplate": "Placa de C.L. Bailey, desde 1999",
     "catalogLabel": "Colección 2026",
