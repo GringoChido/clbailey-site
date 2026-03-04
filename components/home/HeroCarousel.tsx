@@ -194,33 +194,45 @@ const HeroCarousel = () => {
         </div>
       ))}
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/10" />
+      {/* Gradient overlay — editorial left-to-right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
 
-      {/* Text overlay — bottom-left, keyed to remount on slide change */}
+      {/* Dealer login — persistent subtle link */}
+      <Link
+        href="/dealer"
+        className="absolute top-24 xl:top-28 right-6 md:right-10 z-20
+          font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px]
+          text-white/25 hover:text-white/50 transition-colors duration-300"
+      >
+        {t("dealerLogin")}
+      </Link>
+
+      {/* Text overlay — vertically centered left, generous spacing */}
       <div
         key={`text-${displayIndex}`}
-        className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-16 lg:px-24 pb-32 md:pb-36"
+        className="absolute inset-0 z-10 flex items-center"
       >
-        <p className="section-label !text-white/40 mb-4 animate-fade-up">
-          {t(`slides.${slideKey}.label`)}
-        </p>
-        <h1 className="heading-hero text-white mb-3 max-w-[600px] animate-fade-up animate-delay-1">
-          {SLIDE_CATEGORIES[displayIndex].headline}
-        </h1>
-        <p className="text-sm font-light text-white/50 max-w-[500px] mb-8 animate-fade-up animate-delay-2">
-          {SLIDE_CATEGORIES[displayIndex].description}
-        </p>
-        <Link
-          href={`/products/${SLIDE_CATEGORIES[displayIndex].slug}`}
-          className="btn-outline-white animate-fade-up animate-delay-3"
-        >
-          {t(`slides.${slideKey}.cta`)}
-        </Link>
+        <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32 pb-8">
+          <p className="section-label !text-white/50 mb-6 animate-fade-up">
+            {t(`slides.${slideKey}.label`)}
+          </p>
+          <h1 className="heading-hero text-white mb-5 max-w-[680px] leading-[1.05] animate-fade-up animate-delay-1">
+            {SLIDE_CATEGORIES[displayIndex].headline}
+          </h1>
+          <p className="text-[15px] leading-[1.7] font-light text-white/60 max-w-[520px] mb-10 animate-fade-up animate-delay-2">
+            {SLIDE_CATEGORIES[displayIndex].description}
+          </p>
+          <Link
+            href={`/products/${SLIDE_CATEGORIES[displayIndex].slug}`}
+            className="btn-outline-white animate-fade-up animate-delay-3"
+          >
+            {t(`slides.${slideKey}.cta`)}
+          </Link>
+        </div>
       </div>
 
       {/* Navigation strip */}
-      <div className="absolute bottom-16 md:bottom-20 left-0 right-0 z-10">
+      <div className="absolute bottom-12 md:bottom-14 left-0 right-0 z-10">
         <HeroCarouselNav
           categories={SLIDE_CATEGORIES}
           activeIndex={activeIndex}
@@ -230,8 +242,8 @@ const HeroCarousel = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 text-center animate-fade-in animate-delay-5">
-        <div className="w-[1px] h-10 bg-white/20 mx-auto mb-2" />
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 text-center animate-fade-in animate-delay-5">
+        <div className="w-[1px] h-8 bg-white/15 mx-auto mb-1.5" />
         <span className="text-[0.625rem] tracking-[0.2em] uppercase text-white/30">
           {t("scrollLabel")}
         </span>
