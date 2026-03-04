@@ -339,16 +339,17 @@
     "downloadSpec": "Descargar Ficha Técnica"
   },
   "trade": {
-    "heading": "Diseña con Facilidad",
-    "description": "Nos enorgullece apoyar a diseñadores de interiores, minoristas y profesionales de la industria con acceso directo a nuestros muebles personalizados para salas de juegos.",
-    "whyJoinHeading": "¿Por qué unirse a nuestro programa comercial?",
-    "benefit1": "Ofertas exclusivas para profesionales del sector",
-    "benefit2": "Sin pedidos mínimos: Pida lo que necesite, cuando lo necesite",
-    "benefit3": "Hojas de pedido fáciles de usar para una planificación perfecta",
-    "applyCta": "Solicite unirse al programa comercial",
-    "notTradeHeading": "¿No es un profesional del sector?",
-    "notTradeDescription": "No hay problema: nos asociamos con cientos de distribuidores autorizados en todo Estados Unidos que pueden ayudarle a diseñar la sala de juegos de sus sueños.",
-    "findDealerCta": "Encuentre un distribuidor autorizado"
+    "heading": "Diseñe con Facilidad",
+    "sectionHeading": "Asóciese con una Marca de Herencia",
+    "description": "Apoyamos a diseñadores de interiores, minoristas y profesionales de la industria con acceso directo a nuestros muebles personalizados para salas de juego. Sin mínimos, sin complicaciones.",
+    "statLabel": "Distribuidores Autorizados en Todo el País",
+    "benefit1": "Precios y ofertas exclusivas para distribuidores",
+    "benefit2": "Sin mínimos: ordene lo que necesite, cuando lo necesite",
+    "benefit3": "Hojas de pedido listas para una planificación sin contratiempos",
+    "applyCta": "Solicitar Programa de Distribuidores",
+    "notTradeDescription": "¿No es profesional del sector? Nos asociamos con distribuidores autorizados en todo EE.UU. que pueden ayudarle a diseñar la sala de juegos perfecta.",
+    "findDealerCta": "Encontrar un Distribuidor Autorizado",
+    "imageAlt": "Mesa de billar C.L. Bailey Dutchess en un entorno de sala de juegos de lujo"
   },
   "dealerPortal": {
     "title": "Portal de Distribuidores",

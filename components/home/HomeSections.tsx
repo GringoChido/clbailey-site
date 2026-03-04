@@ -372,56 +372,93 @@ function HeritageSection({ t }: { t: (key: string) => string }) {
 /* ─── Section 8: Trade Program ─── */
 function TradeProgramBlock({ t }: { t: (key: string) => string }) {
   return (
-    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
-      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16">
-          <p className="section-label mb-3">{t("trade.heading")}</p>
-          <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)]">
-            {t("trade.whyJoinHeading")}
-          </h2>
-        </div>
+    <section className="bg-[var(--color-off-white)]">
+      <div className="max-w-[90rem] mx-auto">
+        <div className="grid lg:grid-cols-2 min-h-[70vh]">
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Card 1: For Trade Professionals */}
-          <div className="bg-white border border-[var(--color-cloud)] p-10 lg:p-12">
-            <h3 className="heading-card mb-6">{t("trade.whyJoinHeading")}</h3>
-            <p className="text-base text-[var(--color-body)] leading-relaxed mb-6">
-              {t("trade.description")}
-            </p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[var(--color-bronze)]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm text-[var(--color-body)] leading-relaxed">{t("trade.benefit1")}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[var(--color-bronze)]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm text-[var(--color-body)] leading-relaxed">{t("trade.benefit2")}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 mt-1 flex-shrink-0 text-[var(--color-bronze)]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm text-[var(--color-body)] leading-relaxed">{t("trade.benefit3")}</span>
-              </li>
-            </ul>
-            <Link href="/dealer" className="btn-primary">
-              {t("trade.applyCta")}
-            </Link>
+          {/* Left: Full-height lifestyle image */}
+          <div className="relative min-h-[400px] lg:min-h-0 overflow-hidden">
+            <Image
+              src={`${IMAGEKIT_BASE}/pool-tables/dutchess/lifestyle.jpg`}
+              alt={t("trade.imageAlt")}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={85}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
           </div>
 
-          {/* Card 2: Not a Trade Professional */}
-          <div className="bg-white border border-[var(--color-cloud)] p-10 lg:p-12">
-            <h3 className="heading-card mb-6">{t("trade.notTradeHeading")}</h3>
-            <p className="text-base text-[var(--color-body)] leading-relaxed mb-8">
-              {t("trade.notTradeDescription")}
+          {/* Right: Content panel */}
+          <div className="flex flex-col justify-center px-10 py-16 lg:px-16 lg:py-20 xl:px-20">
+
+            <p className="section-label mb-4">
+              {t("trade.heading")}
             </p>
-            <Link href="/dealer" className="btn-outline">
-              {t("trade.findDealerCta")}
-            </Link>
+
+            <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-5">
+              {t("trade.sectionHeading")}
+            </h2>
+
+            <p className="text-base text-[var(--color-body)] leading-relaxed mb-10 max-w-md">
+              {t("trade.description")}
+            </p>
+
+            {/* Stat callout */}
+            <div className="mb-10 pb-10 border-b border-[var(--color-cloud)]">
+              <p className="heading-display text-[2.5rem] md:text-5xl text-[var(--color-primary)] mb-1">
+                200+
+              </p>
+              <p className="section-label !text-[var(--color-mid-gray)]">
+                {t("trade.statLabel")}
+              </p>
+            </div>
+
+            {/* Benefits list */}
+            <div className="space-y-4 mb-10">
+              {[t("trade.benefit1"), t("trade.benefit2"), t("trade.benefit3")].map((benefit) => (
+                <div key={benefit} className="flex items-start gap-3">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="flex-shrink-0 mt-0.5 text-[var(--color-bronze)]"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span className="text-[13px] text-[var(--color-body)] leading-relaxed">
+                    {benefit}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Primary CTA */}
+            <div className="mb-10">
+              <Link href="/dealer" className="btn-primary">
+                {t("trade.applyCta")}
+              </Link>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[var(--color-cloud)] mb-8" />
+
+            {/* Consumer path */}
+            <div>
+              <p className="text-[13px] text-[var(--color-body)] mb-3">
+                {t("trade.notTradeDescription")}
+              </p>
+              <Link
+                href="/dealer"
+                className="text-sm font-medium text-[var(--color-primary)] border-b border-[var(--color-primary)] pb-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] transition-colors duration-300"
+              >
+                {t("trade.findDealerCta")} &rarr;
+              </Link>
+            </div>
+
           </div>
         </div>
       </div>

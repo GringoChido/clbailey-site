@@ -340,15 +340,16 @@
   },
   "trade": {
     "heading": "Design with Ease",
-    "description": "We're proud to support interior designers, retailers, and industry professionals with direct access to our custom game room furniture.",
-    "whyJoinHeading": "Why Join Our Trade Program?",
-    "benefit1": "Exclusive To the Trade Offers",
-    "benefit2": "No Minimums: Order what you need, when you need it",
-    "benefit3": "Easy-to-Use Order Sheets for seamless project planning",
-    "applyCta": "Apply to Our Trade Program",
-    "notTradeHeading": "Not a Trade Professional?",
-    "notTradeDescription": "No problem: we partner with hundreds of Authorized Dealers across the U.S. who can help you design the game room of your dreams.",
-    "findDealerCta": "Find an Authorized Dealer"
+    "sectionHeading": "Partner With a Heritage Brand",
+    "description": "We support interior designers, retailers, and industry professionals with direct access to our custom game room furniture. No minimums, no hassle.",
+    "statLabel": "Authorized Dealers Nationwide",
+    "benefit1": "Exclusive trade pricing and offers",
+    "benefit2": "No minimums: order what you need, when you need it",
+    "benefit3": "Ready-made order sheets for seamless project planning",
+    "applyCta": "Apply to Trade Program",
+    "notTradeDescription": "Not a trade professional? We partner with authorized dealers across the U.S. who can help you design the perfect game room.",
+    "findDealerCta": "Find an Authorized Dealer",
+    "imageAlt": "C.L. Bailey Dutchess pool table in a luxury game room setting"
   },
   "dealerPortal": {
     "title": "Dealer Portal",
