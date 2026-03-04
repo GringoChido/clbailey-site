@@ -196,16 +196,6 @@ const HeroCarousel = () => {
       {/* Gradient overlay — editorial left-to-right */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
 
-      {/* Dealer login — persistent subtle link */}
-      <Link
-        href="/dealer"
-        className="absolute top-24 xl:top-28 right-6 md:right-10 z-20
-          font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px]
-          text-white/25 hover:text-white/50 transition-colors duration-300"
-      >
-        {t("dealerLogin")}
-      </Link>
-
       {/* Text overlay — vertically centered left, generous spacing */}
       <div
         key={`text-${displayIndex}`}

@@ -65,7 +65,7 @@ export default function Header() {
           className={`announcement-bar transition-[max-height,opacity,padding] duration-500 overflow-hidden ${
             scrolled
               ? "max-h-0 opacity-0 !py-0"
-              : "max-h-12 opacity-100"
+              : "max-h-20 opacity-100"
           }`}
         >
           {t("nav.announcement")}
@@ -140,7 +140,7 @@ export default function Header() {
             </Link>
 
             {/* Right: Find a Dealer */}
-            <div className="flex items-center justify-end w-auto">
+            <div className="flex items-center justify-end w-[120px]">
               <Link
                 href="/dealer"
                 className={`hidden xl:inline-flex items-center whitespace-nowrap font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[2px] px-5 py-2 rounded-full border transition-all duration-300 ${
