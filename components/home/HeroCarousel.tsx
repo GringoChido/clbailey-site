@@ -197,14 +197,6 @@ const HeroCarousel = () => {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/10" />
 
-      {/* Dealer login link */}
-      <Link
-        href="/dealer"
-        className="absolute top-[calc(var(--header-height)+1rem)] xl:top-[calc(var(--header-height-xl)+1rem)] right-6 md:right-16 lg:right-24 z-20 font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-white/30 hover:text-white/60 transition-colors duration-300"
-      >
-        {t("dealerLogin")}
-      </Link>
-
       {/* Text overlay — bottom-left, keyed to remount on slide change */}
       <div
         key={`text-${displayIndex}`}

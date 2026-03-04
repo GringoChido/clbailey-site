@@ -6,7 +6,6 @@ import {
   categories,
   getCategory,
   getProductsByCategory,
-  getAllCategorySizes,
   img,
   IMAGEKIT_BASE,
 } from "@/lib/products";
@@ -64,7 +63,6 @@ export default async function CategoryPage({ params }: PageProps) {
   if (!category) notFound();
 
   const products = getProductsByCategory(categorySlug);
-  const availableSizes = getAllCategorySizes(categorySlug);
 
   return (
     <>
@@ -102,7 +100,6 @@ export default async function CategoryPage({ params }: PageProps) {
       {/* Filter + Product Grid */}
       <CategoryGrid
         products={products}
-        availableSizes={availableSizes}
         locale={locale}
       />
 

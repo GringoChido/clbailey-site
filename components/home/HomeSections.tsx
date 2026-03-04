@@ -407,7 +407,6 @@ export default async function HomeSections() {
       <EditorialFeature t={t} />
       <FeaturedProducts t={t} />
       <ShuffleboardBlock t={t} />
-      <FinishesSection t={t} />
       <EditorialDealer t={t} />
       <FurnitureBlock t={t} />
       <HeritageSection t={t} />
