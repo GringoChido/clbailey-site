@@ -552,6 +552,25 @@
     "seoTitle": "Why C.L. Bailey {categoryName}",
     "fromCollection": "From the {collectionName} Collection"
   },
+  "dealerBlock": {
+    "label": "Resources",
+    "heading": "Browse Our Catalog",
+    "viewAll": "View All Catalogs",
+    "viewSpecSheet": "View Spec Sheet",
+    "dealerLabel": "Authorized Dealers",
+    "dealerHeading": "Your Showroom, Powered by Ours",
+    "dealerDescription": "Access the tools, pricing, and marketing assets that move product off your floor.",
+    "feature1Title": "Product Configurator",
+    "feature1Desc": "Build custom quotes with finish, size, and accessory options",
+    "feature2Title": "Dealer Pricing",
+    "feature2Desc": "Current cost sheets and margin calculators",
+    "feature3Title": "Marketing Kits",
+    "feature3Desc": "Campaign assets, social templates, and POS signage",
+    "feature4Title": "Spec Sheet Library",
+    "feature4Desc": "Every product PDF, updated quarterly",
+    "dealerLoginCta": "Dealer Login",
+    "applyAccess": "Not a dealer? Apply for access"
+  },
   "tradeBlock": {
     "tradeLabel": "Trade Program",
     "tradeHeading": "Become an Authorized Dealer",

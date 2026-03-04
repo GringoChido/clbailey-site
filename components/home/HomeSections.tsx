@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { getFeaturedProducts, img, IMAGEKIT_BASE } from "@/lib/products";
+import CatalogBrowser from "./CatalogBrowser";
 
 /* ─── Section 1: Category Navigation ─── */
 function CategoryNav({ t }: { t: (key: string) => string }) {
@@ -79,29 +80,84 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 2: Editorial Feature (Sourcebook) ─── */
-function EditorialFeature({ t }: { t: (key: string) => string }) {
+/* ─── Section 2: Dealer Portal Block ─── */
+function DealerPortalBlock({ t }: { t: (key: string) => string }) {
+  const features = [
+    { title: t("dealerBlock.feature1Title"), desc: t("dealerBlock.feature1Desc") },
+    { title: t("dealerBlock.feature2Title"), desc: t("dealerBlock.feature2Desc") },
+    { title: t("dealerBlock.feature3Title"), desc: t("dealerBlock.feature3Desc") },
+    { title: t("dealerBlock.feature4Title"), desc: t("dealerBlock.feature4Desc") },
+  ];
+
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
-      <Image
-        src={`${IMAGEKIT_BASE}/pool-tables/dutchess/hero.jpg`}
-        alt={t("museum.altDutchess")}
-        fill
-        className="object-cover"
-        sizes="100vw"
-        quality={85}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
-      <div className="relative z-10 text-center px-6 py-20">
-        <p className="section-label !text-[var(--color-light-on-dark)]/40 mb-4">
-          {t("museum.catalogLabel")}
+    <section className="py-24 lg:py-32 bg-[var(--color-off-white)]">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+        <p className="section-label text-center mb-3">
+          {t("dealerBlock.label")}
         </p>
-        <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-8">
-          {t("museum.requestSourcebook")}
+        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] text-center mb-16">
+          {t("dealerBlock.heading")}
         </h2>
-        <Link href="/catalogs" className="btn-outline-white">
-          {t("museum.viewCatalogs")}
-        </Link>
+
+        <div className="grid lg:grid-cols-2 gap-0">
+          {/* Left: Catalog Browser */}
+          <CatalogBrowser />
+
+          {/* Right: Dealer Portal promo */}
+          <div className="bg-[var(--color-deep)] p-10 lg:p-14 flex flex-col justify-between">
+            <div>
+              <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-4">
+                {t("dealerBlock.dealerLabel")}
+              </p>
+              <h3 className="heading-display text-2xl lg:text-3xl text-white font-light mb-5">
+                {t("dealerBlock.dealerHeading")}
+              </h3>
+              <p className="text-[13px] leading-[26px] text-[var(--color-light-on-dark)]/50 mb-10">
+                {t("dealerBlock.dealerDescription")}
+              </p>
+
+              <div className="space-y-5 mb-12">
+                {features.map((feature) => (
+                  <div key={feature.title} className="flex items-start gap-3">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="flex-shrink-0 mt-1 text-[var(--color-bronze)]"
+                    >
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                    <div>
+                      <p className="text-[13px] font-medium text-white tracking-[0.02em]">
+                        {feature.title}
+                      </p>
+                      <p className="text-[11px] text-[var(--color-light-on-dark)]/40 leading-relaxed">
+                        {feature.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Link href="/dealer" className="btn-outline-white">
+                {t("dealerBlock.dealerLoginCta")}
+              </Link>
+              <p className="mt-5">
+                <Link
+                  href="/contact-us"
+                  className="text-[11px] text-[var(--color-light-on-dark)]/30 hover:text-[var(--color-light-on-dark)]/50 transition-colors duration-300"
+                >
+                  {t("dealerBlock.applyAccess")}
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -377,25 +433,6 @@ function EditorialProducts({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Editorial Interstitial: About the Dealer Portal ─── */
-function EditorialDealer({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="bg-[var(--color-deep)] py-20 lg:py-28">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-        <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-6">
-          {t("home.editorialDealerLabel")}
-        </p>
-        <p className="font-[family-name:var(--font-display)] text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] font-light italic text-[var(--color-light-on-dark)]/85 leading-relaxed mb-10">
-          {t("home.editorialDealer")}
-        </p>
-        <Link href="/dealer" className="btn-outline-white">
-          {t("home.editorialDealerCta")}
-        </Link>
-      </div>
-    </section>
-  );
-}
-
 /* ─── Export assembled homepage sections ─── */
 export default async function HomeSections() {
   const t = await getTranslations();
@@ -404,10 +441,9 @@ export default async function HomeSections() {
     <>
       <CategoryNav t={t} />
       <EditorialProducts t={t} />
-      <EditorialFeature t={t} />
+      <DealerPortalBlock t={t} />
       <FeaturedProducts t={t} />
       <ShuffleboardBlock t={t} />
-      <EditorialDealer t={t} />
       <FurnitureBlock t={t} />
       <HeritageSection t={t} />
       <TradeProgramBlock t={t} />

@@ -552,6 +552,25 @@
     "seoTitle": "Por Qué C.L. Bailey {categoryName}",
     "fromCollection": "De la Colección {collectionName}"
   },
+  "dealerBlock": {
+    "label": "Recursos",
+    "heading": "Explore Nuestro Catalogo",
+    "viewAll": "Ver Todos los Catalogos",
+    "viewSpecSheet": "Ver Ficha Tecnica",
+    "dealerLabel": "Distribuidores Autorizados",
+    "dealerHeading": "Su Sala de Exhibicion, Impulsada por la Nuestra",
+    "dealerDescription": "Acceda a las herramientas, precios y recursos de marketing que mueven producto de su piso de ventas.",
+    "feature1Title": "Configurador de Productos",
+    "feature1Desc": "Cotizaciones personalizadas con acabado, tamano y accesorios",
+    "feature2Title": "Precios para Distribuidores",
+    "feature2Desc": "Hojas de costos y calculadoras de margen actualizadas",
+    "feature3Title": "Kits de Marketing",
+    "feature3Desc": "Recursos de campana, plantillas sociales y senalizacion POS",
+    "feature4Title": "Biblioteca de Fichas Tecnicas",
+    "feature4Desc": "Todos los PDFs de producto, actualizados trimestralmente",
+    "dealerLoginCta": "Acceso Distribuidores",
+    "applyAccess": "No es distribuidor? Solicite acceso"
+  },
   "tradeBlock": {
     "tradeLabel": "Programa Comercial",
     "tradeHeading": "Conviértase en Distribuidor Autorizado",
