@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { getFeaturedProducts, img, IMAGEKIT_BASE } from "@/lib/products";
 import CatalogBrowser from "./CatalogBrowser";
+import DealerLocator from "./DealerLocator";
 
 /* ─── Section 1: Category Navigation ─── */
 function CategoryNav({ t }: { t: (key: string) => string }) {
@@ -478,6 +479,7 @@ export default async function HomeSections() {
 
   return (
     <>
+      <DealerLocator />
       <CategoryNav t={t} />
       <DealerPortalBlock t={t} />
       <ShuffleboardBlock t={t} />
