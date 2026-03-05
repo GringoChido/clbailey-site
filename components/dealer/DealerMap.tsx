@@ -73,24 +73,6 @@ const DealerMap = ({
 
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
-    // Desaturate the base style once loaded
-    map.on("style.load", () => {
-      const layers = map.getStyle().layers;
-      if (layers) {
-        for (const layer of layers) {
-          if (
-            layer.type === "fill" &&
-            layer.id.includes("land")
-          ) {
-            map.setPaintProperty(layer.id, "fill-color", "#f0ede8");
-          }
-          if (layer.type === "line" && layer.id.includes("road")) {
-            map.setPaintProperty(layer.id, "line-color", "#ddd9d3");
-          }
-        }
-      }
-    });
-
     mapRef.current = map;
 
     return () => {
