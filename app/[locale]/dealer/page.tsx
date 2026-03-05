@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import DealerSearch from "@/components/ui/DealerSearch";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import { setRequestLocale } from "next-intl/server";
+import DealerLocatorPage from "@/components/dealer/DealerLocatorPage";
 
 export const metadata: Metadata = {
   title: "Find a Dealer",
@@ -16,23 +15,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function DealerPage() {
-  const t = await getTranslations();
+export default async function DealerPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
 
-  return (
-    <div className="pt-28 pb-20 lg:pb-28">
-      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
-        <ScrollReveal>
-          <h1 className="heading-display text-3xl md:text-4xl mb-4">
-            {t("dealer.title")}
-          </h1>
-          <p className="text-[13px] text-[var(--color-body)] leading-[26px] max-w-lg mb-16">
-            {t("dealer.description")}
-          </p>
-        </ScrollReveal>
-
-        <DealerSearch />
-      </div>
-    </div>
-  );
+  return <DealerLocatorPage />;
 }
