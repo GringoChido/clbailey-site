@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AIConcierge from "@/components/ui/AIConcierge";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -38,6 +39,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <main className="pt-[var(--header-height)] xl:pt-[var(--header-height-xl)]">{children}</main>
         <Footer />
         <AIConcierge />
+        <CookieConsent />
       </NextIntlClientProvider>
     </>
   );

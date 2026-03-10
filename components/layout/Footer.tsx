@@ -229,9 +229,18 @@ export default async function Footer() {
             <p className="metadata text-[var(--color-sand)]/50">
               &copy; {new Date().getFullYear()} {company.name}. {t("footer.allRights")}
             </p>
-            <p className="metadata text-[var(--color-sand)]/50">
-              {t("footer.division")} &middot; {t("footer.location")}
-            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/privacy-policy"
+                className="metadata text-[var(--color-sand)]/50 hover:text-[var(--color-light-on-dark)] transition-colors duration-300"
+              >
+                {t("footer.privacyPolicy")}
+              </Link>
+              <span className="metadata text-[var(--color-sand)]/30">&middot;</span>
+              <p className="metadata text-[var(--color-sand)]/50">
+                {t("footer.division")} &middot; {t("footer.location")}
+              </p>
+            </div>
           </div>
         </div>
       </footer>

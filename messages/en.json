@@ -148,6 +148,7 @@
     "subscribeSuccess": "Thank you for subscribing.",
     "subscribeError": "Something went wrong. Please try again.",
     "allRights": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
     "division": "A division of CLB Assets LLC",
     "location": "Tomball, Texas",
     "yourLocalDealer": "Your Local Dealer",
@@ -589,5 +590,69 @@
     "dealerDescription": "Every C.L. Bailey table is sold, delivered, and installed by an authorized dealer near you.",
     "zipPlaceholder": "ZIP Code",
     "searchCta": "Search"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: March 2026",
+    "introLabel": "YOUR PRIVACY",
+    "introHeading": "How We Handle Your Information",
+    "introText": "C.L. Bailey & Co. is committed to protecting the privacy of visitors to our website and our authorized dealer partners. This policy explains what information we collect, how we use it, and your rights regarding that data.",
+    "collectLabel": "INFORMATION WE COLLECT",
+    "collectHeading": "What We Gather",
+    "collectText": "We collect information you voluntarily provide through our website forms:",
+    "collectItems": {
+      "leads": "Lead forms: name, email address, and ZIP code when you request a product spec sheet or catalog",
+      "newsletter": "Newsletter signup: email address",
+      "dealer": "Dealer inquiry: name, email, and message content",
+      "configurator": "Product configurator: name, email, ZIP code, and product preferences",
+      "chat": "AI Concierge: conversation messages (not stored permanently)"
+    },
+    "useLabel": "HOW WE USE IT",
+    "useHeading": "Purpose of Collection",
+    "useItems": {
+      "respond": "To respond to your inquiries and connect you with an authorized dealer",
+      "specs": "To deliver requested product specifications and catalogs",
+      "newsletter": "To send occasional company updates if you opted in",
+      "improve": "To improve our website and product offerings"
+    },
+    "sharingLabel": "THIRD PARTIES",
+    "sharingHeading": "Who Has Access",
+    "sharingText": "We share information only with services necessary to operate our business:",
+    "sharingItems": {
+      "dealers": "Authorized dealers: your contact information when you request a dealer connection",
+      "email": "Resend: transactional email delivery",
+      "sheets": "Google Sheets: lead data storage",
+      "maps": "Google Maps: dealer locator functionality",
+      "ai": "OpenAI: AI Concierge chat (conversation data is not stored by us)"
+    },
+    "cookiesLabel": "COOKIES",
+    "cookiesHeading": "Cookies and Tracking",
+    "cookiesText": "Our website uses essential cookies for site functionality (such as dealer portal authentication). Third-party services like Google Maps may set additional cookies. You can manage your cookie preferences using the consent banner that appears when you first visit the site.",
+    "rightsLabel": "YOUR RIGHTS",
+    "rightsHeading": "Your Choices",
+    "rightsText": "You have the right to:",
+    "rightsItems": {
+      "access": "Request a copy of the personal information we hold about you",
+      "delete": "Request deletion of your personal information",
+      "optout": "Opt out of marketing communications at any time",
+      "correct": "Request corrections to inaccurate information"
+    },
+    "rightsContact": "To exercise any of these rights, email us at",
+    "ccpaLabel": "CALIFORNIA RESIDENTS",
+    "ccpaHeading": "CCPA Rights",
+    "ccpaText": "If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect and the right to request deletion. We do not sell personal information to third parties.",
+    "securityLabel": "DATA SECURITY",
+    "securityHeading": "How We Protect Your Data",
+    "securityText": "We use industry-standard security measures including HTTPS encryption, secure authentication, and access controls to protect your information. Our website is hosted on Vercel, which provides enterprise-grade infrastructure security.",
+    "contactLabel": "CONTACT",
+    "contactHeading": "Questions About This Policy",
+    "contactText": "If you have questions about this privacy policy or how we handle your data, please contact us:",
+    "legalDisclaimer": "This policy is provided as a framework. C.L. Bailey & Co. recommends having this document reviewed by legal counsel to ensure full compliance with applicable federal and state regulations."
+  },
+  "cookies": {
+    "message": "We use cookies and third-party services to improve your experience. Essential cookies are required for site functionality.",
+    "accept": "Accept All",
+    "essentialOnly": "Essential Only",
+    "learnMore": "Privacy Policy"
   }
 }

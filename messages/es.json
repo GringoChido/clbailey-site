@@ -148,6 +148,7 @@
     "subscribeSuccess": "Gracias por suscribirse.",
     "subscribeError": "Algo salió mal. Intente de nuevo.",
     "allRights": "Todos los derechos reservados.",
+    "privacyPolicy": "Politica de Privacidad",
     "division": "Una división de CLB Assets LLC",
     "location": "Tomball, Texas",
     "yourLocalDealer": "Su Distribuidor Local",
@@ -589,5 +590,69 @@
     "dealerDescription": "Cada mesa C.L. Bailey se vende, entrega e instala por un distribuidor autorizado cerca de usted.",
     "zipPlaceholder": "Código Postal",
     "searchCta": "Buscar"
+  },
+  "privacy": {
+    "title": "Politica de Privacidad",
+    "lastUpdated": "Ultima actualizacion: marzo 2026",
+    "introLabel": "SU PRIVACIDAD",
+    "introHeading": "Como Manejamos Su Informacion",
+    "introText": "C.L. Bailey & Co. esta comprometido con proteger la privacidad de los visitantes de nuestro sitio web y nuestros distribuidores autorizados. Esta politica explica que informacion recopilamos, como la usamos y sus derechos con respecto a esos datos.",
+    "collectLabel": "INFORMACION QUE RECOPILAMOS",
+    "collectHeading": "Lo Que Recopilamos",
+    "collectText": "Recopilamos informacion que usted proporciona voluntariamente a traves de los formularios de nuestro sitio web:",
+    "collectItems": {
+      "leads": "Formularios de contacto: nombre, correo electronico y codigo postal cuando solicita una hoja de especificaciones o catalogo",
+      "newsletter": "Suscripcion al boletin: correo electronico",
+      "dealer": "Consulta de distribuidor: nombre, correo electronico y contenido del mensaje",
+      "configurator": "Configurador de productos: nombre, correo electronico, codigo postal y preferencias de producto",
+      "chat": "Conserje IA: mensajes de conversacion (no se almacenan permanentemente)"
+    },
+    "useLabel": "COMO LA USAMOS",
+    "useHeading": "Proposito de la Recopilacion",
+    "useItems": {
+      "respond": "Para responder a sus consultas y conectarlo con un distribuidor autorizado",
+      "specs": "Para entregar especificaciones de productos y catalogos solicitados",
+      "newsletter": "Para enviar actualizaciones ocasionales de la empresa si opto por recibirlas",
+      "improve": "Para mejorar nuestro sitio web y ofertas de productos"
+    },
+    "sharingLabel": "TERCEROS",
+    "sharingHeading": "Quien Tiene Acceso",
+    "sharingText": "Compartimos informacion solo con los servicios necesarios para operar nuestro negocio:",
+    "sharingItems": {
+      "dealers": "Distribuidores autorizados: su informacion de contacto cuando solicita una conexion con un distribuidor",
+      "email": "Resend: entrega de correo electronico transaccional",
+      "sheets": "Google Sheets: almacenamiento de datos de contacto",
+      "maps": "Google Maps: funcionalidad del localizador de distribuidores",
+      "ai": "OpenAI: chat del Conserje IA (los datos de conversacion no son almacenados por nosotros)"
+    },
+    "cookiesLabel": "COOKIES",
+    "cookiesHeading": "Cookies y Seguimiento",
+    "cookiesText": "Nuestro sitio web utiliza cookies esenciales para la funcionalidad del sitio (como la autenticacion del portal de distribuidores). Servicios de terceros como Google Maps pueden establecer cookies adicionales. Puede administrar sus preferencias de cookies utilizando el banner de consentimiento que aparece cuando visita el sitio por primera vez.",
+    "rightsLabel": "SUS DERECHOS",
+    "rightsHeading": "Sus Opciones",
+    "rightsText": "Usted tiene derecho a:",
+    "rightsItems": {
+      "access": "Solicitar una copia de la informacion personal que tenemos sobre usted",
+      "delete": "Solicitar la eliminacion de su informacion personal",
+      "optout": "Cancelar las comunicaciones de marketing en cualquier momento",
+      "correct": "Solicitar correcciones a informacion inexacta"
+    },
+    "rightsContact": "Para ejercer cualquiera de estos derechos, envie un correo electronico a",
+    "ccpaLabel": "RESIDENTES DE CALIFORNIA",
+    "ccpaHeading": "Derechos CCPA",
+    "ccpaText": "Si usted es residente de California, tiene derechos adicionales bajo la Ley de Privacidad del Consumidor de California (CCPA), incluyendo el derecho a saber que informacion personal recopilamos y el derecho a solicitar su eliminacion. No vendemos informacion personal a terceros.",
+    "securityLabel": "SEGURIDAD DE DATOS",
+    "securityHeading": "Como Protegemos Sus Datos",
+    "securityText": "Utilizamos medidas de seguridad estandar de la industria, incluyendo cifrado HTTPS, autenticacion segura y controles de acceso para proteger su informacion. Nuestro sitio web esta alojado en Vercel, que proporciona seguridad de infraestructura de nivel empresarial.",
+    "contactLabel": "CONTACTO",
+    "contactHeading": "Preguntas Sobre Esta Politica",
+    "contactText": "Si tiene preguntas sobre esta politica de privacidad o como manejamos sus datos, contactenos:",
+    "legalDisclaimer": "Esta politica se proporciona como un marco de referencia. C.L. Bailey & Co. recomienda que este documento sea revisado por un abogado para garantizar el cumplimiento total de las regulaciones federales y estatales aplicables."
+  },
+  "cookies": {
+    "message": "Usamos cookies y servicios de terceros para mejorar su experiencia. Las cookies esenciales son necesarias para la funcionalidad del sitio.",
+    "accept": "Aceptar Todas",
+    "essentialOnly": "Solo Esenciales",
+    "learnMore": "Politica de Privacidad"
   }
 }
