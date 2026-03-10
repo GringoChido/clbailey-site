@@ -7,6 +7,8 @@ import {
   LayoutDashboard,
   Users,
   UserPlus,
+  Package,
+  Target,
   BarChart3,
   Megaphone,
   LogOut,
@@ -15,6 +17,8 @@ import {
 import DashboardPanel from "./panels/DashboardPanel";
 import DealerManagementPanel from "./panels/DealerManagementPanel";
 import OnboardingPanel from "./panels/OnboardingPanel";
+import OrderManagementPanel from "./panels/OrderManagementPanel";
+import MarketingPanel from "./panels/MarketingPanel";
 import AnalyticsPanel from "./panels/AnalyticsPanel";
 import AnnouncementsPanel from "./panels/AnnouncementsPanel";
 import type { AdminSection } from "@/lib/admin/types";
@@ -23,6 +27,8 @@ const navItems: { id: AdminSection; label: string; icon: typeof LayoutDashboard 
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { id: "dealers", label: "Dealer Management", icon: Users },
   { id: "onboarding", label: "Onboard Dealer", icon: UserPlus },
+  { id: "orders", label: "Order Management", icon: Package },
+  { id: "marketing", label: "Marketing", icon: Target },
   { id: "analytics", label: "Analytics", icon: BarChart3 },
   { id: "announcements", label: "Announcements", icon: Megaphone },
 ];
@@ -48,6 +54,10 @@ export default function AdminDashboard() {
         return <DealerManagementPanel onNavigate={setActiveSection} />;
       case "onboarding":
         return <OnboardingPanel onComplete={() => setActiveSection("dealers")} />;
+      case "orders":
+        return <OrderManagementPanel />;
+      case "marketing":
+        return <MarketingPanel />;
       case "analytics":
         return <AnalyticsPanel />;
       case "announcements":

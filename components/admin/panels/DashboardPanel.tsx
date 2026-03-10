@@ -8,6 +8,7 @@ import {
   UserPlus,
   FileText,
   Settings,
+  Target,
 } from "lucide-react";
 import { adminKPIs, recentActivity } from "@/lib/admin/mock-data";
 import type { AdminSection, ActivityType } from "@/lib/admin/types";
@@ -147,9 +148,9 @@ export default function DashboardPanel({ onNavigate }: Props) {
           <div className="space-y-3">
             {[
               { label: "Onboard New Dealer", icon: UserPlus, section: "onboarding" as AdminSection },
-              { label: "Manage Dealers", icon: Package, section: "dealers" as AdminSection },
+              { label: "Manage Orders", icon: Package, section: "orders" as AdminSection },
+              { label: "Marketing", icon: Target, section: "marketing" as AdminSection },
               { label: "View Analytics", icon: FileText, section: "analytics" as AdminSection },
-              { label: "Post Announcement", icon: Settings, section: "announcements" as AdminSection },
             ].map(({ label, icon: Icon, section }) => (
               <button
                 key={label}
