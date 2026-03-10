@@ -1,24 +1,36 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { dealerInquirySchema } from "@/lib/validations";
+import { rateLimit } from "@/lib/rate-limit";
 
-// TODO: Wire to Salesforce API
-export async function POST(request: Request) {
+const limiter = rateLimit({ interval: 60 * 1000, limit: 5 });
+
+export async function POST(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const { success } = limiter.check(ip);
+  if (!success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
+    const result = dealerInquirySchema.safeParse(body);
 
-    const { dealerName, customerName, customerEmail } = body;
-
-    if (!dealerName || !customerName || !customerEmail) {
+    if (!result.success) {
       return NextResponse.json(
-        { error: "Missing required fields: dealerName, customerName, customerEmail" },
+        { error: result.error.issues[0]?.message || "Invalid input" },
         { status: 400 }
       );
     }
 
-    // Log the inquiry for now
-    console.log("[Dealer Inquiry]", JSON.stringify(body, null, 2));
+    const data = result.data;
 
-    // TODO: Wire to Salesforce API to create a Lead
-    // TODO: Send confirmation email via Resend
+    console.log("[Dealer Inquiry]", {
+      dealer: data.dealerName,
+      customer: data.customerEmail.replace(/(.{2}).*(@.*)/, "$1***$2"),
+    });
 
     return NextResponse.json({ success: true, message: "Inquiry sent" });
   } catch {

@@ -1,15 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { geocodeZip, findNearestDealers } from "@/lib/dealers";
+import { rateLimit } from "@/lib/rate-limit";
 
-/*
-  GET /api/dealers/search?zip=77377&limit=5
-  Returns nearest dealers sorted by distance.
-*/
+const limiter = rateLimit({ interval: 60 * 1000, limit: 15 });
 
 export async function GET(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const { success } = limiter.check(ip);
+  if (!success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const zip = searchParams.get("zip");
-  const limit = parseInt(searchParams.get("limit") || "5", 10);
+  const limitParam = searchParams.get("limit") || "5";
+  const limit = Math.min(Math.max(parseInt(limitParam, 10) || 5, 1), 20);
 
   if (!zip || !/^\d{5}$/.test(zip.trim())) {
     return NextResponse.json(

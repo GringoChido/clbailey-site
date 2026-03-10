@@ -1,28 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
+import { newsletterSchema } from "@/lib/validations";
+import { rateLimit } from "@/lib/rate-limit";
+
+const limiter = rateLimit({ interval: 60 * 1000, limit: 3 });
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const { success } = limiter.check(ip);
+  if (!success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   try {
-    const { email } = await request.json();
+    const body = await request.json();
+    const result = newsletterSchema.safeParse(body);
 
-    if (!email || typeof email !== "string") {
+    if (!result.success) {
       return NextResponse.json(
-        { error: "Email is required" },
+        { error: result.error.issues[0]?.message || "Invalid email" },
         { status: 400 },
       );
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 },
-      );
-    }
-
+    const { email } = result.data;
     const timestamp = new Date().toISOString();
-    console.log("[NEWSLETTER]", { timestamp, email });
 
-    // Log to Google Sheets if configured
+    console.log("[NEWSLETTER]", { timestamp, email: email.replace(/(.{2}).*(@.*)/, "$1***$2") });
+
     const sheetsId = process.env.GOOGLE_SHEETS_ID;
     const serviceEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
     const privateKeyB64 = process.env.GOOGLE_PRIVATE_KEY;

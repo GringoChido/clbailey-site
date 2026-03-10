@@ -1,48 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { leadSchema } from "@/lib/validations";
+import { rateLimit } from "@/lib/rate-limit";
 
-interface LeadPayload {
-  name: string;
-  email: string;
-  zip: string;
-  product: string;
-  pdfUrl: string;
-}
+const limiter = rateLimit({ interval: 60 * 1000, limit: 3 });
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const { success } = limiter.check(ip);
+  if (!success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   try {
-    const body = (await request.json()) as LeadPayload;
-    const { name, email, zip, product, pdfUrl } = body;
+    const body = await request.json();
+    const result = leadSchema.safeParse(body);
 
-    if (!email || !zip || !product || !pdfUrl) {
+    if (!result.success) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: result.error.issues[0]?.message || "Invalid input" },
         { status: 400 }
       );
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
-    }
-
-    if (!/^\d{5}$/.test(zip.trim())) {
-      return NextResponse.json(
-        { error: "ZIP code must be 5 digits" },
-        { status: 400 }
-      );
-    }
-
+    const { name, email, zip, product, pdfUrl } = result.data;
     const timestamp = new Date().toISOString();
 
-    console.log("[LEAD]", { timestamp, name, email, zip, product, pdfUrl });
+    console.log("[LEAD]", { timestamp, email: email.replace(/(.{2}).*(@.*)/, "$1***$2"), zip, product });
 
-    // Run Resend email + Google Sheets in parallel
     const promises: Promise<void>[] = [];
 
-    // Resend notification
     const resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {
       const resend = new Resend(resendKey);
@@ -51,15 +41,15 @@ export async function POST(request: NextRequest) {
           .send({
             from: "C.L. Bailey Leads <leads@clbailey.com>",
             to: ["info@clbailey.com"],
-            subject: `New Lead: ${product} — ${name || "Unknown"}`,
+            subject: `New Lead: ${product}`,
             html: `
               <h2>New Spec Sheet Download</h2>
               <table style="border-collapse:collapse;">
-                <tr><td style="padding:4px 12px 4px 0;color:#888;">Name</td><td>${name || "—"}</td></tr>
-                <tr><td style="padding:4px 12px 4px 0;color:#888;">Email</td><td>${email}</td></tr>
-                <tr><td style="padding:4px 12px 4px 0;color:#888;">ZIP</td><td>${zip}</td></tr>
-                <tr><td style="padding:4px 12px 4px 0;color:#888;">Product</td><td>${product}</td></tr>
-                <tr><td style="padding:4px 12px 4px 0;color:#888;">PDF</td><td>${pdfUrl}</td></tr>
+                <tr><td style="padding:4px 12px 4px 0;color:#888;">Name</td><td>${escapeHtml(name)}</td></tr>
+                <tr><td style="padding:4px 12px 4px 0;color:#888;">Email</td><td>${escapeHtml(email)}</td></tr>
+                <tr><td style="padding:4px 12px 4px 0;color:#888;">ZIP</td><td>${escapeHtml(zip)}</td></tr>
+                <tr><td style="padding:4px 12px 4px 0;color:#888;">Product</td><td>${escapeHtml(product)}</td></tr>
+                <tr><td style="padding:4px 12px 4px 0;color:#888;">PDF</td><td>${escapeHtml(pdfUrl)}</td></tr>
                 <tr><td style="padding:4px 12px 4px 0;color:#888;">Time</td><td>${timestamp}</td></tr>
               </table>
             `,
@@ -71,7 +61,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Google Sheets integration
     const sheetsId = process.env.GOOGLE_SHEETS_ID;
     if (sheetsId) {
       promises.push(
@@ -100,6 +89,15 @@ export async function POST(request: NextRequest) {
       { status: 400 }
     );
   }
+}
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 /* ─── Google Sheets helper ─── */
