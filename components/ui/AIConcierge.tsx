@@ -3,13 +3,20 @@
 import { useState, useRef, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 export default function AIConcierge() {
   const t = useTranslations("concierge");
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const { messages, sendMessage, status } = useChat();
+
+  // Hide public concierge on dealer portal and admin panel
+  if (pathname?.includes("/dealer-portal") || pathname?.includes("/admin")) {
+    return null;
+  }
 
   const isLoading = status === "submitted" || status === "streaming";
 
