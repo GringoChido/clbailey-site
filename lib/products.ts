@@ -28,6 +28,7 @@ export interface Category {
   headline: string;
   description: string;
   heroImage: string;
+  heroVideo?: string;
   sortOrder: number;
 }
 
