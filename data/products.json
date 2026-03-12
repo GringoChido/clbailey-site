@@ -11,7 +11,7 @@
       "name": "Pool Tables",
       "headline": "Built for Homes That Endure",
       "description": "Nine distinct models. Solid hardwood construction. Lifetime guarantee.",
-      "heroImage": "pool-tables/skylar/hero.jpg",
+      "heroImage": "The_C_L__Bailey_Co__Master_Organizer/Hero_Slides/slide-1-pool-tables_cabZMGXYn.jpg",
       "sortOrder": 1
     },
     {
@@ -19,7 +19,7 @@
       "name": "Shuffleboards",
       "headline": "Fourteen Feet of Solid Hardwood",
       "description": "Premium shuffleboards from 9' to 14'. Solid playfield. Precision scoring.",
-      "heroImage": "shuffleboards/viking-shuffleboard/hero.jpg",
+      "heroImage": "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg",
       "sortOrder": 2
     },
     {
@@ -27,7 +27,7 @@
       "name": "Game Room Furniture",
       "headline": "Every Seat. Every Surface. Matched.",
       "description": "Spectator chairs, storage benches, and cue racks designed to complement your table.",
-      "heroImage": "game-room-furniture/skylar-furniture/hero.jpg",
+      "heroImage": "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20Spec-chair_KmxSG58XqI.jpg",
       "sortOrder": 3
     },
     {
@@ -35,7 +35,7 @@
       "name": "Cue Racks",
       "headline": "Floor, Wall, and Corner. Five Finishes.",
       "description": "Floor, wall, and corner cue racks in matching finishes.",
-      "heroImage": "cue-racks/carved-leg-cue-rack/hero.jpg",
+      "heroImage": "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack_hwoOTwD0o.jpg",
       "sortOrder": 4
     },
     {
@@ -69,14 +69,15 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/skylar/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg",
         "gallery": [
-          "pool-tables/skylar/angle.jpg",
-          "pool-tables/skylar/graphite.jpg",
-          "pool-tables/skylar/nameplate.jpg",
-          "pool-tables/skylar/dining-top.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/clb%20skylar%20image%203_7bWQdCHbv.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/clb%20skylar%20image%204_n3PiE-mhoU.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/clb%20skylar%20image%205_AtvgcxtkZL.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20rail_a7ZrkNErL.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/clb%20skylar%20image%202__x_M9qpGt.jpg"
         ],
-        "dimensions": "pool-tables/skylar/dimensions.jpg"
+        "dimensions": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/clb%20skylar%208'%20dimensions%20image_dbiSM2dBNO.jpg"
       },
       "pdf": "skylar-pool-table.pdf",
       "featured": true,
@@ -102,14 +103,15 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/viking/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/viking%20combo_3-Iafpk-F.jpg",
         "gallery": [
-          "pool-tables/viking/angle.jpg",
-          "pool-tables/viking/detail.jpg",
-          "pool-tables/viking/nameplate.jpg",
-          "pool-tables/viking/lifestyle.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/clb%20viking%20image%208_9KFmcsMUm.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/clb%20viking%20image%204_au4F8ZHpHJ.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/clb%20viking%20image%205_VntyZyvzSk.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/clb%20viking%20image%206_qk_uGXRll.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/clb%20viking%20image%203_FWwBs9FSqS.jpg"
         ],
-        "dimensions": null
+        "dimensions": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/clb%20viking%20dimensions_KA0OjMqkL.jpg"
       },
       "pdf": "viking-pool-table.pdf",
       "featured": true,
@@ -137,14 +139,13 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/dutchess/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%202_4Rq5CRLeN.jpg",
         "gallery": [
-          "pool-tables/dutchess/green.jpg",
-          "pool-tables/dutchess/diamond-detail.jpg",
-          "pool-tables/dutchess/nameplate.jpg",
-          "pool-tables/dutchess/rail.jpg",
-          "pool-tables/dutchess/detail.jpg",
-          "pool-tables/dutchess/lifestyle.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%203_s3JeXVP6L.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%204_xhsANj4A8I.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%205_cmX4YVy6D5.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%206_VPrAPXYZj.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%207_ZE3EugN-2.jpg"
         ],
         "dimensions": null
       },
@@ -172,14 +173,15 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/tunbridge/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Tunbridge/Weathered_Brown/tunbridge%20combo_XNCM04WcK.jpg",
         "gallery": [
-          "pool-tables/tunbridge/profile.jpg",
-          "pool-tables/tunbridge/detail.jpg",
-          "pool-tables/tunbridge/nameplate.jpg",
-          "pool-tables/tunbridge/diamond.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Tunbridge/Weathered_Brown/clb%20tunbridge%20image%202_nR3XmF5X8.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Tunbridge/Weathered_Brown/clb%20tunbridge%20image%203_J4Ii9Wvik3.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Tunbridge/Weathered_Brown/clb%20tunbridge%20image%205_mrwhdxs0C.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Tunbridge/Weathered_Brown/clb%20tunbridge%20image%206_cElacOrpKM.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Tunbridge/Weathered_Brown/clb%20tunbridge%20image%207_1yWKcWVl0K.jpg"
         ],
-        "dimensions": "pool-tables/tunbridge/dimensions.jpg"
+        "dimensions": null
       },
       "pdf": "tunbridge-catalog.pdf",
       "featured": false,
@@ -206,12 +208,10 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/duke/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Duke/Warm_Chestnut/clb%20duke%20image%202_UqeW3MTwa1.jpg",
         "gallery": [
-          "pool-tables/duke/closed.jpg",
-          "pool-tables/duke/angle.jpg",
-          "pool-tables/duke/nameplate.jpg",
-          "pool-tables/duke/rail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Duke/Warm_Chestnut/clb%20duke%20image%203_lMNHHBaggR.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Duke/Warm_Chestnut/clb%20duke%20image%204_jqm-lFNtIJ.jpg"
         ],
         "dimensions": null
       },
@@ -239,11 +239,10 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/norwich/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Norwich/Warm_Chestnut/clb%20norwich%20image%202_K74VUZYJY-.jpg",
         "gallery": [
-          "pool-tables/norwich/closed.jpg",
-          "pool-tables/norwich/angle.jpg",
-          "pool-tables/norwich/rail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Norwich/Warm_Chestnut/clb%20norwich%20image%203_eNFIJT8gX.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Norwich/Warm_Chestnut/clb%20norwich%20image%204_2xKkC-F4b.jpg"
         ],
         "dimensions": null
       },
@@ -271,11 +270,11 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/elayna/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Elayna/Warm_Chestnut/clb%20elayna%20image%202_cbqgFUNZz4.jpg",
         "gallery": [
-          "pool-tables/elayna/angle.jpg",
-          "pool-tables/elayna/detail.jpg",
-          "pool-tables/elayna/side.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Elayna/Warm_Chestnut/clb%20elayna%20image%203_5AkwL0txp.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Elayna/Warm_Chestnut/clb%20elayna%20image%204_tzIzKm5eHC.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Elayna/Warm_Chestnut/clb%20elayna%20image%205_C5VVAPBTI3.jpg"
         ],
         "dimensions": null
       },
@@ -303,11 +302,10 @@
         "8'"
       ],
       "images": {
-        "hero": "pool-tables/adrian/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Adrian/Warm_Chestnut/clb%20adrian%20ptb%20profile_rYNSgoBT-m.jpg",
         "gallery": [
-          "pool-tables/adrian/front.jpg",
-          "pool-tables/adrian/detail.jpg",
-          "pool-tables/adrian/back.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Adrian/Warm_Chestnut/clb%20adrian%20image%203_6FEkwqMU_c.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Adrian/Warm_Chestnut/clb%20adrian%20image%204_QEtrMoC5Te.jpg"
         ],
         "dimensions": null
       },
@@ -335,8 +333,10 @@
         "8'"
       ],
       "images": {
-        "hero": null,
-        "gallery": [],
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Addison/Black/addison_vJxW01dqd.jpg",
+        "gallery": [
+          "The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Addison/Black/addison2_ryP107F3f.jpg"
+        ],
         "dimensions": null
       },
       "pdf": "addison-pool-table.pdf",
@@ -362,15 +362,11 @@
         "12'"
       ],
       "images": {
-        "hero": "shuffleboards/viking-shuffleboard/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg",
         "gallery": [
-          "shuffleboards/viking-shuffleboard/profile.jpg",
-          "shuffleboards/viking-shuffleboard/lifestyle.jpg",
-          "shuffleboards/viking-shuffleboard/playfield.jpg",
-          "shuffleboards/viking-shuffleboard/score-counter.jpg",
-          "shuffleboards/viking-shuffleboard/detail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/clb%20shb%20wax%20and%20pucks%20image_uNu04a40Q.jpg"
         ],
-        "dimensions": "shuffleboards/viking-shuffleboard/dimensions.jpg"
+        "dimensions": null
       },
       "pdf": "viking-shuffleboard.pdf",
       "featured": true,
@@ -395,12 +391,12 @@
         "12'"
       ],
       "images": {
-        "hero": "shuffleboards/skylar-shuffleboard/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Skylar/Warm_Chestnut/skylar%20shb%20image%202_KPaju0F9XR.jpg",
         "gallery": [
-          "shuffleboards/skylar-shuffleboard/angle.jpg",
-          "shuffleboards/skylar-shuffleboard/detail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Skylar/Warm_Chestnut/skylar%20shb%20image%203_BTcUB41dXa.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Skylar/Warm_Chestnut/skylar%20shb%20image%205_LHB9YbsqD.jpg"
         ],
-        "dimensions": "shuffleboards/skylar-shuffleboard/dimensions.jpg"
+        "dimensions": null
       },
       "pdf": "skylar-shuffleboard.pdf",
       "featured": true,
@@ -426,13 +422,16 @@
         "14'"
       ],
       "images": {
-        "hero": "shuffleboards/tunbridge-shuffleboard/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/clb%20tunbridge%20shb%20image%203_7QNsDmxOCB.jpg",
         "gallery": [
-          "shuffleboards/tunbridge-shuffleboard/12ft.jpg",
-          "shuffleboards/tunbridge-shuffleboard/14ft.jpg",
-          "shuffleboards/tunbridge-shuffleboard/detail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/clb%20tunbridge%20shb%20image%204_jh3g8VRe0H.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/clb%20tunbridge%20shb%20image%205_z3uwnAiwR.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/clb%20tunbridge%20shb%20image%206_fJrLTQAIPx.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/tunbridge%2012'%20image%202_Z2P7HKMmw.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/tunbridge%2014'%20image%202_eMDmy3aBI.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Tunbridge/Weathered_Brown/clb%20tunbridge%20aahb%20image%207_wW8DSVmFR.jpg"
         ],
-        "dimensions": "shuffleboards/tunbridge-shuffleboard/dimensions.jpg"
+        "dimensions": null
       },
       "pdf": "tunbridge-shuffleboard.pdf",
       "featured": false,
@@ -488,12 +487,13 @@
       ],
       "sizes": [],
       "images": {
-        "hero": "game-room-furniture/skylar-furniture/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20Spec-chair_KmxSG58XqI.jpg",
         "gallery": [
-          "game-room-furniture/skylar-furniture/bench.jpg",
-          "game-room-furniture/skylar-furniture/cue-rack.jpg",
-          "game-room-furniture/skylar-furniture/dolly.jpg",
-          "game-room-furniture/skylar-furniture/chair-detail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20spec%20chair%202_yGmJQHwYK.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20spec%20chair%203_4gis3a93V.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack_hwoOTwD0o.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack%203_egpataV8C.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Skylar/Warm_Chestnut/skylar%20caddy_SyGE-VD57.jpg"
         ],
         "dimensions": null
       },
@@ -517,10 +517,10 @@
       ],
       "sizes": [],
       "images": {
-        "hero": "game-room-furniture/tunbridge-furniture/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Tunbridge/Weathered_Brown/tunbridge%20cue%20rack_w2uqURMMB7.jpg",
         "gallery": [
-          "game-room-furniture/tunbridge-furniture/bench.jpg",
-          "game-room-furniture/tunbridge-furniture/cue-rack.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Tunbridge/Weathered_Brown/tunbridge%20cue%20rack%202_UNXzPxW25C.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Tunbridge/Weathered_Brown/tunbridge%20cue%20rack%203_g7_K4Xw4n.jpg"
         ],
         "dimensions": null
       },
@@ -544,11 +544,10 @@
       ],
       "sizes": [],
       "images": {
-        "hero": "game-room-furniture/viking-furniture/hero.jpg",
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Benches/Viking/Antique_Oak/viking-bench-crop_ukWsqEDUI.jpg",
         "gallery": [
-          "game-room-furniture/viking-furniture/bench.jpg",
-          "game-room-furniture/viking-furniture/cue-rack.jpg",
-          "game-room-furniture/viking-furniture/chair-detail.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Viking/clb%20viking%20image%206_qk_uGXRll.jpg",
+          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Viking/clb%20viking%20image%207_qAeewk-7C.jpg"
         ],
         "dimensions": null
       },

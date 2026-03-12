@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { categories, img } from "@/lib/products";
@@ -179,16 +180,17 @@ const HeroCarousel = () => {
           className="absolute inset-0"
           aria-hidden={i !== activeIndex}
         >
-          <img
+          <Image
             src={img(cat.heroImage)}
             alt={`${cat.name} collection by C.L. Bailey`}
-            className={`w-full h-full object-cover transition-opacity ease-in-out ${
+            fill
+            className={`object-cover transition-opacity ease-in-out ${
               i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
             style={{ transitionDuration: `${FADE_DURATION}ms` }}
             sizes="100vw"
-            fetchPriority={i === 0 ? "high" : undefined}
-            loading="eager"
+            priority={i === 0}
+            quality={80}
           />
         </div>
       ))}

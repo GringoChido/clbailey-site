@@ -12,21 +12,21 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
       label: t("museum.poolTables"),
       subtitle: t("museum.nineModels"),
       href: "/products/pool-tables",
-      image: `${IMAGEKIT_BASE}/pool-tables/viking/hero.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/viking%20combo_3-Iafpk-F.jpg`,
       alt: t("museum.altPoolTables"),
     },
     {
       label: t("museum.shuffleboards"),
       subtitle: t("museum.nineToFourteen"),
       href: "/products/shuffleboards",
-      image: `${IMAGEKIT_BASE}/shuffleboards/viking-shuffleboard/hero.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg`,
       alt: t("museum.altShuffleboards"),
     },
     {
       label: t("museum.furniture"),
       subtitle: t("museum.completeTheRoom"),
       href: "/products/game-room-furniture",
-      image: `${IMAGEKIT_BASE}/game-room-furniture/viking-furniture/chair-detail.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Benches/Viking/Antique_Oak/viking-bench-crop_ukWsqEDUI.jpg`,
       alt: t("museum.altFurniture"),
     },
     {
@@ -245,7 +245,7 @@ function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[50vh] lg:min-h-[70vh] flex items-center overflow-hidden">
       <Image
-        src={`${IMAGEKIT_BASE}/shuffleboards/viking-shuffleboard/lifestyle.jpg`}
+        src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg`}
         alt={t("home.shuffleboardAlt")}
         fill
         className="object-cover"
@@ -321,7 +321,7 @@ function FurnitureBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="relative w-full min-h-[50vh] lg:min-h-[70vh] flex items-center overflow-hidden">
       <Image
-        src={`${IMAGEKIT_BASE}/game-room-furniture/skylar-furniture/hero.jpg`}
+        src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20Spec-chair_KmxSG58XqI.jpg`}
         alt={t("home.furnitureAlt")}
         fill
         className="object-cover"

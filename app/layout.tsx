@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "C.L. Bailey & Co.",
     images: [
       {
-        url: `${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`,
+        url: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg`,
         width: 1200,
         height: 630,
         alt: "C.L. Bailey & Co. — Handcrafted Pool Tables",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "C.L. Bailey & Co. | Modern Heritage Billiards",
     description:
       "Solid hardwood pool tables, shuffleboards, and game room furniture. Handcrafted in Tomball, Texas.",
-    images: [`${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`],
+    images: [`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg`],
   },
   alternates: {
     canonical: "https://clbailey.com",
@@ -103,7 +103,7 @@ export default function RootLayout({
               name: "C.L. Bailey & Co.",
               url: "https://clbailey.com",
               logo: "https://clbailey.com/images/brand/logo.png",
-              image: `${IMAGEKIT_BASE}/pool-tables/skylar/hero.jpg`,
+              image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg`,
               description:
                 "Handcrafted solid hardwood pool tables, shuffleboards, and game room furniture. Built in Tomball, Texas since 1999.",
               foundingDate: "1999",

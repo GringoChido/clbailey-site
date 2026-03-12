@@ -321,7 +321,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
 
         {/* Full-bleed CraftSection break */}
-        <CraftSection backgroundImage="pool-tables/dutchess/hero.jpg" />
+        <CraftSection backgroundImage="The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%202_4Rq5CRLeN.jpg" />
 
         <div className="max-w-[90rem] mx-auto px-6 lg:px-10 mt-20">
           {/* Collection / Cross-category products */}

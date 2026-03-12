@@ -1,4 +1,4 @@
-const IMAGEKIT_URL = process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT;
+const IMAGEKIT_BASE = "https://ik.imagekit.io/billiardfactory";
 
 export default function imagekitLoader({
   src,
@@ -9,11 +9,20 @@ export default function imagekitLoader({
   width: number;
   quality?: number;
 }) {
-  if (!IMAGEKIT_URL) {
+  // Local /images/ paths serve from public/ directly, skip ImageKit
+  if (src.startsWith("/images/")) {
     return src;
   }
 
-  const params = [`w-${width}`, `f-auto`];
+  const params = [`w-${width}`, "f-auto"];
   if (quality) params.push(`q-${quality}`);
-  return `${IMAGEKIT_URL}/tr:${params.join(",")}${src}`;
+
+  // If src is already a full ImageKit URL, insert transforms
+  if (src.startsWith(IMAGEKIT_BASE)) {
+    const path = src.replace(IMAGEKIT_BASE, "");
+    return `${IMAGEKIT_BASE}/tr:${params.join(",")}${path}`;
+  }
+
+  // If src is a relative path, build the full URL with transforms
+  return `${IMAGEKIT_BASE}/tr:${params.join(",")}/${src}`;
 }

@@ -21,21 +21,21 @@ function CollectionsPortfolio({ t }: { t: (key: string) => string }) {
       title: t("museum.poolTables"),
       subtitle: "Nine Models",
       href: "/products/pool-tables",
-      image: `${IMAGEKIT_BASE}/pool-tables/viking/hero.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/viking%20combo_3-Iafpk-F.jpg`,
       alt: t("museum.altPoolTables"),
     },
     {
       title: t("museum.shuffleboards"),
       subtitle: "9 to 14 Feet",
       href: "/products/shuffleboards",
-      image: `${IMAGEKIT_BASE}/shuffleboards/viking-shuffleboard/hero.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg`,
       alt: t("museum.altShuffleboards"),
     },
     {
       title: t("museum.furniture"),
       subtitle: "Complete the Room",
       href: "/products/game-room-furniture",
-      image: `${IMAGEKIT_BASE}/game-room-furniture/skylar-furniture/hero.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20Spec-chair_KmxSG58XqI.jpg`,
       alt: t("museum.altFurniture"),
     },
     {
@@ -102,7 +102,7 @@ function CatalogStrip({ t }: { t: (key: string) => string }) {
       {/* Left: Image */}
       <div className="relative min-h-[50vh] lg:min-h-[100vh] overflow-hidden">
         <Image
-          src={`${IMAGEKIT_BASE}/pool-tables/dutchess/hero.jpg`}
+          src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%202_4Rq5CRLeN.jpg`}
           alt={t("museum.altDutchess")}
           fill
           className="object-cover"

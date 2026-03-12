@@ -5,12 +5,8 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "ik.imagekit.io",
-      },
-    ],
+    loader: "custom",
+    loaderFile: "./lib/imagekit-loader.ts",
   },
 
   async headers() {
