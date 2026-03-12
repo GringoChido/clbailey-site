@@ -46,6 +46,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https://ik.imagekit.io https://maps.googleapis.com https://maps.gstatic.com",
+              "media-src 'self' https://ik.imagekit.io",
               "connect-src 'self' https://api.openai.com https://maps.googleapis.com",
               "frame-src 'none'",
               "object-src 'none'",
