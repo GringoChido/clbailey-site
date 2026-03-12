@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Condensed, Raleway } from "next/font/google";
+import localFont from "next/font/local";
 import { IMAGEKIT_BASE } from "@/lib/products";
 import "./globals.css";
 
@@ -19,6 +20,13 @@ const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const leJourSerif = localFont({
+  src: "../public/fonts/le-jour-serif.woff2",
+  variable: "--font-le-jour",
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -147,7 +155,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${roboto.variable} ${robotoCondensed.variable} ${raleway.variable} antialiased`}
+        className={`${roboto.variable} ${robotoCondensed.variable} ${raleway.variable} ${leJourSerif.variable} antialiased`}
       >
         {children}
       </body>

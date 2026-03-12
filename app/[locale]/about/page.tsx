@@ -33,7 +33,7 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <ScrollReveal delay={1}>
               <p className="heading-sub text-2xl lg:text-3xl mb-8">
-                Three decades of industry experience. One uncompromising standard.
+                {t("about.storySubheading")}
               </p>
               <div className="space-y-6 text-[13px] text-[var(--color-body)] leading-[26px]">
                 <p>{t("about.storyP1")}</p>

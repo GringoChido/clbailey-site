@@ -29,7 +29,7 @@
   --header-height-xl: 160px;
 
   /* ─── Fonts ─── */
-  --font-display: var(--font-roboto-condensed);  /* Headings: light weight */
+  --font-display: var(--font-le-jour), var(--font-roboto-condensed);  /* Headings: Le Jour Serif hero, Roboto Condensed fallback */
   --font-label: var(--font-raleway);              /* Labels, nav: uppercase */
   --font-serif: var(--font-roboto);               /* Body text */
   --font-sans: var(--font-roboto);                /* Body text */
