@@ -13,6 +13,11 @@ const CategoryHeroVideo = ({ src, poster }: CategoryHeroVideoProps) => {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    // Ensure muted property is set (some browsers need this programmatically)
+    video.muted = true;
+    video.playsInline = true;
+
     video.play().catch(() => {
       // Autoplay blocked, poster frame shows as fallback
     });
