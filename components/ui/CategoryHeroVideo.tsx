@@ -14,14 +14,19 @@ const CategoryHeroVideo = ({ src, poster }: CategoryHeroVideoProps) => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Ensure muted property is set (some browsers need this programmatically)
     video.muted = true;
     video.playsInline = true;
+
+    // Set src programmatically to avoid React hydration stripping <source>
+    if (!video.src || video.networkState === 3) {
+      video.src = src;
+      video.load();
+    }
 
     video.play().catch(() => {
       // Autoplay blocked, poster frame shows as fallback
     });
-  }, []);
+  }, [src]);
 
   return (
     <video
@@ -32,10 +37,9 @@ const CategoryHeroVideo = ({ src, poster }: CategoryHeroVideoProps) => {
       playsInline
       preload="auto"
       poster={poster}
+      src={src}
       className="absolute inset-0 w-full h-full object-cover"
-    >
-      <source src={src} type="video/mp4" />
-    </video>
+    />
   );
 };
 
