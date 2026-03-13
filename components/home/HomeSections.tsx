@@ -11,7 +11,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
       label: t("museum.poolTables"),
       subtitle: t("museum.nineModels"),
       href: "/products/pool-tables",
-      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/viking%20combo_3-Iafpk-F.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Home%20Page/HOMEPAGE_viking_SfyWJouxB_vUwRLXA0s.jpeg`,
       alt: t("museum.altPoolTables"),
     },
     {
