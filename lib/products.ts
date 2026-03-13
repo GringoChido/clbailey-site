@@ -3,6 +3,7 @@ import productsData from "@/data/products.json";
 /* ─── Types ─── */
 export interface ProductImage {
   hero: string | null;
+  categoryImage?: string | null;
   gallery: string[];
   dimensions: string | null;
 }

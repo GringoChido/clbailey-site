@@ -30,7 +30,7 @@ export default function ProductCard({
       {/* Image container with hover overlay */}
       <div className="aspect-[4/3] relative overflow-hidden bg-[var(--color-off-white)] border border-[var(--color-cloud)] mb-4">
         <Image
-          src={img(product.images.hero)}
+          src={img(product.images.categoryImage ?? product.images.hero)}
           alt={product.name}
           fill
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
