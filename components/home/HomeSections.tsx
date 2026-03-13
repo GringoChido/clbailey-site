@@ -271,10 +271,10 @@ function DealerPortalBlock({ t }: { t: (key: string) => string }) {
               <div className="text-[var(--color-bronze)]/60 mb-5">
                 {feature.icon}
               </div>
-              <h3 className="text-[13px] font-medium text-[var(--color-light-on-dark)] tracking-[0.02em] mb-2">
+              <h3 className="text-[15px] lg:text-base font-medium text-[var(--color-light-on-dark)] tracking-[0.02em] mb-2">
                 {feature.title}
               </h3>
-              <p className="text-[11px] text-[var(--color-light-on-dark)]/30 leading-[20px]">
+              <p className="text-[13px] text-[var(--color-light-on-dark)]/50 leading-[22px]">
                 {feature.desc}
               </p>
             </div>
@@ -363,97 +363,55 @@ function CraftHeritageSection({ t }: { t: (key: string) => string }) {
     { title: t("home.craftPillar3Title"), desc: t("home.craftPillar3Desc") },
   ];
 
-  const allFinishes = [
-    { name: "Espresso", color: "#3C2415" },
-    { name: "Rustic", color: "#7B6147" },
-    { name: "Timber", color: "#8B7355" },
-    { name: "Graphite", color: "#4A4A4A" },
-    { name: "Traditional Mahogany", color: "#6B2A2A" },
-    { name: "Warm Chestnut", color: "#8B5E3C" },
-    { name: "Dark Walnut", color: "#4A3728" },
-    { name: "Black", color: "#1D1D1D" },
-  ];
-
   return (
-    <>
-      {/* Part A: Heritage Statement with background image */}
-      <section className="relative w-full min-h-[60vh] lg:min-h-[75vh] flex items-center overflow-hidden">
-        <Image
-          src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Home%20Page/Built%20by%20hand.%20Guaranteed%20for%20life_Zhr34MxYq.jpeg`}
-          alt={t("home.craftImageAlt")}
-          fill
-          className="object-cover"
-          sizes="100vw"
-          quality={85}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/90 via-[var(--color-deep)]/60 to-[var(--color-deep)]/30" />
+    <section className="relative w-full min-h-[60vh] lg:min-h-[75vh] flex items-center overflow-hidden">
+      <Image
+        src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Home%20Page/Built%20by%20hand.%20Guaranteed%20for%20life_Zhr34MxYq.jpeg`}
+        alt={t("home.craftImageAlt")}
+        fill
+        className="object-cover"
+        sizes="100vw"
+        quality={85}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/90 via-[var(--color-deep)]/60 to-[var(--color-deep)]/30" />
 
-        <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20 lg:py-28">
-          <div className="max-w-2xl">
-            <p className="section-label !text-white/30 mb-4">
-              {t("home.craftLabel")}
-            </p>
-            <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
-              {t("home.craftHeading")}
-            </h2>
-            <p className="text-base text-white/50 mb-14 leading-relaxed max-w-lg">
-              {t("home.craftDescription")}
-            </p>
-          </div>
-
-          {/* Three craft pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="border-t border-white/10 pt-6 pb-2 pr-8"
-              >
-                <h3 className="text-[13px] font-medium text-white tracking-[0.02em] mb-2">
-                  {pillar.title}
-                </h3>
-                <p className="text-[12px] text-white/35 leading-[20px]">
-                  {pillar.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <Link href="/about" className="btn-outline-white">
-              {t("home.heritageCta")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Part B: Finish Swatches */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-          <p className="section-label mb-3">
-            {t("home.finishesLabel")}
+      <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        <div className="max-w-2xl">
+          <p className="section-label !text-white/30 mb-4">
+            {t("home.craftLabel")}
           </p>
-          <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-4">
-            {t("home.finishesHeading")}
+          <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
+            {t("home.craftHeading")}
           </h2>
-          <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-16 leading-relaxed">
-            {t("home.finishesDescription")}
+          <p className="text-base text-white/50 mb-14 leading-relaxed max-w-lg">
+            {t("home.craftDescription")}
           </p>
-          <div className="grid grid-cols-4 gap-6 md:flex md:flex-wrap md:justify-center md:gap-10 lg:gap-14">
-            {allFinishes.map((finish) => (
-              <div key={finish.name} className="group flex flex-col items-center gap-3 cursor-pointer">
-                <div
-                  className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-[var(--color-cloud)] group-hover:border-[var(--color-bronze)] transition-[border-color] duration-300"
-                  style={{ backgroundColor: finish.color }}
-                />
-                <span className="text-[0.6875rem] font-normal text-[var(--color-body)] tracking-[0.06em]">
-                  {finish.name}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
-    </>
+
+        {/* Three craft pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+          {pillars.map((pillar) => (
+            <div
+              key={pillar.title}
+              className="border border-white/10 bg-white/[0.04] backdrop-blur-sm px-6 py-6 lg:px-8 lg:py-8"
+            >
+              <h3 className="text-[15px] lg:text-base font-medium text-white tracking-[0.02em] mb-3">
+                {pillar.title}
+              </h3>
+              <p className="text-[13px] lg:text-[14px] text-white/50 leading-[22px] lg:leading-[24px]">
+                {pillar.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12">
+          <Link href="/about" className="btn-outline-white">
+            {t("home.heritageCta")}
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 

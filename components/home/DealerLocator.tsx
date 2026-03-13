@@ -56,7 +56,7 @@ export default function DealerLocator() {
           {t("label")}
         </p>
 
-        <h2 className="heading-display text-[22px] md:text-[28px] !text-[var(--color-light-on-dark)] mb-3">
+        <h2 className="heading-display text-3xl md:text-[2.5rem] lg:text-[3rem] !text-[var(--color-light-on-dark)] mb-3">
           {t("heading")}
         </h2>
 
