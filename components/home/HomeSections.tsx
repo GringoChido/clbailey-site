@@ -355,41 +355,14 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
   );
 }
 
-/* ─── Section 4: Shuffleboard Block ─── */
-function ShuffleboardBlock({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="relative w-full min-h-[50vh] lg:min-h-[70vh] flex items-center overflow-hidden">
-      <Image
-        src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg`}
-        alt={t("home.shuffleboardAlt")}
-        fill
-        className="object-cover"
-        sizes="100vw"
-        quality={85}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/80 via-[var(--color-deep)]/40 to-transparent" />
-      <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20">
-        <div className="max-w-lg">
-          <p className="section-label !text-[var(--color-light-on-dark)]/40 mb-4">
-            {t("home.shuffleboardLabel")}
-          </p>
-          <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
-            {t("home.shuffleboardHeading")}
-          </h2>
-          <p className="text-base text-[var(--color-light-on-dark)]/50 mb-10 leading-relaxed">
-            {t("home.shuffleboardDescription")}
-          </p>
-          <Link href="/products/shuffleboards" className="btn-outline-white">
-            {t("home.shuffleboardCta")}
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ─── Section 4: Craft Heritage ─── */
+function CraftHeritageSection({ t }: { t: (key: string) => string }) {
+  const pillars = [
+    { title: t("home.craftPillar1Title"), desc: t("home.craftPillar1Desc") },
+    { title: t("home.craftPillar2Title"), desc: t("home.craftPillar2Desc") },
+    { title: t("home.craftPillar3Title"), desc: t("home.craftPillar3Desc") },
+  ];
 
-/* ─── Section 5: Finishes ─── */
-function FinishesSection({ t }: { t: (key: string) => string }) {
   const allFinishes = [
     { name: "Espresso", color: "#3C2415" },
     { name: "Rustic", color: "#7B6147" },
@@ -402,104 +375,97 @@ function FinishesSection({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-white">
-      <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-        <p className="section-label mb-3">
-          {t("home.finishesLabel")}
-        </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-4">
-          {t("home.finishesHeading")}
-        </h2>
-        <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-16 leading-relaxed">
-          {t("home.finishesDescription")}
-        </p>
-        <div className="grid grid-cols-4 gap-6 md:flex md:flex-wrap md:justify-center md:gap-10 lg:gap-14">
-          {allFinishes.map((finish) => (
-            <div key={finish.name} className="group flex flex-col items-center gap-3 cursor-pointer">
+    <>
+      {/* Part A: Heritage Statement with background image */}
+      <section className="relative w-full min-h-[60vh] lg:min-h-[75vh] flex items-center overflow-hidden">
+        <Image
+          src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/viking%20combo_3-Iafpk-F.jpg`}
+          alt={t("home.craftImageAlt")}
+          fill
+          className="object-cover"
+          sizes="100vw"
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/90 via-[var(--color-deep)]/60 to-[var(--color-deep)]/30" />
+
+        <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+          <div className="max-w-2xl">
+            <p className="section-label !text-white/30 mb-4">
+              {t("home.craftLabel")}
+            </p>
+            <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
+              {t("home.craftHeading")}
+            </h2>
+            <p className="text-base text-white/50 mb-14 leading-relaxed max-w-lg">
+              {t("home.craftDescription")}
+            </p>
+          </div>
+
+          {/* Three craft pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
+            {pillars.map((pillar) => (
               <div
-                className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-[var(--color-cloud)] group-hover:border-[var(--color-bronze)] transition-[border-color] duration-300"
-                style={{ backgroundColor: finish.color }}
-              />
-              <span className="text-[0.6875rem] font-normal text-[var(--color-body)] tracking-[0.06em]">
-                {finish.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+                key={pillar.title}
+                className="border-t border-white/10 pt-6 pb-2 pr-8"
+              >
+                <h3 className="text-[13px] font-medium text-white tracking-[0.02em] mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-[12px] text-white/35 leading-[20px]">
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
 
-/* ─── Section 6: Game Room Furniture ─── */
-function FurnitureBlock({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="relative w-full min-h-[50vh] lg:min-h-[70vh] flex items-center overflow-hidden">
-      <Image
-        src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20Spec-chair_KmxSG58XqI.jpg`}
-        alt={t("home.furnitureAlt")}
-        fill
-        className="object-cover"
-        sizes="100vw"
-        quality={85}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-deep)]/80 via-[var(--color-deep)]/40 to-transparent" />
-      <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 py-20">
-        <div className="max-w-lg">
-          <p className="section-label !text-[var(--color-light-on-dark)]/40 mb-4">
-            {t("home.furnitureLabel")}
+          <div className="mt-12">
+            <Link href="/about" className="btn-outline-white">
+              {t("home.heritageCta")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Part B: Finish Swatches */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+          <p className="section-label mb-3">
+            {t("home.finishesLabel")}
           </p>
-          <h2 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-5">
-            {t("home.furnitureHeading")}
+          <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-4">
+            {t("home.finishesHeading")}
           </h2>
-          <p className="text-base text-[var(--color-light-on-dark)]/50 mb-10 leading-relaxed">
-            {t("home.furnitureDescription")}
+          <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-16 leading-relaxed">
+            {t("home.finishesDescription")}
           </p>
-          <Link href="/products/game-room-furniture" className="btn-outline-white">
-            {t("home.furnitureCta")}
-          </Link>
+          <div className="grid grid-cols-4 gap-6 md:flex md:flex-wrap md:justify-center md:gap-10 lg:gap-14">
+            {allFinishes.map((finish) => (
+              <div key={finish.name} className="group flex flex-col items-center gap-3 cursor-pointer">
+                <div
+                  className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-[var(--color-cloud)] group-hover:border-[var(--color-bronze)] transition-[border-color] duration-300"
+                  style={{ backgroundColor: finish.color }}
+                />
+                <span className="text-[0.6875rem] font-normal text-[var(--color-body)] tracking-[0.06em]">
+                  {finish.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
-/* ─── Section 7: Heritage ─── */
-function HeritageSection({ t }: { t: (key: string) => string }) {
-  return (
-    <section className="py-16 lg:py-32 bg-[var(--color-cloud)]">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-        <p className="section-label mb-4">
-          {t("museum.heritageLabel")}
-        </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] mb-5">
-          {t("home.heritageHeading")}
-        </h2>
-        <p className="text-base text-[var(--color-body)] max-w-lg mx-auto mb-12 leading-relaxed">
-          {t("home.heritageDescription")}
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/about" className="btn-outline">
-            {t("home.heritageCta")}
-          </Link>
-          <Link href="/contact-us" className="btn-primary">
-            {t("home.helpCta")}
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 8: Trade Program ─── */
+/* ─── Section 5: Trade Program ─── */
 function TradeProgramBlock({ t }: { t: (key: string) => string }) {
   return (
     <section className="bg-[var(--color-off-white)] overflow-hidden">
       <div className="max-w-[90rem] mx-auto">
-        <div className="grid lg:grid-cols-2 lg:min-h-[70vh]">
+        <div className="grid lg:grid-cols-2 lg:min-h-[65vh]">
 
           {/* Left: Full-height lifestyle image */}
-          <div className="relative min-h-[320px] lg:min-h-0 overflow-hidden">
+          <div className="relative min-h-[360px] lg:min-h-0 overflow-hidden">
             <Image
               src="/images/trade-lifestyle.jpg"
               alt={t("trade.imageAlt")}
@@ -508,11 +474,11 @@ function TradeProgramBlock({ t }: { t: (key: string) => string }) {
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={85}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
           </div>
 
           {/* Right: Content panel */}
-          <div className="flex flex-col justify-center px-6 py-12 md:px-10 md:py-16 lg:px-16 lg:py-20 xl:px-20">
+          <div className="flex flex-col justify-center px-6 py-14 md:px-10 md:py-16 lg:px-16 lg:py-20 xl:px-20">
 
             <p className="section-label mb-4">
               {t("trade.heading")}
@@ -522,22 +488,12 @@ function TradeProgramBlock({ t }: { t: (key: string) => string }) {
               {t("trade.sectionHeading")}
             </h2>
 
-            <p className="text-base text-[var(--color-body)] leading-relaxed mb-10 max-w-md">
+            <p className="text-[14px] text-[var(--color-body)] leading-[26px] mb-10 max-w-md">
               {t("trade.description")}
             </p>
 
-            {/* Stat callout */}
-            <div className="mb-10 pb-10 border-b border-[var(--color-cloud)]">
-              <p className="heading-display text-[2.5rem] md:text-5xl text-[var(--color-primary)] mb-1">
-                200+
-              </p>
-              <p className="section-label !text-[var(--color-mid-gray)]">
-                {t("trade.statLabel")}
-              </p>
-            </div>
-
             {/* Benefits list */}
-            <div className="space-y-4 mb-10">
+            <div className="space-y-4 mb-10 pb-10 border-b border-[var(--color-cloud)]">
               {[t("trade.benefit1"), t("trade.benefit2"), t("trade.benefit3")].map((benefit) => (
                 <div key={benefit} className="flex items-start gap-3">
                   <svg
@@ -547,7 +503,7 @@ function TradeProgramBlock({ t }: { t: (key: string) => string }) {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="flex-shrink-0 mt-0.5 text-[var(--color-bronze)]"
+                    className="flex-shrink-0 mt-0.5 text-[var(--color-mid-gray)]"
                   >
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
@@ -558,24 +514,24 @@ function TradeProgramBlock({ t }: { t: (key: string) => string }) {
               ))}
             </div>
 
-            {/* Primary CTA */}
-            <div className="mb-10">
+            {/* Dual CTA */}
+            <div className="flex flex-col sm:flex-row items-start gap-5 mb-10">
               <Link href="/dealer" className="btn-primary">
                 {t("trade.applyCta")}
               </Link>
+              <Link href="/contact-us" className="btn-outline">
+                {t("home.helpCta")}
+              </Link>
             </div>
-
-            {/* Divider */}
-            <div className="h-px bg-[var(--color-cloud)] mb-8" />
 
             {/* Consumer path */}
             <div>
-              <p className="text-[13px] text-[var(--color-body)] mb-3">
+              <p className="text-[12px] text-[var(--color-body)]/60 mb-2">
                 {t("trade.notTradeDescription")}
               </p>
               <Link
                 href="/dealer"
-                className="text-sm font-medium text-[var(--color-primary)] border-b border-[var(--color-primary)] pb-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] transition-colors duration-300"
+                className="text-[12px] font-medium text-[var(--color-primary)] border-b border-[var(--color-primary)] pb-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] transition-colors duration-300"
               >
                 {t("trade.findDealerCta")} &rarr;
               </Link>
@@ -597,10 +553,8 @@ export default async function HomeSections() {
       <DealerLocator />
       <CategoryNav t={t} />
       <DealerPortalBlock t={t} />
-      <ShuffleboardBlock t={t} />
       <FeaturedProducts t={t} />
-      <FurnitureBlock t={t} />
-      <HeritageSection t={t} />
+      <CraftHeritageSection t={t} />
       <TradeProgramBlock t={t} />
     </>
   );
