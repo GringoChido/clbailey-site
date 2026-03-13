@@ -12,19 +12,20 @@ export default function AIConcierge() {
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const { messages, sendMessage, status } = useChat();
-
-  // Hide public concierge on dealer portal and admin panel
-  if (pathname?.includes("/dealer-portal") || pathname?.includes("/admin")) {
-    return null;
-  }
-
   const isLoading = status === "submitted" || status === "streaming";
+
+  const hidden = pathname?.includes("/dealer-portal") || pathname?.includes("/admin");
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
+
+  // Hide public concierge on dealer portal and admin panel
+  if (hidden) {
+    return null;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
