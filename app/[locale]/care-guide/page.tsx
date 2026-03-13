@@ -5,6 +5,19 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "Table Care Guide | The C.L. Bailey Co.",
   description: "Proper care and maintenance for your C.L. Bailey pool table, shuffleboard, and game room furniture.",
+  openGraph: {
+    title: "Table Care Guide | C.L. Bailey & Co.",
+    description:
+      "Proper care and maintenance for your C.L. Bailey pool table, shuffleboard, and game room furniture.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/care-guide",
+    languages: {
+      en: "https://clbailey.com/en/care-guide",
+      es: "https://clbailey.com/es/care-guide",
+    },
+  },
 };
 
 export default async function CareGuidePage() {

@@ -6,7 +6,22 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("privacy");
   return {
     title: `${t("title")} | ${company.name}`,
+    description:
+      "How C.L. Bailey & Co. collects, uses, and protects your personal information. Read our privacy practices and your data rights.",
     robots: { index: true, follow: true },
+    openGraph: {
+      title: `${t("title")} | C.L. Bailey & Co.`,
+      description:
+        "How C.L. Bailey & Co. collects, uses, and protects your personal information.",
+      type: "website",
+    },
+    alternates: {
+      canonical: "https://clbailey.com/en/privacy-policy",
+      languages: {
+        en: "https://clbailey.com/en/privacy-policy",
+        es: "https://clbailey.com/es/privacy-policy",
+      },
+    },
   };
 }
 
@@ -26,10 +41,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
         <p className="section-label mb-3 text-[var(--color-mid-gray)]">
           {t("introLabel")}
         </p>
-        <h1
-          className="text-3xl lg:text-4xl mb-3 text-[var(--color-primary)]"
-          style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
-        >
+        <h1 className="heading-display text-3xl lg:text-4xl mb-3">
           {t("introHeading")}
         </h1>
         <p className="metadata text-[var(--color-mid-gray)] mb-10">
@@ -166,10 +178,7 @@ function PolicySection({
   return (
     <div className="mb-14">
       <p className="section-label mb-2 text-[var(--color-mid-gray)]">{label}</p>
-      <h2
-        className="text-xl mb-5 text-[var(--color-primary)]"
-        style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
-      >
+      <h2 className="heading-display text-xl mb-5">
         {heading}
       </h2>
       {children}

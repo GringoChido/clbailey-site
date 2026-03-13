@@ -96,15 +96,7 @@ const DealerLocatorPage = () => {
           >
             The C.L. Bailey Co.
           </p>
-          <h1
-            className="text-white mb-4"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 300,
-              fontSize: "clamp(32px, 5vw, 52px)",
-              lineHeight: 1.1,
-            }}
-          >
+          <h1 className="heading-hero text-white mb-4">
             Find Your Authorized Dealer
           </h1>
           <p
@@ -171,14 +163,7 @@ const DealerLocatorPage = () => {
           >
             Can&apos;t find a dealer near you?
           </p>
-          <h2
-            className="text-white mb-6"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 300,
-              fontSize: "clamp(24px, 4vw, 38px)",
-            }}
-          >
+          <h2 className="heading-display text-white text-2xl md:text-3xl mb-6">
             We&apos;ll connect you directly.
           </h2>
           <div className="space-y-2 mb-8">

@@ -27,15 +27,7 @@ export default function DealerLocator() {
           Dealer Exclusive
         </p>
 
-        <h2
-          className="mb-6 text-white"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 300,
-            fontSize: "clamp(20px, 3vw, 28px)",
-            lineHeight: 1.2,
-          }}
-        >
+        <h2 className="heading-display text-xl md:text-2xl mb-6 text-white">
           Your Dealer Is Closer Than You Think
         </h2>
 

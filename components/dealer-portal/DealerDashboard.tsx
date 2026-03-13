@@ -77,7 +77,7 @@ export default function DealerDashboard() {
           <div>
             <Image
               src="/images/brand/clb-logo.png"
-              alt="The C.L. Bailey Co. — Tomball, Texas"
+              alt="The C.L. Bailey Co., Tomball, Texas"
               width={180}
               height={49}
               className="h-[40px] w-auto mb-4"

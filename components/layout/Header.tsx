@@ -131,7 +131,6 @@ export default function Header() {
                 height={75}
                 className="h-[48px] xl:h-[56px] w-auto select-none"
                 priority
-                unoptimized
               />
             </Link>
 
@@ -182,7 +181,6 @@ export default function Header() {
               width={280}
               height={75}
               className="h-[32px] w-auto select-none"
-              unoptimized
             />
           </Link>
 
@@ -262,7 +260,6 @@ export default function Header() {
               width={280}
               height={75}
               className="h-[34px] w-auto select-none"
-              unoptimized
             />
           </Link>
           <Link
@@ -288,8 +285,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-5 text-2xl text-[var(--color-primary)] border-b border-[var(--color-cloud)] tracking-[0.01em] hover:text-[var(--color-bronze)] transition-colors duration-300"
-                  style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
+                  className="heading-display block py-5 text-2xl text-[var(--color-primary)] border-b border-[var(--color-cloud)] tracking-[0.01em] hover:text-[var(--color-bronze)] transition-colors duration-300"
                 >
                   {item.label}
                 </Link>

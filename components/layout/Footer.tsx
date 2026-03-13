@@ -19,10 +19,7 @@ export default async function Footer() {
             <p className="section-label mb-3 !text-[var(--color-sand)]">
               {t("footer.newsletterLabel")}
             </p>
-            <h3
-              className="text-2xl mb-8 text-[var(--color-light-on-dark)]"
-              style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
-            >
+            <h3 className="heading-display text-2xl mb-8 text-[var(--color-light-on-dark)]">
               {t("footer.newsletterHeading")}
             </h3>
             <NewsletterForm />
@@ -68,7 +65,6 @@ export default async function Footer() {
                 width={160}
                 height={43}
                 className="h-[48px] w-auto object-contain mb-2 invert hue-rotate-180"
-                unoptimized
               />
               <div className="space-y-1 text-sm text-[var(--color-sand)]/70">
                 <p>{company.address.street}</p>
@@ -131,7 +127,7 @@ export default async function Footer() {
             {/* Dealer CTA band */}
             <div className="pb-6 mb-6 border-b border-[rgba(212,201,184,0.15)]">
               <p className="section-label mb-3 !text-[var(--color-sand)]">{t("footer.dealerLabel")}</p>
-              <p className="text-lg text-[var(--color-light-on-dark)] mb-4 leading-relaxed" style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}>
+              <p className="heading-display text-lg text-[var(--color-light-on-dark)] mb-4 leading-relaxed">
                 {t("footer.dealerHeadline")}
               </p>
               <Link href="/dealer" className="btn-outline-white text-sm py-3 px-6">
@@ -195,7 +191,6 @@ export default async function Footer() {
                 width={140}
                 height={38}
                 className="h-[40px] w-auto object-contain mb-1 invert hue-rotate-180"
-                unoptimized
               />
               <p>{company.address.street}, {company.address.city}, {company.address.state} {company.address.zip}</p>
               <p>

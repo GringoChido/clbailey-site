@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/lifetime-guarantee",
     "/room-size",
     "/dealer",
+    "/velocity-pro-cloth",
+    "/privacy-policy",
   ];
 
   const staticEntries = locales.flatMap((locale) =>

@@ -36,6 +36,7 @@ const CategoryHeroVideo = ({ src, poster }: CategoryHeroVideoProps) => {
       loop
       playsInline
       preload="auto"
+      aria-hidden="true"
       poster={poster}
       src={src}
       className="absolute inset-0 w-full h-full object-cover"

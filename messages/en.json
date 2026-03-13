@@ -19,7 +19,7 @@
     "dealerPortal": "Dealer Portal"
   },
   "hero": {
-    "label": "The C.L. Bailey Co.",
+    "label": "The C.L. Bailey & Co.",
     "title": "Built to Last Generations",
     "subtitle": "Solid hardwood pool tables, shuffleboards, and game room furniture. Handcrafted in Tomball, Texas. Backed by a lifetime guarantee.",
     "ctaProducts": "View Collection",
@@ -204,6 +204,7 @@
     "linkCopied": "Link copied",
     "downloadImages": "Download Images",
     "dealerExclusive": "Dealer Exclusive. Not Sold Online.",
+    "dealerExclusiveShort": "Dealer Exclusive",
     "convertibleBadge": "Convertible"
   },
   "products": {
@@ -211,7 +212,39 @@
     "description": "Four categories. Twenty products. One standard of quality.",
     "moreCategoryName": "More {categoryName}",
     "completeGameRoom": "Complete Your Game Room",
-    "completeGameRoomSub": "Explore complementary pieces from our other collections"
+    "completeGameRoomSub": "Explore complementary pieces from our other collections."
+  },
+  "pdp": {
+    "dealerTools": "Dealer Tools",
+    "dealerPortal": "Dealer Portal"
+  },
+  "configurator": {
+    "configSent": "Configuration Sent",
+    "thankYou": "Thank you, {name}.",
+    "sentToDealer": "Your {product} configuration has been sent to {dealer} in {location}.",
+    "expectResponse": "Expect to hear from them within 24 hours.",
+    "configReceived": "Your {product} configuration has been received. A member of our team will connect you with your nearest dealer.",
+    "findDealer": "Find a Dealer",
+    "stepSize": "Size",
+    "stepFinish": "Finish",
+    "stepContact": "Contact",
+    "selectSize": "Select Size",
+    "selectFinish": "Select Finish",
+    "backToSize": "Back to Size",
+    "sendToDealer": "Send to a Dealer",
+    "labelName": "Name",
+    "placeholderName": "Your name",
+    "labelEmail": "Email",
+    "placeholderEmail": "you@example.com",
+    "labelZip": "ZIP Code",
+    "placeholderZip": "e.g. 77377",
+    "sending": "Sending...",
+    "sendConfig": "Send Configuration to a Dealer",
+    "backToFinish": "Back to Finish",
+    "errorEmail": "Please enter a valid email address.",
+    "errorZip": "Please enter a valid 5-digit ZIP code.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorNetwork": "Unable to send your configuration. Please try again."
   },
   "concierge": {
     "openLabel": "Open Showroom Manager",
@@ -233,7 +266,10 @@
     "noResults": "No dealers found near that ZIP code.",
     "contactUs": "Contact us for dealer inquiries",
     "networkTitle": "Nationwide dealer network",
-    "networkDescription": "Enter your ZIP code above to find your nearest dealer."
+    "networkDescription": "Enter your ZIP code above to find your nearest dealer.",
+    "searchPlaceholder": "Enter city, state, or zip code",
+    "filterByModel": "Filter by Model",
+    "allModels": "All Models"
   },
   "about": {
     "title": "About Us",
@@ -560,7 +596,23 @@
     "sortZA": "Z to A",
     "allSizes": "All",
     "seoTitle": "Why C.L. Bailey {categoryName}",
-    "fromCollection": "From the {collectionName} Collection"
+    "fromCollection": "From the {collectionName} Collection",
+    "poolTablesName": "Pool Tables",
+    "poolTablesDesc": "Nine distinct models. Solid hardwood construction. Lifetime guarantee.",
+    "shuffleboardsName": "Shuffleboards",
+    "shuffleboardsDesc": "Premium shuffleboards from 9' to 14'. Solid playfield. Precision scoring.",
+    "gameRoomFurnitureName": "Game Room Furniture",
+    "gameRoomFurnitureDesc": "Spectator chairs, storage benches, and cue racks designed to complement your table.",
+    "cueRacksName": "Cue Racks",
+    "cueRacksDesc": "Floor, wall, and corner cue racks in matching finishes.",
+    "accessoriesName": "Accessories",
+    "accessoriesDesc": "Premium billiard accessories, from professional-grade ball sets to handcrafted leather pockets.",
+    "poolTablesHeadline": "Built for Homes That Endure",
+    "shuffleboardsHeadline": "Fourteen Feet of Solid Hardwood",
+    "gameRoomFurnitureHeadline": "Every Seat. Every Surface. Matched.",
+    "cueRacksHeadline": "Floor, Wall, and Corner. Five Finishes.",
+    "accessoriesHeadline": "From First Break to Final Touch",
+    "productCount": "{count, plural, one {# Product} other {# Products}}"
   },
   "dealerBlock": {
     "label": "Resources",

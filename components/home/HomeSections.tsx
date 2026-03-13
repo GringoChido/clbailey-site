@@ -129,7 +129,7 @@ function DealerPortalBlock({ t }: { t: (key: string) => string }) {
               <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-4">
                 {t("dealerBlock.dealerLabel")}
               </p>
-              <h3 className="heading-display text-2xl lg:text-3xl text-white font-light mb-5">
+              <h3 className="heading-display text-2xl lg:text-3xl text-white mb-5">
                 {t("dealerBlock.dealerHeading")}
               </h3>
               <p className="text-[13px] leading-[26px] text-[var(--color-light-on-dark)]/50 mb-10">

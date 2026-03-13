@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface ProductConfiguratorProps {
   productName: string;
@@ -54,6 +55,7 @@ const ProductConfigurator = ({
   finishes,
   locale,
 }: ProductConfiguratorProps) => {
+  const t = useTranslations("configurator");
   const [currentStep, setCurrentStep] = useState<Step>(1);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedFinish, setSelectedFinish] = useState<string | null>(null);
@@ -87,12 +89,12 @@ const ProductConfigurator = ({
     if (!selectedSize || !selectedFinish) return;
 
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setError("Please enter a valid email address.");
+      setError(t("errorEmail"));
       return;
     }
 
     if (!formData.zip || !/^\d{5}$/.test(formData.zip.trim())) {
-      setError("Please enter a valid 5-digit ZIP code.");
+      setError(t("errorZip"));
       return;
     }
 
@@ -116,13 +118,13 @@ const ProductConfigurator = ({
       const data = (await res.json()) as ConfiguratorResponse;
 
       if (!res.ok || !data.success) {
-        setError(data.error ?? "Something went wrong. Please try again.");
+        setError(data.error ?? t("errorGeneric"));
         return;
       }
 
       setResult(data);
     } catch {
-      setError("Unable to send your configuration. Please try again.");
+      setError(t("errorNetwork"));
     } finally {
       setSubmitting(false);
     }
@@ -132,16 +134,19 @@ const ProductConfigurator = ({
     return (
       <div className="py-10">
         <div className="text-center max-w-lg mx-auto">
-          <p className="section-label mb-4">Configuration Sent</p>
+          <p className="section-label mb-4">{t("configSent")}</p>
           <h3 className="heading-card text-2xl mb-6">
-            Thank you, {formData.name || "there"}.
+            {t("thankYou", { name: formData.name || "" })}
           </h3>
 
           {result.dealer ? (
             <div className="space-y-4">
               <p className="text-body leading-relaxed">
-                Your {productName} configuration has been sent
-                to {result.dealer.name} in {result.dealer.city}, {result.dealer.state}.
+                {t("sentToDealer", {
+                  product: productName,
+                  dealer: result.dealer.name,
+                  location: `${result.dealer.city}, ${result.dealer.state}`,
+                })}
               </p>
               <div className="border border-cloud p-6 mt-6">
                 <p className="metadata mb-2">{result.dealer.name}</p>
@@ -151,14 +156,13 @@ const ProductConfigurator = ({
                 </p>
               </div>
               <p className="text-body text-sm mt-4">
-                Expect to hear from them within 24 hours.
+                {t("expectResponse")}
               </p>
             </div>
           ) : (
             <div className="space-y-4">
               <p className="text-body leading-relaxed">
-                Your {productName} configuration has been received.
-                A member of our team will connect you with your nearest dealer.
+                {t("configReceived", { product: productName })}
               </p>
             </div>
           )}
@@ -167,7 +171,7 @@ const ProductConfigurator = ({
             href={`/${locale}/dealer`}
             className="btn-outline mt-8 inline-block"
           >
-            Find a Dealer
+            {t("findDealer")}
           </Link>
         </div>
       </div>
@@ -207,9 +211,9 @@ const ProductConfigurator = ({
               {step}
             </span>
             <span className="metadata hidden sm:inline">
-              {step === 1 && "Size"}
-              {step === 2 && "Finish"}
-              {step === 3 && "Contact"}
+              {step === 1 && t("stepSize")}
+              {step === 2 && t("stepFinish")}
+              {step === 3 && t("stepContact")}
             </span>
           </button>
         ))}
@@ -231,7 +235,7 @@ const ProductConfigurator = ({
         }`}
       >
         <div className="text-center max-w-md mx-auto">
-          <p className="section-label mb-6">Select Size</p>
+          <p className="section-label mb-6">{t("selectSize")}</p>
           <div className="flex justify-center gap-4">
             {sizes.map((size) => (
               <button
@@ -259,7 +263,7 @@ const ProductConfigurator = ({
         }`}
       >
         <div className="text-center max-w-lg mx-auto">
-          <p className="section-label mb-6">Select Finish</p>
+          <p className="section-label mb-6">{t("selectFinish")}</p>
           <div className="flex flex-wrap justify-center gap-5">
             {finishes.map((finish) => (
               <button
@@ -291,7 +295,7 @@ const ProductConfigurator = ({
               onClick={() => setCurrentStep(1)}
               className="mt-8 text-body text-xs uppercase tracking-widest hover:text-primary transition-colors duration-200"
             >
-              Back to Size
+              {t("backToSize")}
             </button>
           )}
         </div>
@@ -307,45 +311,45 @@ const ProductConfigurator = ({
       >
         <div className="max-w-sm mx-auto">
           <p className="section-label mb-6 text-center">
-            Send to a Dealer
+            {t("sendToDealer")}
           </p>
 
           <div className="space-y-5">
             <div>
-              <label className="metadata block mb-2">Name</label>
+              <label className="metadata block mb-2">{t("labelName")}</label>
               <input
                 type="text"
                 className="input-modern"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                placeholder="Your name"
+                placeholder={t("placeholderName")}
               />
             </div>
 
             <div>
               <label className="metadata block mb-2">
-                Email <span className="text-silver">*</span>
+                {t("labelEmail")} <span className="text-silver">*</span>
               </label>
               <input
                 type="email"
                 className="input-modern"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                placeholder="you@example.com"
+                placeholder={t("placeholderEmail")}
                 required
               />
             </div>
 
             <div>
               <label className="metadata block mb-2">
-                ZIP Code <span className="text-silver">*</span>
+                {t("labelZip")} <span className="text-silver">*</span>
               </label>
               <input
                 type="text"
                 className="input-modern"
                 value={formData.zip}
                 onChange={(e) => handleInputChange("zip", e.target.value)}
-                placeholder="e.g. 77377"
+                placeholder={t("placeholderZip")}
                 maxLength={5}
                 inputMode="numeric"
                 required
@@ -367,7 +371,7 @@ const ProductConfigurator = ({
                 submitting ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
-              {submitting ? "Sending..." : "Send Configuration to a Dealer"}
+              {submitting ? t("sending") : t("sendConfig")}
             </button>
           </div>
 
@@ -375,7 +379,7 @@ const ProductConfigurator = ({
             onClick={() => setCurrentStep(2)}
             className="mt-6 block mx-auto text-body text-xs uppercase tracking-widest hover:text-primary transition-colors duration-200"
           >
-            Back to Finish
+            {t("backToFinish")}
           </button>
         </div>
       </div>

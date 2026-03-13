@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   categories,
   getCategory,
@@ -12,6 +12,14 @@ import {
 import CategoryGrid from "@/components/ui/CategoryGrid";
 import CategoryHeroVideo from "@/components/ui/CategoryHeroVideo";
 import TradeProgramBlock from "@/components/ui/TradeProgramBlock";
+
+const CATEGORY_I18N_KEYS: Record<string, { name: string; desc: string; headline: string }> = {
+  "pool-tables": { name: "poolTablesName", desc: "poolTablesDesc", headline: "poolTablesHeadline" },
+  "shuffleboards": { name: "shuffleboardsName", desc: "shuffleboardsDesc", headline: "shuffleboardsHeadline" },
+  "game-room-furniture": { name: "gameRoomFurnitureName", desc: "gameRoomFurnitureDesc", headline: "gameRoomFurnitureHeadline" },
+  "cue-racks": { name: "cueRacksName", desc: "cueRacksDesc", headline: "cueRacksHeadline" },
+  "accessories": { name: "accessoriesName", desc: "accessoriesDesc", headline: "accessoriesHeadline" },
+};
 
 interface PageProps {
   params: Promise<{ locale: string; category: string }>;
@@ -64,6 +72,13 @@ export default async function CategoryPage({ params }: PageProps) {
   if (!category) notFound();
 
   const products = getProductsByCategory(categorySlug);
+  const t = await getTranslations("common");
+  const tc = await getTranslations("categoryPage");
+  const keys = CATEGORY_I18N_KEYS[categorySlug];
+
+  const categoryName = keys ? tc(keys.name) : category.name;
+  const categoryDesc = keys ? tc(keys.desc) : category.description;
+  const categoryHeadline = keys ? tc(keys.headline) : category.headline;
 
   return (
     <>
@@ -77,7 +92,7 @@ export default async function CategoryPage({ params }: PageProps) {
         ) : (
           <Image
             src={img(category.heroImage)}
-            alt={category.name}
+            alt={categoryName}
             fill
             className="object-cover"
             sizes="100vw"
@@ -88,19 +103,19 @@ export default async function CategoryPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/30 to-black/10" />
         <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 pb-14">
           <p className="section-label !text-white/40 mb-3">
-            {locale === "es" ? "Productos" : "Products"}
+            {t("products")}
           </p>
           <h1 className="heading-display text-3xl md:text-[2.75rem] lg:text-5xl text-white mb-3">
-            {category.name}
+            {categoryName}
           </h1>
           <p className="heading-sub !text-white/70 mb-2">
-            {category.headline}
+            {categoryHeadline}
           </p>
           <p className="text-sm text-white/50 max-w-lg">
-            {category.description}
+            {categoryDesc}
           </p>
           <p className="metadata !text-white/30 mt-4">
-            {products.length} {products.length === 1 ? "Product" : "Products"}
+            {tc("productCount", { count: products.length })}
           </p>
         </div>
       </section>
@@ -116,10 +131,10 @@ export default async function CategoryPage({ params }: PageProps) {
         <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl">
             <p className="section-label mb-4">
-              {category.name}
+              {categoryName}
             </p>
             <p className="text-[13px] leading-[26px] text-[var(--color-body)]">
-              {category.description}
+              {categoryDesc}
             </p>
           </div>
         </div>

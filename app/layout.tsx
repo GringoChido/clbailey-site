@@ -8,18 +8,21 @@ const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
+  display: "swap",
 });
 
 const robotoCondensed = Roboto_Condensed({
   variable: "--font-roboto-condensed",
   subsets: ["latin"],
   weight: ["300", "400", "700"],
+  display: "swap",
 });
 
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 const leJourSerif = localFont({
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
         url: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg`,
         width: 1200,
         height: 630,
-        alt: "C.L. Bailey & Co. — Handcrafted Pool Tables",
+        alt: "C.L. Bailey & Co. Handcrafted Pool Tables",
       },
     ],
     locale: "en_US",
@@ -149,7 +152,11 @@ export default function RootLayout({
                   closes: "12:00",
                 },
               ],
-              sameAs: [],
+              sameAs: [
+                "https://www.instagram.com/clbaileyco",
+                "https://www.facebook.com/theclbaileyco",
+                "https://www.pinterest.com/clbaileyco",
+              ],
             }),
           }}
         />

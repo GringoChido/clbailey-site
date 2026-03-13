@@ -7,6 +7,19 @@ import { getFeaturedProducts, img } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Velocity Pro Worsted Cloth | The C.L. Bailey Co.",
   description: "87% wool worsted construction for professional-grade play. Faster ball speed, spill resistance, and extended cloth life.",
+  openGraph: {
+    title: "Velocity Pro Worsted Cloth | C.L. Bailey & Co.",
+    description:
+      "87% wool worsted construction for professional-grade play. Faster ball speed, spill resistance, and extended cloth life.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/velocity-pro-cloth",
+    languages: {
+      en: "https://clbailey.com/en/velocity-pro-cloth",
+      es: "https://clbailey.com/es/velocity-pro-cloth",
+    },
+  },
 };
 
 const feltColors = [

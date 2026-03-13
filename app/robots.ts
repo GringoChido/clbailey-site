@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/dealer-portal/"],
+        disallow: ["/api/", "/dealer-portal/", "/admin/"],
       },
     ],
     sitemap: "https://clbailey.com/sitemap.xml",

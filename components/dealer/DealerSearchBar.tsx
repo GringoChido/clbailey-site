@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { AVAILABLE_MODELS } from "@/lib/dealer-utils";
 
 interface DealerSearchBarProps {
@@ -19,6 +20,8 @@ const DealerSearchBar = ({
   showFilters,
   onToggleFilters,
 }: DealerSearchBarProps) => {
+  const t = useTranslations("dealer");
+
   return (
     <div
       className="bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] mx-4 md:mx-auto md:max-w-4xl -mt-6 relative z-10 p-4 md:p-6"
@@ -43,8 +46,8 @@ const DealerSearchBar = ({
             type="text"
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
-            placeholder="Enter city, state, or zip code"
-            className="w-full pl-10 pr-4 py-3 border border-[#e0ddd8] text-[14px] text-[#1a1a1a] placeholder:text-[#999] focus:outline-none focus:border-[#1a3a2a] transition-colors"
+            placeholder={t("searchPlaceholder")}
+            className="w-full pl-10 pr-4 py-3 border border-[#e0ddd8] text-[14px] text-[#1a1a1a] placeholder:text-[#999] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] focus-visible:outline-offset-2 focus:border-[#1a3a2a] transition-colors"
             style={{
               fontFamily: "var(--font-sans)",
               fontWeight: 300,
@@ -75,7 +78,7 @@ const DealerSearchBar = ({
                 d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
               />
             </svg>
-            Filter by Model
+            {t("filterByModel")}
           </span>
         </button>
       </div>
@@ -92,7 +95,7 @@ const DealerSearchBar = ({
               }`}
               style={{ fontFamily: "var(--font-label)", borderRadius: "2px" }}
             >
-              All Models
+              {t("allModels")}
             </button>
             {AVAILABLE_MODELS.map((model) => (
               <button

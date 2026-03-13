@@ -6,6 +6,19 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "Contact Us | The C.L. Bailey Co.",
   description: "Get in touch with The C.L. Bailey Co. in Tomball, Texas. Questions about our pool tables, shuffleboards, or dealer program.",
+  openGraph: {
+    title: "Contact Us | C.L. Bailey & Co.",
+    description:
+      "Get in touch with The C.L. Bailey Co. in Tomball, Texas. Questions about our pool tables, shuffleboards, or dealer program.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/contact-us",
+    languages: {
+      en: "https://clbailey.com/en/contact-us",
+      es: "https://clbailey.com/es/contact-us",
+    },
+  },
 };
 
 export default async function ContactPage() {

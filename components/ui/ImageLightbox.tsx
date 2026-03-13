@@ -9,6 +9,7 @@ interface ImageLightboxProps {
   initialIndex?: number;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  productName?: string;
 }
 
 const ImageLightbox = ({
@@ -16,6 +17,7 @@ const ImageLightbox = ({
   initialIndex = 0,
   open,
   onOpenChange,
+  productName,
 }: ImageLightboxProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
@@ -56,11 +58,11 @@ const ImageLightbox = ({
           aria-describedby={undefined}
         >
           <Dialog.Title className="sr-only">
-            Image {currentIndex + 1} of {images.length}
+            {productName ? `${productName} - image` : "Image"} {currentIndex + 1} of {images.length}
           </Dialog.Title>
 
           {/* Close button */}
-          <Dialog.Close className="absolute top-6 right-6 z-10 text-white/60 hover:text-white transition-colors duration-300 cursor-pointer">
+          <Dialog.Close aria-label="Close lightbox" className="absolute top-6 right-6 z-10 text-white/60 hover:text-white transition-colors duration-300 cursor-pointer">
             <svg
               width="24"
               height="24"
@@ -97,7 +99,7 @@ const ImageLightbox = ({
           <div className="relative w-full h-full max-w-[90vw] max-h-[85vh] mx-16 my-16">
             <Image
               src={images[currentIndex]}
-              alt={`Image ${currentIndex + 1} of ${images.length}`}
+              alt={productName ? `${productName} - image ${currentIndex + 1} of ${images.length}` : `Image ${currentIndex + 1} of ${images.length}`}
               fill
               className="object-contain"
               sizes="90vw"

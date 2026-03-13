@@ -5,7 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import AIConcierge from "@/components/ui/AIConcierge";
+import LazyAIConcierge from "@/components/ui/LazyAIConcierge";
 import CookieConsent from "@/components/ui/CookieConsent";
 
 export function generateStaticParams() {
@@ -35,10 +35,16 @@ export default async function LocaleLayout({ children, params }: Props) {
         }}
       />
       <NextIntlClientProvider>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[var(--color-primary)] focus:text-white focus:text-sm"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="pt-[var(--header-height)] xl:pt-[var(--header-height-xl)]">{children}</main>
+        <main id="main-content" className="pt-[var(--header-height)] xl:pt-[var(--header-height-xl)]">{children}</main>
         <Footer />
-        <AIConcierge />
+        <LazyAIConcierge />
         <CookieConsent />
       </NextIntlClientProvider>
     </>

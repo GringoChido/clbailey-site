@@ -7,7 +7,20 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "About Us | The C.L. Bailey Co.",
   description:
-    "The story behind C.L. Bailey — three decades of billiards industry experience, solid hardwood construction, and a lifetime guarantee on every table.",
+    "The story behind C.L. Bailey: three decades of billiards industry experience, solid hardwood construction, and a lifetime guarantee on every table.",
+  openGraph: {
+    title: "About Us | C.L. Bailey & Co.",
+    description:
+      "Three decades of billiards industry experience. Solid hardwood construction and a lifetime guarantee on every table.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/about",
+    languages: {
+      en: "https://clbailey.com/en/about",
+      es: "https://clbailey.com/es/about",
+    },
+  },
 };
 
 export default async function AboutPage() {

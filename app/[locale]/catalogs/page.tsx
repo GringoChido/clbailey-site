@@ -6,6 +6,19 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "Catalogs & Downloads | The C.L. Bailey Co.",
   description: "Download specification sheets and product catalogs for all C.L. Bailey pool tables, shuffleboards, and game room furniture.",
+  openGraph: {
+    title: "Catalogs & Downloads | C.L. Bailey & Co.",
+    description:
+      "Download specification sheets and product catalogs for all C.L. Bailey pool tables, shuffleboards, and game room furniture.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/catalogs",
+    languages: {
+      en: "https://clbailey.com/en/catalogs",
+      es: "https://clbailey.com/es/catalogs",
+    },
+  },
 };
 
 /* Group products that have PDFs by category */

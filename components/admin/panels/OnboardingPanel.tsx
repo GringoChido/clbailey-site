@@ -377,7 +377,7 @@ function ReviewItem({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-4">
       <span className="text-[12px] text-[var(--color-mid-gray)]">{label}</span>
-      <span className="text-[13px] text-[var(--color-primary)] text-right">{value || "—"}</span>
+      <span className="text-[13px] text-[var(--color-primary)] text-right">{value || "-"}</span>
     </div>
   );
 }

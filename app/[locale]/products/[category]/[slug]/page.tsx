@@ -228,7 +228,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   </span>
                   {convertible && (
                     <span className="metadata bg-[var(--color-cloud)] px-2 py-1">
-                      Convertible
+                      {t("common.convertibleBadge")}
                     </span>
                   )}
                 </div>
@@ -264,7 +264,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <ScrollReveal delay={2}>
                 {isDealer ? (
                   <div className="py-8 border-t border-[var(--color-cloud)]">
-                    <p className="section-label mb-4">Dealer Tools</p>
+                    <p className="section-label mb-4">{t("pdp.dealerTools")}</p>
                     <div className="flex flex-wrap gap-3">
                       {product.pdf && (
                         <a
@@ -280,7 +280,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                         href={`/${locale}/dealer-portal`}
                         className="btn-outline"
                       >
-                        Dealer Portal
+                        {t("pdp.dealerPortal")}
                       </Link>
                     </div>
                   </div>
@@ -327,16 +327,16 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {/* Collection / Cross-category products */}
           {crossCategoryProducts.length > 0 && (
             <ScrollReveal className="mb-20">
-              <h2 className="section-label mb-3">
+              <p className="section-label mb-3">
                 {collectionProducts.length > 0
                   ? t("common.collection")
                   : t("products.completeGameRoom")}
-              </h2>
-              <h3 className="heading-display text-2xl lg:text-3xl text-[var(--color-primary)] mb-3">
+              </p>
+              <h2 className="heading-display text-2xl lg:text-3xl text-[var(--color-primary)] mb-3">
                 {collectionProducts.length > 0
                   ? `${product.name.replace(/^The\s+/i, "").replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture)s?$/i, "")} Collection`
                   : t("products.completeGameRoomSub")}
-              </h3>
+              </h2>
               <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {crossCategoryProducts.slice(0, 4).map((cp) => (
@@ -349,9 +349,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {/* More from this category */}
           {relatedProducts.length > 0 && (
             <ScrollReveal>
-              <h2 className="section-label mb-3">
+              <p className="section-label mb-3">
                 {t("products.moreCategoryName", { categoryName: cat.name })}
-              </h2>
+              </p>
               <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map((rp) => (

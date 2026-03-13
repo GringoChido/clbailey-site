@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 type SortOption = "featured" | "az" | "za";
 
 interface CategoryFilterProps {
@@ -10,12 +12,6 @@ interface CategoryFilterProps {
   currentSize: string | null;
 }
 
-const sortOptions: { value: SortOption; label: string }[] = [
-  { value: "featured", label: "Featured" },
-  { value: "az", label: "A to Z" },
-  { value: "za", label: "Z to A" },
-];
-
 export default function CategoryFilter({
   availableSizes,
   onSortChange,
@@ -23,6 +19,13 @@ export default function CategoryFilter({
   currentSort,
   currentSize,
 }: CategoryFilterProps) {
+  const t = useTranslations("categoryPage");
+
+  const sortOptions: { value: SortOption; label: string }[] = [
+    { value: "featured", label: t("sortFeatured") },
+    { value: "az", label: t("sortAZ") },
+    { value: "za", label: t("sortZA") },
+  ];
   return (
     <div className="sticky top-[var(--header-height)] z-30 bg-white border-b border-[var(--color-cloud)]">
       <div className="overflow-x-auto no-scrollbar">
@@ -61,7 +64,7 @@ export default function CategoryFilter({
                     : "text-[var(--color-mid-gray)] hover:text-[var(--color-primary)]"
                 }`}
               >
-                All
+                {t("allSizes")}
               </button>
               {availableSizes.map((size) => (
                 <button

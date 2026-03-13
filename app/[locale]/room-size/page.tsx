@@ -6,6 +6,19 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "Room Size Chart | The C.L. Bailey Co.",
   description: "Determine the right pool table size for your room. Minimum room dimensions for 7-foot, 8-foot, and 9-foot tables.",
+  openGraph: {
+    title: "Room Size Chart | C.L. Bailey & Co.",
+    description:
+      "Determine the right pool table size for your room. Minimum room dimensions for 7-foot, 8-foot, and 9-foot tables.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/room-size",
+    languages: {
+      en: "https://clbailey.com/en/room-size",
+      es: "https://clbailey.com/es/room-size",
+    },
+  },
 };
 
 const tableData = Object.entries(sizeChart).map(([size, dims]) => ({

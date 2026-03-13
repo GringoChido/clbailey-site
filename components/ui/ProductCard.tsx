@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { img, isConvertible, type Product } from "@/lib/products";
 import { getFinishColor } from "@/lib/finishes";
 
@@ -14,6 +17,7 @@ export default function ProductCard({
   priority = false,
   locale = "en",
 }: ProductCardProps) {
+  const t = useTranslations("common");
   const convertible = isConvertible(product);
   const showDots =
     product.finishes.length > 0 && product.finishes[0] !== "Various";
@@ -37,7 +41,7 @@ export default function ProductCard({
         {/* Convertible badge */}
         {convertible && (
           <span className="absolute top-3 left-3 z-10 metadata bg-white/90 px-3 py-1.5 text-[var(--color-primary)]">
-            Convertible
+            {t("convertibleBadge")}
           </span>
         )}
 
@@ -47,7 +51,7 @@ export default function ProductCard({
             {product.tagline}
           </p>
           <span className="metadata text-white border border-white px-5 py-2">
-            View Details
+            {t("viewDetails")}
           </span>
         </div>
       </div>
@@ -75,7 +79,7 @@ export default function ProductCard({
         </div>
       )}
 
-      <p className="metadata">Dealer Exclusive</p>
+      <p className="metadata">{t("dealerExclusiveShort")}</p>
     </Link>
   );
 }

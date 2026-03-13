@@ -30,6 +30,7 @@ const PDPGalleryClient = ({ images, productName }: PDPGalleryClientProps) => {
         initialIndex={lightboxIndex}
         open={lightboxOpen}
         onOpenChange={setLightboxOpen}
+        productName={productName}
       />
     </>
   );

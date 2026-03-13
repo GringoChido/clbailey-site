@@ -8,6 +8,19 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "All Products | The C.L. Bailey Co.",
   description: "Browse our complete collection of pool tables, shuffleboards, game room furniture, and cue racks.",
+  openGraph: {
+    title: "All Products | C.L. Bailey & Co.",
+    description:
+      "Browse our complete collection of pool tables, shuffleboards, game room furniture, and cue racks.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/products",
+    languages: {
+      en: "https://clbailey.com/en/products",
+      es: "https://clbailey.com/es/products",
+    },
+  },
 };
 
 export default async function ProductsPage() {

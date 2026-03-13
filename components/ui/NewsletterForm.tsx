@@ -48,7 +48,7 @@ export default function NewsletterForm() {
           placeholder={t("emailPlaceholder")}
           aria-label={t("emailPlaceholder")}
           required
-          className="flex-1 bg-transparent border-none py-3.5 text-sm font-light tracking-wide text-[var(--color-light-on-dark)] placeholder:text-[var(--color-sand)]/40 focus:outline-none"
+          className="flex-1 bg-transparent border-none py-3.5 text-sm font-light tracking-wide text-[var(--color-light-on-dark)] placeholder:text-[var(--color-sand)]/40 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-bronze)] focus-visible:outline-offset-2"
         />
         <button
           type="submit"

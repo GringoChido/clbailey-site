@@ -19,7 +19,7 @@
     "dealerPortal": "Portal de Distribuidores"
   },
   "hero": {
-    "label": "The C.L. Bailey Co.",
+    "label": "C.L. Bailey & Co.",
     "title": "Construidas para Durar Generaciones",
     "subtitle": "Mesas de billar de madera maciza, shuffleboards y muebles de sala de juegos. Fabricados a mano en Tomball, Texas. Respaldados por una garantía de por vida.",
     "ctaProducts": "Ver Colección",
@@ -148,7 +148,7 @@
     "subscribeSuccess": "Gracias por suscribirse.",
     "subscribeError": "Algo salió mal. Intente de nuevo.",
     "allRights": "Todos los derechos reservados.",
-    "privacyPolicy": "Politica de Privacidad",
+    "privacyPolicy": "Política de Privacidad",
     "division": "Una división de CLB Assets LLC",
     "location": "Tomball, Texas",
     "yourLocalDealer": "Su Distribuidor Local",
@@ -204,6 +204,7 @@
     "linkCopied": "Enlace copiado",
     "downloadImages": "Descargar Imágenes",
     "dealerExclusive": "Exclusivo de Distribuidores. No Se Vende En Línea.",
+    "dealerExclusiveShort": "Exclusivo de Distribuidores",
     "convertibleBadge": "Convertible"
   },
   "products": {
@@ -212,6 +213,38 @@
     "moreCategoryName": "Más {categoryName}",
     "completeGameRoom": "Complete Su Sala de Juegos",
     "completeGameRoomSub": "Explore piezas complementarias de nuestras otras colecciones"
+  },
+  "pdp": {
+    "dealerTools": "Herramientas para Distribuidores",
+    "dealerPortal": "Portal de Distribuidores"
+  },
+  "configurator": {
+    "configSent": "Configuración Enviada",
+    "thankYou": "Gracias, {name}.",
+    "sentToDealer": "Su configuración de {product} ha sido enviada a {dealer} en {location}.",
+    "expectResponse": "Espere noticias de ellos dentro de 24 horas.",
+    "configReceived": "Su configuración de {product} ha sido recibida. Un miembro de nuestro equipo lo conectará con su distribuidor más cercano.",
+    "findDealer": "Encontrar un Distribuidor",
+    "stepSize": "Tamaño",
+    "stepFinish": "Acabado",
+    "stepContact": "Contacto",
+    "selectSize": "Seleccionar Tamaño",
+    "selectFinish": "Seleccionar Acabado",
+    "backToSize": "Volver a Tamaño",
+    "sendToDealer": "Enviar a un Distribuidor",
+    "labelName": "Nombre",
+    "placeholderName": "Su nombre",
+    "labelEmail": "Correo Electrónico",
+    "placeholderEmail": "usted@ejemplo.com",
+    "labelZip": "Código Postal",
+    "placeholderZip": "ej. 77377",
+    "sending": "Enviando...",
+    "sendConfig": "Enviar Configuración a un Distribuidor",
+    "backToFinish": "Volver a Acabado",
+    "errorEmail": "Por favor ingrese una dirección de correo electrónico válida.",
+    "errorZip": "Por favor ingrese un código postal válido de 5 dígitos.",
+    "errorGeneric": "Algo salió mal. Por favor intente de nuevo.",
+    "errorNetwork": "No se pudo enviar su configuración. Por favor intente de nuevo."
   },
   "concierge": {
     "openLabel": "Abrir Gerente de Showroom",
@@ -233,7 +266,10 @@
     "noResults": "No se encontraron distribuidores cerca de ese código postal.",
     "contactUs": "Contáctenos para consultas sobre distribuidores",
     "networkTitle": "Red nacional de distribuidores",
-    "networkDescription": "Ingrese su código postal arriba para encontrar su distribuidor más cercano."
+    "networkDescription": "Ingrese su código postal arriba para encontrar su distribuidor más cercano.",
+    "searchPlaceholder": "Ingrese ciudad, estado o código postal",
+    "filterByModel": "Filtrar por Modelo",
+    "allModels": "Todos los Modelos"
   },
   "about": {
     "title": "Sobre Nosotros",
@@ -560,26 +596,42 @@
     "sortZA": "Z a A",
     "allSizes": "Todos",
     "seoTitle": "Por Qué C.L. Bailey {categoryName}",
-    "fromCollection": "De la Colección {collectionName}"
+    "fromCollection": "De la Colección {collectionName}",
+    "poolTablesName": "Mesas de Billar",
+    "poolTablesDesc": "Nueve modelos distintos. Construcción en madera maciza. Garantía de por vida.",
+    "shuffleboardsName": "Shuffleboards",
+    "shuffleboardsDesc": "Shuffleboards premium de 9' a 14'. Superficie sólida. Puntuación de precisión.",
+    "gameRoomFurnitureName": "Muebles de Sala de Juegos",
+    "gameRoomFurnitureDesc": "Sillas para espectadores, bancos de almacenamiento y portatacos diseñados para complementar su mesa.",
+    "cueRacksName": "Portatacos",
+    "cueRacksDesc": "Portatacos de piso, pared y esquina en acabados combinables.",
+    "accessoriesName": "Accesorios",
+    "accessoriesDesc": "Accesorios premium de billar, desde juegos de bolas profesionales hasta bolsillos de cuero artesanales.",
+    "poolTablesHeadline": "Construidas para Hogares que Perduran",
+    "shuffleboardsHeadline": "Catorce Pies de Madera Maciza",
+    "gameRoomFurnitureHeadline": "Cada Asiento. Cada Superficie. Coordinados.",
+    "cueRacksHeadline": "Piso, Pared y Esquina. Cinco Acabados.",
+    "accessoriesHeadline": "Del Primer Tiro al Toque Final",
+    "productCount": "{count, plural, one {# Producto} other {# Productos}}"
   },
   "dealerBlock": {
     "label": "Recursos",
-    "heading": "Explore Nuestro Catalogo",
-    "viewAll": "Ver Todos los Catalogos",
-    "viewSpecSheet": "Ver Ficha Tecnica",
+    "heading": "Explore Nuestro Catálogo",
+    "viewAll": "Ver Todos los Catálogos",
+    "viewSpecSheet": "Ver Ficha Técnica",
     "dealerLabel": "Distribuidores Autorizados",
-    "dealerHeading": "Su Sala de Exhibicion, Impulsada por la Nuestra",
+    "dealerHeading": "Su Sala de Exhibición, Impulsada por la Nuestra",
     "dealerDescription": "Acceda a las herramientas, precios y recursos de marketing que mueven producto de su piso de ventas.",
     "feature1Title": "Configurador de Productos",
-    "feature1Desc": "Cotizaciones personalizadas con acabado, tamano y accesorios",
+    "feature1Desc": "Cotizaciones personalizadas con acabado, tamaño y accesorios",
     "feature2Title": "Precios para Distribuidores",
     "feature2Desc": "Hojas de costos y calculadoras de margen actualizadas",
     "feature3Title": "Kits de Marketing",
-    "feature3Desc": "Recursos de campana, plantillas sociales y senalizacion POS",
-    "feature4Title": "Biblioteca de Fichas Tecnicas",
+    "feature3Desc": "Recursos de campaña, plantillas sociales y señalización POS",
+    "feature4Title": "Biblioteca de Fichas Técnicas",
     "feature4Desc": "Todos los PDFs de producto, actualizados trimestralmente",
     "dealerLoginCta": "Acceso Distribuidores",
-    "applyAccess": "No es distribuidor? Solicite acceso"
+    "applyAccess": "¿No es distribuidor? Solicite acceso"
   },
   "tradeBlock": {
     "tradeLabel": "Programa Comercial",

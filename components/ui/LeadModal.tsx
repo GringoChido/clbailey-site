@@ -157,7 +157,7 @@ export default function LeadModal({
             {t("disclaimer")}
           </p>
 
-          <Dialog.Close className="absolute top-4 right-4 text-[var(--color-silver)] hover:text-[var(--color-primary)] transition-colors duration-300">
+          <Dialog.Close aria-label="Close dialog" className="absolute top-4 right-4 text-[var(--color-silver)] hover:text-[var(--color-primary)] transition-colors duration-300">
             <svg
               width="20"
               height="20"

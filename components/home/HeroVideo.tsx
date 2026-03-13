@@ -22,6 +22,7 @@ export default function HeroVideo() {
       loop
       playsInline
       preload="auto"
+      aria-hidden="true"
       poster={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg`}
       className="absolute inset-0 w-full h-full object-cover"
     >

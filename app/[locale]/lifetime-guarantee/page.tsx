@@ -5,6 +5,19 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = {
   title: "Lifetime Guarantee | The C.L. Bailey Co.",
   description: "Every C.L. Bailey pool table and shuffleboard carries a lifetime structural guarantee. No fine print. No expiration.",
+  openGraph: {
+    title: "Lifetime Guarantee | C.L. Bailey & Co.",
+    description:
+      "Every C.L. Bailey pool table and shuffleboard carries a lifetime structural guarantee. No fine print. No expiration.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://clbailey.com/en/lifetime-guarantee",
+    languages: {
+      en: "https://clbailey.com/en/lifetime-guarantee",
+      es: "https://clbailey.com/es/lifetime-guarantee",
+    },
+  },
 };
 
 export default async function LifetimeGuaranteePage() {
