@@ -215,7 +215,12 @@
     "downloadImages": "Download Images",
     "dealerExclusive": "Dealer Exclusive. Not Sold Online.",
     "dealerExclusiveShort": "Dealer Exclusive",
-    "convertibleBadge": "Convertible"
+    "convertibleBadge": "Convertible",
+    "skipToContent": "Skip to content"
+  },
+  "craftBanner": {
+    "heading": "Solid hardwood. Lifetime guarantee. Handcrafted in Tomball, Texas.",
+    "since": "Since 1999"
   },
   "products": {
     "title": "All Products",

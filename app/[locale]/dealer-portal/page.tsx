@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DealerDashboard from "@/components/dealer-portal/DealerDashboard";
+import DealerDashboardLoader from "@/components/dealer-portal/DealerDashboardLoader";
 
 export const metadata: Metadata = {
   title: "Dealer Portal",
@@ -12,7 +12,7 @@ export default async function DealerPortalPage() {
     <div className="pt-32 pb-20 lg:pb-28">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
         <div className="animate-fade-up">
-          <DealerDashboard />
+          <DealerDashboardLoader />
         </div>
       </div>
     </div>

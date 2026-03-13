@@ -2,6 +2,7 @@
 
 import ProductCard from "@/components/ui/ProductCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { useTranslations } from "next-intl";
 import type { Product } from "@/lib/products";
 
 interface CategoryGridProps {
@@ -10,6 +11,7 @@ interface CategoryGridProps {
 }
 
 const CategoryGrid = ({ products, locale }: CategoryGridProps) => {
+  const t = useTranslations("categoryPage");
   const sorted = [...products].sort((a, b) => a.sortOrder - b.sortOrder);
 
   return (
@@ -29,7 +31,7 @@ const CategoryGrid = ({ products, locale }: CategoryGridProps) => {
 
         <div className="text-center mt-16">
           <p className="metadata !text-[var(--color-mid-gray)]">
-            {sorted.length} {sorted.length === 1 ? "Product" : "Products"}
+            {t("productCount", { count: sorted.length })}
           </p>
         </div>
       </div>

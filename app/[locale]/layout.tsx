@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -25,6 +26,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   setRequestLocale(locale);
+  const t = await getTranslations("common");
 
   return (
     <>
@@ -39,7 +41,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[var(--color-primary)] focus:text-white focus:text-sm"
         >
-          Skip to content
+          {t("skipToContent")}
         </a>
         <Header />
         <main id="main-content" className="pt-[var(--header-height)] xl:pt-[var(--header-height-xl)]">{children}</main>

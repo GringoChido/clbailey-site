@@ -215,7 +215,12 @@
     "downloadImages": "Descargar Imágenes",
     "dealerExclusive": "Exclusivo de Distribuidores. No Se Vende En Línea.",
     "dealerExclusiveShort": "Exclusivo de Distribuidores",
-    "convertibleBadge": "Convertible"
+    "convertibleBadge": "Convertible",
+    "skipToContent": "Ir al contenido"
+  },
+  "craftBanner": {
+    "heading": "Madera maciza. Garantía de por vida. Fabricado en Tomball, Texas.",
+    "since": "Desde 1999"
   },
   "products": {
     "title": "Todos los Productos",
