@@ -19,10 +19,11 @@ import PDPGalleryClient from "@/components/ui/PDPGalleryClient";
 import FinishSwatches from "@/components/ui/FinishSwatches";
 import ProductAccordion from "@/components/ui/ProductAccordion";
 import ProductConfigurator from "@/components/ui/ProductConfigurator";
-import CraftSection from "@/components/ui/CraftSection";
 import ProductCard from "@/components/ui/ProductCard";
 import LeadModal from "@/components/ui/LeadModal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import CraftStrip from "@/components/ui/CraftStrip";
+import ConfigureNudge from "@/components/ui/ConfigureNudge";
 
 interface PageProps {
   params: Promise<{ locale: string; category: string; slug: string }>;
@@ -205,7 +206,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           </nav>
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
             {/* Left: Gallery */}
             <PDPGalleryClient
               images={allImages}
@@ -261,7 +262,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </ScrollReveal>
 
               {/* Configurator or Dealer CTAs */}
-              <ScrollReveal delay={2}>
+              <ScrollReveal delay={2} id="configurator">
                 {isDealer ? (
                   <div className="py-8 border-t border-[var(--color-cloud)]">
                     <p className="section-label mb-4">{t("pdp.dealerTools")}</p>
@@ -320,10 +321,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Full-bleed CraftSection break */}
-        <CraftSection backgroundImage="The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Dutchess/Warm_Chestnut/clb%20dutchess%20image%202_4Rq5CRLeN.jpg" />
+        {/* Craftsmanship trust strip */}
+        <CraftStrip />
 
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-10 mt-20">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10 mt-0">
           {/* Collection / Cross-category products */}
           {crossCategoryProducts.length > 0 && (
             <ScrollReveal className="mb-20">
@@ -332,11 +333,16 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   ? t("common.collection")
                   : t("products.completeGameRoom")}
               </p>
-              <h2 className="heading-display text-2xl lg:text-3xl text-[var(--color-primary)] mb-3">
+              <h2 className="heading-display text-2xl lg:text-3xl text-[var(--color-primary)] mb-2">
                 {collectionProducts.length > 0
                   ? `${product.name.replace(/^The\s+/i, "").replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture)s?$/i, "")} Collection`
                   : t("products.completeGameRoomSub")}
               </h2>
+              <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-6">
+                {collectionProducts.length > 0
+                  ? t("products.collectionDesc", { name: product.name.replace(/^The\s+/i, "").replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture)s?$/i, "") })
+                  : t("products.crossCategoryDesc")}
+              </p>
               <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {crossCategoryProducts.slice(0, 4).map((cp) => (
@@ -352,6 +358,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <p className="section-label mb-3">
                 {t("products.moreCategoryName", { categoryName: cat.name })}
               </p>
+              <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-6">
+                {t("products.moreCategoryDesc")}
+              </p>
               <div className="h-px bg-[var(--color-cloud)] mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map((rp) => (
@@ -362,6 +371,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
           )}
         </div>
       </div>
+
+      {/* Desktop configure nudge (non-dealer only) */}
+      {!isDealer && product.sizes.length > 0 && (
+        <ConfigureNudge label={t("products.configureNudge")} />
+      )}
 
       {/* Sticky Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-[var(--color-cloud)] px-4 py-3 flex gap-3">

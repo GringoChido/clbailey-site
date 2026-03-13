@@ -70,8 +70,8 @@ export default function ProductCard({
             return (
               <span
                 key={finish}
-                title={finish}
-                className="w-3 h-3 rounded-full inline-block"
+                data-finish={finish}
+                className="relative w-3 h-3 rounded-full inline-block group/swatch cursor-default after:content-[attr(data-finish)] after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:mb-1.5 after:px-2 after:py-1 after:text-[9px] after:text-white after:bg-[var(--color-primary)] after:whitespace-nowrap after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-200 hover:after:opacity-100"
                 style={{ backgroundColor: color }}
               />
             );

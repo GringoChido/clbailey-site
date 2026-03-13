@@ -7,6 +7,7 @@ interface ScrollRevealProps {
   className?: string;
   delay?: number;
   threshold?: number;
+  id?: string;
 }
 
 const ScrollReveal = ({
@@ -14,6 +15,7 @@ const ScrollReveal = ({
   className = "",
   delay = 0,
   threshold = 0.1,
+  id,
 }: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,6 +42,7 @@ const ScrollReveal = ({
   return (
     <div
       ref={ref}
+      id={id}
       className={`reveal ${staggerClass} ${className}`.trim()}
     >
       {children}

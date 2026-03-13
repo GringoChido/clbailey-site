@@ -358,7 +358,7 @@ const ProductConfigurator = ({
           </div>
 
           {error && (
-            <p className="text-sm mt-4 text-center" style={{ color: "#8B4040" }}>
+            <p className="text-sm mt-4 text-center text-[var(--color-body)]">
               {error}
             </p>
           )}

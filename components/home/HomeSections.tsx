@@ -379,7 +379,7 @@ function CraftHeritageSection({ t }: { t: (key: string) => string }) {
       {/* Part A: Heritage Statement with background image */}
       <section className="relative w-full min-h-[60vh] lg:min-h-[75vh] flex items-center overflow-hidden">
         <Image
-          src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Viking/Antique_Oak/viking%20combo_3-Iafpk-F.jpg`}
+          src={`${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Home%20Page/Built%20by%20hand.%20Guaranteed%20for%20life_Zhr34MxYq.jpeg`}
           alt={t("home.craftImageAlt")}
           fill
           className="object-cover"

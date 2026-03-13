@@ -218,16 +218,24 @@
     "convertibleBadge": "Convertible",
     "skipToContent": "Ir al contenido"
   },
-  "craftBanner": {
-    "heading": "Madera maciza. Garantía de por vida. Fabricado en Tomball, Texas.",
-    "since": "Desde 1999"
+  "craftStrip": {
+    "pillar1Title": "Madera Maciza",
+    "pillar1Desc": "Sin aglomerado, sin MDF. Cada superficie es madera real.",
+    "pillar2Title": "Garantía Estructural de por Vida",
+    "pillar2Desc": "Respaldamos cada pieza mientras usted la posea.",
+    "pillar3Title": "Hecho a Mano en Texas",
+    "pillar3Desc": "Fabricado en nuestras instalaciones de Tomball, TX desde 1999."
   },
   "products": {
     "title": "Todos los Productos",
     "description": "Cuatro categorías. Veinte productos. Un estándar de calidad.",
     "moreCategoryName": "Más {categoryName}",
+    "moreCategoryDesc": "Fabricados con la misma atención al detalle.",
     "completeGameRoom": "Complete Su Sala de Juegos",
-    "completeGameRoomSub": "Explore piezas complementarias de nuestras otras colecciones"
+    "completeGameRoomSub": "Explore piezas complementarias de nuestras otras colecciones",
+    "collectionDesc": "Complete su espacio con piezas de la colección {name}.",
+    "crossCategoryDesc": "Explore nuestra gama completa de muebles artesanales para sala de juegos.",
+    "configureNudge": "Configurar Esta Mesa"
   },
   "pdp": {
     "dealerTools": "Herramientas para Distribuidores",
@@ -598,10 +606,6 @@
     "noDealerTitle": "Su configuración ha sido recibida.",
     "noDealerText": "Lo conectaremos con su distribuidor autorizado más cercano en breve.",
     "error": "Algo salió mal. Por favor intente de nuevo."
-  },
-  "craft": {
-    "headline": "Madera maciza. Garantía de por vida. Fabricado a mano en Tomball, Texas.",
-    "since": "Desde 1999"
   },
   "categoryPage": {
     "models": "Modelos",

@@ -218,16 +218,24 @@
     "convertibleBadge": "Convertible",
     "skipToContent": "Skip to content"
   },
-  "craftBanner": {
-    "heading": "Solid hardwood. Lifetime guarantee. Handcrafted in Tomball, Texas.",
-    "since": "Since 1999"
+  "craftStrip": {
+    "pillar1Title": "Solid Hardwood",
+    "pillar1Desc": "No particle board, no MDF. Every surface is real wood.",
+    "pillar2Title": "Lifetime Structural Warranty",
+    "pillar2Desc": "We stand behind every piece for as long as you own it.",
+    "pillar3Title": "Handcrafted in Texas",
+    "pillar3Desc": "Built in our Tomball, TX facility since 1999."
   },
   "products": {
     "title": "All Products",
     "description": "Four categories. Twenty products. One standard of quality.",
     "moreCategoryName": "More {categoryName}",
+    "moreCategoryDesc": "Crafted with the same attention to detail.",
     "completeGameRoom": "Complete Your Game Room",
-    "completeGameRoomSub": "Explore complementary pieces from our other collections."
+    "completeGameRoomSub": "Explore complementary pieces from our other collections.",
+    "collectionDesc": "Complete your room with matching pieces from the {name} collection.",
+    "crossCategoryDesc": "Explore our full range of handcrafted game room furniture.",
+    "configureNudge": "Configure This Table"
   },
   "pdp": {
     "dealerTools": "Dealer Tools",
@@ -598,10 +606,6 @@
     "noDealerTitle": "Your configuration has been received.",
     "noDealerText": "We will connect you with your nearest authorized dealer shortly.",
     "error": "Something went wrong. Please try again."
-  },
-  "craft": {
-    "headline": "Solid hardwood. Lifetime guarantee. Handcrafted in Tomball, Texas.",
-    "since": "Since 1999"
   },
   "categoryPage": {
     "models": "Models",
