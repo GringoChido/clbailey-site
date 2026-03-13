@@ -15,7 +15,7 @@
     "findDealer": "Find a Dealer",
     "toggleMenu": "Toggle menu",
     "wordmark": "C.L. Bailey & Co.",
-    "announcement": "Dealer Exclusive. Not Sold Online  |  Lifetime Structural Guarantee",
+    "announcement": "Dealer Exclusive  |  Lifetime Structural Guarantee",
     "dealerPortal": "Dealer Portal"
   },
   "hero": {
@@ -632,6 +632,13 @@
     "feature4Desc": "Every product PDF, updated quarterly",
     "dealerLoginCta": "Dealer Login",
     "applyAccess": "Not a dealer? Apply for access"
+  },
+  "dealerLocator": {
+    "label": "Dealer Exclusive",
+    "heading": "Your Dealer Is Closer Than You Think",
+    "placeholder": "Enter your zip code",
+    "cta": "Find a Dealer",
+    "subtext": "Every table is delivered and installed by an authorized dealer in your area."
   },
   "tradeBlock": {
     "tradeLabel": "Trade Program",

@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { getFeaturedProducts, img, IMAGEKIT_BASE } from "@/lib/products";
-import CatalogBrowser from "./CatalogBrowser";
 import DealerLocator from "./DealerLocator";
 
-/* ─── Section 1: Category Navigation ─── */
+/* ─── Section 1: Category Navigation — Asymmetric Bento Grid ─── */
 function CategoryNav({ t }: { t: (key: string) => string }) {
   const items = [
     {
@@ -46,137 +45,253 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
   ];
 
   return (
-    <section className="py-16 lg:py-32 bg-[var(--color-off-white)]">
+    <section className="py-16 lg:py-28 bg-[var(--color-off-white)]">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
-        <p className="section-label text-center mb-3">
-          {t("museum.portfolioLabel")}
-        </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] text-center mb-4">
-          {t("home.categoryHeading")}
-        </h2>
-        <p className="text-base text-[var(--color-body)] text-center max-w-lg mx-auto mb-6 leading-relaxed">
-          {t("home.editorialProducts")}
-        </p>
-        <div className="text-center mb-16">
-          <Link href="/products" className="btn-outline">
-            {t("home.editorialProductsCta")}
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div>
+            <p className="section-label mb-3">
+              {t("museum.portfolioLabel")}
+            </p>
+            <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)]">
+              {t("home.categoryHeading")}
+            </h2>
+            <p className="text-base text-[var(--color-body)] mt-3 max-w-md leading-relaxed">
+              {t("home.editorialProducts")}
+            </p>
+          </div>
+          <Link
+            href="/products"
+            className="text-sm font-medium text-[var(--color-primary)] border-b border-[var(--color-primary)] pb-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] transition-colors duration-300 whitespace-nowrap"
+          >
+            {t("home.editorialProductsCta")} &rarr;
           </Link>
         </div>
 
-        <div className="overflow-hidden -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
-          <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 lg:grid lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:pb-0">
-            {items.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="group flex-shrink-0 w-[260px] lg:w-auto"
-              >
-                <div className="aspect-[3/4] relative overflow-hidden bg-[var(--color-cloud)]">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    className="object-cover group-hover:scale-[1.04] transition-transform duration-700"
-                    sizes="(max-width: 1024px) 260px, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-[1.125rem] font-light text-white uppercase tracking-[0.04em]">
-                      {item.label}
-                    </h3>
-                    <p className="text-[0.6875rem] text-white/40 uppercase tracking-[0.1em] mt-1.5">
-                      {item.subtitle}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+        {/* Asymmetric bento grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4 auto-rows-[200px] lg:auto-rows-[240px]">
+          {/* Pool Tables — large hero tile, spans 7 cols and 2 rows */}
+          <Link
+            href={items[0].href}
+            className="group relative overflow-hidden col-span-2 lg:col-span-7 row-span-2 bg-[var(--color-cloud)]"
+          >
+            <Image
+              src={items[0].image}
+              alt={items[0].alt}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-10">
+              <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-white/30 mb-2">
+                {items[0].subtitle}
+              </p>
+              <h3 className="heading-display text-2xl lg:text-4xl !text-white">
+                {items[0].label}
+              </h3>
+            </div>
+          </Link>
+
+          {/* Shuffleboards — tall right tile */}
+          <Link
+            href={items[1].href}
+            className="group relative overflow-hidden col-span-1 lg:col-span-5 row-span-1 bg-[var(--color-cloud)]"
+          >
+            <Image
+              src={items[1].image}
+              alt={items[1].alt}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+              sizes="(max-width: 1024px) 50vw, 42vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-8">
+              <p className="font-[family-name:var(--font-label)] text-[9px] font-medium uppercase tracking-[3px] text-white/30 mb-1.5">
+                {items[1].subtitle}
+              </p>
+              <h3 className="heading-display text-lg lg:text-2xl !text-white">
+                {items[1].label}
+              </h3>
+            </div>
+          </Link>
+
+          {/* Furniture */}
+          <Link
+            href={items[2].href}
+            className="group relative overflow-hidden col-span-1 lg:col-span-5 row-span-1 bg-[var(--color-cloud)]"
+          >
+            <Image
+              src={items[2].image}
+              alt={items[2].alt}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+              sizes="(max-width: 1024px) 50vw, 42vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-8">
+              <p className="font-[family-name:var(--font-label)] text-[9px] font-medium uppercase tracking-[3px] text-white/30 mb-1.5">
+                {items[2].subtitle}
+              </p>
+              <h3 className="heading-display text-lg lg:text-2xl !text-white">
+                {items[2].label}
+              </h3>
+            </div>
+          </Link>
+
+          {/* Cue Racks — bottom left */}
+          <Link
+            href={items[3].href}
+            className="group relative overflow-hidden col-span-1 lg:col-span-6 row-span-1 bg-[var(--color-cloud)]"
+          >
+            <Image
+              src={items[3].image}
+              alt={items[3].alt}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+              sizes="(max-width: 1024px) 50vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-8">
+              <p className="font-[family-name:var(--font-label)] text-[9px] font-medium uppercase tracking-[3px] text-white/30 mb-1.5">
+                {items[3].subtitle}
+              </p>
+              <h3 className="heading-display text-lg lg:text-2xl !text-white">
+                {items[3].label}
+              </h3>
+            </div>
+          </Link>
+
+          {/* Accessories — bottom right */}
+          <Link
+            href={items[4].href}
+            className="group relative overflow-hidden col-span-1 lg:col-span-6 row-span-1 bg-[var(--color-cloud)]"
+          >
+            <Image
+              src={items[4].image}
+              alt={items[4].alt}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+              sizes="(max-width: 1024px) 50vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-8">
+              <p className="font-[family-name:var(--font-label)] text-[9px] font-medium uppercase tracking-[3px] text-white/30 mb-1.5">
+                {items[4].subtitle}
+              </p>
+              <h3 className="heading-display text-lg lg:text-2xl !text-white">
+                {items[4].label}
+              </h3>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
-/* ─── Section 2: Dealer Portal Block ─── */
+/* ─── Section 2: Dealer Portal Block — Full-width Dark Panel ─── */
 function DealerPortalBlock({ t }: { t: (key: string) => string }) {
   const features = [
-    { title: t("dealerBlock.feature1Title"), desc: t("dealerBlock.feature1Desc") },
-    { title: t("dealerBlock.feature2Title"), desc: t("dealerBlock.feature2Desc") },
-    { title: t("dealerBlock.feature3Title"), desc: t("dealerBlock.feature3Desc") },
-    { title: t("dealerBlock.feature4Title"), desc: t("dealerBlock.feature4Desc") },
+    {
+      title: t("dealerBlock.feature1Title"),
+      desc: t("dealerBlock.feature1Desc"),
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 3v18M3 12h18M7.5 7.5l9 9M16.5 7.5l-9 9" />
+        </svg>
+      ),
+    },
+    {
+      title: t("dealerBlock.feature2Title"),
+      desc: t("dealerBlock.feature2Desc"),
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+        </svg>
+      ),
+    },
+    {
+      title: t("dealerBlock.feature3Title"),
+      desc: t("dealerBlock.feature3Desc"),
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M3 9h18M9 21V9" />
+        </svg>
+      ),
+    },
+    {
+      title: t("dealerBlock.feature4Title"),
+      desc: t("dealerBlock.feature4Desc"),
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+          <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+        </svg>
+      ),
+    },
   ];
 
   return (
-    <section className="py-16 lg:py-32 bg-[var(--color-off-white)] overflow-hidden">
-      <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
-        <p className="section-label text-center mb-3">
-          {t("dealerBlock.label")}
-        </p>
-        <h2 className="heading-display text-3xl md:text-[2.5rem] text-[var(--color-primary)] text-center mb-16">
-          {t("dealerBlock.heading")}
-        </h2>
+    <section className="relative overflow-hidden bg-[var(--color-deep)]">
+      {/* Subtle ambient glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(ellipse 50% 50% at 0% 50%, rgba(168,146,121,0.06) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 50% at 100% 50%, rgba(168,146,121,0.04) 0%, transparent 60%)
+          `,
+        }}
+      />
 
-        <div className="grid lg:grid-cols-2 gap-0 overflow-hidden">
-          {/* Left: Catalog Browser */}
-          <div className="min-w-0">
-            <CatalogBrowser />
-          </div>
+      <div className="relative z-10 max-w-[90rem] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        {/* Top: Label + Heading + Description */}
+        <div className="max-w-2xl mx-auto text-center mb-16 lg:mb-20">
+          <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-bronze)]/50 mb-5">
+            {t("dealerBlock.dealerLabel")}
+          </p>
+          <h2 className="heading-display text-3xl md:text-[2.5rem] lg:text-[3rem] !text-[var(--color-light-on-dark)] mb-5">
+            {t("dealerBlock.dealerHeading")}
+          </h2>
+          <p className="text-[14px] leading-[26px] text-[var(--color-light-on-dark)]/40 max-w-lg mx-auto">
+            {t("dealerBlock.dealerDescription")}
+          </p>
+        </div>
 
-          {/* Right: Dealer Portal promo */}
-          <div className="min-w-0 bg-[var(--color-deep)] p-6 md:p-10 lg:p-14 flex flex-col justify-between">
-            <div>
-              <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-[var(--color-light-on-dark)]/30 mb-4">
-                {t("dealerBlock.dealerLabel")}
-              </p>
-              <h3 className="heading-display text-2xl lg:text-3xl text-white mb-5">
-                {t("dealerBlock.dealerHeading")}
-              </h3>
-              <p className="text-[13px] leading-[26px] text-[var(--color-light-on-dark)]/50 mb-10">
-                {t("dealerBlock.dealerDescription")}
-              </p>
-
-              <div className="space-y-5 mb-12">
-                {features.map((feature) => (
-                  <div key={feature.title} className="flex items-start gap-3">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className="flex-shrink-0 mt-1 text-[var(--color-bronze)]"
-                    >
-                      <path d="M9 18l6-6-6-6" />
-                    </svg>
-                    <div>
-                      <p className="text-[13px] font-medium text-white tracking-[0.02em]">
-                        {feature.title}
-                      </p>
-                      <p className="text-[11px] text-[var(--color-light-on-dark)]/40 leading-relaxed">
-                        {feature.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+        {/* Feature grid — 4 columns */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.04] mb-16 lg:mb-20">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="bg-[var(--color-deep)] p-6 lg:p-8 group hover:bg-white/[0.02] transition-colors duration-500"
+            >
+              <div className="text-[var(--color-bronze)]/60 mb-5">
+                {feature.icon}
               </div>
-            </div>
-
-            <div>
-              <Link href="/dealer" className="btn-outline-white">
-                {t("dealerBlock.dealerLoginCta")}
-              </Link>
-              <p className="mt-5">
-                <Link
-                  href="/contact-us"
-                  className="text-[11px] text-[var(--color-light-on-dark)]/30 hover:text-[var(--color-light-on-dark)]/50 transition-colors duration-300"
-                >
-                  {t("dealerBlock.applyAccess")}
-                </Link>
+              <h3 className="text-[13px] font-medium text-[var(--color-light-on-dark)] tracking-[0.02em] mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-[11px] text-[var(--color-light-on-dark)]/30 leading-[20px]">
+                {feature.desc}
               </p>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Bottom: CTA row */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <Link href="/dealer-portal" className="btn-outline-white">
+            {t("dealerBlock.dealerLoginCta")}
+          </Link>
+          <Link
+            href="/contact-us"
+            className="text-[11px] font-[family-name:var(--font-label)] font-medium uppercase tracking-[2px] text-[var(--color-light-on-dark)]/25 hover:text-[var(--color-light-on-dark)]/50 transition-colors duration-300"
+          >
+            {t("dealerBlock.applyAccess")}
+          </Link>
         </div>
       </div>
     </section>

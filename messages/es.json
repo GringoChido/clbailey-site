@@ -15,7 +15,7 @@
     "findDealer": "Encontrar Distribuidor",
     "toggleMenu": "Alternar menú",
     "wordmark": "C.L. Bailey & Co.",
-    "announcement": "Exclusivo de Distribuidores. No Se Vende En Línea  |  Garantía Estructural de por Vida",
+    "announcement": "Exclusivo de Distribuidores  |  Garantía Estructural de por Vida",
     "dealerPortal": "Portal de Distribuidores"
   },
   "hero": {
@@ -632,6 +632,13 @@
     "feature4Desc": "Todos los PDFs de producto, actualizados trimestralmente",
     "dealerLoginCta": "Acceso Distribuidores",
     "applyAccess": "¿No es distribuidor? Solicite acceso"
+  },
+  "dealerLocator": {
+    "label": "Exclusivo de Distribuidores",
+    "heading": "Su Distribuidor Está Más Cerca de lo Que Piensa",
+    "placeholder": "Ingrese su código postal",
+    "cta": "Encontrar Distribuidor",
+    "subtext": "Cada mesa es entregada e instalada por un distribuidor autorizado en su área."
   },
   "tradeBlock": {
     "tradeLabel": "Programa Comercial",
