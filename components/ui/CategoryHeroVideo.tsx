@@ -17,15 +17,45 @@ const CategoryHeroVideo = ({ src, poster }: CategoryHeroVideoProps) => {
     video.muted = true;
     video.playsInline = true;
 
+    const tryPlay = () => {
+      if (video.paused && video.readyState >= 2) {
+        video.play().catch(() => {
+          // Autoplay blocked, poster frame shows as fallback
+        });
+      }
+    };
+
     // Set src programmatically to avoid React hydration stripping <source>
     if (!video.src || video.networkState === 3) {
       video.src = src;
       video.load();
     }
 
-    video.play().catch(() => {
-      // Autoplay blocked, poster frame shows as fallback
-    });
+    tryPlay();
+
+    // Retry when video data is ready
+    video.addEventListener("canplay", tryPlay);
+
+    // Resume playback when tab becomes visible again
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") tryPlay();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    // Resume when video scrolls into viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) tryPlay();
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+
+    return () => {
+      video.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", onVisibility);
+      observer.disconnect();
+    };
   }, [src]);
 
   return (
