@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
@@ -93,12 +94,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   const t = await getTranslations();
 
-  // Check dealer auth cookie
   const cookieStore = await cookies();
   const dealerAuth = cookieStore.get("dealer-auth");
   const isDealer = dealerAuth?.value === "authorized";
 
-  // Collect all images: hero first, then gallery
   const allImages = [
     product.images.hero,
     ...product.images.gallery,
@@ -106,7 +105,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   const convertible = isConvertible(product);
 
-  // Smart cross-sell: collection matches first, then fallback
   const collectionProducts = getCollectionMatches(product.name, category);
   const relatedProducts = getProductsByCategory(category)
     .filter((p) => p.slug !== slug)
@@ -115,6 +113,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
     collectionProducts.length > 0
       ? collectionProducts
       : getCrossCategoryProducts(category, 4);
+
+  const heroImage = product.images.categoryImage ?? product.images.hero;
 
   /* ─── JSON-LD ─── */
   const productSchema = {
@@ -181,31 +181,65 @@ export default async function ProductDetailPage({ params }: PageProps) {
         }}
       />
 
-      <div className="pt-28 pb-20 lg:pb-28">
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+      {/* ─── Hero Banner ─── */}
+      <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[400px] flex items-end overflow-hidden">
+        <Image
+          src={img(heroImage)}
+          alt={product.name}
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+
+        <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 pb-12 lg:pb-16">
           {/* Breadcrumb */}
           <nav
-            className="metadata !text-[var(--color-mid-gray)] mb-8"
+            className="metadata !text-white/40 mb-4"
             aria-label="Breadcrumb"
           >
             <Link
               href={`/${locale}/products`}
-              className="hover:text-[var(--color-primary)] transition-colors duration-300"
+              className="hover:text-white/70 transition-colors duration-300"
             >
               {t("common.products")}
             </Link>
             <span className="mx-2">/</span>
             <Link
               href={`/${locale}/products/${category}`}
-              className="hover:text-[var(--color-primary)] transition-colors duration-300"
+              className="hover:text-white/70 transition-colors duration-300"
             >
               {cat.name}
             </Link>
-            <span className="mx-2">/</span>
-            <span className="text-[var(--color-body)]">{product.name}</span>
           </nav>
 
-          {/* Two-column layout */}
+          <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-3 max-w-2xl leading-[1.05]">
+            {product.name}
+          </h1>
+          <p className="heading-sub !text-white/70 max-w-lg mb-4">
+            {product.tagline}
+          </p>
+
+          <div className="flex items-center gap-3">
+            <span className="metadata !text-white/40">
+              {t("common.pricingLabel")}
+            </span>
+            {convertible && (
+              <span className="metadata bg-white/15 backdrop-blur-sm px-3 py-1 text-white/80">
+                {t("common.convertibleBadge")}
+              </span>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Product Content ─── */}
+      <div className="py-16 lg:py-24">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+
+          {/* Two-column: Gallery + Product Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
             {/* Left: Gallery */}
             <PDPGalleryClient
@@ -213,32 +247,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
               productName={product.name}
             />
 
-            {/* Right: Product info */}
+            {/* Right: Product details */}
             <div>
               <ScrollReveal>
-                <p className="section-label mb-3">{cat.name}</p>
-                <h1 className="heading-display text-3xl lg:text-[2.5rem] text-[var(--color-primary)] mb-3">
-                  {product.name}
-                </h1>
-                <p className="heading-sub mb-3">{product.tagline}</p>
-
-                {/* Badges */}
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="metadata !text-[var(--color-mid-gray)]">
-                    {t("common.pricingLabel")}
-                  </span>
-                  {convertible && (
-                    <span className="metadata bg-[var(--color-cloud)] px-2 py-1">
-                      {t("common.convertibleBadge")}
-                    </span>
-                  )}
-                </div>
-
+                <p className="section-label mb-3">{t("common.aboutThisTable")}</p>
                 <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-8 max-w-md">
                   {product.description}
                 </p>
 
-                {/* Finish swatches (small dots) */}
+                {/* Finish swatches */}
                 {product.finishes.length > 0 &&
                   product.finishes[0] !== "Various" && (
                     <div className="mb-8">
@@ -295,7 +312,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
                       locale={locale}
                     />
 
-                    {/* Secondary CTAs below configurator */}
                     <div className="hidden lg:flex flex-wrap gap-3 pb-8">
                       {product.pdf && (
                         <LeadModal
