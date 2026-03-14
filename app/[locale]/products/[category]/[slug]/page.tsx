@@ -232,7 +232,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       {/* ─── Product Photo Showcase ─── */}
       {galleryImages.length > 0 && (
         <PDPShowcase
-          heroImage={product.images.hero}
+          heroImage={null}
           images={galleryImages}
           productName={product.name}
         />
@@ -242,7 +242,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <section className="py-16 lg:py-24 bg-[var(--color-off-white)]" id="configurator">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <ScrollReveal>
-            <h2 className="heading-display text-2xl md:text-3xl text-[var(--color-primary)] mb-8 text-center">{t("pdp.productDetails")}</h2>
+            <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-[var(--color-primary)] mb-10 text-center">{t("pdp.productDetails")}</h2>
             <ProductAccordion
               features={product.features}
               sizes={product.sizes}

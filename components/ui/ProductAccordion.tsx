@@ -26,7 +26,7 @@ const AccordionSection = ({
         className="flex w-full items-center justify-between py-5 cursor-pointer group"
         aria-expanded={open}
       >
-        <span className="metadata">{title}</span>
+        <span className="section-label text-[13px]">{title}</span>
         <svg
           width="14"
           height="14"
@@ -100,7 +100,7 @@ const ProductAccordion = ({
           {features.map((feature, i) => (
             <li
               key={i}
-              className="text-[15px] text-[var(--color-body)] leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[11px] before:w-1.5 before:h-[1px] before:bg-[var(--color-silver)]"
+              className="text-base text-[var(--color-primary)] leading-[1.8] pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[11px] before:w-1.5 before:h-[1px] before:bg-[var(--color-silver)]"
             >
               {feature}
             </li>
@@ -114,7 +114,7 @@ const ProductAccordion = ({
           {sizes.map((size, i) => (
             <li
               key={i}
-              className="text-[15px] text-[var(--color-body)] leading-relaxed"
+              className="text-base text-[var(--color-primary)] leading-[1.8]"
             >
               {size}
             </li>
@@ -140,7 +140,7 @@ const ProductAccordion = ({
 
       {/* Warranty */}
       <AccordionSection title={labels.warranty}>
-        <p className="text-[15px] text-[var(--color-body)] leading-relaxed">
+        <p className="text-base text-[var(--color-primary)] leading-[1.8]">
           {warrantyText}
         </p>
       </AccordionSection>
