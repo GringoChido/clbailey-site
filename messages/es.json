@@ -298,7 +298,7 @@
     "storyLabel": "Nuestra Historia",
     "storySubheading": "Tres décadas de experiencia en la industria. Un estándar sin concesiones.",
     "storyP1": "C.L. Bailey & Co. fue fundada en 1999 por Charles L. Bailey con una sola convicción: que los muebles de sala de juegos deben construirse como se construían las casas antes, con madera maciza, ensamblaje honesto y sin atajos.",
-    "storyP2": "Lo que comenzó como un pequeño taller en Tomball, Texas, se ha convertido en uno de los nombres más respetados en la fabricación de billares. Cada pieza que sale de nuestra instalación lleva la misma promesa que el primer día: madera real, artesanía real y una garantía estructural de por vida.",
+    "storyP2": "A lo largo de más de dos décadas, C.L. Bailey se ha convertido en uno de los nombres más respetados en la fabricación de billares. Cada pieza que sale de nuestra instalación lleva la misma promesa que el primer día: madera real, artesanía real y una garantía estructural de por vida.",
     "storyP3": "No seguimos tendencias. No cortamos esquinas con aglomerado o chapa. Construimos muebles que pertenecen a hogares donde la calidad aún importa, y respaldamos cada pieza mientras la posea.",
     "principlesLabel": "Principios",
     "principle1Title": "Solo Madera Maciza",
@@ -308,9 +308,9 @@
     "principle3Title": "Instalación por Distribuidores a Nivel Nacional",
     "principle3Desc": "Cada mesa es entregada e instalada profesionalmente por un distribuidor autorizado en su área.",
     "visitLabel": "Visítenos",
-    "heritageLabel": "Tomball, Texas",
-    "heritageStatement": "Fabricado en Texas Desde 1999",
-    "heritageSubtext": "Cada mesa que sale de nuestra planta en Tomball lleva la misma promesa del primer día: madera maciza, garantía de por vida, sin compromisos."
+    "heritageLabel": "Nuestra Herencia",
+    "heritageStatement": "Construyendo Calidad de Confianza Desde 1999",
+    "heritageSubtext": "Cada mesa lleva la misma promesa del primer día: madera maciza, garantía de por vida, sin compromisos."
   },
   "contact": {
     "title": "Contáctenos",
@@ -399,14 +399,14 @@
     "downloadSpec": "Descargar Ficha Técnica"
   },
   "trade": {
-    "heading": "Diseñe con Facilidad",
-    "sectionHeading": "Asóciese con una Marca de Herencia",
-    "description": "Apoyamos a diseñadores de interiores, minoristas y profesionales de la industria con acceso directo a nuestros muebles personalizados para salas de juego. Sin mínimos, sin complicaciones.",
+    "heading": "Para Diseñadores de Interiores",
+    "sectionHeading": "Su Visión, Nuestra Red de Distribuidores",
+    "description": "La extensa red de distribuidores de C.L. Bailey colabora con diseñadores de interiores para crear hogares excepcionales. Contáctenos directamente y lo conectamos con el distribuidor adecuado en su área, o con el que más confiamos para el proyecto.",
     "statLabel": "Distribuidores Autorizados en Todo el País",
-    "benefit1": "Precios y ofertas exclusivas para distribuidores",
-    "benefit2": "Sin mínimos: ordene lo que necesite, cuando lo necesite",
-    "benefit3": "Hojas de pedido listas para una planificación sin contratiempos",
-    "applyCta": "Solicitar Programa de Distribuidores",
+    "benefit1": "Acceso directo al equipo de C.L. Bailey para consulta de proyectos",
+    "benefit2": "Lo conectamos con un distribuidor autorizado de confianza en su región",
+    "benefit3": "Soporte coordinado desde la especificación hasta la entrega e instalación",
+    "applyCta": "Contáctenos",
     "notTradeDescription": "¿No es profesional del sector? Nos asociamos con distribuidores autorizados en todo EE.UU. que pueden ayudarle a diseñar la sala de juegos perfecta.",
     "findDealerCta": "Encontrar un Distribuidor Autorizado",
     "imageAlt": "Sala de juegos de lujo moderna con mesa de billar, iluminación colgante y zona de descanso"
@@ -639,10 +639,10 @@
     "subtext": "Cada mesa es entregada e instalada por un distribuidor autorizado en su área."
   },
   "tradeBlock": {
-    "tradeLabel": "Programa Comercial",
+    "tradeLabel": "Programa de Distribuidores",
     "tradeHeading": "Conviértase en Distribuidor Autorizado",
     "tradeDescription": "Diseñadores de interiores, minoristas y profesionales de la industria obtienen acceso directo a nuestros muebles personalizados para salas de juegos. Sin mínimos. Pedidos fáciles.",
-    "tradeCta": "Conozca el Programa Comercial",
+    "tradeCta": "Más Información",
     "dealerLabel": "Encontrar Distribuidor",
     "dealerHeading": "Encuentre un Distribuidor Autorizado",
     "dealerDescription": "Cada mesa C.L. Bailey se vende, entrega e instala por un distribuidor autorizado cerca de usted.",

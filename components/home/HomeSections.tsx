@@ -474,7 +474,7 @@ function TradeProgramBlock({ t }: { t: (key: string) => string }) {
 
             {/* Dual CTA */}
             <div className="flex flex-col sm:flex-row items-start gap-5 mb-10">
-              <Link href="/dealer" className="btn-primary">
+              <Link href="/contact-us" className="btn-primary">
                 {t("trade.applyCta")}
               </Link>
               <Link href="/contact-us" className="btn-outline">

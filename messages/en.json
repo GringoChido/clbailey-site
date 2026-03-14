@@ -298,7 +298,7 @@
     "storyLabel": "Our Story",
     "storySubheading": "Three decades of industry experience. One uncompromising standard.",
     "storyP1": "C.L. Bailey & Co. was founded in 1999 by Charles L. Bailey with a single conviction: that game room furniture should be built the way homes used to be, with solid wood, honest joinery, and no shortcuts.",
-    "storyP2": "What began as a small workshop in Tomball, Texas, has grown into one of the most respected names in billiards manufacturing. Every piece that leaves our facility carries the same promise it did on day one: real hardwood, real craftsmanship, and a lifetime structural guarantee.",
+    "storyP2": "Over more than two decades, C.L. Bailey has grown into one of the most respected names in billiards manufacturing. Every piece that leaves our facility carries the same promise it did on day one: real hardwood, real craftsmanship, and a lifetime structural guarantee.",
     "storyP3": "We don't chase trends. We don't cut corners with particle board or veneer. We build furniture that belongs in homes where quality still matters, and we stand behind every piece for as long as you own it.",
     "principlesLabel": "Principles",
     "principle1Title": "Solid Hardwood Only",
@@ -308,9 +308,9 @@
     "principle3Title": "Dealer-Installed Nationwide",
     "principle3Desc": "Every table is delivered and professionally installed by an authorized dealer in your area.",
     "visitLabel": "Visit Us",
-    "heritageLabel": "Tomball, Texas",
-    "heritageStatement": "Built in Texas Since 1999",
-    "heritageSubtext": "Every table that leaves our Tomball facility carries the same promise it did on day one: solid hardwood, lifetime guarantee, no compromises."
+    "heritageLabel": "Our Heritage",
+    "heritageStatement": "Building Quality You Can Trust Since 1999",
+    "heritageSubtext": "Every table carries the same promise it did on day one: solid hardwood, lifetime guarantee, no compromises."
   },
   "contact": {
     "title": "Contact Us",
@@ -399,14 +399,14 @@
     "downloadSpec": "Download Spec Sheet"
   },
   "trade": {
-    "heading": "Design with Ease",
-    "sectionHeading": "Partner With a Heritage Brand",
-    "description": "We support interior designers, retailers, and industry professionals with direct access to our custom game room furniture. No minimums, no hassle.",
+    "heading": "For Interior Designers",
+    "sectionHeading": "Your Vision, Our Dealer Network",
+    "description": "C.L. Bailey's extensive dealer network partners with interior designers to create masterpiece homes. Contact us directly, and we connect you with the right dealer in your area, or one we trust most for the job.",
     "statLabel": "Authorized Dealers Nationwide",
-    "benefit1": "Exclusive trade pricing and offers",
-    "benefit2": "No minimums: order what you need, when you need it",
-    "benefit3": "Ready-made order sheets for seamless project planning",
-    "applyCta": "Apply to Trade Program",
+    "benefit1": "Direct access to the C.L. Bailey team for project consultation",
+    "benefit2": "We match you with a trusted, authorized dealer in your region",
+    "benefit3": "Coordinated support from specification to delivery and installation",
+    "applyCta": "Contact Us",
     "notTradeDescription": "Not a trade professional? We partner with authorized dealers across the U.S. who can help you design the perfect game room.",
     "findDealerCta": "Find an Authorized Dealer",
     "imageAlt": "Modern luxury game room with pool table, pendant lighting, and lounge seating"
@@ -639,10 +639,10 @@
     "subtext": "Every table is delivered and installed by an authorized dealer in your area."
   },
   "tradeBlock": {
-    "tradeLabel": "Trade Program",
+    "tradeLabel": "Dealer Program",
     "tradeHeading": "Become an Authorized Dealer",
     "tradeDescription": "Interior designers, retailers, and industry professionals get direct access to our custom game room furniture. No minimums. Easy ordering.",
-    "tradeCta": "Learn About the Trade Program",
+    "tradeCta": "Learn More",
     "dealerLabel": "Find a Dealer",
     "dealerHeading": "Find an Authorized Dealer",
     "dealerDescription": "Every C.L. Bailey table is sold, delivered, and installed by an authorized dealer near you.",

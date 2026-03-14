@@ -13,6 +13,7 @@ export interface Product {
   slug: string;
   name: string;
   category: string;
+  family?: "skylar" | "viking" | "tunbridge";
   tagline: string;
   description: string;
   features: string[];
@@ -116,6 +117,12 @@ export function getCrossCategoryProducts(currentCategory: string, limit = 4): Pr
     .filter((p) => p.category !== currentCategory && p.featured)
     .sort((a, b) => a.sortOrder - b.sortOrder)
     .slice(0, limit);
+}
+
+export function getProductsByFamily(family: string): Product[] {
+  return products
+    .filter((p) => p.family === family)
+    .sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
 /**

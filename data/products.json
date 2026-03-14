@@ -57,6 +57,7 @@
       "slug": "skylar",
       "name": "The Skylar",
       "category": "pool-tables",
+      "family": "skylar",
       "tagline": "Clean Lines. Convertible Top. Modern in Every Detail.",
       "description": "Clean lines. Convertible dining top. The Skylar fits modern homes without compromising on play.",
       "features": [
@@ -93,6 +94,7 @@
       "slug": "viking",
       "name": "The Viking",
       "category": "pool-tables",
+      "family": "viking",
       "tagline": "Distressed Hardwood. Industrial Hardware. Built to Command the Room.",
       "description": "Distressed hardwood. Industrial hardware. The Viking commands the room.",
       "features": [
@@ -165,6 +167,7 @@
       "slug": "tunbridge",
       "name": "The Tunbridge",
       "category": "pool-tables",
+      "family": "tunbridge",
       "tagline": "Anchors the Whole Room. Matches the Whole Collection.",
       "description": "Transitional styling. Full furniture collection. The Tunbridge anchors the whole room.",
       "features": [
@@ -361,6 +364,7 @@
       "slug": "viking-shuffleboard",
       "name": "Viking Shuffleboard",
       "category": "shuffleboards",
+      "family": "viking",
       "tagline": "Built for Serious Play",
       "description": "Butcher block playfield. Rustic finish. Matches the Viking pool table.",
       "features": [
@@ -392,6 +396,7 @@
       "slug": "skylar-shuffleboard",
       "name": "Skylar Shuffleboard",
       "category": "shuffleboards",
+      "family": "skylar",
       "tagline": "Modern Lines. Matched to the Skylar Collection.",
       "description": "Clean modern lines to match the Skylar pool table. Climatic adjusters included.",
       "features": [
@@ -423,6 +428,7 @@
       "slug": "tunbridge-shuffleboard",
       "name": "Tunbridge Shuffleboard",
       "category": "shuffleboards",
+      "family": "tunbridge",
       "tagline": "The Long View",
       "description": "Available in 12' and 14'. Matches the full Tunbridge furniture collection.",
       "features": [
@@ -489,16 +495,17 @@
       "sortOrder": 4
     },
     {
-      "slug": "skylar-furniture",
-      "name": "Skylar Game Room Furniture",
+      "slug": "skylar-spectator-chair",
+      "name": "Skylar Spectator Chair",
       "category": "game-room-furniture",
-      "tagline": "Spectator Chair. Storage Bench. Cue Rack. All Matched to the Skylar.",
-      "description": "Spectator chair. Storage bench. Cue rack. Dining dolly. All matched to the Skylar.",
+      "family": "skylar",
+      "tagline": "Swivel Seat. Matched to the Skylar Collection.",
+      "description": "Spectator chair with swivel seat, padded armrests, and footrest. Finished to match the Skylar pool table.",
       "features": [
-        "Spectator chair with swivel",
-        "Storage bench",
-        "Floor cue rack",
-        "Dining dolly for table conversion"
+        "360-degree swivel seat",
+        "Padded armrests and footrest",
+        "Matching Skylar Espresso finish",
+        "Solid hardwood construction"
       ],
       "finishes": [
         "Espresso"
@@ -508,10 +515,7 @@
         "hero": "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20Spec-chair_KmxSG58XqI.jpg",
         "gallery": [
           "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20spec%20chair%202_yGmJQHwYK.jpg",
-          "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20spec%20chair%203_4gis3a93V.jpg",
-          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack_hwoOTwD0o.jpg",
-          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack%203_egpataV8C.jpg",
-          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Skylar/Warm_Chestnut/skylar%20caddy_SyGE-VD57.jpg"
+          "The_C_L__Bailey_Co__Master_Organizer/Spectator_Chairs/Skylar/Warm_Chestnut/skylar%20spec%20chair%203_4gis3a93V.jpg"
         ],
         "dimensions": null
       },
@@ -520,15 +524,97 @@
       "sortOrder": 1
     },
     {
-      "slug": "tunbridge-furniture",
-      "name": "Tunbridge Game Room Furniture",
-      "category": "game-room-furniture",
-      "tagline": "Matched to the Last Detail",
-      "description": "Spectator chair. Storage bench. Cue rack. All in the Tunbridge Timber finish.",
+      "slug": "skylar-cue-rack",
+      "name": "Skylar Cue Rack",
+      "category": "cue-racks",
+      "family": "skylar",
+      "tagline": "Floor Standing. Matched to the Skylar Collection.",
+      "description": "Floor-standing cue rack finished to match the Skylar pool table. Holds 10 cues with integrated storage.",
       "features": [
-        "Spectator chair with swivel",
-        "Storage bench with lid",
-        "Floor cue rack"
+        "Holds 10 cues",
+        "Integrated storage",
+        "Matching Skylar Espresso finish",
+        "Solid hardwood construction"
+      ],
+      "finishes": [
+        "Espresso"
+      ],
+      "sizes": [],
+      "images": {
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack_hwoOTwD0o.jpg",
+        "gallery": [
+          "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Skylar/Warm_Chestnut/skylar%20cue%20rack%203_egpataV8C.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "skylar-dining-top",
+      "name": "Skylar Dining Top",
+      "category": "game-room-furniture",
+      "family": "skylar",
+      "tagline": "Convert Your Table. Dine in Style.",
+      "description": "Convertible dining top sized to fit the Skylar pool table. Includes dining dolly for easy storage.",
+      "features": [
+        "Sized to fit Skylar pool table",
+        "Includes dining dolly",
+        "Matching Skylar Espresso finish",
+        "Solid hardwood construction"
+      ],
+      "finishes": [
+        "Espresso"
+      ],
+      "sizes": [],
+      "images": {
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Skylar/Warm_Chestnut/skylar%20caddy_SyGE-VD57.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 2
+    },
+    {
+      "slug": "tunbridge-spectator-chair",
+      "name": "Tunbridge Spectator Chair",
+      "category": "game-room-furniture",
+      "family": "tunbridge",
+      "tagline": "Swivel Seat. Matched to the Tunbridge Collection.",
+      "description": "Spectator chair with swivel seat, padded armrests, and footrest. Finished in Tunbridge Timber.",
+      "features": [
+        "360-degree swivel seat",
+        "Padded armrests and footrest",
+        "Matching Tunbridge Timber finish",
+        "Solid hardwood construction"
+      ],
+      "finishes": [
+        "Timber"
+      ],
+      "sizes": [],
+      "images": {
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Cue_Racks/Tunbridge/Weathered_Brown/tunbridge%20cue%20rack_w2uqURMMB7.jpg",
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 3
+    },
+    {
+      "slug": "tunbridge-cue-rack",
+      "name": "Tunbridge Cue Rack",
+      "category": "cue-racks",
+      "family": "tunbridge",
+      "tagline": "Floor Standing. Matched to the Tunbridge Collection.",
+      "description": "Floor-standing cue rack finished in Tunbridge Timber. Holds 10 cues with integrated storage.",
+      "features": [
+        "Holds 10 cues",
+        "Integrated storage",
+        "Matching Tunbridge Timber finish",
+        "Solid hardwood construction"
       ],
       "finishes": [
         "Timber"
@@ -544,18 +630,45 @@
       },
       "pdf": null,
       "featured": false,
-      "sortOrder": 2
+      "sortOrder": 5
     },
     {
-      "slug": "viking-furniture",
-      "name": "Viking Game Room Furniture",
+      "slug": "tunbridge-dining-top",
+      "name": "Tunbridge Dining Top",
       "category": "game-room-furniture",
-      "tagline": "Distressed Finish. Same Toughness. The Full Viking Experience.",
-      "description": "Spectator chair. Storage bench. Cue rack. All in the Viking Rustic finish.",
+      "family": "tunbridge",
+      "tagline": "Convert Your Table. Dine in Style.",
+      "description": "Convertible dining top sized to fit the Tunbridge pool table. Timber finish.",
       "features": [
-        "Spectator chair with swivel",
-        "Storage bench with lid",
-        "Floor cue rack"
+        "Sized to fit Tunbridge pool table",
+        "Matching Tunbridge Timber finish",
+        "Solid hardwood construction"
+      ],
+      "finishes": [
+        "Timber"
+      ],
+      "sizes": [],
+      "images": {
+        "hero": null,
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "viking-spectator-chair",
+      "name": "Viking Spectator Chair",
+      "category": "game-room-furniture",
+      "family": "viking",
+      "tagline": "Distressed Finish. Swivel Seat. The Full Viking Experience.",
+      "description": "Spectator chair with swivel seat, padded armrests, and footrest. Finished in Viking Rustic.",
+      "features": [
+        "360-degree swivel seat",
+        "Padded armrests and footrest",
+        "Matching Viking Rustic finish",
+        "Solid hardwood construction"
       ],
       "finishes": [
         "Rustic"
@@ -563,15 +676,65 @@
       "sizes": [],
       "images": {
         "hero": "The_C_L__Bailey_Co__Master_Organizer/Benches/Viking/Antique_Oak/viking-bench-crop_ukWsqEDUI.jpg",
-        "gallery": [
-          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Viking/clb%20viking%20image%206_qk_uGXRll.jpg",
-          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Viking/clb%20viking%20image%207_qAeewk-7C.jpg"
-        ],
+        "gallery": [],
         "dimensions": null
       },
       "pdf": "viking-accessories.pdf",
       "featured": true,
-      "sortOrder": 3
+      "sortOrder": 5
+    },
+    {
+      "slug": "viking-cue-rack",
+      "name": "Viking Cue Rack",
+      "category": "cue-racks",
+      "family": "viking",
+      "tagline": "Floor Standing. Matched to the Viking Collection.",
+      "description": "Floor-standing cue rack finished in Viking Rustic. Holds 10 cues with integrated storage.",
+      "features": [
+        "Holds 10 cues",
+        "Integrated storage",
+        "Matching Viking Rustic finish",
+        "Solid hardwood construction"
+      ],
+      "finishes": [
+        "Rustic"
+      ],
+      "sizes": [],
+      "images": {
+        "hero": null,
+        "gallery": [],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 6
+    },
+    {
+      "slug": "viking-dining-top",
+      "name": "Viking Dining Top",
+      "category": "game-room-furniture",
+      "family": "viking",
+      "tagline": "Convert Your Table. Dine in Style.",
+      "description": "Convertible dining top sized to fit the Viking pool table. Rustic finish.",
+      "features": [
+        "Sized to fit Viking pool table",
+        "Matching Viking Rustic finish",
+        "Solid hardwood construction"
+      ],
+      "finishes": [
+        "Rustic"
+      ],
+      "sizes": [],
+      "images": {
+        "hero": "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Viking/clb%20viking%20image%206_qk_uGXRll.jpg",
+        "gallery": [
+          "The_C_L__Bailey_Co__Master_Organizer/Dining_Tops/Viking/clb%20viking%20image%207_qAeewk-7C.jpg"
+        ],
+        "dimensions": null
+      },
+      "pdf": null,
+      "featured": false,
+      "sortOrder": 6
     },
     {
       "slug": "game-table-sets",
@@ -692,103 +855,6 @@
       "sortOrder": 3
     },
     {
-      "slug": "iron-leather-pockets",
-      "name": "#6 Iron Leather Pockets",
-      "category": "accessories",
-      "tagline": "Genuine Leather. Reinforced Iron. Built to Last the Table.",
-      "description": "Professional-grade replacement pockets featuring genuine leather construction with #6 irons. Designed to fit C.L. Bailey pool tables and most standard pocket configurations. Available in multiple leather colors to complement your table finish.",
-      "features": [
-        "Genuine leather construction",
-        "#6 iron reinforcement",
-        "Fits standard pocket configurations",
-        "Multiple leather colors available"
-      ],
-      "finishes": [
-        "Various"
-      ],
-      "sizes": [],
-      "images": {
-        "hero": "accessories/iron-leather-pockets/hero.jpg",
-        "gallery": [],
-        "dimensions": null
-      },
-      "pdf": null,
-      "featured": false,
-      "sortOrder": 1
-    },
-    {
-      "slug": "basic-accessory-kit",
-      "name": "Basic Accessory Kit",
-      "category": "accessories",
-      "tagline": "The Essentials, Ready to Play",
-      "description": "A curated starter kit with the essentials for your new pool table. Includes a complete ball set, two standard cues, a triangle rack, chalk, and a table brush. An ideal addition when purchasing your first C.L. Bailey table.",
-      "features": [
-        "Complete ball set",
-        "2 standard cues",
-        "Triangle rack",
-        "Chalk and table brush"
-      ],
-      "finishes": [],
-      "sizes": [],
-      "images": {
-        "hero": "accessories/basic-accessory-kit/hero.jpg",
-        "gallery": [],
-        "dimensions": null
-      },
-      "pdf": null,
-      "featured": false,
-      "sortOrder": 2
-    },
-    {
-      "slug": "deluxe-accessory-kit",
-      "name": "Deluxe Accessory Kit",
-      "category": "accessories",
-      "tagline": "Premium Cues. Full Rack Set. Everything Beyond the Basics.",
-      "description": "Step up from the basics with higher-quality cues, a full accessory complement, and extras that elevate your playing experience. Includes premium maple cues, Magnum ball set, triangle and diamond racks, leather chalk holders, and a table cover.",
-      "features": [
-        "Magnum ball set",
-        "4 premium maple cues",
-        "Triangle and diamond racks",
-        "Leather chalk holders",
-        "Table brush and table cover"
-      ],
-      "finishes": [],
-      "sizes": [],
-      "images": {
-        "hero": "accessories/deluxe-accessory-kit/hero.jpg",
-        "gallery": [],
-        "dimensions": null
-      },
-      "pdf": null,
-      "featured": false,
-      "sortOrder": 3
-    },
-    {
-      "slug": "magnum-pool-ball-sets",
-      "name": "Magnum Pool Ball Sets",
-      "category": "accessories",
-      "tagline": "Phenolic Resin. Regulation Weight. Inspected Individually.",
-      "description": "Professional-quality phenolic resin ball sets engineered for consistent roll and lasting color vibrancy. Regulation size and weight. Each set is individually inspected for roundness and balance.",
-      "features": [
-        "Phenolic resin construction",
-        "Regulation 2-1/4\" size",
-        "Balanced to regulation standards",
-        "Individually inspected"
-      ],
-      "finishes": [],
-      "sizes": [
-        "Regulation 2-1/4\""
-      ],
-      "images": {
-        "hero": "accessories/magnum-pool-ball-sets/hero.jpg",
-        "gallery": [],
-        "dimensions": null
-      },
-      "pdf": null,
-      "featured": false,
-      "sortOrder": 4
-    },
-    {
       "slug": "mali-basic-green-felt",
       "name": "Mali Basic Green Felt",
       "category": "accessories",
@@ -814,30 +880,42 @@
       },
       "pdf": null,
       "featured": false,
-      "sortOrder": 5
+      "sortOrder": 1
     },
     {
-      "slug": "platinum-accessory-kit",
-      "name": "Platinum Accessory Kit",
+      "slug": "velocity-pro-cloth",
+      "name": "Velocity Pro Worsted Cloth",
       "category": "accessories",
-      "tagline": "Everything. No Compromises.",
-      "description": "Our top-tier accessory package, curated for players who demand the best. Includes everything in the Deluxe kit plus premium cue cases, advanced cleaning supplies, and exclusive C.L. Bailey branded accessories. The complete game room solution.",
+      "tagline": "87% Wool Worsted. Professional-Grade Play.",
+      "description": "87% wool worsted construction for professional-grade play. Faster ball speed, spill resistance, and extended cloth life. Available in eight colors.",
       "features": [
-        "Everything in the Deluxe kit",
-        "Premium cue cases",
-        "Advanced cleaning supplies",
-        "Exclusive C.L. Bailey branded accessories"
+        "87% wool worsted construction",
+        "Faster ball speed and truer roll",
+        "Spill-resistant surface",
+        "Available in eight colors"
       ],
-      "finishes": [],
-      "sizes": [],
+      "finishes": [
+        "Tournament Green",
+        "Burgundy",
+        "Navy",
+        "Camel",
+        "Black",
+        "Charcoal",
+        "Red",
+        "Royal Blue"
+      ],
+      "sizes": [
+        "7'",
+        "8'"
+      ],
       "images": {
-        "hero": "accessories/platinum-accessory-kit/hero.jpg",
+        "hero": "accessories/velocity-pro-cloth/hero.jpg",
         "gallery": [],
         "dimensions": null
       },
       "pdf": null,
       "featured": false,
-      "sortOrder": 6
+      "sortOrder": 2
     },
     {
       "slug": "premium-accessory-kit",
@@ -860,7 +938,7 @@
       },
       "pdf": null,
       "featured": false,
-      "sortOrder": 7
+      "sortOrder": 3
     }
   ],
   "company": {
