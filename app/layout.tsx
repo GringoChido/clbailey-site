@@ -111,9 +111,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["Organization", "LocalBusiness"],
+              "@id": "https://clbailey.com/#organization",
               name: "C.L. Bailey & Co.",
+              alternateName: ["CL Bailey", "C.L. Bailey", "CLBailey", "The C.L. Bailey Company"],
               url: "https://clbailey.com",
-              logo: "https://clbailey.com/images/brand/logo.png",
+              logo: {
+                "@type": "ImageObject",
+                "@id": "https://clbailey.com/#logo",
+                url: "https://clbailey.com/images/brand/logo.png",
+                contentUrl: "https://clbailey.com/images/brand/logo.png",
+                caption: "C.L. Bailey & Co. Logo",
+              },
               image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Pool_Tables/Skylar/Warm_Chestnut/skylar%20combo_ySLqSRsgG.jpg`,
               description:
                 "Handcrafted solid hardwood pool tables, shuffleboards, and game room furniture. Built in Tomball, Texas since 1999.",
@@ -157,6 +165,25 @@ export default function RootLayout({
                 "https://www.facebook.com/theclbaileyco",
                 "https://www.pinterest.com/clbaileyco",
               ],
+              knowsAbout: [
+                "pool tables",
+                "billiard tables",
+                "shuffleboard tables",
+                "game room furniture",
+                "solid hardwood furniture",
+                "billiards",
+              ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "C.L. Bailey Product Catalog",
+                itemListElement: [
+                  { "@type": "OfferCatalog", name: "Pool Tables" },
+                  { "@type": "OfferCatalog", name: "Shuffleboards" },
+                  { "@type": "OfferCatalog", name: "Game Room Furniture" },
+                  { "@type": "OfferCatalog", name: "Cue Racks" },
+                  { "@type": "OfferCatalog", name: "Accessories" },
+                ],
+              },
             }),
           }}
         />
