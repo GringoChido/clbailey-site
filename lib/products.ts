@@ -4,6 +4,7 @@ import productsData from "@/data/products.json";
 export interface ProductImage {
   hero: string | null;
   categoryImage?: string | null;
+  homepageImage?: string | null;
   gallery: string[];
   dimensions: string | null;
 }

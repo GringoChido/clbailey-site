@@ -335,7 +335,7 @@ function FeaturedProducts({ t }: { t: (key: string) => string }) {
               >
                 <div className="aspect-[4/3] overflow-hidden bg-white mb-5">
                   <Image
-                    src={img(product.images.hero)}
+                    src={img(product.images.homepageImage ?? product.images.hero)}
                     alt={product.name}
                     width={640}
                     height={480}
