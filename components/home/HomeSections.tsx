@@ -18,7 +18,7 @@ function CategoryNav({ t }: { t: (key: string) => string }) {
       label: t("museum.shuffleboards"),
       subtitle: t("museum.nineToFourteen"),
       href: "/products/shuffleboards",
-      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Shuffleboards/Viking/Antique_Oak/viking%20shb%20profile%20image_DQZaxvot3.jpg`,
+      image: `${IMAGEKIT_BASE}/The_C_L__Bailey_Co__Master_Organizer/Home%20Page/HOMEPAGE_tunbridge_8lNE4UAs__3kOyRsPLy.jpeg`,
       alt: t("museum.altShuffleboards"),
     },
     {
