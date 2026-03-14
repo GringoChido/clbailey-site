@@ -65,7 +65,7 @@ const FinishSwatches = ({
             className="flex flex-col items-center gap-3 cursor-pointer group"
           >
             <div
-              className={`w-16 h-16 transition-all duration-200 ${
+              className={`w-20 h-20 transition-all duration-200 ${
                 isActive
                   ? "ring-2 ring-[var(--color-primary)] ring-offset-2"
                   : "ring-1 ring-[var(--color-cloud)] group-hover:ring-[var(--color-mid-gray)]"

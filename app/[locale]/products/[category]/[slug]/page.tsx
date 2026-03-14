@@ -16,13 +16,12 @@ import {
   pdf,
   IMAGEKIT_BASE,
 } from "@/lib/products";
-import ProductConfigurator from "@/components/ui/ProductConfigurator";
+import ProductActionCard from "@/components/ui/ProductActionCard";
 import ProductCard from "@/components/ui/ProductCard";
 import LeadModal from "@/components/ui/LeadModal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ConfigureNudge from "@/components/ui/ConfigureNudge";
 import PDPShowcase from "@/components/ui/PDPShowcase";
-import FinishSwatches from "@/components/ui/FinishSwatches";
 
 interface PageProps {
   params: Promise<{ locale: string; category: string; slug: string }>;
@@ -173,8 +172,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
     : "Lifetime structural warranty on all solid hardwood products. Professional installation recommended. Contact your authorized dealer for complete warranty details.";
 
   const labels = locale === "es"
-    ? { features: "Caracteristicas y Construccion", sizes: "Tamanos Disponibles", finishes: "Opciones de Acabado", warranty: "Garantia y Cuidado", roomSize: "Guia de Tamano de Habitacion" }
-    : { features: "Features & Construction", sizes: "Available Sizes", finishes: "Finish Options", warranty: "Warranty & Care", roomSize: "Room Size Guide" };
+    ? { features: "Caracteristicas y Construccion", warranty: "Garantia y Cuidado", roomSize: "Guia de Tamano de Habitacion" }
+    : { features: "Features & Construction", warranty: "Warranty & Care", roomSize: "Room Size Guide" };
+
+  const actionLabels = locale === "es"
+    ? { selectSize: "Seleccionar Tamano", selectFinish: "Seleccionar Acabado", findDealer: "Encontrar un Distribuidor", downloadSpec: "Descargar Hoja de Especificaciones", dealerExclusive: "Exclusivo para Distribuidores. No se Vende en Linea.", selectedLabel: "Su Seleccion" }
+    : { selectSize: "Select Your Size", selectFinish: "Select Your Finish", findDealer: "Find a Dealer", downloadSpec: "Download Spec Sheet", dealerExclusive: "Dealer Exclusive. Not Sold Online.", selectedLabel: "Your Selection" };
 
   return (
     <>
@@ -299,12 +302,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
         />
       )}
 
-      {/* ─── Specs + Configurator: Two-Column Layout ─── */}
+      {/* ─── Product Details + Action Card ─── */}
       <section className="py-16 lg:py-24 bg-[var(--color-off-white)]" id="configurator">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
-            {/* Left Column: Open Specs */}
+            {/* Left Column: Product Specs */}
             <div className="lg:col-span-7">
               <ScrollReveal>
                 <h2 className="heading-display text-3xl md:text-4xl text-[var(--color-primary)] mb-10">
@@ -327,22 +330,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   </ul>
                 </div>
 
-                {/* Sizes */}
-                <div className="mb-10">
-                  <p className="section-label text-[13px] mb-4">{labels.sizes}</p>
-                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
-                  <div className="flex gap-4">
-                    {product.sizes.map((size) => (
-                      <span
-                        key={size}
-                        className="metadata px-5 py-2.5 border border-[var(--color-cloud)] text-[var(--color-primary)]"
-                      >
-                        {size}
-                      </span>
-                    ))}
-                  </div>
-                  {product.images.dimensions && (
-                    <div className="mt-6 relative w-full max-w-lg aspect-[4/3]">
+                {/* Dimensions Image */}
+                {product.images.dimensions && (
+                  <div className="mb-10">
+                    <p className="section-label text-[13px] mb-4">{t("common.dimensions")}</p>
+                    <div className="h-px bg-[var(--color-cloud)] mb-5" />
+                    <div className="relative w-full max-w-lg aspect-[4/3]">
                       <Image
                         src={img(product.images.dimensions)}
                         alt={`${product.name} dimensions`}
@@ -351,15 +344,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
                         sizes="(max-width: 768px) 100vw, 500px"
                       />
                     </div>
-                  )}
-                </div>
-
-                {/* Finishes */}
-                <div className="mb-10">
-                  <p className="section-label text-[13px] mb-4">{labels.finishes}</p>
-                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
-                  <FinishSwatches finishes={product.finishes} size="lg" />
-                </div>
+                  </div>
+                )}
 
                 {/* Warranty */}
                 <div className="mb-10">
@@ -389,7 +375,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </ScrollReveal>
             </div>
 
-            {/* Right Column: Sticky Configurator */}
+            {/* Right Column: Sticky Action Card */}
             <div className="lg:col-span-5">
               <div className="lg:sticky lg:top-28">
                 <ScrollReveal delay={1}>
@@ -417,32 +403,26 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     </div>
                   ) : (
                     <div className="bg-white p-6 lg:p-8 border border-[var(--color-cloud)]">
-                      <ProductConfigurator
+                      <ProductActionCard
                         productName={product.name}
-                        productSlug={product.slug}
                         sizes={product.sizes}
                         finishes={product.finishes}
                         locale={locale}
+                        dealerHref={`/${locale}/dealer`}
+                        labels={actionLabels}
+                        specSheetSlot={
+                          product.pdf ? (
+                            <LeadModal
+                              productName={product.name}
+                              pdfUrl={pdf(product.pdf)}
+                            >
+                              <button className="btn-outline w-full">
+                                {actionLabels.downloadSpec}
+                              </button>
+                            </LeadModal>
+                          ) : undefined
+                        }
                       />
-
-                      <div className="flex flex-col gap-3 mt-4 pt-6 border-t border-[var(--color-cloud)]">
-                        {product.pdf && (
-                          <LeadModal
-                            productName={product.name}
-                            pdfUrl={pdf(product.pdf)}
-                          >
-                            <button className="btn-outline w-full">
-                              {t("common.downloadSpecSheet")}
-                            </button>
-                          </LeadModal>
-                        )}
-                        <Link
-                          href={`/${locale}/dealer`}
-                          className="btn-outline text-center"
-                        >
-                          {t("nav.findDealer")}
-                        </Link>
-                      </div>
                     </div>
                   )}
                 </ScrollReveal>

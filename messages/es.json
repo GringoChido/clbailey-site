@@ -586,26 +586,6 @@
     "warrantyCare": "Garantía y Cuidado",
     "warrantyText": "Garantía estructural de por vida en todos los productos de madera maciza. Se recomienda instalación profesional. Contacte a su distribuidor autorizado para detalles completos de la garantía."
   },
-  "configurator": {
-    "stepLabel": "Paso {step} de {total}",
-    "selectSize": "Seleccionar Tamaño",
-    "selectFinish": "Seleccionar Acabado",
-    "sendToDealer": "Enviar a un Distribuidor",
-    "nameLabel": "Nombre",
-    "namePlaceholder": "Su nombre",
-    "emailLabel": "Correo Electrónico",
-    "emailPlaceholder": "usted@correo.com",
-    "zipLabel": "Código Postal",
-    "zipPlaceholder": "77377",
-    "submit": "Enviar Configuración a un Distribuidor",
-    "submitting": "Enviando...",
-    "successTitle": "Su configuración del {productName} ha sido enviada a {dealerName} en {dealerLocation}.",
-    "successExpect": "Espere noticias de ellos dentro de las próximas 24 horas.",
-    "successFallback": "Encontrar Más Distribuidores",
-    "noDealerTitle": "Su configuración ha sido recibida.",
-    "noDealerText": "Lo conectaremos con su distribuidor autorizado más cercano en breve.",
-    "error": "Algo salió mal. Por favor intente de nuevo."
-  },
   "categoryPage": {
     "models": "Modelos",
     "products": "Productos",

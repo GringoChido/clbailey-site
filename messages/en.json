@@ -586,26 +586,6 @@
     "warrantyCare": "Warranty & Care",
     "warrantyText": "Lifetime structural warranty on all solid hardwood products. Professional installation recommended. Contact your authorized dealer for complete warranty details."
   },
-  "configurator": {
-    "stepLabel": "Step {step} of {total}",
-    "selectSize": "Select Size",
-    "selectFinish": "Select Finish",
-    "sendToDealer": "Send to a Dealer",
-    "nameLabel": "Name",
-    "namePlaceholder": "Your name",
-    "emailLabel": "Email",
-    "emailPlaceholder": "you@example.com",
-    "zipLabel": "ZIP Code",
-    "zipPlaceholder": "77377",
-    "submit": "Send Configuration to a Dealer",
-    "submitting": "Sending...",
-    "successTitle": "Your {productName} configuration has been sent to {dealerName} in {dealerLocation}.",
-    "successExpect": "Expect to hear from them within 24 hours.",
-    "successFallback": "Find More Dealers",
-    "noDealerTitle": "Your configuration has been received.",
-    "noDealerText": "We will connect you with your nearest authorized dealer shortly.",
-    "error": "Something went wrong. Please try again."
-  },
   "categoryPage": {
     "models": "Models",
     "products": "Products",
