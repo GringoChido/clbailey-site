@@ -52,7 +52,7 @@ const FinishSwatches = ({
   }
 
   return (
-    <div className="flex flex-wrap gap-5">
+    <div className="flex flex-wrap gap-6">
       {finishes.map((finish) => {
         const isActive = selected === finish;
         const color = getFinishColor(finish);
@@ -62,10 +62,14 @@ const FinishSwatches = ({
             key={finish}
             type="button"
             onClick={() => onSelect?.(finish)}
-            className="flex flex-col items-center gap-2 cursor-pointer group"
+            className="flex flex-col items-center gap-3 cursor-pointer group"
           >
             <div
-              className="w-10 h-10 transition-all duration-200"
+              className={`w-16 h-16 transition-all duration-200 ${
+                isActive
+                  ? "ring-2 ring-[var(--color-primary)] ring-offset-2"
+                  : "ring-1 ring-[var(--color-cloud)] group-hover:ring-[var(--color-mid-gray)]"
+              }`}
               style={
                 isVarious(finish)
                   ? {
@@ -76,10 +80,10 @@ const FinishSwatches = ({
               }
             />
             <span
-              className={`text-[10px] text-[var(--color-mid-gray)] leading-tight text-center max-w-[60px] transition-all duration-200 ${
+              className={`text-[11px] font-[family-name:var(--font-label)] uppercase tracking-[1.5px] text-center max-w-[80px] transition-all duration-200 ${
                 isActive
-                  ? "underline underline-offset-2 text-[var(--color-primary)]"
-                  : "group-hover:text-[var(--color-primary)]"
+                  ? "text-[var(--color-primary)]"
+                  : "text-[var(--color-mid-gray)] group-hover:text-[var(--color-primary)]"
               }`}
             >
               {finish}

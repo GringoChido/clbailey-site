@@ -29,13 +29,13 @@ const PDPShowcase = ({ heroImage, images, productName }: PDPShowcaseProps) => {
           <p className="section-label mb-6 text-center">Gallery</p>
         </div>
 
-        {/* Horizontal scrolling gallery */}
+        {/* Gallery grid — centered, scrolls on mobile */}
         <div className="overflow-x-auto no-scrollbar">
-          <div className="flex justify-center gap-3 lg:gap-4 px-6 lg:px-10 pb-4">
+          <div className="flex gap-3 lg:gap-4 px-6 lg:px-10 pb-4 w-fit mx-auto">
             {allImages.map((src, i) => (
               <div
                 key={i}
-                className="relative flex-shrink-0 w-[240px] md:w-[300px] lg:w-[360px] aspect-[4/3] cursor-pointer overflow-hidden group bg-[var(--color-off-white)]"
+                className="relative flex-shrink-0 w-[280px] md:w-[320px] lg:w-[340px] aspect-[4/3] cursor-pointer overflow-hidden group bg-[var(--color-off-white)]"
                 onClick={() => openLightbox(i)}
                 role="button"
                 tabIndex={0}

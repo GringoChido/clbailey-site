@@ -283,12 +283,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
           <ScrollReveal>
-            <p className="text-lg md:text-xl text-[var(--color-primary)] leading-[1.8] mb-8">
+            <p className="text-lg md:text-xl text-[var(--color-primary)] leading-[1.8]">
               {product.description}
             </p>
-            <div className="flex justify-center">
-              <FinishSwatches finishes={product.finishes} size="lg" />
-            </div>
           </ScrollReveal>
         </div>
       </section>
