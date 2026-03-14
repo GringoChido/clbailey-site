@@ -31,7 +31,7 @@ const PDPShowcase = ({ heroImage, images, productName }: PDPShowcaseProps) => {
 
         {/* Horizontal scrolling gallery */}
         <div className="overflow-x-auto no-scrollbar">
-          <div className="flex gap-3 lg:gap-4 px-6 lg:px-10 pb-4">
+          <div className="flex justify-center gap-3 lg:gap-4 px-6 lg:px-10 pb-4">
             {allImages.map((src, i) => (
               <div
                 key={i}
