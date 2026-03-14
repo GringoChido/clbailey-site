@@ -16,14 +16,13 @@ import {
   pdf,
   IMAGEKIT_BASE,
 } from "@/lib/products";
-import ProductAccordion from "@/components/ui/ProductAccordion";
 import ProductConfigurator from "@/components/ui/ProductConfigurator";
 import ProductCard from "@/components/ui/ProductCard";
 import LeadModal from "@/components/ui/LeadModal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import CraftStrip from "@/components/ui/CraftStrip";
 import ConfigureNudge from "@/components/ui/ConfigureNudge";
 import PDPShowcase from "@/components/ui/PDPShowcase";
+import FinishSwatches from "@/components/ui/FinishSwatches";
 
 interface PageProps {
   params: Promise<{ locale: string; category: string; slug: string }>;
@@ -126,6 +125,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
     },
     manufacturer: {
       "@type": "Organization",
+      "@id": "https://clbailey.com/#organization",
       name: "C.L. Bailey & Co.",
     },
     category: cat.name,
@@ -137,6 +137,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       priceCurrency: "USD",
       seller: {
         "@type": "Organization",
+        "@id": "https://clbailey.com/#organization",
         name: "C.L. Bailey & Co.",
       },
     },
@@ -166,6 +167,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
       },
     ],
   };
+
+  const warrantyText = locale === "es"
+    ? "Garantia estructural de por vida en todos los productos de madera maciza. Se recomienda instalacion profesional. Contacte a su distribuidor autorizado para conocer los detalles completos de la garantia."
+    : "Lifetime structural warranty on all solid hardwood products. Professional installation recommended. Contact your authorized dealer for complete warranty details.";
+
+  const labels = locale === "es"
+    ? { features: "Caracteristicas y Construccion", sizes: "Tamanos Disponibles", finishes: "Opciones de Acabado", warranty: "Garantia y Cuidado", roomSize: "Guia de Tamano de Habitacion" }
+    : { features: "Features & Construction", sizes: "Available Sizes", finishes: "Finish Options", warranty: "Warranty & Care", roomSize: "Room Size Guide" };
 
   return (
     <>
@@ -229,7 +238,62 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ─── Product Photo Showcase ─── */}
+      {/* ─── Trust Bar (moved up from bottom) ─── */}
+      <section className="bg-[var(--color-primary)] py-8 lg:py-10">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="flex items-center gap-4">
+              <div className="w-px h-8 bg-white/20 hidden md:block" />
+              <div>
+                <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-white/50 mb-1">
+                  {t("craftStrip.pillar1Title")}
+                </p>
+                <p className="text-[13px] font-light text-white/70">
+                  {t("craftStrip.pillar1Desc")}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-px h-8 bg-white/20 hidden md:block" />
+              <div>
+                <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-white/50 mb-1">
+                  {t("craftStrip.pillar2Title")}
+                </p>
+                <p className="text-[13px] font-light text-white/70">
+                  {t("craftStrip.pillar2Desc")}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-px h-8 bg-white/20 hidden md:block" />
+              <div>
+                <p className="font-[family-name:var(--font-label)] text-[10px] font-medium uppercase tracking-[3px] text-white/50 mb-1">
+                  {t("craftStrip.pillar3Title")}
+                </p>
+                <p className="text-[13px] font-light text-white/70">
+                  {t("craftStrip.pillar3Desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Product Intro ─── */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+          <ScrollReveal>
+            <p className="text-lg md:text-xl text-[var(--color-primary)] leading-[1.8] mb-8">
+              {product.description}
+            </p>
+            <div className="flex justify-center">
+              <FinishSwatches finishes={product.finishes} size="lg" />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ─── Lifestyle Gallery ─── */}
       {galleryImages.length > 0 && (
         <PDPShowcase
           heroImage={null}
@@ -238,79 +302,158 @@ export default async function ProductDetailPage({ params }: PageProps) {
         />
       )}
 
-      {/* ─── Product Details + Configurator ─── */}
+      {/* ─── Specs + Configurator: Two-Column Layout ─── */}
       <section className="py-16 lg:py-24 bg-[var(--color-off-white)]" id="configurator">
-        <div className="max-w-3xl mx-auto px-6 lg:px-10">
-          <ScrollReveal>
-            <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-[var(--color-primary)] mb-10 text-center">{t("pdp.productDetails")}</h2>
-            <ProductAccordion
-              features={product.features}
-              sizes={product.sizes}
-              finishes={product.finishes}
-              dimensionsImage={product.images.dimensions}
-              locale={locale}
-            />
-          </ScrollReveal>
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
-          <ScrollReveal delay={1}>
-            {isDealer ? (
-              <div className="py-10 border-t border-[var(--color-cloud)] mt-10">
-                <p className="section-label mb-4 text-center">{t("pdp.dealerTools")}</p>
-                <div className="flex justify-center flex-wrap gap-3">
-                  {product.pdf && (
-                    <a
-                      href={pdf(product.pdf)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary"
-                    >
-                      {t("common.downloadSpecSheet")}
-                    </a>
+            {/* Left Column: Open Specs */}
+            <div className="lg:col-span-7">
+              <ScrollReveal>
+                <h2 className="heading-display text-3xl md:text-4xl text-[var(--color-primary)] mb-10">
+                  {t("pdp.productDetails")}
+                </h2>
+
+                {/* Features */}
+                <div className="mb-10">
+                  <p className="section-label text-[13px] mb-4">{labels.features}</p>
+                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
+                  <ul className="space-y-3">
+                    {product.features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="text-base text-[var(--color-primary)] leading-[1.8] pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[13px] before:w-2 before:h-[1px] before:bg-[var(--color-silver)]"
+                      >
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Sizes */}
+                <div className="mb-10">
+                  <p className="section-label text-[13px] mb-4">{labels.sizes}</p>
+                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
+                  <div className="flex gap-4">
+                    {product.sizes.map((size) => (
+                      <span
+                        key={size}
+                        className="metadata px-5 py-2.5 border border-[var(--color-cloud)] text-[var(--color-primary)]"
+                      >
+                        {size}
+                      </span>
+                    ))}
+                  </div>
+                  {product.images.dimensions && (
+                    <div className="mt-6 relative w-full max-w-lg aspect-[4/3]">
+                      <Image
+                        src={img(product.images.dimensions)}
+                        alt={`${product.name} dimensions`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 500px"
+                      />
+                    </div>
                   )}
+                </div>
+
+                {/* Finishes */}
+                <div className="mb-10">
+                  <p className="section-label text-[13px] mb-4">{labels.finishes}</p>
+                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
+                  <FinishSwatches finishes={product.finishes} size="lg" />
+                </div>
+
+                {/* Warranty */}
+                <div className="mb-10">
+                  <p className="section-label text-[13px] mb-4">{labels.warranty}</p>
+                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
+                  <p className="text-base text-[var(--color-primary)] leading-[1.8]">
+                    {warrantyText}
+                  </p>
+                </div>
+
+                {/* Room Size Link */}
+                <div>
+                  <p className="section-label text-[13px] mb-4">{labels.roomSize}</p>
+                  <div className="h-px bg-[var(--color-cloud)] mb-5" />
+                  <p className="text-base text-[var(--color-body)] leading-[1.8] mb-3">
+                    {locale === "es"
+                      ? "No esta seguro de que su habitacion sea lo suficientemente grande? Consulte nuestra guia de tamanos de habitacion para conocer las dimensiones minimas recomendadas."
+                      : "Not sure your room is large enough? Check our room size guide for recommended minimum dimensions."}
+                  </p>
                   <Link
-                    href={`/${locale}/dealer-portal`}
-                    className="btn-outline"
+                    href={`/${locale}/room-size`}
+                    className="btn-outline inline-block"
                   >
-                    {t("pdp.dealerPortal")}
+                    {locale === "es" ? "Ver Guia de Tamanos" : "View Room Size Guide"}
                   </Link>
                 </div>
-              </div>
-            ) : (
-              <div className="mt-10 border-t border-[var(--color-cloud)]">
-                <ProductConfigurator
-                  productName={product.name}
-                  productSlug={product.slug}
-                  sizes={product.sizes}
-                  finishes={product.finishes}
-                  locale={locale}
-                />
+              </ScrollReveal>
+            </div>
 
-                <div className="flex justify-center flex-wrap gap-3 pb-4">
-                  {product.pdf && (
-                    <LeadModal
-                      productName={product.name}
-                      pdfUrl={pdf(product.pdf)}
-                    >
-                      <button className="btn-outline">
-                        {t("common.downloadSpecSheet")}
-                      </button>
-                    </LeadModal>
+            {/* Right Column: Sticky Configurator */}
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-28">
+                <ScrollReveal delay={1}>
+                  {isDealer ? (
+                    <div className="bg-white p-8 border border-[var(--color-cloud)]">
+                      <p className="section-label mb-4 text-center">{t("pdp.dealerTools")}</p>
+                      <div className="flex flex-col gap-3">
+                        {product.pdf && (
+                          <a
+                            href={pdf(product.pdf)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary text-center"
+                          >
+                            {t("common.downloadSpecSheet")}
+                          </a>
+                        )}
+                        <Link
+                          href={`/${locale}/dealer-portal`}
+                          className="btn-outline text-center"
+                        >
+                          {t("pdp.dealerPortal")}
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-white p-6 lg:p-8 border border-[var(--color-cloud)]">
+                      <ProductConfigurator
+                        productName={product.name}
+                        productSlug={product.slug}
+                        sizes={product.sizes}
+                        finishes={product.finishes}
+                        locale={locale}
+                      />
+
+                      <div className="flex flex-col gap-3 mt-4 pt-6 border-t border-[var(--color-cloud)]">
+                        {product.pdf && (
+                          <LeadModal
+                            productName={product.name}
+                            pdfUrl={pdf(product.pdf)}
+                          >
+                            <button className="btn-outline w-full">
+                              {t("common.downloadSpecSheet")}
+                            </button>
+                          </LeadModal>
+                        )}
+                        <Link
+                          href={`/${locale}/dealer`}
+                          className="btn-outline text-center"
+                        >
+                          {t("nav.findDealer")}
+                        </Link>
+                      </div>
+                    </div>
                   )}
-                  <Link
-                    href={`/${locale}/dealer`}
-                    className="btn-outline"
-                  >
-                    {t("nav.findDealer")}
-                  </Link>
-                </div>
+                </ScrollReveal>
               </div>
-            )}
-          </ScrollReveal>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* ─── Craftsmanship Strip ─── */}
-      <CraftStrip />
 
       {/* ─── Cross-sell ─── */}
       <div className="py-16 lg:py-24">
