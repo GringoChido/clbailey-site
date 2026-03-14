@@ -16,7 +16,6 @@ import {
   pdf,
   IMAGEKIT_BASE,
 } from "@/lib/products";
-import FinishSwatches from "@/components/ui/FinishSwatches";
 import ProductAccordion from "@/components/ui/ProductAccordion";
 import ProductConfigurator from "@/components/ui/ProductConfigurator";
 import ProductCard from "@/components/ui/ProductCard";
@@ -230,29 +229,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ─── Product Intro ─── */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-          <ScrollReveal>
-            <p className="section-label text-[13px] tracking-[3px] mb-5">{t("common.aboutThisTable")}</p>
-            <p className="text-base md:text-lg text-[var(--color-body)] leading-[1.8] mb-10 max-w-2xl mx-auto">
-              {product.description}
-            </p>
-
-            {/* Finish swatches centered */}
-            {product.finishes.length > 0 &&
-              product.finishes[0] !== "Various" && (
-                <div className="flex justify-center">
-                  <FinishSwatches
-                    finishes={product.finishes}
-                    size="sm"
-                  />
-                </div>
-              )}
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* ─── Product Photo Showcase ─── */}
       {galleryImages.length > 0 && (
         <PDPShowcase
@@ -266,7 +242,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <section className="py-16 lg:py-24 bg-[var(--color-off-white)]" id="configurator">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <ScrollReveal>
-            <p className="section-label mb-6 text-center">{t("pdp.productDetails")}</p>
+            <h2 className="heading-display text-2xl md:text-3xl text-[var(--color-primary)] mb-8 text-center">{t("pdp.productDetails")}</h2>
             <ProductAccordion
               features={product.features}
               sizes={product.sizes}

@@ -24,7 +24,7 @@ const PDPShowcase = ({ heroImage, images, productName }: PDPShowcaseProps) => {
 
   return (
     <>
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-10 lg:py-12 bg-white">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
           <p className="section-label mb-6 text-center">Gallery</p>
         </div>
@@ -35,7 +35,7 @@ const PDPShowcase = ({ heroImage, images, productName }: PDPShowcaseProps) => {
             {allImages.map((src, i) => (
               <div
                 key={i}
-                className="relative flex-shrink-0 w-[320px] md:w-[420px] lg:w-[520px] aspect-[4/3] cursor-pointer overflow-hidden group bg-[var(--color-off-white)]"
+                className="relative flex-shrink-0 w-[240px] md:w-[300px] lg:w-[360px] aspect-[4/3] cursor-pointer overflow-hidden group bg-[var(--color-off-white)]"
                 onClick={() => openLightbox(i)}
                 role="button"
                 tabIndex={0}
@@ -47,7 +47,7 @@ const PDPShowcase = ({ heroImage, images, productName }: PDPShowcaseProps) => {
                   alt={`${productName} ${i + 1} of ${allImages.length}`}
                   fill
                   className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                  sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 300px, 360px"
                   priority={i === 0}
                 />
               </div>
