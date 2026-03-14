@@ -24,100 +24,34 @@ const PDPShowcase = ({ heroImage, images, productName }: PDPShowcaseProps) => {
 
   return (
     <>
-      <section className="bg-[var(--color-off-white)]">
-        <div className="max-w-[90rem] mx-auto">
+      <section className="py-12 lg:py-16 bg-white">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+          <p className="section-label mb-6 text-center">Gallery</p>
+        </div>
 
-          {/* Hero product shot: full width */}
-          {heroImage && (
-            <div
-              className="relative w-full aspect-[16/7] cursor-pointer overflow-hidden group"
-              onClick={() => openLightbox(0)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter") openLightbox(0); }}
-              aria-label={`${productName}, click to enlarge`}
-            >
-              <Image
-                src={img(heroImage)}
-                alt={productName}
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                sizes="100vw"
-                quality={85}
-              />
-            </div>
-          )}
-
-          {/* Alternating grid rows */}
-          <div className="px-3 lg:px-4 py-3 lg:py-4 space-y-3 lg:space-y-4">
-            {images.length >= 2 && (
-              <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                {images.slice(0, 2).map((src, i) => (
-                  <div
-                    key={i}
-                    className="relative aspect-[4/3] cursor-pointer overflow-hidden group bg-white"
-                    onClick={() => openLightbox((heroImage ? 1 : 0) + i)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => { if (e.key === "Enter") openLightbox((heroImage ? 1 : 0) + i); }}
-                    aria-label={`${productName} detail ${i + 1}, click to enlarge`}
-                  >
-                    <Image
-                      src={img(src)}
-                      alt={`${productName} detail ${i + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Third image: wide cinematic crop */}
-            {images.length >= 3 && (
+        {/* Horizontal scrolling gallery */}
+        <div className="overflow-x-auto no-scrollbar">
+          <div className="flex gap-3 lg:gap-4 px-6 lg:px-10 pb-4">
+            {allImages.map((src, i) => (
               <div
-                className="relative aspect-[21/9] cursor-pointer overflow-hidden group bg-white"
-                onClick={() => openLightbox(heroImage ? 3 : 2)}
+                key={i}
+                className="relative flex-shrink-0 w-[320px] md:w-[420px] lg:w-[520px] aspect-[4/3] cursor-pointer overflow-hidden group bg-[var(--color-off-white)]"
+                onClick={() => openLightbox(i)}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => { if (e.key === "Enter") openLightbox(heroImage ? 3 : 2); }}
-                aria-label={`${productName} detail 3, click to enlarge`}
+                onKeyDown={(e) => { if (e.key === "Enter") openLightbox(i); }}
+                aria-label={`${productName} image ${i + 1}, click to enlarge`}
               >
                 <Image
-                  src={img(images[2])}
-                  alt={`${productName} detail 3`}
+                  src={img(src)}
+                  alt={`${productName} ${i + 1} of ${allImages.length}`}
                   fill
                   className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 520px"
+                  priority={i === 0}
                 />
               </div>
-            )}
-
-            {/* Remaining images in pairs */}
-            {images.length > 3 && (
-              <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                {images.slice(3).map((src, i) => (
-                  <div
-                    key={i}
-                    className="relative aspect-[4/3] cursor-pointer overflow-hidden group bg-white"
-                    onClick={() => openLightbox((heroImage ? 4 : 3) + i)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => { if (e.key === "Enter") openLightbox((heroImage ? 4 : 3) + i); }}
-                    aria-label={`${productName} detail ${i + 4}, click to enlarge`}
-                  >
-                    <Image
-                      src={img(src)}
-                      alt={`${productName} detail ${i + 4}`}
-                      fill
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
+            ))}
           </div>
         </div>
       </section>

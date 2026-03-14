@@ -234,8 +234,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
           <ScrollReveal>
-            <p className="section-label mb-4">{t("common.aboutThisTable")}</p>
-            <p className="text-[15px] text-[var(--color-body)] leading-[28px] mb-10 max-w-xl mx-auto">
+            <p className="section-label text-[13px] tracking-[3px] mb-5">{t("common.aboutThisTable")}</p>
+            <p className="text-base md:text-lg text-[var(--color-body)] leading-[1.8] mb-10 max-w-2xl mx-auto">
               {product.description}
             </p>
 
@@ -351,7 +351,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   ? `${product.name.replace(/^The\s+/i, "").replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture)s?$/i, "")} Collection`
                   : t("products.completeGameRoomSub")}
               </h2>
-              <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-6">
+              <p className="text-[15px] text-[var(--color-body)] leading-[28px] mb-6">
                 {collectionProducts.length > 0
                   ? t("products.collectionDesc", { name: product.name.replace(/^The\s+/i, "").replace(/\s+(Pool Table|Shuffleboard|Game Room Furniture)s?$/i, "") })
                   : t("products.crossCategoryDesc")}
@@ -370,7 +370,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <p className="section-label mb-3">
                 {t("products.moreCategoryName", { categoryName: cat.name })}
               </p>
-              <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-6">
+              <p className="text-[15px] text-[var(--color-body)] leading-[28px] mb-6">
                 {t("products.moreCategoryDesc")}
               </p>
               <div className="h-px bg-[var(--color-cloud)] mb-8" />

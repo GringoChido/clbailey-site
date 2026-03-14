@@ -100,7 +100,7 @@ const ProductAccordion = ({
           {features.map((feature, i) => (
             <li
               key={i}
-              className="text-[13px] text-[var(--color-body)] leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-1.5 before:h-[1px] before:bg-[var(--color-silver)]"
+              className="text-[15px] text-[var(--color-body)] leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[11px] before:w-1.5 before:h-[1px] before:bg-[var(--color-silver)]"
             >
               {feature}
             </li>
@@ -114,7 +114,7 @@ const ProductAccordion = ({
           {sizes.map((size, i) => (
             <li
               key={i}
-              className="text-[13px] text-[var(--color-body)] leading-relaxed"
+              className="text-[15px] text-[var(--color-body)] leading-relaxed"
             >
               {size}
             </li>
@@ -140,7 +140,7 @@ const ProductAccordion = ({
 
       {/* Warranty */}
       <AccordionSection title={labels.warranty}>
-        <p className="text-[13px] text-[var(--color-body)] leading-relaxed">
+        <p className="text-[15px] text-[var(--color-body)] leading-relaxed">
           {warrantyText}
         </p>
       </AccordionSection>
