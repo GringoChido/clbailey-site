@@ -16,7 +16,6 @@ import {
   pdf,
   IMAGEKIT_BASE,
 } from "@/lib/products";
-import PDPGalleryClient from "@/components/ui/PDPGalleryClient";
 import FinishSwatches from "@/components/ui/FinishSwatches";
 import ProductAccordion from "@/components/ui/ProductAccordion";
 import ProductConfigurator from "@/components/ui/ProductConfigurator";
@@ -25,6 +24,7 @@ import LeadModal from "@/components/ui/LeadModal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CraftStrip from "@/components/ui/CraftStrip";
 import ConfigureNudge from "@/components/ui/ConfigureNudge";
+import PDPShowcase from "@/components/ui/PDPShowcase";
 
 interface PageProps {
   params: Promise<{ locale: string; category: string; slug: string }>;
@@ -98,11 +98,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const dealerAuth = cookieStore.get("dealer-auth");
   const isDealer = dealerAuth?.value === "authorized";
 
-  const allImages = [
-    product.images.hero,
-    ...product.images.gallery,
-  ].filter(Boolean) as string[];
-
+  const galleryImages = product.images.gallery.filter(Boolean) as string[];
   const convertible = isConvertible(product);
 
   const collectionProducts = getCollectionMatches(product.name, category);
@@ -195,7 +191,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
 
         <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-10 pb-12 lg:pb-16">
-          {/* Breadcrumb */}
           <nav
             className="metadata !text-white/40 mb-4"
             aria-label="Breadcrumb"
@@ -235,113 +230,115 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ─── Product Content ─── */}
-      <div className="py-16 lg:py-24">
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
+      {/* ─── Product Intro ─── */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+          <ScrollReveal>
+            <p className="section-label mb-4">{t("common.aboutThisTable")}</p>
+            <p className="text-[15px] text-[var(--color-body)] leading-[28px] mb-10 max-w-xl mx-auto">
+              {product.description}
+            </p>
 
-          {/* Two-column: Gallery + Product Info */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
-            {/* Left: Gallery */}
-            <PDPGalleryClient
-              images={allImages}
-              productName={product.name}
+            {/* Finish swatches centered */}
+            {product.finishes.length > 0 &&
+              product.finishes[0] !== "Various" && (
+                <div className="flex justify-center">
+                  <FinishSwatches
+                    finishes={product.finishes}
+                    size="sm"
+                  />
+                </div>
+              )}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ─── Product Photo Showcase ─── */}
+      {galleryImages.length > 0 && (
+        <PDPShowcase
+          heroImage={product.images.hero}
+          images={galleryImages}
+          productName={product.name}
+        />
+      )}
+
+      {/* ─── Product Details + Configurator ─── */}
+      <section className="py-16 lg:py-24 bg-[var(--color-off-white)]" id="configurator">
+        <div className="max-w-3xl mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <p className="section-label mb-6 text-center">{t("pdp.productDetails")}</p>
+            <ProductAccordion
+              features={product.features}
+              sizes={product.sizes}
+              finishes={product.finishes}
+              dimensionsImage={product.images.dimensions}
+              locale={locale}
             />
+          </ScrollReveal>
 
-            {/* Right: Product details */}
-            <div>
-              <ScrollReveal>
-                <p className="section-label mb-3">{t("common.aboutThisTable")}</p>
-                <p className="text-[13px] text-[var(--color-body)] leading-[26px] mb-8 max-w-md">
-                  {product.description}
-                </p>
-
-                {/* Finish swatches */}
-                {product.finishes.length > 0 &&
-                  product.finishes[0] !== "Various" && (
-                    <div className="mb-8">
-                      <FinishSwatches
-                        finishes={product.finishes}
-                        size="sm"
-                      />
-                    </div>
+          <ScrollReveal delay={1}>
+            {isDealer ? (
+              <div className="py-10 border-t border-[var(--color-cloud)] mt-10">
+                <p className="section-label mb-4 text-center">{t("pdp.dealerTools")}</p>
+                <div className="flex justify-center flex-wrap gap-3">
+                  {product.pdf && (
+                    <a
+                      href={pdf(product.pdf)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      {t("common.downloadSpecSheet")}
+                    </a>
                   )}
-              </ScrollReveal>
-
-              {/* Accordion */}
-              <ScrollReveal delay={1}>
-                <ProductAccordion
-                  features={product.features}
+                  <Link
+                    href={`/${locale}/dealer-portal`}
+                    className="btn-outline"
+                  >
+                    {t("pdp.dealerPortal")}
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div className="mt-10 border-t border-[var(--color-cloud)]">
+                <ProductConfigurator
+                  productName={product.name}
+                  productSlug={product.slug}
                   sizes={product.sizes}
                   finishes={product.finishes}
-                  dimensionsImage={product.images.dimensions}
                   locale={locale}
                 />
-              </ScrollReveal>
 
-              {/* Configurator or Dealer CTAs */}
-              <ScrollReveal delay={2} id="configurator">
-                {isDealer ? (
-                  <div className="py-8 border-t border-[var(--color-cloud)]">
-                    <p className="section-label mb-4">{t("pdp.dealerTools")}</p>
-                    <div className="flex flex-wrap gap-3">
-                      {product.pdf && (
-                        <a
-                          href={pdf(product.pdf)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary"
-                        >
-                          {t("common.downloadSpecSheet")}
-                        </a>
-                      )}
-                      <Link
-                        href={`/${locale}/dealer-portal`}
-                        className="btn-outline"
-                      >
-                        {t("pdp.dealerPortal")}
-                      </Link>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="border-t border-[var(--color-cloud)]">
-                    <ProductConfigurator
+                <div className="flex justify-center flex-wrap gap-3 pb-4">
+                  {product.pdf && (
+                    <LeadModal
                       productName={product.name}
-                      productSlug={product.slug}
-                      sizes={product.sizes}
-                      finishes={product.finishes}
-                      locale={locale}
-                    />
-
-                    <div className="hidden lg:flex flex-wrap gap-3 pb-8">
-                      {product.pdf && (
-                        <LeadModal
-                          productName={product.name}
-                          pdfUrl={pdf(product.pdf)}
-                        >
-                          <button className="btn-outline">
-                            {t("common.downloadSpecSheet")}
-                          </button>
-                        </LeadModal>
-                      )}
-                      <Link
-                        href={`/${locale}/dealer`}
-                        className="btn-outline"
-                      >
-                        {t("nav.findDealer")}
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </ScrollReveal>
-            </div>
-          </div>
+                      pdfUrl={pdf(product.pdf)}
+                    >
+                      <button className="btn-outline">
+                        {t("common.downloadSpecSheet")}
+                      </button>
+                    </LeadModal>
+                  )}
+                  <Link
+                    href={`/${locale}/dealer`}
+                    className="btn-outline"
+                  >
+                    {t("nav.findDealer")}
+                  </Link>
+                </div>
+              </div>
+            )}
+          </ScrollReveal>
         </div>
+      </section>
 
-        {/* Craftsmanship trust strip */}
-        <CraftStrip />
+      {/* ─── Craftsmanship Strip ─── */}
+      <CraftStrip />
 
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-10 mt-0">
-          {/* Collection / Cross-category products */}
+      {/* ─── Cross-sell ─── */}
+      <div className="py-16 lg:py-24">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-10">
           {crossCategoryProducts.length > 0 && (
             <ScrollReveal className="mb-20">
               <p className="section-label mb-3">
@@ -368,7 +365,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </ScrollReveal>
           )}
 
-          {/* More from this category */}
           {relatedProducts.length > 0 && (
             <ScrollReveal>
               <p className="section-label mb-3">
@@ -388,7 +384,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Desktop configure nudge (non-dealer only) */}
+      {/* Desktop configure nudge */}
       {!isDealer && product.sizes.length > 0 && (
         <ConfigureNudge label={t("products.configureNudge")} />
       )}
