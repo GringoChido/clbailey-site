@@ -141,7 +141,7 @@ export default async function CategoryPage({ params }: PageProps) {
       </section>
 
       {/* Trade Program + Dealer Finder */}
-      <TradeProgramBlock locale={locale} />
+      <TradeProgramBlock />
     </>
   );
 }
